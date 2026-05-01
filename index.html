@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficus Development Organization</title>    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { padding-top: 80px; } 
+    </style>
+</head>
+<body class="bg-gray-50 cursor-default">
+
+    <div id="ficus-header-container"></div>
+
+<section id="home" class="relative py-4 lg:py-0 lg:h-screen pt-24 flex items-center justify-start overflow-hidden bg-ficus-yellow">
+    
+    <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-30 mix-blend-multiply hero-bg-image">
+    </div>
+    
+    <div class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] lg:bg-[linear-gradient(to_right,_var(--tw-gradient-stops))] from-ficus-yellow/95 via-ficus-yellow/85 to-blue-900/70"></div>
+    
+    <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-2 sm:gap-4 lg:gap-8 items-center px-4 sm:px-8 lg:px-16 max-w-[1800px] mx-auto w-full">
+        
+        <div id="hero-text-content" class="text-left z-20 lg:col-span-7 order-1 lg:order-1 mt-2 lg:mt-0">
+            <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold text-ficus-charcoal tracking-tight mb-2 lg:mb-6 leading-tight drop-shadow-sm">
+                Empowering Communities. Growing Futures.
+            </h1>
+            <p class="mt-1 lg:mt-6 text-sm sm:text-base md:text-xl lg:text-2xl text-ficus-charcoal/90 font-medium max-w-2xl mb-4 lg:mb-10 leading-relaxed">
+                We equip women, youth, and smallholder farmers across Tanzania with the skills, tools, and opportunities to build resilient, thriving lives.
+            </p>
+            
+            <div class="flex flex-row flex-wrap gap-2 sm:gap-4 lg:gap-5 justify-start items-center">
+                
+                <a href="donate.html" class="group w-auto bg-blue-900 text-white px-4 py-2 sm:px-8 sm:py-4 rounded-full font-bold text-xs sm:text-lg hover:bg-blue-800 transition duration-300 shadow-lg flex justify-center items-center gap-1 sm:gap-2 transform hover:-translate-y-1">
+                    Donate Now 
+                    <svg class="w-3 h-3 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+                
+                <a href="program.html" class="group w-auto bg-transparent border-2 border-blue-900 text-blue-900 px-4 py-2 sm:px-8 sm:py-4 rounded-full font-bold text-xs sm:text-lg hover:bg-blue-900 hover:text-white transition duration-300 shadow-lg transform hover:-translate-y-1 text-center whitespace-nowrap">
+                    Explore Our Work
+                </a>
+                
+            </div>
+        </div>
+        
+        <div id="hero-image-animate" class="relative flex items-center justify-center w-full lg:h-full z-10 animate-float lg:col-span-5 order-2 lg:order-2 mt-4 lg:mt-0">
+            
+            <div class="absolute inset-0 flex items-center justify-center -z-10">
+                <svg class="w-[280px] h-[280px] sm:w-[700px] sm:h-[700px] lg:w-[1600px] lg:h-[1600px] text-blue-900 opacity-90 animate-spin-slow drop-shadow-2xl scale-[1.5] reverse-spin" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="currentColor" d="M39.9,-65.7C50.3,-58.5,56.1,-43.8,63.1,-30C70,-16.1,78.2,-3,77.7,10.2C77.2,23.3,67.9,36.5,58.8,49.1C49.7,61.7,40.7,73.8,28.8,79.5C16.9,85.2,2,84.6,-13.4,80.5C-28.7,76.5,-44.6,68.9,-56.3,58.1C-68.1,47.3,-75.7,33.2,-78.9,18.4C-82.1,3.5,-81,-12.1,-75.5,-26C-70.1,-39.9,-60.4,-52.1,-48.7,-59C-36.9,-65.9,-23.1,-67.6,-8.7,-67.9C5.8,-68.2,21.7,-67.2,39.9,-65.7Z" transform="translate(100 100)" />
+                </svg>
+            </div>
+
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0 animate-spin-slow">
+                <svg id="infinity-outline" class="w-[200px] h-[200px] sm:w-[500px] sm:h-[500px] lg:w-[900px] lg:h-[900px] text-ficus-yellow transition-colors duration-1000 opacity-90 drop-shadow-2xl" viewBox="0 0 100 60" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M 24.3,30.8 C 11.4,30.8 1,20.4 1,7.5 1,-5.4 11.4,-15.8 24.3,-15.8 c 11.4,0 18.2,10.6 25.7,23.3 7.5,12.7 14.3,23.3 25.7,23.3 12.9,0 23.3,-10.4 23.3,-23.3 0,-12.9 -10.4,-23.3 -23.3,-23.3 -11.4,0 -18.2,10.6 -25.7,23.3 C 42.5,20.2 35.7,30.8 24.3,30.8 Z" transform="translate(25, 25) scale(0.65)" />
+                </svg>
+            </div>
+
+            <div class="relative w-[160px] h-[160px] sm:w-[350px] sm:h-[350px] lg:w-[550px] lg:h-[550px] bg-blue-900 shadow-2xl overflow-hidden border-[3px] lg:border-[6px] border-white z-10 flex-shrink-0 animate-morph group">
+                
+                <img src="picha/1 (24).jpg" 
+                     class="hero-cycle-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100 transform group-hover:scale-110" alt="FIDO Agriculture">
+                     
+                <img src="picha/1 (23).jpg" 
+                     class="hero-cycle-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 transform group-hover:scale-110" alt="FIDO Education">
+                     
+                <img src="picha/1 (25).jpg" 
+                     class="hero-cycle-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 transform group-hover:scale-110" alt="FIDO Community">
+                     
+                <img src="picha/1 (27).jpg" 
+                     class="hero-cycle-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 transform group-hover:scale-110" alt="FIDO Environment">
+                     
+                <img src="picha/1 (26).jpg" 
+                     class="hero-cycle-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0 transform group-hover:scale-110" alt="FIDO Innovation">
+                     
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-10 lg:py-24 bg-ficus-sand overflow-hidden">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center reveal-on-scroll">
+        
+        <div class="space-y-6 lg:space-y-8 z-10">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-blue-900/10 text-blue-900 font-bold text-xs lg:text-sm tracking-widest uppercase">
+                Who We Are
+            </div>
+            
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-ficus-charcoal leading-tight">
+                We are <span class="text-blue-900 relative">FIDO.<svg class="absolute w-full h-2 lg:h-3 -bottom-1 left-0 text-ficus-yellow opacity-70" viewBox="0 0 100 10" preserveAspectRatio="none"><path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="4" fill="transparent"/></svg></span>
+            </h2>
+            
+            <p class="text-sm md:text-base lg:text-lg text-justify lg:text-left text-ficus-charcoal/80 leading-relaxed font-medium">
+                Ficus Development Organization is a Tanzanian non‑profit working hand‑in‑hand with vulnerable communities to break the cycle of poverty. From climate‑smart farming to digital literacy, our integrated approach ensures no one is left behind.
+            </p>
+            
+            <a href="#about-page" class="group inline-flex w-full sm:w-auto justify-center items-center gap-2 sm:gap-3 bg-ficus-charcoal text-white px-6 py-3.5 lg:px-8 lg:py-4 rounded-full font-bold text-sm lg:text-lg hover:bg-blue-900 transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                Learn About Our Mission 
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+        </div>
+
+        <div class="relative mt-2 lg:mt-0">
+            <div class="absolute -inset-2 lg:-inset-4 bg-ficus-yellow rounded-tl-[50px] lg:rounded-tl-[100px] rounded-br-[50px] lg:rounded-br-[100px] rounded-tr-xl rounded-bl-xl opacity-50 transform translate-x-2 translate-y-2 lg:translate-x-4 lg:translate-y-4"></div>
+            
+            <div class="relative h-[280px] sm:h-[350px] lg:h-[500px] w-full rounded-tl-[40px] lg:rounded-tl-[80px] rounded-br-[40px] lg:rounded-br-[80px] rounded-tr-xl lg:rounded-tr-2xl rounded-bl-xl lg:rounded-bl-2xl overflow-hidden shadow-2xl bg-gray-200">
+                <img src="picha/1 (20).jpg" alt="FIDO Community Work" class="w-full h-full object-cover hover:scale-105 transition-transform duration-1000">
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+
+<section id="programs" class="py-10 lg:py-24 bg-white relative overflow-hidden">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 reveal-on-scroll">
+        
+        <div class="text-center max-w-3xl mx-auto mb-8 lg:mb-16 space-y-3 lg:space-y-4">
+            <h2 class="text-3xl md:text-5xl font-bold text-ficus-charcoal">What We Do</h2>
+            <div class="w-16 lg:w-24 h-1.5 bg-ficus-yellow mx-auto rounded-full"></div>
+        </div>
+
+        <div class="relative w-full overflow-hidden" id="carousel-viewport">
+            <div class="flex flex-nowrap transition-transform duration-700 ease-in-out gap-4 sm:gap-6 lg:gap-8" id="carousel-track">
+                
+                <div class="carousel-card shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-21px)] group bg-ficus-sand/40 p-6 lg:p-10 rounded-[24px] lg:rounded-[40px] hover:bg-blue-900 transition-colors duration-500 shadow-sm hover:shadow-2xl flex flex-col h-auto">
+                    <div class="flex items-center gap-4 mb-4 lg:mb-6">
+                        <div class="w-12 h-12 lg:w-14 lg:h-14 shrink-0 bg-white rounded-xl lg:rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-500">
+                            <svg class="w-6 h-6 lg:w-7 lg:h-7 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path></svg>
+                        </div>
+                        <h3 class="text-xl lg:text-2xl font-bold text-ficus-charcoal group-hover:text-white transition-colors duration-500">Education & Skills</h3>
+                    </div>
+                    <p class="text-sm lg:text-base text-ficus-charcoal/70 leading-relaxed mb-4 lg:mb-8 group-hover:text-ficus-sand transition-colors duration-500 flex-grow">Building brighter futures through quality learning.</p>
+                    <a href="#edu" class="inline-flex items-center text-sm lg:text-base text-blue-900 font-bold group-hover:text-ficus-yellow transition-colors duration-500 mt-auto">Read More <svg class="ml-2 w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></a>
+                </div>
+                
+                <div class="carousel-card shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-21px)] group bg-ficus-sand/40 p-6 lg:p-10 rounded-[24px] lg:rounded-[40px] hover:bg-blue-900 transition-colors duration-500 shadow-sm hover:shadow-2xl flex flex-col h-auto">
+                    <div class="flex items-center gap-4 mb-4 lg:mb-6">
+                        <div class="w-12 h-12 lg:w-14 lg:h-14 shrink-0 bg-white rounded-xl lg:rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-500">
+                            <svg class="w-6 h-6 lg:w-7 lg:h-7 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl lg:text-2xl font-bold text-ficus-charcoal group-hover:text-white transition-colors duration-500">Health & Wellbeing</h3>
+                    </div>
+                    <p class="text-sm lg:text-base text-ficus-charcoal/70 leading-relaxed mb-4 lg:mb-8 group-hover:text-ficus-sand transition-colors duration-500 flex-grow">Access to healthcare and nutrition for all.</p>
+                    <a href="#health" class="inline-flex items-center text-sm lg:text-base text-blue-900 font-bold group-hover:text-ficus-yellow transition-colors duration-500 mt-auto">Read More <svg class="ml-2 w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></a>
+                </div>
+
+                <div class="carousel-card shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-21px)] group bg-ficus-sand/40 p-6 lg:p-10 rounded-[24px] lg:rounded-[40px] hover:bg-blue-900 transition-colors duration-500 shadow-sm hover:shadow-2xl flex flex-col h-auto">
+                    <div class="flex items-center gap-4 mb-4 lg:mb-6">
+                        <div class="w-12 h-12 lg:w-14 lg:h-14 shrink-0 bg-white rounded-xl lg:rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-500">
+                            <svg class="w-6 h-6 lg:w-7 lg:h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl lg:text-2xl font-bold text-ficus-charcoal group-hover:text-white transition-colors duration-500">Agriculture</h3>
+                    </div>
+                    <p class="text-sm lg:text-base text-ficus-charcoal/70 leading-relaxed mb-4 lg:mb-8 group-hover:text-ficus-sand transition-colors duration-500 flex-grow">Climate‑smart farming, better incomes.</p>
+                    <a href="#agri" class="inline-flex items-center text-sm lg:text-base text-blue-900 font-bold group-hover:text-ficus-yellow transition-colors duration-500 mt-auto">Read More <svg class="ml-2 w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></a>
+                </div>
+
+                <div class="carousel-card shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-21px)] group bg-ficus-sand/40 p-6 lg:p-10 rounded-[24px] lg:rounded-[40px] hover:bg-blue-900 transition-colors duration-500 shadow-sm hover:shadow-2xl flex flex-col h-auto">
+                    <div class="flex items-center gap-4 mb-4 lg:mb-6">
+                        <div class="w-12 h-12 lg:w-14 lg:h-14 shrink-0 bg-white rounded-xl lg:rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-500">
+                             <svg class="w-6 h-6 lg:w-7 lg:h-7 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                        </div>
+                        <h3 class="text-xl lg:text-2xl font-bold text-ficus-charcoal group-hover:text-white transition-colors duration-500">Environment</h3>
+                    </div>
+                    <p class="text-sm lg:text-base text-ficus-charcoal/70 leading-relaxed mb-4 lg:mb-8 group-hover:text-ficus-sand transition-colors duration-500 flex-grow">Protecting nature, strengthening resilience.</p>
+                    <a href="#env" class="inline-flex items-center text-sm lg:text-base text-blue-900 font-bold group-hover:text-ficus-yellow transition-colors duration-500 mt-auto">Read More <svg class="ml-2 w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></a>
+                </div>
+
+                <div class="carousel-card shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-21px)] group bg-ficus-sand/40 p-6 lg:p-10 rounded-[24px] lg:rounded-[40px] hover:bg-blue-900 transition-colors duration-500 shadow-sm hover:shadow-2xl flex flex-col h-auto">
+                    <div class="flex items-center gap-4 mb-4 lg:mb-6">
+                        <div class="w-12 h-12 lg:w-14 lg:h-14 shrink-0 bg-white rounded-xl lg:rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-500">
+                             <svg class="w-6 h-6 lg:w-7 lg:h-7 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <h3 class="text-xl lg:text-2xl font-bold text-ficus-charcoal group-hover:text-white transition-colors duration-500">Tech & Innovation</h3>
+                    </div>
+                    <p class="text-sm lg:text-base text-ficus-charcoal/70 leading-relaxed mb-4 lg:mb-8 group-hover:text-ficus-sand transition-colors duration-500 flex-grow">Digital solutions for inclusive development.</p>
+                    <a href="#tech" class="inline-flex items-center text-sm lg:text-base text-blue-900 font-bold group-hover:text-ficus-yellow transition-colors duration-500 mt-auto">Read More <svg class="ml-2 w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></a>
+                </div>
+
+                <div class="carousel-card shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-21px)] group bg-ficus-sand/40 p-6 lg:p-10 rounded-[24px] lg:rounded-[40px] hover:bg-blue-900 transition-colors duration-500 shadow-sm hover:shadow-2xl flex flex-col h-auto">
+                    <div class="flex items-center gap-4 mb-4 lg:mb-6">
+                        <div class="w-12 h-12 lg:w-14 lg:h-14 shrink-0 bg-white rounded-xl lg:rounded-2xl flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-500">
+                            <svg class="w-6 h-6 lg:w-7 lg:h-7 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl lg:text-2xl font-bold text-ficus-charcoal group-hover:text-white transition-colors duration-500">Economic Empowerment</h3>
+                    </div>
+                    <p class="text-sm lg:text-base text-ficus-charcoal/70 leading-relaxed mb-4 lg:mb-8 group-hover:text-ficus-sand transition-colors duration-500 flex-grow">Women & youth entrepreneurship.</p>
+                    <a href="#econ" class="inline-flex items-center text-sm lg:text-base text-blue-900 font-bold group-hover:text-ficus-yellow transition-colors duration-500 mt-auto">Read More <svg class="ml-2 w-4 h-4 lg:w-5 lg:h-5 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg></a>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="flex justify-center items-center mt-10 gap-3" id="carousel-dots">
+            </div>
+
+    </div>
+</section>
+
+
+<section id="impact" class="py-10 lg:py-24 bg-blue-900 text-white relative border-y-4 lg:border-y-8 border-ficus-yellow">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent bg-[length:20px_20px]"></div>
+    
+    <div class="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 text-center reveal-on-scroll">
+        <h2 class="text-3xl md:text-5xl font-bold mb-8 lg:mb-16">Our Impact in Numbers</h2>
+        
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-12 mb-8 lg:mb-16">
+            
+            <div class="p-2 sm:p-4 lg:p-6 flex flex-col justify-center">
+                <div class="text-4xl sm:text-5xl lg:text-7xl font-black text-ficus-yellow mb-1 lg:mb-4 tracking-tighter flex justify-center items-center">
+                    <span class="fido-counter" data-target="1200">0</span>
+                    <span class="text-2xl lg:text-4xl ml-0.5">+</span>
+                </div>
+                <p class="text-ficus-sand text-xs sm:text-sm lg:text-lg font-medium leading-tight px-2">Farmers Trained</p>
+            </div>
+            
+            <div class="p-2 sm:p-4 lg:p-6 flex flex-col justify-center">
+                <div class="text-4xl sm:text-5xl lg:text-7xl font-black text-ficus-yellow mb-1 lg:mb-4 tracking-tighter flex justify-center items-center">
+                    <span class="fido-counter" data-target="5000">0</span>
+                    <span class="text-2xl lg:text-4xl ml-0.5">+</span>
+                </div>
+                <p class="text-ficus-sand text-xs sm:text-sm lg:text-lg font-medium leading-tight px-2">Children Supported</p>
+            </div>
+            
+            <div class="p-2 sm:p-4 lg:p-6 flex flex-col justify-center">
+                <div class="text-4xl sm:text-5xl lg:text-7xl font-black text-ficus-yellow mb-1 lg:mb-4 tracking-tighter flex justify-center items-center">
+                    <span class="fido-counter" data-target="800">0</span>
+                    <span class="text-2xl lg:text-4xl ml-0.5">+</span>
+                </div>
+                <p class="text-ficus-sand text-xs sm:text-sm lg:text-lg font-medium leading-tight px-2">Women & Youth</p>
+            </div>
+            
+            <div class="p-2 sm:p-4 lg:p-6 flex flex-col justify-center">
+                <div class="text-4xl sm:text-5xl lg:text-7xl font-black text-ficus-yellow mb-1 lg:mb-4 tracking-tighter flex justify-center items-center">
+                    <span class="fido-counter" data-target="15">0</span>
+                    <span class="text-2xl lg:text-4xl ml-0.5">+</span>
+                </div>
+                <p class="text-ficus-sand text-xs sm:text-sm lg:text-lg font-medium leading-tight px-2">Community Partners</p>
+            </div>
+        </div>
+        
+        <a href="#impact-page" class="inline-flex justify-center w-full sm:w-auto bg-ficus-yellow text-blue-900 px-6 py-3.5 lg:px-10 lg:py-4 rounded-full font-bold text-sm lg:text-lg hover:bg-white transition-all duration-300 shadow-xl hover:-translate-y-1">
+            See Our Full Impact
+        </a>
+    </div>
+</section>
+
+
+<section id="testimonials" class="py-10 lg:py-24 bg-ficus-sand overflow-hidden relative">
+    <div class="absolute top-10 left-10 text-[150px] lg:text-[300px] leading-none text-blue-900 opacity-5 font-serif select-none pointer-events-none">"</div>
+    
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12 text-center reveal-on-scroll z-10 relative">
+        <h2 class="text-3xl md:text-5xl font-bold text-ficus-charcoal mb-8 lg:mb-16">Voices from the Ground</h2>
+
+        <div class="relative bg-white rounded-[30px] lg:rounded-[50px] p-6 sm:p-10 md:p-16 shadow-2xl max-w-4xl mx-auto border border-gray-100">
+            
+            <div id="fido-testimonial-slider" class="relative min-h-[200px] md:min-h-[250px]">
+                
+                <div class="fido-slide absolute inset-0 transition-all duration-700 opacity-100 translate-x-0 flex flex-col justify-center">
+                    <p class="text-lg md:text-3xl italic text-ficus-charcoal/90 mb-6 lg:mb-10 leading-relaxed font-light">
+                        "Thanks to FIDO, I learned to grow vegetables even in dry seasons. Now I sell at the market and pay for my children’s school fees."
+                    </p>
+                    <div class="flex items-center justify-center gap-4 lg:gap-5">
+                        <img src="https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Mama Anna" class="w-12 h-12 lg:w-16 lg:h-16 rounded-full object-cover shadow-lg border-2 border-ficus-yellow">
+                        <div class="text-left">
+                            <h4 class="font-bold text-lg lg:text-xl text-blue-900">Mama Anna</h4>
+                            <p class="text-sm lg:text-md text-ficus-charcoal/60">Farmer, Ngara</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fido-slide absolute inset-0 transition-all duration-700 opacity-0 translate-x-8 pointer-events-none flex flex-col justify-center">
+                    <p class="text-lg md:text-3xl italic text-ficus-charcoal/90 mb-6 lg:mb-10 leading-relaxed font-light">
+                        "The digital literacy program completely changed my life. I now run a successful online business serving the entire Lake Zone."
+                    </p>
+                    <div class="flex items-center justify-center gap-4 lg:gap-5">
+                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" alt="Sarah" class="w-12 h-12 lg:w-16 lg:h-16 rounded-full object-cover shadow-lg border-2 border-ficus-yellow">
+                        <div class="text-left">
+                            <h4 class="font-bold text-lg lg:text-xl text-blue-900">Sarah M.</h4>
+                            <p class="text-sm lg:text-md text-ficus-charcoal/60">Entrepreneur, Mwanza</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center gap-4 mt-6 lg:mt-8">
+                <button id="slide-prev" type="button" title="Previous testimonial" aria-label="Previous testimonial" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-ficus-sand text-blue-900 hover:bg-ficus-yellow hover:text-white flex items-center justify-center transition-colors shadow-sm">
+                    <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button id="slide-next" type="button" title="Next testimonial" aria-label="Next testimonial" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-ficus-sand text-blue-900 hover:bg-ficus-yellow hover:text-white flex items-center justify-center transition-colors shadow-sm">
+                    <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="mt-8 lg:mt-12">
+            <a href="#impact-page" class="text-blue-900 font-bold text-base lg:text-lg hover:text-ficus-yellow transition-colors inline-flex items-center gap-2 border-b-2 border-blue-900 hover:border-ficus-yellow pb-1">
+                Read More Stories <svg class="w-4 h-4 lg:w-5 lg:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<section id="get-involved" class="py-10 lg:py-24 bg-white relative overflow-hidden">
+    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 reveal-on-scroll">
+        
+        <div class="flex flex-col lg:flex-row gap-6 lg:gap-12 items-start lg:items-center justify-between mb-8 lg:mb-16">
+            <div class="lg:w-1/2">
+                <h2 class="text-3xl md:text-5xl font-bold text-ficus-charcoal mb-4 lg:mb-6">Join the Movement</h2>
+                <p class="text-base lg:text-lg text-ficus-charcoal/70 max-w-xl leading-relaxed">
+                    Be a part of the change. There are many ways you can help us build resilient communities across Tanzania.
+                </p>
+            </div>
+            <div class="lg:w-1/2 flex justify-start lg:justify-end">
+                <a href="#get-involved-page" class="w-full sm:w-auto text-center bg-blue-900 text-white px-8 py-3.5 lg:px-10 lg:py-4 rounded-full font-bold text-sm lg:text-lg hover:bg-ficus-yellow hover:text-ficus-charcoal transition-all duration-300 shadow-xl hover:-translate-y-1">
+                    Get Started Today
+                </a>
+            </div>
+        </div>
+        
+        <div class="relative w-full overflow-hidden" id="involved-viewport">
+            <div class="flex flex-nowrap lg:grid lg:grid-cols-3 transition-transform duration-700 ease-in-out gap-4 sm:gap-6 lg:gap-8" id="involved-track">
+                
+                <div class="involved-card shrink-0 w-full lg:w-auto bg-ficus-sand/30 border border-gray-100 p-8 lg:p-10 rounded-[30px] hover:shadow-2xl hover:border-ficus-yellow transition-all duration-500 group flex flex-col justify-center items-start h-auto">
+                    <div class="flex items-center gap-4 mb-4 lg:mb-6 w-full">
+                        <div class="w-14 h-14 lg:w-16 lg:h-16 shrink-0 bg-ficus-yellow rounded-2xl flex items-center justify-center text-ficus-charcoal group-hover:-translate-y-1 transition-transform duration-500 shadow-md">
+                            <svg class="w-7 h-7 lg:w-8 lg:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl lg:text-3xl font-bold text-blue-900">Donate</h3>
+                    </div>
+                    <p class="text-ficus-charcoal/70 text-base lg:text-lg">Every contribution plants a seed of change in vulnerable communities.</p>
+                </div>
+                
+                <div class="involved-card shrink-0 w-full lg:w-auto bg-ficus-sand/30 border border-gray-100 p-8 lg:p-10 rounded-[30px] hover:shadow-2xl hover:border-blue-900 transition-all duration-500 group flex flex-col justify-center items-start h-auto">
+                    <div class="flex items-center gap-4 mb-4 lg:mb-6 w-full">
+                        <div class="w-14 h-14 lg:w-16 lg:h-16 shrink-0 bg-blue-900 rounded-2xl flex items-center justify-center text-white group-hover:-translate-y-1 transition-transform duration-500 shadow-md">
+                            <svg class="w-7 h-7 lg:w-8 lg:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        </div>
+                        <h3 class="text-2xl lg:text-3xl font-bold text-blue-900">Volunteer</h3>
+                    </div>
+                    <p class="text-ficus-charcoal/70 text-base lg:text-lg">Share your time and skills on the ground or digitally to support our mission.</p>
+                </div>
+                
+                <div class="involved-card shrink-0 w-full lg:w-auto bg-ficus-sand/30 border border-gray-100 p-8 lg:p-10 rounded-[30px] hover:shadow-2xl hover:border-green-600 transition-all duration-500 group flex flex-col justify-center items-start h-auto">
+                    <div class="flex items-center gap-4 mb-4 lg:mb-6 w-full">
+                        <div class="w-14 h-14 lg:w-16 lg:h-16 shrink-0 bg-green-600 rounded-2xl flex items-center justify-center text-white group-hover:-translate-y-1 transition-transform duration-500 shadow-md">
+                            <svg class="w-7 h-7 lg:w-8 lg:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                        </div>
+                        <h3 class="text-2xl lg:text-3xl font-bold text-blue-900">Partner</h3>
+                    </div>
+                    <p class="text-ficus-charcoal/70 text-base lg:text-lg">Collaborate with FIDO to scale our impact and reach more families.</p>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="flex lg:hidden justify-center items-center mt-8 gap-3" id="involved-dots">
+            </div>
+        
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const track = document.getElementById('involved-track');
+    const dotsContainer = document.getElementById('involved-dots');
+    const originalCards = Array.from(document.querySelectorAll('.involved-card'));
+    const totalOriginalCards = originalCards.length;
+    
+    if (!track || totalOriginalCards === 0) return;
+
+    let currentIndex = 0;
+    let autoSlideInterval;
+    let isTransitioning = false;
+
+    // Creates the invisible clone at the end to prevent the rewind
+    function setupSeamlessLoop() {
+        const existingClones = document.querySelectorAll('.cloned-card');
+        existingClones.forEach(clone => clone.remove());
+
+        if (window.innerWidth < 1024) {
+            const firstClone = originalCards[0].cloneNode(true);
+            firstClone.classList.add('cloned-card', 'lg:hidden'); 
+            track.appendChild(firstClone);
+        }
+    }
+
+    function initDots() {
+        dotsContainer.innerHTML = '';
+        if (window.innerWidth >= 1024) return;
+
+        originalCards.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = `h-2 rounded-full transition-all duration-300 ${i === 0 ? 'bg-blue-900 w-6' : 'bg-gray-300 w-2'}`;
+            dot.addEventListener('click', () => {
+                if (!isTransitioning) goToSlide(i);
+            });
+            dotsContainer.appendChild(dot);
+        });
+    }
+
+    function goToSlide(index) {
+        if (window.innerWidth >= 1024) {
+            track.style.transform = 'translateX(0)';
+            return;
+        }
+
+        isTransitioning = true;
+        track.style.transition = 'transform 0.7s ease-in-out';
+        
+        currentIndex = index;
+        const offset = currentIndex * 100;
+        const gapOffset = currentIndex * 16; // Adjusts for the gap space
+        track.style.transform = `translateX(calc(-${offset}% - ${gapOffset}px))`;
+
+        const dotIndex = currentIndex === totalOriginalCards ? 0 : currentIndex;
+        const dots = dotsContainer.querySelectorAll('button');
+        dots.forEach((dot, i) => {
+            if (i === dotIndex) {
+                dot.classList.replace('bg-gray-300', 'bg-blue-900');
+                dot.classList.replace('w-2', 'w-6');
+            } else {
+                dot.classList.replace('bg-blue-900', 'bg-gray-300');
+                dot.classList.replace('w-6', 'w-2');
+            }
+        });
+    }
+
+    // The Magic Trick: Instantly snaps back to zero when it hits the clone
+    track.addEventListener('transitionend', () => {
+        isTransitioning = false;
+        
+        if (currentIndex === totalOriginalCards) {
+            track.style.transition = 'none';
+            currentIndex = 0;
+            track.style.transform = `translateX(0px)`;
+            void track.offsetWidth; // Force browser to register the snap
+        }
+    });
+
+    function startAutoSlide() {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(() => {
+            if (!isTransitioning) goToSlide(currentIndex + 1);
+        }, 4000);
+    }
+
+    setupSeamlessLoop();
+    initDots();
+    if (window.innerWidth < 1024) startAutoSlide();
+
+    window.addEventListener('resize', () => {
+        setupSeamlessLoop();
+        initDots();
+        currentIndex = 0;
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(0)';
+        clearInterval(autoSlideInterval);
+        if (window.innerWidth < 1024) startAutoSlide();
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Unique variables for the 'What We Do' Programs section
+    const programTrack = document.getElementById('carousel-track');
+    const programDotsContainer = document.getElementById('carousel-dots');
+    const programCards = Array.from(document.querySelectorAll('.carousel-card'));
+    const totalOriginalCards = programCards.length;
+    
+    if (!programTrack || totalOriginalCards === 0) return;
+
+    let currentIndex = 0;
+    let autoSlideInterval;
+    let isTransitioning = false;
+    let cardsPerView = getCardsPerView();
+
+    function getCardsPerView() {
+        if (window.innerWidth >= 1024) return 3; // Desktop
+        if (window.innerWidth >= 768) return 2;  // Tablet
+        return 1;                                // Mobile
+    }
+
+    // 1. Setup Seamless Loop (Clones cards at the end)
+    function setupSeamlessLoop() {
+        // Remove old clones
+        const existingClones = document.querySelectorAll('.program-clone');
+        existingClones.forEach(clone => clone.remove());
+
+        // Clone the first few cards and append them to the end of the track
+        for (let i = 0; i < cardsPerView; i++) {
+            if (programCards[i]) {
+                const clone = programCards[i].cloneNode(true);
+                clone.classList.add('program-clone'); 
+                programTrack.appendChild(clone);
+            }
+        }
+    }
+
+    // 2. Initialize Dots
+    function initDots() {
+        programDotsContainer.innerHTML = '';
+        
+        for (let i = 0; i < totalOriginalCards; i++) {
+            const dot = document.createElement('button');
+            dot.className = `h-2 rounded-full transition-all duration-300 ${i === 0 ? 'bg-blue-900 w-8' : 'bg-gray-300 w-3 hover:bg-blue-400'}`;
+            dot.addEventListener('click', () => {
+                if (!isTransitioning) goToSlide(i);
+            });
+            programDotsContainer.appendChild(dot);
+        }
+    }
+
+    // 3. Move Slide
+    function goToSlide(index) {
+        isTransitioning = true;
+        programTrack.style.transition = 'transform 0.7s ease-in-out';
+        
+        currentIndex = index;
+        
+        // Calculate translation percentage based on items visible
+        const percentageToMove = currentIndex * (100 / cardsPerView);
+        
+        // The CSS variables for gap are 16px(sm), 24px(md), 32px(lg). 
+        // We approximate the pixel push needed for the gap.
+        let gapSize = window.innerWidth >= 1024 ? 32 : window.innerWidth >= 768 ? 24 : 16;
+        const gapOffset = currentIndex * gapSize; 
+
+        programTrack.style.transform = `translateX(calc(-${percentageToMove}% - ${gapOffset}px))`;
+
+        // Update active dot visual
+        const dotIndex = currentIndex % totalOriginalCards; 
+        const dots = programDotsContainer.querySelectorAll('button');
+        dots.forEach((dot, i) => {
+            if (i === dotIndex) {
+                dot.classList.remove('bg-gray-300', 'w-3', 'hover:bg-blue-400');
+                dot.classList.add('bg-blue-900', 'w-8');
+            } else {
+                dot.classList.remove('bg-blue-900', 'w-8');
+                dot.classList.add('bg-gray-300', 'w-3', 'hover:bg-blue-400');
+            }
+        });
+    }
+
+    // 4. The Magic Trick: Instantly snap back when hitting a clone
+    programTrack.addEventListener('transitionend', () => {
+        isTransitioning = false;
+        
+        // If we reached the first cloned card...
+        if (currentIndex === totalOriginalCards) {
+            // Turn off animation
+            programTrack.style.transition = 'none';
+            // Instantly jump back to the real first card
+            currentIndex = 0;
+            programTrack.style.transform = `translateX(0px)`;
+            
+            // Force browser to register the snap before allowing animations again
+            void programTrack.offsetWidth; 
+        }
+    });
+
+    function startAutoSlide() {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(() => {
+            if (!isTransitioning) {
+                goToSlide(currentIndex + 1);
+            }
+        }, 4000);
+    }
+
+    // Init
+    setupSeamlessLoop();
+    initDots();
+    startAutoSlide();
+
+    // Handle Window Resize
+    window.addEventListener('resize', () => {
+        const newCardsPerView = getCardsPerView();
+        if (newCardsPerView !== cardsPerView) {
+            cardsPerView = newCardsPerView;
+            setupSeamlessLoop();
+            initDots();
+            currentIndex = 0;
+            programTrack.style.transition = 'none';
+            programTrack.style.transform = 'translateX(0)';
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+<div id="ficus-footer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
