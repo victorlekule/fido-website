@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Involved | FIDO Tanzania</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ficus-yellow': '#F2B705',
+                        'ficus-charcoal': '#1F2933',
+                        'ficus-sand': '#F4EFEA',
+                        'ficus-blue': '#003366',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        body { padding-top: 80px; overflow-x: hidden; } 
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0); }
+        }
+        
+        /* Premium Swiper Customizations */
+        .swiper-pagination-bullet { background: rgba(0, 51, 102, 0.3) !important; opacity: 1 !important; }
+        .swiper-pagination-bullet-active { background: #003366 !important; width: 24px !important; border-radius: 4px !important; }
+        .swiper-wrapper { padding-bottom: 40px !important; } /* Space for dots on mobile */
+        
+        /* Desktop Override: Turn Swiper back into standard Tailwind Grids */
+        @media (min-width: 1024px) {
+            .swiper-wrapper { 
+                transform: translate3d(0px, 0, 0) !important; 
+                flex-wrap: wrap !important; 
+                padding-bottom: 0 !important; 
+            }
+            .swiper-slide { width: auto !important; height: auto !important; margin-right: 0 !important; }
+            .swiper-pagination { display: none !important; }
+        }
+    </style>
+</head>
+<body class="bg-white font-sans selection:bg-ficus-yellow selection:text-ficus-charcoal cursor-default">
+
+    <div id="ficus-header-container"></div>
+
+    <section class="relative min-h-[50vh] lg:min-h-[70vh]  mt-16 flex items-center bg-ficus-blue overflow-hidden py-12 lg:py-24">
+        <div class="absolute top-0 right-0 w-[300px] lg:w-[800px] h-[300px] lg:h-[800px] bg-ficus-yellow/10 rounded-full blur-[80px] lg:blur-[150px] animate-pulse"></div>
+        <div class="absolute -bottom-10 lg:-bottom-20 -left-10 lg:-left-20 w-[200px] lg:w-[600px] h-[200px] lg:h-[600px] bg-blue-500/10 rounded-full blur-[60px] lg:blur-[120px]"></div>
+
+        <div class="relative z-10 max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            
+            <div class="reveal-on-scroll order-1 text-center lg:text-left">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-ficus-yellow/20 text-ficus-yellow font-bold text-xs lg:text-sm tracking-widest uppercase mb-4 lg:mb-6">
+                    Join the Movement
+                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-8xl font-black text-white leading-tight mb-4 lg:mb-8">
+                    Change Starts <br class="hidden lg:block"> <span class="text-ficus-yellow">With You.</span>
+                </h1>
+                <p class="text-base sm:text-xl md:text-3xl text-ficus-sand max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8 lg:mb-12">
+                    Whether you give your time, voice, or resources, you can help build a more equitable Tanzania.
+                </p>
+                <a href="#roles" class="bg-ficus-yellow text-ficus-charcoal px-8 py-3.5 lg:px-12 lg:py-5 rounded-full font-black text-sm lg:text-xl hover:bg-white transition-all shadow-xl lg:shadow-2xl inline-block transform hover:-translate-y-1">
+                    Find Your Role
+                </a>
+            </div>
+            
+            <div class="flex justify-center items-center reveal-on-scroll order-2 mt-4 lg:mt-0">
+                <div class="relative w-full max-w-[280px] sm:max-w-[400px] lg:max-w-[550px] aspect-square animate-morph bg-ficus-sand/10 border-2 border-white/20 overflow-hidden shadow-2xl lg:shadow-3xl backdrop-blur-sm">
+                    <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover opacity-80" alt="Join FIDO">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roles" class="py-10 lg:py-24 bg-white overflow-hidden">
+        <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 reveal-on-scroll">
+            
+            <div class="swiper swiper-roles">
+                <div class="swiper-wrapper lg:grid lg:grid-cols-2 lg:gap-12">
+                    
+                    <div class="swiper-slide w-full lg:w-auto group relative bg-ficus-sand/40 rounded-[30px] lg:rounded-[50px] p-6 lg:p-20 overflow-hidden flex flex-col h-auto">
+                        <div class="relative z-10 flex flex-col flex-grow">
+                            
+                            <div class="flex items-center gap-4 mb-4 lg:mb-8">
+                                <div class="w-12 h-12 lg:w-20 lg:h-20 shrink-0 bg-white rounded-xl lg:rounded-3xl flex items-center justify-center text-ficus-blue shadow-md lg:shadow-xl group-hover:scale-110 transition-transform">
+                                    <svg class="w-6 h-6 lg:w-10 lg:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                                </div>
+                                <h2 class="text-2xl lg:text-5xl font-black text-ficus-charcoal leading-tight">Volunteer</h2>
+                            </div>
+
+                            <p class="text-sm lg:text-xl text-gray-600 mb-6 lg:mb-10 leading-relaxed flex-grow text-justify lg:text-left">
+                                Share your expertise in teaching, climate-smart agriculture, digital tech, or community mobilization. We welcome both local Tanzanian talent and international volunteers to work hand-in-hand with our Mwanza team.
+                            </p>
+                            <a href="#contact" class="inline-flex justify-center items-center gap-2 lg:gap-3 bg-ficus-blue text-white px-6 py-3.5 lg:px-10 lg:py-4 rounded-full font-bold hover:bg-ficus-yellow hover:text-ficus-charcoal transition-all text-sm lg:text-base w-full sm:w-max">
+                                Apply to Volunteer <span class="text-lg lg:text-xl">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide w-full lg:w-auto group relative bg-ficus-blue rounded-[30px] lg:rounded-[50px] p-6 lg:p-20 overflow-hidden flex flex-col h-auto">
+                        <div class="absolute top-0 right-0 w-40 lg:w-64 h-40 lg:h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                        <div class="relative z-10 flex flex-col flex-grow">
+                            
+                            <div class="flex items-center gap-4 mb-4 lg:mb-8">
+                                <div class="w-12 h-12 lg:w-20 lg:h-20 shrink-0 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl lg:rounded-3xl flex items-center justify-center text-ficus-yellow shadow-md lg:shadow-xl group-hover:scale-110 transition-transform">
+                                    <svg class="w-6 h-6 lg:w-10 lg:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                </div>
+                                <h2 class="text-2xl lg:text-5xl font-black text-white leading-tight">Partner</h2>
+                            </div>
+
+                            <p class="text-sm lg:text-xl text-ficus-sand/80 mb-6 lg:mb-10 leading-relaxed flex-grow text-justify lg:text-left">
+                                We collaborate with NGOs, government agencies, universities, and private businesses. Whether through resource sharing or program implementation, let’s create sustainable impact together.
+                            </p>
+                            <a href="#contact" class="inline-flex justify-center items-center gap-2 lg:gap-3 bg-ficus-yellow text-ficus-charcoal px-6 py-3.5 lg:px-10 lg:py-4 rounded-full font-bold hover:bg-white transition-all text-sm lg:text-base w-full sm:w-max">
+                                Become a Partner <span class="text-lg lg:text-xl">→</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 lg:py-12 bg-white overflow-hidden">
+        <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 reveal-on-scroll">
+            
+            <div class="swiper swiper-careers">
+                <div class="swiper-wrapper lg:grid lg:grid-cols-3 lg:gap-8">
+                    
+                    <div class="swiper-slide w-full lg:w-auto lg:col-span-1 bg-ficus-charcoal rounded-[30px] lg:rounded-[40px] p-6 lg:p-10 text-white flex flex-col justify-center h-auto">
+                        <h3 class="text-2xl lg:text-3xl font-bold mb-2 lg:mb-4">Careers & Internships</h3>
+                        <p class="text-sm lg:text-base text-ficus-sand/60 mb-6 lg:mb-8 leading-relaxed flex-grow">Join a passionate team dedicated to community‑led development. We are always looking for innovators and social workers.</p>
+                        <a href="mailto:careers@fido.or.tz" class="text-ficus-yellow font-bold border-b-2 border-ficus-yellow pb-1 hover:text-white hover:border-white transition-all w-max">Send Your CV</a>
+                    </div>
+
+                    <div class="swiper-slide w-full lg:w-auto lg:col-span-2 bg-ficus-yellow rounded-[30px] lg:rounded-[40px] p-6 lg:p-10 flex flex-col md:flex-row items-start md:items-center gap-4 lg:gap-8 h-auto">
+                        <div class="md:w-2/3 flex flex-col">
+                            <h3 class="text-2xl lg:text-4xl font-black text-ficus-charcoal mb-2 lg:mb-4">Fundraise for FIDO</h3>
+                            <p class="text-sm lg:text-lg text-ficus-charcoal/80 leading-relaxed text-justify lg:text-left">Start a personal fundraising campaign — for a birthday, a marathon, or a class project — and rally your network for Tanzanian communities.</p>
+                        </div>
+                        <div class="md:w-1/3 w-full flex justify-start md:justify-end mt-2 md:mt-0">
+                            <a href="#" class="w-full sm:w-auto text-center bg-ficus-blue text-white px-6 py-3.5 lg:px-8 lg:py-4 rounded-full font-bold hover:bg-ficus-charcoal transition-all shadow-lg text-sm lg:text-base">Start Fundraising</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-10 lg:py-24 bg-ficus-sand/30 overflow-hidden">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 text-center reveal-on-scroll">
+            <h2 class="text-3xl md:text-6xl font-black text-ficus-charcoal mb-3 lg:mb-6">Spread the Word</h2>
+            <p class="text-sm lg:text-xl text-gray-500 mb-8 lg:mb-16 max-w-2xl mx-auto">Your voice is a tool for change. Share our mission with your community online.</p>
+            
+            <div class="swiper swiper-social">
+                <div class="swiper-wrapper lg:grid lg:grid-cols-3 lg:gap-8">
+                    
+                    <div class="swiper-slide w-full lg:w-auto bg-white p-6 lg:p-8 rounded-[20px] lg:rounded-3xl shadow-xl flex flex-col h-auto">
+                        <div class="flex items-center gap-3 lg:gap-4 mb-4 lg:mb-6">
+                            <div class="w-10 h-10 lg:w-12 lg:h-12 shrink-0 bg-gradient-to-tr from-yellow-400 to-purple-600 rounded-lg lg:rounded-xl"></div>
+                            <button class="text-ficus-blue font-black uppercase text-[10px] lg:text-xs tracking-widest text-left">Copy Sample Post</button>
+                        </div>
+                        <p class="italic text-gray-600 text-sm lg:text-base mb-2 flex-grow text-justify lg:text-left">"I just joined the movement with @FIDOTanzania to break the cycle of poverty. Check out their climate-smart agri projects!"</p>
+                    </div>
+
+                    <div class="swiper-slide w-full lg:w-auto bg-white p-6 lg:p-8 rounded-[20px] lg:rounded-3xl shadow-xl flex flex-col h-auto">
+                        <div class="flex items-center gap-3 lg:gap-4 mb-4 lg:mb-6">
+                            <div class="w-10 h-10 lg:w-12 lg:h-12 shrink-0 bg-blue-700 rounded-lg lg:rounded-xl"></div>
+                            <button class="text-ficus-blue font-black uppercase text-[10px] lg:text-xs tracking-widest text-left">Copy Sample Post</button>
+                        </div>
+                        <p class="italic text-gray-600 text-sm lg:text-base mb-2 flex-grow text-justify lg:text-left">"FIDO is transforming lives in Tanzania through integrated development. Proud to support their vision for a resilient future."</p>
+                    </div>
+
+                    <div class="swiper-slide w-full lg:w-auto bg-white p-6 lg:p-8 rounded-[20px] lg:rounded-3xl shadow-xl flex flex-col h-auto">
+                        <div class="flex items-center gap-3 lg:gap-4 mb-4 lg:mb-6">
+                            <div class="w-10 h-10 lg:w-12 lg:h-12 shrink-0 bg-black rounded-lg lg:rounded-xl"></div>
+                            <button class="text-ficus-blue font-black uppercase text-[10px] lg:text-xs tracking-widest text-left">Copy Sample Post</button>
+                        </div>
+                        <p class="italic text-gray-600 text-sm lg:text-base mb-2 flex-grow text-justify lg:text-left">"Change starts with us. Supporting @FIDO_Tanzania in building self-reliant communities. Join me! #FIDO #Tanzania"</p>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 lg:py-24 bg-white text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 reveal-on-scroll">
+            <div class="w-16 lg:w-20 h-1.5 lg:h-2 bg-ficus-yellow mx-auto mb-6 lg:mb-10 rounded-full"></div>
+            <h2 class="text-3xl sm:text-4xl md:text-7xl font-black text-ficus-charcoal mb-6 lg:mb-8 leading-tight">Have another idea on how to contribute?</h2>
+            <a href="#contact" class="inline-flex justify-center items-center w-full sm:w-auto gap-3 lg:gap-4 bg-ficus-blue text-white px-8 py-4 lg:px-12 lg:py-6 rounded-full font-black text-lg lg:text-2xl hover:bg-ficus-yellow hover:text-ficus-charcoal transition-all shadow-xl lg:shadow-2xl">
+                Contact Us <span>→</span>
+            </a>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Intersection Observer for Scroll Reveals
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        
+                        // Play swipers only when they are visible on screen
+                        if(window.innerWidth < 1024) {
+                            const swipers = entry.target.querySelectorAll('.swiper');
+                            swipers.forEach(s => {
+                                if(s.swiper) s.swiper.autoplay.start();
+                            });
+                        }
+                    } else {
+                        // Pause swipers when off screen
+                        if(window.innerWidth < 1024) {
+                            const swipers = entry.target.querySelectorAll('.swiper');
+                            swipers.forEach(s => {
+                                if(s.swiper) s.swiper.autoplay.stop();
+                            });
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.reveal-on-scroll').forEach(el => revealObserver.observe(el));
+
+            // Initialize Swipers (2D Flat, Right-to-Left, Unique Spacing layouts)
+            function initSwipers() {
+                if (window.innerWidth < 1024) {
+                    
+                    // Layout 1: Full-width Standard Slide
+                    new Swiper('.swiper-roles', {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                        grabCursor: true,
+                        loop: true,
+                        autoplay: { delay: 4000, disableOnInteraction: false },
+                        pagination: { el: '.swiper-pagination', clickable: true }
+                    });
+
+                    // Layout 2: Left-aligned Peeking Slide (Shows a bit of the next card)
+                    new Swiper('.swiper-careers', {
+                        slidesPerView: 1.15,
+                        spaceBetween: 16,
+                        centeredSlides: false, 
+                        grabCursor: true,
+                        loop: true,
+                        autoplay: { delay: 3500, disableOnInteraction: false },
+                        pagination: { el: '.swiper-pagination', clickable: true }
+                    });
+
+                    // Layout 3: Centered Peeking Slide (Shows a bit of previous AND next card)
+                    new Swiper('.swiper-social', {
+                        slidesPerView: 1.1,
+                        spaceBetween: 16,
+                        centeredSlides: true,
+                        grabCursor: true,
+                        loop: true,
+                        autoplay: { delay: 3000, disableOnInteraction: false },
+                        pagination: { el: '.swiper-pagination', clickable: true }
+                    });
+                }
+            }
+
+            initSwipers();
+
+        });
+    </script>
+
+    <div id="ficus-footer"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+

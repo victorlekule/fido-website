@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficus Development Organization</title>    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Premium Morphed Shapes & Floating Animations */
+        @keyframes morphShape {
+            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+        }
+        .animate-morph { animation: morphShape 10s ease-in-out infinite; }
+        
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Expanding Detail Content */
+        .details-wrapper {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+            opacity: 0;
+        }
+        .details-wrapper.open {
+            max-height: 1200px;
+            opacity: 1;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 cursor-default">
+
+    <div id="ficus-header-container"></div>
+
+    <section class="relative min-h-[50vh] lg:min-h-[60vh] pt-24 flex items-center bg-blue-900 overflow-hidden py-12 lg:py-20">
+    <div class="absolute top-0 right-0 w-[300px] h-[300px] lg:w-[600px] lg:h-[600px] bg-ficus-yellow/10 rounded-full blur-[80px] lg:blur-[120px]"></div>
+    <div class="absolute bottom-0 left-0 w-[200px] h-[200px] lg:w-[400px] lg:h-[400px] bg-blue-500/10 rounded-full blur-[60px] lg:blur-[100px]"></div>
+
+    <div class="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-16 w-full text-center py-10 lg:py-20">
+        <div class="reveal-on-scroll">
+            <h1 class="text-3xl sm:text-5xl md:text-7xl font-black text-white leading-tight mb-4 lg:mb-6">
+                Integrated Solutions for <br class="hidden lg:block"> <span class="text-ficus-yellow">Lasting Change</span>
+            </h1>
+            <p class="text-sm sm:text-lg md:text-2xl text-ficus-sand mb-8 lg:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
+                Six core programs that address the root causes of poverty and build self‑reliance across Tanzania.
+            </p>
+            <a href="#donate" class="inline-flex items-center justify-center w-full sm:w-auto gap-2 sm:gap-3 bg-ficus-yellow text-blue-900 px-6 py-3.5 lg:px-10 lg:py-5 rounded-full font-black text-sm lg:text-lg hover:bg-white transition-all shadow-[0_10px_30px_rgba(234,179,8,0.3)] lg:shadow-[0_20px_50px_rgba(234,179,8,0.3)] transform hover:-translate-y-1">
+                Support a Program
+                <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="education" class="py-12 lg:py-24 bg-white overflow-hidden border-b border-gray-50">
+    <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+        <div class="reveal-on-scroll order-2 lg:order-1 text-center lg:text-left">
+            <span class="text-blue-900 font-black tracking-widest uppercase text-xs lg:text-sm mb-2 lg:mb-4 block">Program 01 — Quality Learning</span>
+            <h2 class="text-3xl md:text-6xl font-bold text-ficus-charcoal mb-4 lg:mb-6 leading-tight">Unlocking Potential Through Learning</h2>
+            <p class="text-base lg:text-xl text-gray-600 leading-relaxed text-justify lg:text-left">We improve access to quality education, vocational training, and life skills for children and youth. Our mission is to ensure learning translates directly into sustainable livelihoods.</p>
+            
+            <div id="edu-details" class="details-wrapper">
+                <div class="p-6 lg:p-10 bg-ficus-sand rounded-[20px] lg:rounded-[40px] border-l-4 lg:border-l-8 border-ficus-yellow space-y-4 lg:space-y-6 mt-4 lg:mt-6 text-left">
+                    <p class="text-sm lg:text-base text-gray-700 leading-relaxed"><strong>Infrastructure & Resources:</strong> We renovate classrooms and provide essential learning materials (books, desks, and solar lighting) to rural schools in the Lake Zone.</p>
+                    <p class="text-sm lg:text-base text-gray-700 leading-relaxed"><strong>Vocational Training:</strong> For youth out of school, we provide skills in carpentry, tailoring, and electrical works, paired with basic business management training.</p>
+                    <p class="text-sm lg:text-base text-gray-700 leading-relaxed"><strong>Teacher Support:</strong> We collaborate with local government to provide pedagogical workshops, focusing on inclusive education for children with disabilities.</p>
+                </div>
+            </div>
+
+            <button onclick="toggleDetails('edu-details', this)" class="mt-6 lg:mt-8 group inline-flex justify-center w-full sm:w-auto items-center gap-3 lg:gap-4 bg-blue-900 text-white px-6 py-3.5 lg:px-10 lg:py-4 rounded-full font-bold text-sm lg:text-base hover:bg-ficus-yellow hover:text-blue-900 transition-all shadow-lg">
+                <span>Read More About Education</span> <svg class="w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+        </div>
+        <div class="reveal-on-scroll order-1 lg:order-2 flex justify-center">
+            <div class="relative w-full max-w-[320px] sm:max-w-[450px] lg:max-w-[650px] aspect-video sm:aspect-square animate-morph bg-ficus-sand overflow-hidden shadow-2xl border-[6px] lg:border-[12px] border-white ring-1 ring-gray-100">
+                <img src="picha/1 (21).jpg" class="w-full h-full object-cover" alt="Education">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="health" class="py-12 lg:py-24 bg-ficus-sand/30 overflow-hidden border-b border-gray-50">
+    <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+        <div class="reveal-on-scroll order-1 flex justify-center">
+            <div class="relative w-full max-w-[320px] sm:max-w-[450px] lg:max-w-[650px] aspect-video sm:aspect-square animate-morph bg-blue-900 overflow-hidden shadow-2xl border-[6px] lg:border-[12px] border-white" style="animation-delay: -2s;">
+                <img src="picha/1 (17).jpg" class="w-full h-full object-cover" alt="Health">
+            </div>
+        </div>
+        <div class="reveal-on-scroll order-2 text-center lg:text-left">
+            <span class="text-blue-900 font-black tracking-widest uppercase text-xs lg:text-sm mb-2 lg:mb-4 block">Program 02 — Community Health</span>
+            <h2 class="text-3xl md:text-6xl font-bold text-ficus-charcoal mb-4 lg:mb-6 leading-tight">Healthy Communities, Brighter Futures</h2>
+            <p class="text-base lg:text-xl text-gray-600 leading-relaxed text-justify lg:text-left">We promote health education, disease prevention, and access to health insurance for underserved families. Good health is the foundation of every thriving community.</p>
+            
+            <div id="health-details" class="details-wrapper">
+                <div class="p-6 lg:p-10 bg-white rounded-[20px] lg:rounded-[40px] border-l-4 lg:border-l-8 border-blue-900 space-y-4 lg:space-y-6 shadow-sm mt-4 lg:mt-6 text-left">
+                    <p class="text-sm lg:text-base text-gray-700"><strong>Maternal & Child Health:</strong> Training community health workers to support expectant mothers with prenatal care and nutritional guidance.</p>
+                    <p class="text-sm lg:text-base text-gray-700"><strong>Health Insurance Advocacy:</strong> Facilitating enrollment in the Community Health Fund (CHF) to ensure medical emergencies don't lead families into bankruptcy.</p>
+                    <p class="text-sm lg:text-base text-gray-700"><strong>WASH Initiatives:</strong> Constructing clean water points and promoting hygiene in schools to reduce water-borne illnesses.</p>
+                </div>
+            </div>
+
+            <button onclick="toggleDetails('health-details', this)" class="mt-6 lg:mt-8 group inline-flex justify-center w-full sm:w-auto items-center gap-3 lg:gap-4 bg-blue-900 text-white px-6 py-3.5 lg:px-10 lg:py-4 rounded-full font-bold text-sm lg:text-base hover:bg-ficus-yellow hover:text-blue-900 transition-all shadow-lg">
+                <span>Read More About Health</span> <svg class="w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section id="agriculture" class="py-12 lg:py-24 bg-white overflow-hidden border-b border-gray-50">
+    <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+        <div class="reveal-on-scroll order-2 lg:order-1 text-center lg:text-left">
+            <span class="text-blue-900 font-black tracking-widest uppercase text-xs lg:text-sm mb-2 lg:mb-4 block">Program 03 — Sustainable Farming</span>
+            <h2 class="text-3xl md:text-6xl font-bold text-ficus-charcoal mb-4 lg:mb-6 leading-tight">Growing Resilience from the Ground Up</h2>
+            <p class="text-base lg:text-xl text-gray-600 leading-relaxed text-justify lg:text-left">Through climate‑smart training and agribusiness support, we help smallholder farmers increase yields and secure their families’ food and income.</p>
+            
+            <div id="agri-details" class="details-wrapper">
+                <div class="p-6 lg:p-10 bg-ficus-sand rounded-[20px] lg:rounded-[40px] border-l-4 lg:border-l-8 border-green-600 space-y-4 lg:space-y-6 mt-4 lg:mt-6 text-left">
+                    <p class="text-sm lg:text-base text-gray-700"><strong>Climate-Smart Agriculture (CSA):</strong> Training on conservation tillage, crop diversification, and irrigation systems to fight erratic weather patterns.</p>
+                    <p class="text-sm lg:text-base text-gray-700"><strong>Market Linkages:</strong> Connecting smallholder cooperatives directly with wholesalers in Mwanza to ensure fair pricing for their produce.</p>
+                    <p class="text-sm lg:text-base text-gray-700"><strong>Women in Agri:</strong> Specialized groups for female farmers to gain land-use rights and financial literacy.</p>
+                </div>
+            </div>
+
+            <button onclick="toggleDetails('agri-details', this)" class="mt-6 lg:mt-8 group inline-flex justify-center w-full sm:w-auto items-center gap-3 lg:gap-4 bg-blue-900 text-white px-6 py-3.5 lg:px-10 lg:py-4 rounded-full font-bold text-sm lg:text-base hover:bg-ficus-yellow hover:text-blue-900 transition-all shadow-lg">
+                <span>Read More About Agriculture</span> <svg class="w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+        </div>
+        <div class="reveal-on-scroll order-1 lg:order-2 flex justify-center">
+            <div class="relative w-full max-w-[320px] sm:max-w-[450px] lg:max-w-[650px] aspect-video sm:aspect-square animate-morph bg-green-50 overflow-hidden shadow-2xl border-[6px] lg:border-[12px] border-white">
+                <img src="picha/1 (19).jpg" class="w-full h-full object-cover" alt="Agriculture">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="environment" class="py-12 lg:py-24 bg-blue-900 text-white overflow-hidden">
+    <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+        <div class="reveal-on-scroll order-1 flex justify-center">
+            <div class="relative w-full max-w-[320px] sm:max-w-[450px] lg:max-w-[650px] aspect-video sm:aspect-square animate-morph bg-white/10 overflow-hidden shadow-2xl border-[6px] lg:border-[12px] border-white/10" style="animation-delay: -5s;">
+                <img src="picha/1 (18).jpg" class="w-full h-full object-cover" alt="Environment">
+            </div>
+        </div>
+        <div class="reveal-on-scroll order-2 text-center lg:text-left">
+            <span class="text-ficus-yellow font-black tracking-widest uppercase text-xs lg:text-sm mb-2 lg:mb-4 block">Program 04 — Nature Conservation</span>
+            <h2 class="text-3xl md:text-6xl font-bold mb-4 lg:mb-6 leading-tight">Protecting Nature, Securing Tomorrow</h2>
+            <p class="text-base lg:text-xl text-ficus-sand opacity-90 leading-relaxed text-justify lg:text-left">We lead community‑based conservation and environmental awareness projects that restore ecosystems and build climate resilience.</p>
+            
+            <div id="env-details" class="details-wrapper">
+                <div class="p-6 lg:p-10 bg-white/10 rounded-[20px] lg:rounded-[40px] border-l-4 lg:border-l-8 border-ficus-yellow space-y-4 lg:space-y-6 mt-4 lg:mt-6 backdrop-blur-md text-left">
+                    <p class="text-sm lg:text-base text-white"><strong>Agroforestry:</strong> Integrating tree planting with farming to improve soil health and provide sustainable firewood sources.</p>
+                    <p class="text-sm lg:text-base text-white"><strong>Clean Energy:</strong> Promoting the use of fuel-efficient stoves to reduce deforestation in rural districts.</p>
+                    <p class="text-sm lg:text-base text-white"><strong>Conservation Clubs:</strong> Establishing environmental clubs in primary schools to raise a green-conscious generation.</p>
+                </div>
+            </div>
+
+            <button onclick="toggleDetails('env-details', this)" class="mt-6 lg:mt-8 group inline-flex justify-center w-full sm:w-auto items-center gap-3 lg:gap-4 bg-ficus-yellow text-blue-900 px-6 py-3.5 lg:px-10 lg:py-4 rounded-full font-bold text-sm lg:text-base hover:bg-white hover:text-blue-900 transition-all shadow-lg">
+                <span>Read More About Climate Action</span> <svg class="w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section id="tech" class="py-12 lg:py-24 bg-white overflow-hidden border-b border-gray-50">
+    <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+        <div class="reveal-on-scroll order-2 lg:order-1 text-center lg:text-left">
+            <span class="text-blue-900 font-black tracking-widest uppercase text-xs lg:text-sm mb-2 lg:mb-4 block">Program 05 — Digital Inclusion</span>
+            <h2 class="text-3xl md:text-6xl font-bold text-ficus-charcoal mb-4 lg:mb-6 leading-tight">Innovation for Inclusion</h2>
+            <p class="text-base lg:text-xl text-gray-600 leading-relaxed text-justify lg:text-left">We integrate AgriTech and EdTech to bridge the digital divide. From mobile apps for farmers to digital classrooms, we make tech a tool for equity.</p>
+            
+            <div id="tech-details" class="details-wrapper">
+                <div class="p-6 lg:p-10 bg-ficus-sand rounded-[20px] lg:rounded-[40px] border-l-4 lg:border-l-8 border-purple-600 space-y-4 lg:space-y-6 mt-4 lg:mt-6 text-left">
+                    <p class="text-sm lg:text-base text-gray-700"><strong>Digital Centers:</strong> Establishing internet-enabled hubs in Mwanza where youth can learn coding and digital marketing.</p>
+                    <p class="text-sm lg:text-base text-gray-700"><strong>Data for Farmers:</strong> Using SMS platforms to provide real-time weather and market price alerts to rural smallholders.</p>
+                    <p class="text-sm lg:text-base text-gray-700"><strong>GreenTech Support:</strong> Incubating local innovations that focus on renewable energy and water recycling.</p>
+                </div>
+            </div>
+
+            <button onclick="toggleDetails('tech-details', this)" class="mt-6 lg:mt-8 group inline-flex justify-center w-full sm:w-auto items-center gap-3 lg:gap-4 bg-blue-900 text-white px-6 py-3.5 lg:px-10 lg:py-4 rounded-full font-bold text-sm lg:text-base hover:bg-ficus-yellow hover:text-blue-900 transition-all shadow-lg">
+                <span>Read More About Innovation</span> <svg class="w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+        </div>
+        <div class="reveal-on-scroll order-1 lg:order-2 flex justify-center">
+            <div class="relative w-full max-w-[320px] sm:max-w-[450px] lg:max-w-[650px] aspect-video sm:aspect-square animate-morph bg-purple-50 overflow-hidden shadow-2xl border-[6px] lg:border-[12px] border-white">
+                <img src="picha/1 (24).jpg" class="w-full h-full object-cover" alt="Innovation">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="economy" class="py-12 lg:py-24 bg-ficus-sand/20 overflow-hidden">
+    <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
+        <div class="reveal-on-scroll order-1 flex justify-center">
+            <div class="relative w-full max-w-[320px] sm:max-w-[450px] lg:max-w-[650px] aspect-video sm:aspect-square animate-morph bg-orange-900 overflow-hidden shadow-2xl border-[6px] lg:border-[12px] border-white" style="animation-delay: -3s;">
+                <img src="picha/1 (22).jpg" class="w-full h-full object-cover" alt="Economic Empowerment">
+            </div>
+        </div>
+        <div class="reveal-on-scroll order-2 text-center lg:text-left">
+            <span class="text-blue-900 font-black tracking-widest uppercase text-xs lg:text-sm mb-2 lg:mb-4 block">Program 06 — Self‑Reliance</span>
+            <h2 class="text-3xl md:text-6xl font-bold text-ficus-charcoal mb-4 lg:mb-6 leading-tight">From Survival to Self‑Reliance</h2>
+            <p class="text-base lg:text-xl text-gray-600 leading-relaxed text-justify lg:text-left">We support entrepreneurship and savings groups—especially for women and youth—to break the cycle of poverty permanently.</p>
+            
+            <div id="econ-details" class="details-wrapper">
+                <div class="p-6 lg:p-10 bg-white rounded-[20px] lg:rounded-[40px] border-l-4 lg:border-l-8 border-orange-500 space-y-4 lg:space-y-6 shadow-sm mt-4 lg:mt-6 text-left">
+                    <p class="text-sm lg:text-base text-gray-700"><strong>VICOBA Support:</strong> Strengthening Village Community Bank groups through training on book-keeping and loan management.</p>
+                    <p class="text-sm lg:text-base text-gray-700"><strong>Youth Incubation:</strong> Providing small seed grants and mentorship to youth starting businesses in Mwanza city.</p>
+                    <p class="text-sm lg:text-base text-gray-700"><strong>Value-Addition:</strong> Training farmers on food processing (like drying or packaging) to increase profit margins.</p>
+                </div>
+            </div>
+
+            <button onclick="toggleDetails('econ-details', this)" class="mt-6 lg:mt-8 group inline-flex justify-center w-full sm:w-auto items-center gap-3 lg:gap-4 bg-blue-900 text-white px-6 py-3.5 lg:px-10 lg:py-4 rounded-full font-bold text-sm lg:text-base hover:bg-ficus-yellow hover:text-blue-900 transition-all shadow-lg">
+                <span>Read More About Empowerment</span> <svg class="w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="py-12 lg:py-24 mb-24 bg-ficus-yellow text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 reveal-on-scroll">
+        <h2 class="text-3xl sm:text-5xl font-black text-blue-900 mb-4 lg:mb-8">Fuel the Mission.</h2>
+        <p class="text-base sm:text-2xl text-blue-900/80 mb-8 lg:mb-12 font-medium leading-relaxed">Your support enables us to continue these integrated solutions across Tanzania. Together, we are a promise.</p>
+        <a href="#donate" class="w-full sm:w-auto bg-blue-900 text-white px-8 py-4 lg:px-16 lg:py-6 rounded-full font-black text-lg lg:text-2xl hover:bg-ficus-charcoal transition-all shadow-2xl inline-block">Donate to Where It’s Needed</a>
+    </div>
+</section>
+
+<script>
+    function toggleDetails(id, btn) {
+        const content = document.getElementById(id);
+        const icon = btn.querySelector('svg');
+        const span = btn.querySelector('span');
+
+        if (content.classList.contains('open')) {
+            content.classList.remove('open');
+            icon.classList.remove('rotate-180');
+        } else {
+            content.classList.add('open');
+            icon.classList.add('rotate-180');
+        }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+</script>
+
+
+
+
+<div id="ficus-footer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
