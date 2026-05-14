@@ -432,6 +432,7 @@
 
         <!-- Carousel Viewport -->
         <div class="relative w-full overflow-hidden pb-8" id="carousel-viewport">
+
             <div class="flex flex-nowrap transition-transform duration-700 ease-in-out gap-6 lg:gap-8" id="carousel-track">
                 
                 <!-- Card 1: Education -->
@@ -773,6 +774,7 @@
         
         <!-- Cards Track -->
         <div class="relative w-full overflow-hidden py-4" id="involved-viewport">
+
             <div class="flex flex-nowrap lg:grid lg:grid-cols-3 transition-transform duration-700 ease-out gap-6 sm:gap-8 lg:gap-10" id="involved-track">
                 
                 <!-- Donate Card -->
@@ -967,6 +969,9 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+    // ---------------------------------------------------------
+    // GET INVOLVED CAROUSEL LOGIC
+    // ---------------------------------------------------------
     const track = document.getElementById('involved-track');
     const dotsContainer = document.getElementById('involved-dots');
     const originalCards = Array.from(document.querySelectorAll('.involved-card'));
@@ -978,7 +983,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let autoSlideInterval;
     let isTransitioning = false;
 
-    // Creates the invisible clone at the end to prevent the rewind
     function setupSeamlessLoop() {
         const existingClones = document.querySelectorAll('.cloned-card');
         existingClones.forEach(clone => clone.remove());
@@ -1015,7 +1019,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         currentIndex = index;
         const offset = currentIndex * 100;
-        const gapOffset = currentIndex * 16; // Adjusts for the gap space
+        const gapOffset = currentIndex * 16;
         track.style.transform = `translateX(calc(-${offset}% - ${gapOffset}px))`;
 
         const dotIndex = currentIndex === totalOriginalCards ? 0 : currentIndex;
@@ -1031,15 +1035,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // The Magic Trick: Instantly snaps back to zero when it hits the clone
     track.addEventListener('transitionend', () => {
         isTransitioning = false;
-        
         if (currentIndex === totalOriginalCards) {
             track.style.transition = 'none';
             currentIndex = 0;
             track.style.transform = `translateX(0px)`;
-            void track.offsetWidth; // Force browser to register the snap
+            void track.offsetWidth; 
         }
     });
 
@@ -1054,6 +1056,50 @@ document.addEventListener('DOMContentLoaded', function() {
     initDots();
     if (window.innerWidth < 1024) startAutoSlide();
 
+    // --- TOUCH SWIPE LOGIC FOR GET INVOLVED ---
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+        clearInterval(autoSlideInterval); 
+    }, {passive: true});
+
+    track.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        if (window.innerWidth < 1024) startAutoSlide(); 
+    }, {passive: true});
+
+    function handleSwipe() {
+        if (window.innerWidth >= 1024) return;
+        const swipeThreshold = 50; 
+        
+        if (touchEndX < touchStartX - swipeThreshold) {
+            // Swiped left (next)
+            if (!isTransitioning) goToSlide(currentIndex + 1);
+        }
+        if (touchEndX > touchStartX + swipeThreshold) {
+            // Swiped right (prev)
+            if (!isTransitioning) {
+                if (currentIndex === 0) {
+                    track.style.transition = 'none';
+                    currentIndex = totalOriginalCards;
+                    const offset = currentIndex * 100;
+                    const gapOffset = currentIndex * 16;
+                    track.style.transform = `translateX(calc(-${offset}% - ${gapOffset}px))`;
+                    void track.offsetWidth;
+                    
+                    setTimeout(() => {
+                        goToSlide(currentIndex - 1);
+                    }, 10);
+                } else {
+                    goToSlide(currentIndex - 1);
+                }
+            }
+        }
+    }
+
     window.addEventListener('resize', () => {
         setupSeamlessLoop();
         initDots();
@@ -1066,7 +1112,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Unique variables for the 'What We Do' Programs section
+    // ---------------------------------------------------------
+    // OUR THEMES CAROUSEL LOGIC
+    // ---------------------------------------------------------
     const programTrack = document.getElementById('carousel-track');
     const programDotsContainer = document.getElementById('carousel-dots');
     const programCards = Array.from(document.querySelectorAll('.carousel-card'));
@@ -1080,18 +1128,15 @@ document.addEventListener('DOMContentLoaded', function() {
     let cardsPerView = getCardsPerView();
 
     function getCardsPerView() {
-        if (window.innerWidth >= 1024) return 3; // Desktop
-        if (window.innerWidth >= 768) return 2;  // Tablet
-        return 1;                                // Mobile
+        if (window.innerWidth >= 1024) return 3; 
+        if (window.innerWidth >= 768) return 2;  
+        return 1;                                
     }
 
-    // 1. Setup Seamless Loop (Clones cards at the end)
     function setupSeamlessLoop() {
-        // Remove old clones
         const existingClones = document.querySelectorAll('.program-clone');
         existingClones.forEach(clone => clone.remove());
 
-        // Clone the first few cards and append them to the end of the track
         for (let i = 0; i < cardsPerView; i++) {
             if (programCards[i]) {
                 const clone = programCards[i].cloneNode(true);
@@ -1101,10 +1146,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // 2. Initialize Dots
     function initDots() {
         programDotsContainer.innerHTML = '';
-        
         for (let i = 0; i < totalOriginalCards; i++) {
             const dot = document.createElement('button');
             dot.className = `h-2 rounded-full transition-all duration-300 ${i === 0 ? 'bg-blue-900 w-8' : 'bg-gray-300 w-3 hover:bg-blue-400'}`;
@@ -1115,24 +1158,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // 3. Move Slide
     function goToSlide(index) {
         isTransitioning = true;
         programTrack.style.transition = 'transform 0.7s ease-in-out';
         
         currentIndex = index;
-        
-        // Calculate translation percentage based on items visible
         const percentageToMove = currentIndex * (100 / cardsPerView);
-        
-        // The CSS variables for gap are 16px(sm), 24px(md), 32px(lg). 
-        // We approximate the pixel push needed for the gap.
         let gapSize = window.innerWidth >= 1024 ? 32 : window.innerWidth >= 768 ? 24 : 16;
         const gapOffset = currentIndex * gapSize; 
 
         programTrack.style.transform = `translateX(calc(-${percentageToMove}% - ${gapOffset}px))`;
 
-        // Update active dot visual
         const dotIndex = currentIndex % totalOriginalCards; 
         const dots = programDotsContainer.querySelectorAll('button');
         dots.forEach((dot, i) => {
@@ -1146,19 +1182,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 4. The Magic Trick: Instantly snap back when hitting a clone
     programTrack.addEventListener('transitionend', () => {
         isTransitioning = false;
-        
-        // If we reached the first cloned card...
         if (currentIndex === totalOriginalCards) {
-            // Turn off animation
             programTrack.style.transition = 'none';
-            // Instantly jump back to the real first card
             currentIndex = 0;
             programTrack.style.transform = `translateX(0px)`;
-            
-            // Force browser to register the snap before allowing animations again
             void programTrack.offsetWidth; 
         }
     });
@@ -1172,12 +1201,53 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 4000);
     }
 
-    // Init
     setupSeamlessLoop();
     initDots();
     startAutoSlide();
 
-    // Handle Window Resize
+    // --- TOUCH SWIPE LOGIC FOR OUR THEMES ---
+    let pTouchStartX = 0;
+    let pTouchEndX = 0;
+
+    programTrack.addEventListener('touchstart', e => {
+        pTouchStartX = e.changedTouches[0].screenX;
+        clearInterval(autoSlideInterval);
+    }, {passive: true});
+
+    programTrack.addEventListener('touchend', e => {
+        pTouchEndX = e.changedTouches[0].screenX;
+        handleProgramSwipe();
+        startAutoSlide();
+    }, {passive: true});
+
+    function handleProgramSwipe() {
+        const swipeThreshold = 50;
+        if (pTouchEndX < pTouchStartX - swipeThreshold) {
+            // Swiped left
+            if (!isTransitioning) goToSlide(currentIndex + 1);
+        }
+        if (pTouchEndX > pTouchStartX + swipeThreshold) {
+            // Swiped right
+            if (!isTransitioning) {
+                if (currentIndex === 0) {
+                    programTrack.style.transition = 'none';
+                    currentIndex = totalOriginalCards;
+                    const percentageToMove = currentIndex * (100 / cardsPerView);
+                    let gapSize = window.innerWidth >= 1024 ? 32 : window.innerWidth >= 768 ? 24 : 16;
+                    const gapOffset = currentIndex * gapSize; 
+                    programTrack.style.transform = `translateX(calc(-${percentageToMove}% - ${gapOffset}px))`;
+                    void programTrack.offsetWidth;
+                    
+                    setTimeout(() => {
+                        goToSlide(currentIndex - 1);
+                    }, 10);
+                } else {
+                    goToSlide(currentIndex - 1);
+                }
+            }
+        }
+    }
+
     window.addEventListener('resize', () => {
         const newCardsPerView = getCardsPerView();
         if (newCardsPerView !== cardsPerView) {
