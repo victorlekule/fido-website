@@ -37,13 +37,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 
                 <div class="w-full px-4 sm:px-8 relative">
                     <div class="flex justify-between items-center h-24 lg:h-28">
-                        
+                      
                         <!-- Logo Area -->
                         <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="window.location.href='index.html'">
-                            <svg class="h-10 w-10 lg:h-12 lg:w-12 text-ficus-yellow" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2L8 8H10V14C10 15.1 9.1 16 8 16H6V18H8C10.2 18 12 16.2 12 14V8H14L12 2ZM16 12L14 15H15V22H17V15H18L16 12ZM7 12L5 15H6V22H8V15H9L7 12Z" />
-                            </svg>
+                            
+                            <!-- Increased size: changed h-10 to h-16, and lg:h-12 to lg:h-20 -->
+                            <img src="picha/fodo logo.png" alt="Ficus Logo" class="h-16 lg:h-20 w-auto object-contain">
+                            
+                            <!-- If your PNG already has the word "FICUS" inside it, you can delete the <span> below. Otherwise, leave it. -->
                             <span class="font-black text-2xl md:text-3xl tracking-tight">FICUS</span>
+
                         </div>
 
                         <!-- Desktop Navigation -->
