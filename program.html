@@ -3,39 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ficus Development Organization</title>    
+    <title>Our Impact | Ficus Development Organization</title>
+
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
-        /* Premium Morphed Shapes & Floating Animations */
-        @keyframes morphShape {
-            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+        body { padding-top: 100px; overflow-x: hidden; } /* space for fixed header */
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
         }
-        .animate-morph { animation: morphShape 10s ease-in-out infinite; }
-        
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        .reveal-on-scroll.is-visible {
-            opacity: 1;
-            transform: translateY(0);
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0); }
         }
 
-        /* Expanding Detail Content */
-        .details-wrapper {
-            max-height: 0;
+        /* Detail Page Carousel styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
-            transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
-            opacity: 0;
         }
-        .details-wrapper.open {
-            max-height: 1200px;
-            opacity: 1;
-            margin-top: 2rem;
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+            z-index: 5;
+        }
+        .carousel-btn:hover {
+            background: rgba(0,0,0,0.8);
+        }
+        .carousel-btn.prev {
+            left: 10px;
+        }
+        .carousel-btn.next {
+            right: 10px;
+        }
+        .carousel-dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            cursor: pointer;
+        }
+        .carousel-dot.active {
+            background: white;
         }
     </style>
 </head>
@@ -43,227 +89,471 @@
 
     <div id="ficus-header-container"></div>
 
-    <section class="relative min-h-[50vh] lg:min-h-[60vh] pt-24 flex items-center bg-blue-900 overflow-hidden py-12 lg:py-20">
-    <div class="absolute top-0 right-0 w-[300px] h-[300px] lg:w-[600px] lg:h-[600px] bg-ficus-yellow/10 rounded-full blur-[80px] lg:blur-[120px]"></div>
-    <div class="absolute bottom-0 left-0 w-[200px] h-[200px] lg:w-[400px] lg:h-[400px] bg-blue-500/10 rounded-full blur-[60px] lg:blur-[100px]"></div>
 
-    <div class="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-16 w-full text-center py-10 lg:py-20">
-        <div class="reveal-on-scroll">
-            <h1 class="text-3xl sm:text-5xl md:text-7xl font-black text-white leading-tight mb-4 lg:mb-6">
-                Integrated Solutions for <br class="hidden lg:block"> <span class="text-ficus-yellow">Lasting Change</span>
-            </h1>
-            <p class="text-sm sm:text-lg md:text-2xl text-ficus-sand mb-8 lg:mb-12 max-w-3xl mx-auto leading-relaxed px-2">
-                Six core programs that address the root causes of poverty and build self‑reliance across Tanzania.
-            </p>
-            <a href="#donate" class="inline-flex items-center justify-center w-full sm:w-auto gap-2 sm:gap-3 bg-ficus-yellow text-blue-900 px-6 py-3.5 lg:px-10 lg:py-5 rounded-full font-black text-sm lg:text-lg hover:bg-white transition-all shadow-[0_10px_30px_rgba(234,179,8,0.3)] lg:shadow-[0_20px_50px_rgba(234,179,8,0.3)] transform hover:-translate-y-1">
-                Support a Program
-                <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-            </a>
-        </div>
+<!-- ================= MAIN CONTAINER ================= -->
+<div>
+    <!-- ================= VIEW 1: MAIN IMPACT PAGE ================= -->
+    <div id="main-content" class="transition-opacity duration-500 opacity-100">
+        
+        <!-- 1. PREMIUM LIGHT HERO -->
+        <section class="relative pt-16 pb-20 lg:pt-16 lg:pb-32 bg-ficus-sand/20 overflow-hidden">
+            <!-- Subtle Background Gradients -->
+            <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-900/5 rounded-full blur-[100px] pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-ficus-yellow/10 rounded-full blur-[100px] pointer-events-none"></div>
+
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 text-center">
+                <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white border border-gray-200 text-blue-900 font-bold text-xs lg:text-sm tracking-widest uppercase mb-8 shadow-sm reveal-on-scroll">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Impact Delivered
+                </div>
+                
+                <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-[6rem] font-black text-ficus-charcoal leading-[1.05] mb-8 tracking-tight reveal-on-scroll" style="transition-delay: 100ms;">
+                    Promises Made. <br />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-600">Promises Kept.</span>
+                </h1>
+                
+                <p class="text-lg md:text-2xl text-ficus-charcoal/60 font-light mb-12 leading-relaxed max-w-3xl mx-auto reveal-on-scroll" style="transition-delay: 200ms;">
+                    Explore the completed programs and measurable milestones that have fundamentally transformed communities across Tanzania since 2018.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center reveal-on-scroll" style="transition-delay: 300ms;">
+                    <a href="#projects" class="bg-blue-900 text-white px-8 py-4 lg:px-10 lg:py-5 rounded-full font-black text-sm md:text-lg hover:bg-ficus-yellow hover:text-blue-900 transition-all duration-300 shadow-xl hover:-translate-y-1">Explore Achievements</a>
+                    <a href="#stats" class="bg-white border border-gray-200 text-ficus-charcoal px-8 py-4 lg:px-10 lg:py-5 rounded-full font-bold text-sm md:text-lg hover:border-blue-900 hover:text-blue-900 transition-all duration-300 shadow-sm">View The Data</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. STATS (BENTO GRID) -->
+        <section id="stats" class="py-16 lg:py-24 bg-white relative scroll-mt-24 border-b border-gray-100">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8">
+                    
+                    <div class="bg-gray-50 border border-gray-100 p-6 lg:p-10 rounded-[24px] lg:rounded-[40px] hover:shadow-xl transition-all duration-500 flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-900 mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-graduation-cap text-2xl"></i></div>
+                        <h3 class="text-4xl lg:text-5xl font-black text-ficus-charcoal mb-1"><span class="counter" data-target="5000">0</span>+</h3>
+                        <p class="text-gray-500 font-bold tracking-widest uppercase text-[10px] lg:text-xs">Students Graduated</p>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-100 p-6 lg:p-10 rounded-[24px] lg:rounded-[40px] hover:shadow-xl transition-all duration-500 flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-heartbeat text-2xl"></i></div>
+                        <h3 class="text-4xl lg:text-5xl font-black text-ficus-charcoal mb-1"><span class="counter" data-target="150">0</span>+</h3>
+                        <p class="text-gray-500 font-bold tracking-widest uppercase text-[10px] lg:text-xs">Families Secured</p>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-100 p-6 lg:p-10 rounded-[24px] lg:rounded-[40px] hover:shadow-xl transition-all duration-500 flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 bg-ficus-yellow/30 rounded-2xl flex items-center justify-center text-yellow-700 mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-leaf text-2xl"></i></div>
+                        <h3 class="text-4xl lg:text-5xl font-black text-ficus-charcoal mb-1"><span class="counter" data-target="1200">0</span>+</h3>
+                        <p class="text-gray-500 font-bold tracking-widest uppercase text-[10px] lg:text-xs">Farms Modernized</p>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-100 p-6 lg:p-10 rounded-[24px] lg:rounded-[40px] hover:shadow-xl transition-all duration-500 flex flex-col items-center text-center group">
+                        <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-rocket text-2xl"></i></div>
+                        <h3 class="text-4xl lg:text-5xl font-black text-ficus-charcoal mb-1"><span class="counter" data-target="800">0</span>+</h3>
+                        <p class="text-gray-500 font-bold tracking-widest uppercase text-[10px] lg:text-xs">Businesses Launched</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. ACHIEVED PROJECTS (PERFECTLY BALANCED SIDE-BY-SIDE) -->
+        <section id="projects" class="py-20 lg:py-32 bg-white relative overflow-hidden scroll-mt-24">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
+                
+                <div class="mb-16 lg:mb-24 text-center">
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-ficus-charcoal tracking-tight">Completed Initiatives.</h2>
+                </div>
+
+                <!-- Project 1 (Image Left, Text Right) -->
+                <div class="flex flex-col lg:flex-row items-center gap-10 lg:gap-20 mb-24 lg:mb-40">
+                    <!-- Image Half -->
+                    <div class="w-full lg:w-1/2 reveal-on-scroll">
+                        <div class="relative rounded-[32px] lg:rounded-[48px] overflow-hidden group shadow-2xl h-[400px] lg:h-[600px] cursor-pointer border border-gray-100" onclick="openProjectPage('ngara')">
+                            <img src="picha/shule1.jpeg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Ngara School">
+                            <div class="absolute top-6 left-6 bg-green-500 text-white px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest shadow-md">Handed Over</div>
+                            <div class="absolute inset-0 bg-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="bg-white text-blue-900 px-6 py-3 rounded-full font-bold shadow-xl">View Case Study</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text Half -->
+                    <div class="w-full lg:w-1/2 reveal-on-scroll" style="transition-delay: 150ms;">
+                        <span class="text-blue-900 font-bold uppercase tracking-widest text-xs mb-4 block">Education Pillar</span>
+                        <h2 class="text-3xl lg:text-5xl font-black text-ficus-charcoal leading-tight mb-6">Ngara Community <br>School Initiative</h2>
+                        <p class="text-ficus-charcoal/70 text-lg lg:text-xl font-light leading-relaxed mb-8">
+                            Completed in 2021, this achievement replaced temporary mud-structures with a solar-powered center of excellence, providing a safe learning environment for 300+ rural students.
+                        </p>
+                        <div class="flex flex-wrap gap-3 mb-10">
+                            <div class="px-4 py-2 rounded-lg bg-gray-50 border border-gray-200 text-ficus-charcoal text-sm font-medium">8 Classrooms</div>
+                            <div class="px-4 py-2 rounded-lg bg-gray-50 border border-gray-200 text-ficus-charcoal text-sm font-medium">Solar Grid</div>
+                            <div class="px-4 py-2 rounded-lg bg-gray-50 border border-gray-200 text-ficus-charcoal text-sm font-medium">2000+ Books</div>
+                        </div>
+                        <button onclick="openProjectPage('ngara')" class="inline-flex items-center gap-4 text-blue-900 font-black text-lg uppercase tracking-wider group">
+                            <span class="border-b-2 border-blue-900 pb-1 group-hover:text-ficus-yellow group-hover:border-ficus-yellow transition-all">Read Impact Story</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-3 transition-transform text-ficus-yellow"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2 (Text Left, Image Right - Balanced) -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-10 lg:gap-20">
+                    <!-- Image Half -->
+                    <div class="w-full lg:w-1/2 reveal-on-scroll">
+                        <div class="relative rounded-[32px] lg:rounded-[48px] overflow-hidden group shadow-2xl h-[400px] lg:h-[600px] cursor-pointer border border-gray-100" onclick="openProjectPage('health')">
+                            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Health Program">
+                            <div class="absolute top-6 right-6 bg-blue-600 text-white px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest shadow-md">Nationally Recognized</div>
+                            <div class="absolute inset-0 bg-blue-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                                <span class="bg-white text-blue-900 px-6 py-3 rounded-full font-bold shadow-xl">View Case Study</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Text Half -->
+                    <div class="w-full lg:w-1/2 reveal-on-scroll" style="transition-delay: 150ms;">
+                        <span class="text-blue-900 font-bold uppercase tracking-widest text-xs mb-4 block">Healthcare Pillar</span>
+                        <h2 class="text-3xl lg:text-5xl font-black text-ficus-charcoal leading-tight mb-6">Lake Zone Health <br>Security Fund</h2>
+                        <p class="text-ficus-charcoal/70 text-lg lg:text-xl font-light leading-relaxed mb-8">
+                            A milestone achieved in 2023. We successfully integrated 150 vulnerable families into the NHIF framework, ensuring that medical emergencies no longer lead to financial collapse.
+                        </p>
+                        <div class="flex flex-wrap gap-3 mb-10">
+                            <div class="px-4 py-2 rounded-lg bg-gray-50 border border-gray-200 text-ficus-charcoal text-sm font-medium">150 Households</div>
+                            <div class="px-4 py-2 rounded-lg bg-gray-50 border border-gray-200 text-ficus-charcoal text-sm font-medium">90% Access Increase</div>
+                        </div>
+                        <button onclick="openProjectPage('health')" class="inline-flex items-center gap-4 text-blue-900 font-black text-lg uppercase tracking-wider group">
+                            <span class="border-b-2 border-blue-900 pb-1 group-hover:text-ficus-yellow group-hover:border-ficus-yellow transition-all">Read Impact Story</span>
+                            <i class="fas fa-arrow-right group-hover:translate-x-3 transition-transform text-ficus-yellow"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. EDITORIAL TESTIMONIAL (Dark Contrast Block) -->
+        <section class="py-20 lg:py-32 bg-[#0a1128] overflow-hidden">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12">
+                <div class="relative bg-gradient-to-br from-blue-900 to-[#0a1128] rounded-[40px] lg:rounded-[60px] p-8 lg:p-20 flex flex-col lg:flex-row items-center gap-10 lg:gap-20 shadow-2xl border border-white/10">
+                    
+                    <div class="w-full lg:w-5/12 relative h-[350px] lg:h-[500px] rounded-[30px] lg:rounded-[40px] overflow-hidden shrink-0 shadow-2xl">
+                        <img src="picha/1 (23).jpg" alt="Fatima's Farm" class="w-full h-full object-cover">
+                    </div>
+
+                    <div class="w-full lg:w-7/12 text-white flex flex-col justify-center">
+                        <i class="fas fa-quote-left text-5xl lg:text-6xl text-ficus-yellow/30 mb-6"></i>
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black mb-8 leading-[1.1] tracking-tight">
+                            “FIDO gave me a future, <span class="text-ficus-yellow">not just temporary tools.</span>”
+                        </h2>
+                        <p class="text-lg lg:text-xl text-blue-100/80 font-light mb-8 leading-relaxed">
+                            After completing the AgriTech training program in 2022, Fatima’s tomato harvest tripled. She now employs five women and supplies three local markets in Mwanza.
+                        </p>
+                        <div class="flex items-center gap-4 border-t border-white/10 pt-8 mt-4">
+                            <div class="w-12 h-12 rounded-full bg-ficus-yellow flex items-center justify-center text-[#0a1128] font-black text-xl">F</div>
+                            <div>
+                                <p class="font-bold text-lg">Fatima M.</p>
+                                <p class="text-sm text-ficus-yellow uppercase tracking-widest font-bold">Program Graduate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. CTA -->
+        <section class="py-20 lg:py-32 bg-ficus-yellow relative overflow-hidden">
+            <div class="max-w-[1000px] mx-auto px-4 text-center relative z-10">
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#0a1128] mb-8 tracking-tight leading-tight">Ready to build <br>the next success story?</h2>
+                <div class="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center mt-12">
+                    <a href="donate.html" class="bg-[#0a1128] text-white px-10 py-5 rounded-full font-black text-lg hover:bg-white hover:text-[#0a1128] transition-all shadow-xl hover:-translate-y-1">Fund Future Impact</a>
+                    <a href="volunteer.html" class="bg-transparent border-2 border-[#0a1128] text-[#0a1128] px-10 py-5 rounded-full font-black text-lg hover:bg-[#0a1128] hover:text-white transition-all hover:-translate-y-1">Become a Partner</a>
+                </div>
+            </div>
+        </section>
     </div>
-</section>
 
-<section id="education" class="py-12 lg:py-24 bg-white overflow-hidden border-b border-gray-50">
-    <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
-        <div class="reveal-on-scroll order-2 lg:order-1 text-center lg:text-left">
-            <span class="text-blue-900 font-black tracking-widest uppercase text-xs lg:text-sm mb-2 lg:mb-4 block">Program 01 — Quality Learning</span>
-            <h2 class="text-3xl md:text-6xl font-bold text-ficus-charcoal mb-4 lg:mb-6 leading-tight">Unlocking Potential Through Learning</h2>
-            <p class="text-base lg:text-xl text-gray-600 leading-relaxed text-justify lg:text-left">We improve access to quality education, vocational training, and life skills for children and youth. Our mission is to ensure learning translates directly into sustainable livelihoods.</p>
+  <!-- ================= VIEW 2: PROJECT DETAIL PAGE (Header & Footer remain visible) ================= -->
+<div id="project-detail-page" class="hidden transition-opacity duration-500 opacity-0 pt-28 lg:pt-36 pb-20 bg-ficus-sand/10 min-h-screen">
+    
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-12">
+        
+        <!-- TOP: Premium Close Button -->
+        <div class="flex justify-end mb-6 lg:mb-8">
+            <button type="button" onclick="closeProjectPage()" class="inline-flex items-center gap-2 bg-white text-ficus-charcoal px-5 py-2.5 rounded-full shadow-sm border border-gray-200 font-bold text-xs lg:text-sm tracking-widest uppercase hover:text-red-600 hover:border-red-200 hover:shadow-md transition-all group">
+                Close <i class="fas fa-times text-base lg:text-lg group-hover:rotate-90 transition-transform duration-300"></i>
+            </button>
+        </div>
+
+        <!-- Project Hero Carousel -->
+        <div class="relative w-full h-[400px] lg:h-[600px] overflow-hidden rounded-[32px] lg:rounded-[48px] shadow-2xl mb-12">
+            <div id="detail-carousel" class="w-full h-full relative">
+                <div class="carousel-slides w-full h-full flex transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]" id="detail-carousel-slides"></div>
+                
+                <button class="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 backdrop-blur-md text-blue-900 rounded-full flex items-center justify-center hover:bg-ficus-yellow transition-all z-20 shadow-lg cursor-pointer" onclick="detailPrevSlide()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="absolute right-4 lg:right-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/80 backdrop-blur-md text-blue-900 rounded-full flex items-center justify-center hover:bg-ficus-yellow transition-all z-20 shadow-lg cursor-pointer" onclick="detailNextSlide()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20 bg-black/30 px-4 py-2 rounded-full backdrop-blur-md" id="detail-carousel-dots"></div>
+            </div>
+        </div>
+
+        <!-- Comprehensive Content Area -->
+        <div class="bg-white border border-gray-100 rounded-[32px] lg:rounded-[48px] p-8 lg:p-16 shadow-xl text-ficus-charcoal">
             
-            <div id="edu-details" class="details-wrapper">
-                <div class="p-6 lg:p-10 bg-ficus-sand rounded-[20px] lg:rounded-[40px] border-l-4 lg:border-l-8 border-ficus-yellow space-y-4 lg:space-y-6 mt-4 lg:mt-6 text-left">
-                    <p class="text-sm lg:text-base text-gray-700 leading-relaxed"><strong>Infrastructure & Resources:</strong> We renovate classrooms and provide essential learning materials (books, desks, and solar lighting) to rural schools in the Lake Zone.</p>
-                    <p class="text-sm lg:text-base text-gray-700 leading-relaxed"><strong>Vocational Training:</strong> For youth out of school, we provide skills in carpentry, tailoring, and electrical works, paired with basic business management training.</p>
-                    <p class="text-sm lg:text-base text-gray-700 leading-relaxed"><strong>Teacher Support:</strong> We collaborate with local government to provide pedagogical workshops, focusing on inclusive education for children with disabilities.</p>
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-900 font-bold text-xs tracking-widest uppercase mb-6" id="detail-tag"></div>
+            <h2 id="detail-title" class="text-4xl md:text-5xl lg:text-6xl font-black mb-12 leading-[1.1] tracking-tight"></h2>
+
+            <!-- Info Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-12">
+                <div class="bg-gray-50 p-8 rounded-[24px] border border-gray-100">
+                    <h3 class="text-xl font-bold text-blue-900 flex items-center gap-3 mb-4"><i class="fas fa-map-marker-alt text-ficus-yellow"></i> Location Context</h3>
+                    <p id="detail-location" class="text-ficus-charcoal/70 leading-relaxed"></p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-[24px] border border-gray-100">
+                    <h3 class="text-xl font-bold text-blue-900 flex items-center gap-3 mb-4"><i class="fas fa-exclamation-triangle text-ficus-yellow"></i> The Challenge</h3>
+                    <p id="detail-challenge" class="text-ficus-charcoal/70 leading-relaxed"></p>
                 </div>
             </div>
 
-            <button onclick="toggleDetails('edu-details', this)" class="mt-6 lg:mt-8 group inline-flex justify-center w-full sm:w-auto items-center gap-3 lg:gap-4 bg-blue-900 text-white px-6 py-3.5 lg:px-10 lg:py-4 rounded-full font-bold text-sm lg:text-base hover:bg-ficus-yellow hover:text-blue-900 transition-all shadow-lg">
-                <span>Read More About Education</span> <svg class="w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
-            </button>
-        </div>
-        <div class="reveal-on-scroll order-1 lg:order-2 flex justify-center">
-            <div class="relative w-full max-w-[320px] sm:max-w-[450px] lg:max-w-[650px] aspect-video sm:aspect-square animate-morph bg-ficus-sand overflow-hidden shadow-2xl border-[6px] lg:border-[12px] border-white ring-1 ring-gray-100">
-                <img src="picha/1 (21).jpg" class="w-full h-full object-cover" alt="Education">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="health" class="py-12 lg:py-24 bg-ficus-sand/30 overflow-hidden border-b border-gray-50">
-    <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
-        <div class="reveal-on-scroll order-1 flex justify-center">
-            <div class="relative w-full max-w-[320px] sm:max-w-[450px] lg:max-w-[650px] aspect-video sm:aspect-square animate-morph bg-blue-900 overflow-hidden shadow-2xl border-[6px] lg:border-[12px] border-white" style="animation-delay: -2s;">
-                <img src="picha/1 (17).jpg" class="w-full h-full object-cover" alt="Health">
-            </div>
-        </div>
-        <div class="reveal-on-scroll order-2 text-center lg:text-left">
-            <span class="text-blue-900 font-black tracking-widest uppercase text-xs lg:text-sm mb-2 lg:mb-4 block">Program 02 — Community Health</span>
-            <h2 class="text-3xl md:text-6xl font-bold text-ficus-charcoal mb-4 lg:mb-6 leading-tight">Healthy Communities, Brighter Futures</h2>
-            <p class="text-base lg:text-xl text-gray-600 leading-relaxed text-justify lg:text-left">We promote health education, disease prevention, and access to health insurance for underserved families. Good health is the foundation of every thriving community.</p>
-            
-            <div id="health-details" class="details-wrapper">
-                <div class="p-6 lg:p-10 bg-white rounded-[20px] lg:rounded-[40px] border-l-4 lg:border-l-8 border-blue-900 space-y-4 lg:space-y-6 shadow-sm mt-4 lg:mt-6 text-left">
-                    <p class="text-sm lg:text-base text-gray-700"><strong>Maternal & Child Health:</strong> Training community health workers to support expectant mothers with prenatal care and nutritional guidance.</p>
-                    <p class="text-sm lg:text-base text-gray-700"><strong>Health Insurance Advocacy:</strong> Facilitating enrollment in the Community Health Fund (CHF) to ensure medical emergencies don't lead families into bankruptcy.</p>
-                    <p class="text-sm lg:text-base text-gray-700"><strong>WASH Initiatives:</strong> Constructing clean water points and promoting hygiene in schools to reduce water-borne illnesses.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+                <div class="bg-gray-50 p-8 rounded-[24px] border border-gray-100">
+                    <h3 class="text-xl font-bold text-blue-900 flex items-center gap-3 mb-4"><i class="fas fa-lightbulb text-ficus-yellow"></i> The Intervention</h3>
+                    <div id="detail-solution" class="text-ficus-charcoal/70 leading-relaxed space-y-4"></div>
+                </div>
+                
+                <div class="bg-blue-900 p-8 rounded-[24px] text-white shadow-xl">
+                    <h3 class="text-xl font-bold flex items-center gap-3 mb-4 text-ficus-yellow"><i class="fas fa-chart-line"></i> Concrete Results</h3>
+                    <p id="detail-result" class="font-light leading-relaxed text-blue-50"></p>
+                    <div id="detail-extra" class="mt-6 pt-6 border-t border-white/20 font-bold text-lg text-white"></div>
                 </div>
             </div>
 
-            <button onclick="toggleDetails('health-details', this)" class="mt-6 lg:mt-8 group inline-flex justify-center w-full sm:w-auto items-center gap-3 lg:gap-4 bg-blue-900 text-white px-6 py-3.5 lg:px-10 lg:py-4 rounded-full font-bold text-sm lg:text-base hover:bg-ficus-yellow hover:text-blue-900 transition-all shadow-lg">
-                <span>Read More About Health</span> <svg class="w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+        </div>
+
+        <!-- BOTTOM: Go Back to All Programs Button -->
+        <div class="mt-12 lg:mt-20 flex justify-center pb-10">
+            <button type="button" onclick="closeProjectPage()" class="inline-flex items-center gap-4 bg-blue-900 text-white px-8 py-4 lg:px-12 lg:py-5 rounded-full font-black text-base lg:text-lg hover:bg-ficus-yellow hover:text-blue-900 transition-all duration-300 shadow-2xl hover:-translate-y-1 group">
+                <i class="fas fa-arrow-left group-hover:-translate-x-2 transition-transform duration-300"></i> Back to All Programs
             </button>
         </div>
+
     </div>
-</section>
+</div>
 
-<section id="agriculture" class="py-12 lg:py-24 bg-white overflow-hidden border-b border-gray-50">
-    <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
-        <div class="reveal-on-scroll order-2 lg:order-1 text-center lg:text-left">
-            <span class="text-blue-900 font-black tracking-widest uppercase text-xs lg:text-sm mb-2 lg:mb-4 block">Program 03 — Sustainable Farming</span>
-            <h2 class="text-3xl md:text-6xl font-bold text-ficus-charcoal mb-4 lg:mb-6 leading-tight">Growing Resilience from the Ground Up</h2>
-            <p class="text-base lg:text-xl text-gray-600 leading-relaxed text-justify lg:text-left">Through climate‑smart training and agribusiness support, we help smallholder farmers increase yields and secure their families’ food and income.</p>
-            
-            <div id="agri-details" class="details-wrapper">
-                <div class="p-6 lg:p-10 bg-ficus-sand rounded-[20px] lg:rounded-[40px] border-l-4 lg:border-l-8 border-green-600 space-y-4 lg:space-y-6 mt-4 lg:mt-6 text-left">
-                    <p class="text-sm lg:text-base text-gray-700"><strong>Climate-Smart Agriculture (CSA):</strong> Training on conservation tillage, crop diversification, and irrigation systems to fight erratic weather patterns.</p>
-                    <p class="text-sm lg:text-base text-gray-700"><strong>Market Linkages:</strong> Connecting smallholder cooperatives directly with wholesalers in Mwanza to ensure fair pricing for their produce.</p>
-                    <p class="text-sm lg:text-base text-gray-700"><strong>Women in Agri:</strong> Specialized groups for female farmers to gain land-use rights and financial literacy.</p>
-                </div>
-            </div>
+</div>
 
-            <button onclick="toggleDetails('agri-details', this)" class="mt-6 lg:mt-8 group inline-flex justify-center w-full sm:w-auto items-center gap-3 lg:gap-4 bg-blue-900 text-white px-6 py-3.5 lg:px-10 lg:py-4 rounded-full font-bold text-sm lg:text-base hover:bg-ficus-yellow hover:text-blue-900 transition-all shadow-lg">
-                <span>Read More About Agriculture</span> <svg class="w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
-            </button>
-        </div>
-        <div class="reveal-on-scroll order-1 lg:order-2 flex justify-center">
-            <div class="relative w-full max-w-[320px] sm:max-w-[450px] lg:max-w-[650px] aspect-video sm:aspect-square animate-morph bg-green-50 overflow-hidden shadow-2xl border-[6px] lg:border-[12px] border-white">
-                <img src="picha/1 (19).jpg" class="w-full h-full object-cover" alt="Agriculture">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="environment" class="py-12 lg:py-24 bg-blue-900 text-white overflow-hidden">
-    <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
-        <div class="reveal-on-scroll order-1 flex justify-center">
-            <div class="relative w-full max-w-[320px] sm:max-w-[450px] lg:max-w-[650px] aspect-video sm:aspect-square animate-morph bg-white/10 overflow-hidden shadow-2xl border-[6px] lg:border-[12px] border-white/10" style="animation-delay: -5s;">
-                <img src="picha/1 (18).jpg" class="w-full h-full object-cover" alt="Environment">
-            </div>
-        </div>
-        <div class="reveal-on-scroll order-2 text-center lg:text-left">
-            <span class="text-ficus-yellow font-black tracking-widest uppercase text-xs lg:text-sm mb-2 lg:mb-4 block">Program 04 — Nature Conservation</span>
-            <h2 class="text-3xl md:text-6xl font-bold mb-4 lg:mb-6 leading-tight">Protecting Nature, Securing Tomorrow</h2>
-            <p class="text-base lg:text-xl text-ficus-sand opacity-90 leading-relaxed text-justify lg:text-left">We lead community‑based conservation and environmental awareness projects that restore ecosystems and build climate resilience.</p>
-            
-            <div id="env-details" class="details-wrapper">
-                <div class="p-6 lg:p-10 bg-white/10 rounded-[20px] lg:rounded-[40px] border-l-4 lg:border-l-8 border-ficus-yellow space-y-4 lg:space-y-6 mt-4 lg:mt-6 backdrop-blur-md text-left">
-                    <p class="text-sm lg:text-base text-white"><strong>Agroforestry:</strong> Integrating tree planting with farming to improve soil health and provide sustainable firewood sources.</p>
-                    <p class="text-sm lg:text-base text-white"><strong>Clean Energy:</strong> Promoting the use of fuel-efficient stoves to reduce deforestation in rural districts.</p>
-                    <p class="text-sm lg:text-base text-white"><strong>Conservation Clubs:</strong> Establishing environmental clubs in primary schools to raise a green-conscious generation.</p>
-                </div>
-            </div>
-
-            <button onclick="toggleDetails('env-details', this)" class="mt-6 lg:mt-8 group inline-flex justify-center w-full sm:w-auto items-center gap-3 lg:gap-4 bg-ficus-yellow text-blue-900 px-6 py-3.5 lg:px-10 lg:py-4 rounded-full font-bold text-sm lg:text-base hover:bg-white hover:text-blue-900 transition-all shadow-lg">
-                <span>Read More About Climate Action</span> <svg class="w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
-            </button>
-        </div>
-    </div>
-</section>
-
-<section id="tech" class="py-12 lg:py-24 bg-white overflow-hidden border-b border-gray-50">
-    <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
-        <div class="reveal-on-scroll order-2 lg:order-1 text-center lg:text-left">
-            <span class="text-blue-900 font-black tracking-widest uppercase text-xs lg:text-sm mb-2 lg:mb-4 block">Program 05 — Digital Inclusion</span>
-            <h2 class="text-3xl md:text-6xl font-bold text-ficus-charcoal mb-4 lg:mb-6 leading-tight">Innovation for Inclusion</h2>
-            <p class="text-base lg:text-xl text-gray-600 leading-relaxed text-justify lg:text-left">We integrate AgriTech and EdTech to bridge the digital divide. From mobile apps for farmers to digital classrooms, we make tech a tool for equity.</p>
-            
-            <div id="tech-details" class="details-wrapper">
-                <div class="p-6 lg:p-10 bg-ficus-sand rounded-[20px] lg:rounded-[40px] border-l-4 lg:border-l-8 border-purple-600 space-y-4 lg:space-y-6 mt-4 lg:mt-6 text-left">
-                    <p class="text-sm lg:text-base text-gray-700"><strong>Digital Centers:</strong> Establishing internet-enabled hubs in Mwanza where youth can learn coding and digital marketing.</p>
-                    <p class="text-sm lg:text-base text-gray-700"><strong>Data for Farmers:</strong> Using SMS platforms to provide real-time weather and market price alerts to rural smallholders.</p>
-                    <p class="text-sm lg:text-base text-gray-700"><strong>GreenTech Support:</strong> Incubating local innovations that focus on renewable energy and water recycling.</p>
-                </div>
-            </div>
-
-            <button onclick="toggleDetails('tech-details', this)" class="mt-6 lg:mt-8 group inline-flex justify-center w-full sm:w-auto items-center gap-3 lg:gap-4 bg-blue-900 text-white px-6 py-3.5 lg:px-10 lg:py-4 rounded-full font-bold text-sm lg:text-base hover:bg-ficus-yellow hover:text-blue-900 transition-all shadow-lg">
-                <span>Read More About Innovation</span> <svg class="w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
-            </button>
-        </div>
-        <div class="reveal-on-scroll order-1 lg:order-2 flex justify-center">
-            <div class="relative w-full max-w-[320px] sm:max-w-[450px] lg:max-w-[650px] aspect-video sm:aspect-square animate-morph bg-purple-50 overflow-hidden shadow-2xl border-[6px] lg:border-[12px] border-white">
-                <img src="picha/1 (24).jpg" class="w-full h-full object-cover" alt="Innovation">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="economy" class="py-12 lg:py-24 bg-ficus-sand/20 overflow-hidden">
-    <div class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
-        <div class="reveal-on-scroll order-1 flex justify-center">
-            <div class="relative w-full max-w-[320px] sm:max-w-[450px] lg:max-w-[650px] aspect-video sm:aspect-square animate-morph bg-orange-900 overflow-hidden shadow-2xl border-[6px] lg:border-[12px] border-white" style="animation-delay: -3s;">
-                <img src="picha/1 (22).jpg" class="w-full h-full object-cover" alt="Economic Empowerment">
-            </div>
-        </div>
-        <div class="reveal-on-scroll order-2 text-center lg:text-left">
-            <span class="text-blue-900 font-black tracking-widest uppercase text-xs lg:text-sm mb-2 lg:mb-4 block">Program 06 — Self‑Reliance</span>
-            <h2 class="text-3xl md:text-6xl font-bold text-ficus-charcoal mb-4 lg:mb-6 leading-tight">From Survival to Self‑Reliance</h2>
-            <p class="text-base lg:text-xl text-gray-600 leading-relaxed text-justify lg:text-left">We support entrepreneurship and savings groups—especially for women and youth—to break the cycle of poverty permanently.</p>
-            
-            <div id="econ-details" class="details-wrapper">
-                <div class="p-6 lg:p-10 bg-white rounded-[20px] lg:rounded-[40px] border-l-4 lg:border-l-8 border-orange-500 space-y-4 lg:space-y-6 shadow-sm mt-4 lg:mt-6 text-left">
-                    <p class="text-sm lg:text-base text-gray-700"><strong>VICOBA Support:</strong> Strengthening Village Community Bank groups through training on book-keeping and loan management.</p>
-                    <p class="text-sm lg:text-base text-gray-700"><strong>Youth Incubation:</strong> Providing small seed grants and mentorship to youth starting businesses in Mwanza city.</p>
-                    <p class="text-sm lg:text-base text-gray-700"><strong>Value-Addition:</strong> Training farmers on food processing (like drying or packaging) to increase profit margins.</p>
-                </div>
-            </div>
-
-            <button onclick="toggleDetails('econ-details', this)" class="mt-6 lg:mt-8 group inline-flex justify-center w-full sm:w-auto items-center gap-3 lg:gap-4 bg-blue-900 text-white px-6 py-3.5 lg:px-10 lg:py-4 rounded-full font-bold text-sm lg:text-base hover:bg-ficus-yellow hover:text-blue-900 transition-all shadow-lg">
-                <span>Read More About Empowerment</span> <svg class="w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
-            </button>
-        </div>
-    </div>
-</section>
-
-<section class="py-12 lg:py-24 mb-24 bg-ficus-yellow text-center">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 reveal-on-scroll">
-        <h2 class="text-3xl sm:text-5xl font-black text-blue-900 mb-4 lg:mb-8">Fuel the Mission.</h2>
-        <p class="text-base sm:text-2xl text-blue-900/80 mb-8 lg:mb-12 font-medium leading-relaxed">Your support enables us to continue these integrated solutions across Tanzania. Together, we are a promise.</p>
-        <a href="#donate" class="w-full sm:w-auto bg-blue-900 text-white px-8 py-4 lg:px-16 lg:py-6 rounded-full font-black text-lg lg:text-2xl hover:bg-ficus-charcoal transition-all shadow-2xl inline-block">Donate to Where It’s Needed</a>
-    </div>
-</section>
-
+<!-- ================= JAVASCRIPT LOGIC ================= -->
 <script>
-    function toggleDetails(id, btn) {
-        const content = document.getElementById(id);
-        const icon = btn.querySelector('svg');
-        const span = btn.querySelector('span');
+    // 1. DATA OBJECT (Comprehensive Info)
+    const projectData = {
+        'ngara': {
+            title: 'Ngara Community School Initiative',
+            tag: 'Education Pillar · Ngara, Kagera',
+            location: 'Ngara District, Kagera Region, Tanzania. A remote rural community with historically limited access to foundational education and infrastructure.',
+            challenge: 'Prior to our intervention, over 300 children in Ngara were forced to walk up to 10 kilometers daily to attend lessons in overcrowded, unsafe mud structures. Dropout rates were alarmingly high—especially among young girls—due to long, unsafe distances, lack of gender-separated sanitation, and zero access to electricity for studying.',
+            solution: `
+                <p>Ficus Development Organization established a comprehensive coalition with the regional government and local leaders to completely overhaul the educational infrastructure. The initiative delivered:</p>
+                <ul class="list-disc pl-5 mt-4 space-y-2 font-medium">
+                    <li>8 modern, fully ventilated classrooms.</li>
+                    <li>A solar-powered micro-grid ensuring 24/7 electricity.</li>
+                    <li>A library stocked with 2,000+ bilingual books.</li>
+                    <li>Clean rainwater harvesting and safe sanitation blocks.</li>
+                </ul>
+            `,
+            result: 'Following the 2021 handover, primary enrollment surged by 60%. Most importantly, the primary exam pass rates skyrocketed from a failing 42% up to 78% within a single academic year. The school now acts as a modern hub for the entire village.',
+            extra: 'Key Metric: 85% of graduates now successfully transition to secondary education.',
+            gallery: [
+                'picha/shule1.jpeg',
+                'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80',
+                'https://images.unsplash.com/photo-1522661067900-ab829854a57f?auto=format&fit=crop&w=1200&q=80'
+            ]
+        },
+        'health': {
+            title: 'Lake Zone Health Security Fund',
+            tag: 'Healthcare Pillar · Mwanza',
+            location: 'Mwanza Region, Tanzania. Focus on rapidly expanding peri‑urban areas where informal workers live below the global poverty threshold.',
+            challenge: 'Low‑income families in Mwanza were routinely avoiding hospitals due to prohibitive upfront costs. Minor, highly treatable ailments frequently escalated into life‑threatening emergencies. When care was finally sought, families were forced into "catastrophic health expenditures," selling their land or farming tools just to pay medical bills.',
+            solution: `
+                <p>In strategic partnership with the National Health Insurance Fund (NHIF), FIDO launched an aggressive health access integration initiative:</p>
+                <ul class="list-disc pl-5 mt-4 space-y-2 font-medium">
+                    <li>Paid 100% of annual premiums for 150 highly vulnerable households.</li>
+                    <li>Deployed monthly preventative health and sanitation workshops.</li>
+                    <li>Established a mobile clinic network to reach isolated zones.</li>
+                </ul>
+            `,
+            result: 'The impact was immediate. Preventative hospital visits among beneficiaries increased by 90%, catching diseases early. Simultaneously, out‑of‑pocket health spending dropped by an incredible 70%, completely shielding these families from medical-induced bankruptcy.',
+            extra: 'Key Metric: Zero families have had to sell vital assets for healthcare since 2023.',
+            gallery: [
+                'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80',
+                'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1200&q=80',
+                'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80'
+            ]
+        }
+    };
 
-        if (content.classList.contains('open')) {
-            content.classList.remove('open');
-            icon.classList.remove('rotate-180');
-        } else {
-            content.classList.add('open');
-            icon.classList.add('rotate-180');
+    // 2. COUNTER & REVEAL ANIMATIONS
+    document.addEventListener('DOMContentLoaded', function() {
+        const speed = 100;
+        const animateCounter = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            const increment = target / speed;
+            let current = 0;
+            const update = () => {
+                current += increment;
+                if (current < target) {
+                    counter.innerText = Math.ceil(current);
+                    requestAnimationFrame(update);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            update();
+        };
+        
+        const revealObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    const targetCounters = entry.target.querySelectorAll('.counter');
+                    if (targetCounters.length > 0) {
+                        targetCounters.forEach(c => animateCounter(c));
+                    }
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.reveal-on-scroll, #stats').forEach(el => revealObserver.observe(el));
+    });
+
+    // 3. MODAL (VIEW 2) LOGIC & CAROUSEL ENGINE
+    let slidesContainer = document.getElementById('detail-carousel-slides');
+    let dotsContainer = document.getElementById('detail-carousel-dots');
+    let currentSlide = 0;
+    let totalSlides = 0;
+    let autoInterval = null;
+
+    window.openProjectPage = function(projectId) {
+        const data = projectData[projectId];
+        if (!data) return;
+
+        // Populate Text Data
+        document.getElementById('detail-title').innerText = data.title;
+        document.getElementById('detail-tag').innerText = data.tag;
+        document.getElementById('detail-location').innerText = data.location;
+        document.getElementById('detail-challenge').innerText = data.challenge;
+        document.getElementById('detail-solution').innerHTML = data.solution;
+        document.getElementById('detail-result').innerText = data.result;
+        document.getElementById('detail-extra').innerText = data.extra || '';
+
+        // Build Image Carousel
+        slidesContainer.innerHTML = '';
+        dotsContainer.innerHTML = '';
+        totalSlides = data.gallery.length;
+        currentSlide = 0;
+
+        data.gallery.forEach((src, index) => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.className = 'w-full h-full object-cover shrink-0';
+            slidesContainer.appendChild(img);
+
+            const dot = document.createElement('div');
+            dot.className = `h-2 rounded-full cursor-pointer transition-all duration-300 ${index === 0 ? 'bg-ficus-yellow w-6' : 'bg-white w-2 hover:bg-gray-200'}`;
+            dot.onclick = () => { goToSlide(index); resetAutoPlay(); };
+            dotsContainer.appendChild(dot);
+        });
+
+        // Transition: Hide View 1, Show View 2 (Leaves Header/Footer untouched)
+        const mainContent = document.getElementById('main-content');
+        const detailPage = document.getElementById('project-detail-page');
+
+        mainContent.classList.remove('opacity-100');
+        mainContent.classList.add('opacity-0');
+
+        setTimeout(() => {
+            mainContent.classList.add('hidden');
+            detailPage.classList.remove('hidden');
+            
+            // Scroll to the top of the newly displayed page
+            window.scrollTo({ top: 0, behavior: 'instant' });
+
+            setTimeout(() => {
+                detailPage.classList.remove('opacity-0');
+                detailPage.classList.add('opacity-100');
+            }, 50);
+        }, 500);
+
+        startAutoPlay();
+    };
+
+    window.closeProjectPage = function() {
+        stopAutoPlay();
+        const mainContent = document.getElementById('main-content');
+        const detailPage = document.getElementById('project-detail-page');
+        
+        detailPage.classList.remove('opacity-100');
+        detailPage.classList.add('opacity-0');
+
+        setTimeout(() => {
+            detailPage.classList.add('hidden');
+            mainContent.classList.remove('hidden');
+            
+            // Scroll user back to where they clicked
+            document.getElementById('projects').scrollIntoView({ behavior: 'instant' });
+
+            setTimeout(() => {
+                mainContent.classList.remove('opacity-0');
+                mainContent.classList.add('opacity-100');
+            }, 50);
+        }, 500); 
+    };
+
+    // Carousel Navigation Logic
+    function updateCarouselUI() {
+        slidesContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        const dots = dotsContainer.children;
+        for(let i = 0; i < dots.length; i++) {
+            dots[i].className = `h-2 rounded-full cursor-pointer transition-all duration-300 ${i === currentSlide ? 'bg-ficus-yellow w-6' : 'bg-white w-2 hover:bg-gray-200'}`;
         }
     }
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-            }
-        });
-    }, { threshold: 0.1 });
+    window.detailNextSlide = function() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarouselUI();
+        resetAutoPlay();
+    };
 
-    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    window.detailPrevSlide = function() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarouselUI();
+        resetAutoPlay();
+    };
+
+    function goToSlide(index) {
+        currentSlide = index;
+        updateCarouselUI();
+    }
+
+    function startAutoPlay() {
+        autoInterval = setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarouselUI();
+        }, 4000); 
+    }
+
+    function stopAutoPlay() {
+        if (autoInterval) clearInterval(autoInterval);
+    }
+
+    function resetAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+    }
 </script>
-
-
-
-
-<div id="ficus-footer"></div>
-
+    
+    <div id="ficus-footer"></div>
+    
     <script src="script.js"></script>
 </body>
 </html>

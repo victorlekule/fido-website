@@ -16,122 +16,658 @@
 <body class="bg-ficus-sand font-sans selection:bg-ficus-yellow selection:text-ocean-blue cursor-default">
 
     <div id="ficus-header-container"></div>
-<section class="relative min-h-[60vh] flex items-center mt-16 bg-ficus-blue overflow-hidden">
-    <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/leaf.png')]"></div>
-    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-ficus-yellow/10 rounded-full blur-[120px]"></div>
+<!-- ==================== FICUS 2080 NEWS NEXUS (FINAL PRO FIX) ==================== -->
+<div class="ficus-2080-nexus">
+
+  <!-- ── HERO ── -->
+  <section class="ficus-hero-2080" id="ficus-hero-2080">
+    <canvas id="hero-particles"></canvas>
+    <div class="hero-content-2080">
+      <div class="hero-badge-2080"><span class="live-dot-2080"></span> FICUS COMMAND // LIVE FIELD DATA</div>
+      <h1 class="hero-title-2080">
+        <span class="title-light">Stories of</span>
+        <span class="title-glow">Progress</span>
+        <span class="title-light">& Possibility.</span>
+      </h1>
+      <p class="hero-subtitle-2080">
+        Real‑time dispatches on agriculture, education, health, and environment — and how you can volunteer, donate, or partner.
+      </p>
+      <button class="hero-cta-2080" onclick="document.querySelector('#ficus-newsletter-2080').scrollIntoView({behavior:'smooth'})">
+        <span>Subscribe to the Neural Feed</span>
+        <span class="cta-shimmer"></span>
+      </button>
+    </div>
+    <div class="hero-orb-2080"></div>
+  </section>
+
+  <!-- ── STICKY FILTER BAR ── -->
+  <div class="filter-bar-2080" id="ficus-filter-bar-2080">
+    <div class="filter-inner-2080">
+      <button class="filter-btn-2080 active" data-filter="all">All Stories</button>
+      <button class="filter-btn-2080" data-filter="agriculture">Agriculture</button>
+      <button class="filter-btn-2080" data-filter="education">Education</button>
+      <button class="filter-btn-2080" data-filter="health">Health</button>
+      <button class="filter-btn-2080" data-filter="environment">Environment</button>
+    </div>
+  </div>
+
+  <!-- ── MAIN CONTENT AREA ── -->
+  <main class="news-main-2080" id="main-content-area">
     
-    <div class="relative z-10 max-w-[1800px] mx-auto px-6 lg:px-16 w-full py-20">
-        <div class="reveal-on-scroll max-w-3xl">
-            <h1 class="text-5xl md:text-8xl font-black text-white leading-tight mb-6">
-                Stories of <span class="text-ficus-yellow">Progress</span> & Possibility.
-            </h1>
-            <p class="text-xl md:text-2xl text-ficus-sand leading-relaxed mb-10">
-                Field updates, event highlights, and insights from our team working across Tanzania.
-            </p>
-            <a href="#newsletter" class="bg-ficus-yellow text-ficus-blue px-10 py-5 rounded-full font-black text-lg hover:bg-white transition-all shadow-2xl inline-block transform hover:-translate-y-1">
-                Subscribe for Updates
-            </a>
+    <!-- 1. GRID VIEW (Visible by Default) -->
+    <div class="news-grid-2080" id="news-grid-2080">
+
+      <!-- Card Agriculture -->
+      <article class="news-card-2080" data-category="agriculture">
+        <div class="card-media-2080">
+          <img src="https://images.unsplash.com/photo-1595804561879-a764d26214ee?auto=format&fit=crop&w=800&q=80" alt="Agriculture" loading="lazy">
+          <span class="card-tag-2080 agriculture">Agriculture</span>
         </div>
+        <div class="card-body-2080">
+          <div class="card-meta-2080"><span>NODE: FCS-AG-059</span><span>12 MIN READ</span></div>
+          <h3 class="card-title-2080">Smart Irrigation Expansion — Volunteers & Donors Wanted</h3>
+          <p class="card-excerpt-2080">Deploy AI‑driven irrigation to 2,000 more farms. Join our field team or donate a sensor kit.</p>
+          <button class="card-read-more-2080" data-article="agri-1">Read Full Story</button>
+        </div>
+      </article>
+
+      <!-- Card Education -->
+      <article class="news-card-2080" data-category="education">
+        <div class="card-media-2080">
+          <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=80" alt="Education" loading="lazy">
+          <span class="card-tag-2080 education">Education</span>
+        </div>
+        <div class="card-body-2080">
+          <div class="card-meta-2080"><span>NODE: FCS-ED-112</span><span>8 MIN READ</span></div>
+          <h3 class="card-title-2080">Digital Hub Seeks Coding Mentors & Tech Partners</h3>
+          <p class="card-excerpt-2080">Mwanza’s hub needs volunteer instructors and sponsors for 500 student devices.</p>
+          <button class="card-read-more-2080" data-article="edu-1">Read Full Story</button>
+        </div>
+      </article>
+
+      <!-- Card Health -->
+      <article class="news-card-2080" data-category="health">
+        <div class="card-media-2080">
+          <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80" alt="Health" loading="lazy">
+          <span class="card-tag-2080 health">Health</span>
+        </div>
+        <div class="card-body-2080">
+          <div class="card-meta-2080"><span>NODE: FCS-HL-033</span><span>5 MIN READ</span></div>
+          <h3 class="card-title-2080">Mobile Clinic Fleet Needs Medical Volunteers & Fuel</h3>
+          <p class="card-excerpt-2080">Our AI‑powered clinics are expanding to 15 villages. Volunteer doctors and fuel donations needed.</p>
+          <button class="card-read-more-2080" data-article="health-1">Read Full Story</button>
+        </div>
+      </article>
+
+      <!-- Card Environment -->
+      <article class="news-card-2080" data-category="environment">
+        <div class="card-media-2080">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" alt="Environment" loading="lazy">
+          <span class="card-tag-2080 environment">Environment</span>
+        </div>
+        <div class="card-body-2080">
+          <div class="card-meta-2080"><span>NODE: FCS-EN-024</span><span>6 MIN READ</span></div>
+          <h3 class="card-title-2080">Reforestation Drive Seeks Tree‑Planting Volunteers & Eco‑Partners</h3>
+          <p class="card-excerpt-2080">Help us plant 100,000 trees. Volunteer for a weekend or become a corporate sponsor.</p>
+          <button class="card-read-more-2080" data-article="env-1">Read Full Story</button>
+        </div>
+      </article>
+
+      <!-- Fallback when filtering leaves 0 results -->
+      <div id="no-results-2080" class="no-results-2080">
+        <p>NO STORIES FOUND FOR THIS SECTOR. TRY ANOTHER NODE.</p>
+      </div>
     </div>
-</section>
 
-<main class="py-24 bg-ficus-sand">
-    <div class="max-w-[1800px] mx-auto px-6 lg:px-16">
-        <div class="flex flex-col lg:flex-row gap-16">
-            
-            <div class="lg:w-3/4">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    
-                    <article class="group bg-white rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 reveal-on-scroll">
-                        <div class="relative h-72 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1595804561879-a764d26214ee?auto=format&fit=crop&w=800&q=80" alt="News" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                            <span class="absolute top-6 left-6 bg-ficus-yellow text-ficus-blue px-5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg">Agriculture</span>
-                        </div>
-                        <div class="p-10">
-                            <time class="text-sm font-bold text-gray-400">April 25, 2026</time>
-                            <h3 class="text-2xl md:text-3xl font-bold text-ficus-blue mt-3 mb-4 group-hover:text-ficus-yellow transition-colors">Revolutionizing Smallholder Farming</h3>
-                            <p class="text-ficus-charcoal/70 leading-relaxed mb-8 line-clamp-3 text-lg">Detailed insights into how climate-smart techniques are doubling yields for families in the Lake Zone...</p>
-                            <a href="#" class="text-ficus-blue font-black border-b-4 border-ficus-yellow pb-1 hover:text-ficus-yellow transition-all inline-flex items-center gap-2">
-                                Read Full Story <span>→</span>
-                            </a>
-                        </div>
-                    </article>
+    <!-- 2. INLINE ARTICLE VIEW (Hidden by Default. Uses main scrollbar!) -->
+    <div class="article-view-2080" id="article-view-2080" style="display: none;">
+      
+      <!-- Top Close Button -->
+      <div class="article-header-actions">
+        <button class="article-close-top-btn" id="article-close-top-btn">&times; Close Article</button>
+      </div>
 
-                    <article class="group bg-white rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 reveal-on-scroll delay-200">
-                        <div class="relative h-72 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=80" alt="News" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                            <span class="absolute top-6 left-6 bg-ficus-blue text-white px-5 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg">Education</span>
-                        </div>
-                        <div class="p-10">
-                            <time class="text-sm font-bold text-gray-400">April 18, 2026</time>
-                            <h3 class="text-2xl md:text-3xl font-bold text-ficus-blue mt-3 mb-4 group-hover:text-ficus-yellow transition-colors">New Digital Literacy Hub in Mwanza</h3>
-                            <p class="text-ficus-charcoal/70 leading-relaxed mb-8 line-clamp-3 text-lg">Our doors are open! The new hub provides free coding and entrepreneurship workshops for local youth...</p>
-                            <a href="#" class="text-ficus-blue font-black border-b-4 border-ficus-yellow pb-1 hover:text-ficus-yellow transition-all inline-flex items-center gap-2">
-                                Read Full Story <span>→</span>
-                            </a>
-                        </div>
-                    </article>
-
-                </div>
-
-                <div class="mt-20 flex justify-center items-center gap-6 reveal-on-scroll">
-                    <button class="w-14 h-14 rounded-full border-2 border-ficus-blue text-ficus-blue flex items-center justify-center hover:bg-ficus-blue hover:text-white transition-all font-black">1</button>
-                    <button class="w-14 h-14 rounded-full border-2 border-gray-200 text-gray-400 flex items-center justify-center hover:border-ficus-blue hover:text-ficus-blue transition-all font-black">2</button>
-                    <button class="px-10 py-4 rounded-full bg-ficus-blue text-white font-black hover:bg-ficus-yellow hover:text-ficus-blue transition-all shadow-xl">Load More Stories</button>
-                </div>
-            </div>
-
-            <aside class="lg:w-1/4 space-y-10">
-                
-                <div class="bg-white p-10 rounded-[40px] shadow-sm reveal-on-scroll">
-                    <h4 class="text-xl font-bold text-ficus-blue mb-6">Search Updates</h4>
-                    <div class="relative">
-                        <input type="text" placeholder="Search keywords..." class="w-full bg-ficus-sand px-6 py-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-ficus-yellow text-ficus-charcoal">
-                        <button type="button" aria-label="Search" class="absolute right-4 top-1/2 -translate-y-1/2 text-ficus-blue">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="bg-white p-10 rounded-[40px] shadow-sm reveal-on-scroll">
-                    <h4 class="text-xl font-bold text-ficus-blue mb-6">Explore Topics</h4>
-                    <div class="flex flex-wrap gap-3">
-                        <button class="px-5 py-2 bg-ficus-blue text-white rounded-full text-sm font-black tracking-wide">All Posts</button>
-                        <button class="px-5 py-2 bg-ficus-sand text-ficus-charcoal rounded-full text-sm font-bold hover:bg-ficus-yellow transition-all">Agriculture</button>
-                        <button class="px-5 py-2 bg-ficus-sand text-ficus-charcoal rounded-full text-sm font-bold hover:bg-ficus-yellow transition-all">Education</button>
-                        <button class="px-5 py-2 bg-ficus-sand text-ficus-charcoal rounded-full text-sm font-bold hover:bg-ficus-yellow transition-all">Health</button>
-                        <button class="px-5 py-2 bg-ficus-sand text-ficus-charcoal rounded-full text-sm font-bold hover:bg-ficus-yellow transition-all">Environment</button>
-                    </div>
-                </div>
-
-                <div id="newsletter" class="bg-ficus-yellow p-10 rounded-[40px] text-ficus-blue reveal-on-scroll">
-                    <h4 class="text-2xl font-black mb-4 leading-tight">Stay Informed.</h4>
-                    <p class="font-medium mb-8 opacity-80 text-lg">Join 2,000+ others receiving our monthly impact field reports.</p>
-                    <form class="space-y-4">
-                        <input type="email" placeholder="Email Address" class="w-full px-6 py-4 rounded-2xl bg-white/50 border-none focus:ring-2 focus:ring-ficus-blue placeholder-ficus-blue/50 font-bold">
-                        <button type="submit" class="w-full bg-ficus-blue text-white py-4 rounded-full font-black shadow-lg hover:bg-ficus-charcoal transition-all uppercase tracking-widest text-sm">Join List</button>
-                    </form>
-                </div>
-
-            </aside>
+      <div class="gallery-wrapper-2080">
+        <div class="article-image-gallery-2080">
+          <img src="" alt="Image 1" class="article-img-2080 img-float-2080" id="article-img-1">
+          <img src="" alt="Image 2" class="article-img-2080 img-pulse-2080" id="article-img-2">
         </div>
+      </div>
+      
+      <div class="article-content-2080" id="article-content-2080"></div>
+      
+      <!-- Strictly Horizontal Action Buttons -->
+      <div class="article-actions-2080">
+        <a href="#" class="action-btn-2080 jobs-btn-2080" id="action-job">Apply as Volunteer</a>
+        <a href="#" class="action-btn-2080 donate-btn-2080" id="action-donate">Donate Now</a>
+        <a href="#" class="action-btn-2080 partner-btn-2080" id="action-partner">Become a Partner</a>
+      </div>
+
+      <div class="article-footer-2080">
+        <button class="article-back-btn-2080" id="article-back-btn-2080">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2"/></svg>
+          BACK TO NEWS GRID
+        </button>
+      </div>
+
     </div>
-</main>
+  </main>
 
-<section id="newsletter" class="bg-ficus-yellow py-24 mb-24">
-        <div class="max-w-[1200px] mx-auto px-6 text-center reveal-on-scroll">
-            <h2 class="text-4xl md:text-6xl font-black text-ocean-blue mb-6">Never Miss a Story.</h2>
-            <p class="text-xl text-ocean-blue/70 mb-12 max-w-2xl mx-auto">Get monthly field updates and impact reports delivered directly to your inbox.</p>
-            
-            <form class="flex flex-col md:flex-row gap-4 justify-center items-center">
-                <input type="email" placeholder="Your email address" class="w-full md:w-96 px-8 py-5 rounded-full text-ocean-blue focus:outline-none focus:ring-4 focus:ring-ocean-blue/10 font-medium">
-                <button type="submit" class="w-full md:w-auto bg-ficus-blue text-white px-12 py-5 rounded-full font-black text-lg hover:bg-ficus-charcoal transition-all shadow-2xl">
-                    Subscribe Now
-                </button>
-            </form>
-            <p class="text-sm text-ocean-blue/50 mt-6 italic">We respect your privacy. Unsubscribe at any time.</p>
-        </div>
-    </section>
+  <!-- ── NEWSLETTER ── -->
+  <section class="newsletter-2080" id="ficus-newsletter-2080">
+    <div class="newsletter-grid-2080">
+      <div class="newsletter-text-2080">
+        <h2>Stay <span class="text-blue-2080">Linked.</span></h2>
+        <p>Receive monthly briefings on volunteer openings, donation drives, and partnership calls.</p>
+      </div>
+      <form class="newsletter-form-2080" id="newsletter-form-2080">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit" class="submit-btn-2080"><span>Subscribe Now</span><div class="btn-glow-2080"></div></button>
+        <p class="privacy-note-2080">🔒 Encrypted • Unsubscribe anytime</p>
+      </form>
+    </div>
+  </section>
+
+</div>
+
+<!-- ==================== STYLES ==================== -->
+<style>
+  :root {
+    --ficus-yellow: #F2B705;
+    --ficus-charcoal: #1F2933;
+    --ficus-sand: #F4EFEA;
+    --ficus-blue: #0071BC;
+    --ficus-green: #39B54A;
+  }
+  .ficus-2080-nexus {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--ficus-charcoal);
+    color: var(--ficus-sand);
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* ── SECTION BLURRING EFFECT ── */
+  .ficus-hero-2080, 
+  .filter-bar-2080, 
+  .newsletter-2080 {
+    transition: filter 0.5s ease, opacity 0.5s ease;
+  }
+
+  .is-blurred-section {
+    filter: blur(12px) !important;
+    opacity: 0.3 !important;
+    pointer-events: none !important;
+    user-select: none;
+  }
+
+  /* ── Hero ── */
+  .ficus-hero-2080 {
+    position: relative;
+    min-height: 80vh;
+    background: linear-gradient(145deg, var(--ficus-sand) 0%, #fff 60%, var(--ficus-sand) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  #hero-particles { position: absolute; inset: 0; z-index: 0; }
+  .hero-content-2080 {
+    position: relative; z-index: 2;
+    text-align: center; max-width: 1000px; padding: 2rem;
+    animation: fadeInUp2080 1.2s ease;
+  }
+  .hero-badge-2080 {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(0,113,188,0.1); border: 1px solid var(--ficus-blue);
+    color: var(--ficus-blue); padding: 0.4rem 1.5rem; border-radius: 8px;
+    font-size: 0.75rem; font-weight: 800; letter-spacing: 0.2em;
+    backdrop-filter: blur(10px); margin-bottom: 2rem;
+  }
+  .live-dot-2080 {
+    width: 8px; height: 8px; background: var(--ficus-green);
+    border-radius: 50%; animation: pulse2080 1.5s infinite;
+    box-shadow: 0 0 10px var(--ficus-green);
+  }
+  .hero-title-2080 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem); 
+    font-weight: 900; line-height: 1.05;
+    text-transform: uppercase; color: var(--ficus-charcoal); 
+    margin-bottom: 1.5rem; letter-spacing: -0.02em;
+  }
+  .title-light { display: block; color: var(--ficus-charcoal); }
+  .title-glow { color: var(--ficus-blue); text-shadow: 0 0 25px rgba(0,113,188,0.4); display: inline-block; }
+  .hero-subtitle-2080 {
+    font-size: 1.15rem; max-width: 700px; margin: 0 auto 2.5rem;
+    color: var(--ficus-charcoal); opacity: 0.85; line-height: 1.6;
+  }
+  .hero-cta-2080 {
+    position: relative; padding: 1.2rem 3rem; background: var(--ficus-blue);
+    color: white; border: none; border-radius: 8px;
+    font-weight: 700; font-size: 1rem; letter-spacing: 0.05em; cursor: pointer; overflow: hidden;
+    transition: all 0.3s ease; box-shadow: 0 10px 20px -5px rgba(0,113,188,0.3);
+  }
+  .hero-cta-2080:hover { transform: translateY(-4px); box-shadow: 0 15px 30px -5px rgba(0,113,188,0.5); }
+  .cta-shimmer {
+    position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    left: -100%; transition: 0.6s;
+  }
+  .hero-cta-2080:hover .cta-shimmer { left: 100%; }
+
+  /* ── Filter bar ── */
+  .filter-bar-2080 {
+    position: sticky; top: 0; z-index: 30;
+    background: rgba(31,41,51,0.95); backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.05); padding: 1.2rem 0;
+  }
+  .filter-inner-2080 {
+    max-width: 1400px; margin: 0 auto; padding: 0 2rem;
+    display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;
+  }
+  .filter-btn-2080 {
+    background: transparent; border: 1px solid rgba(244,239,234,0.2);
+    padding: 0.6rem 1.8rem; border-radius: 6px; font-size: 0.85rem; font-weight: 600;
+    color: var(--ficus-sand); cursor: pointer; transition: all 0.3s ease; white-space: nowrap;
+  }
+  .filter-btn-2080.active,
+  .filter-btn-2080:hover {
+    background: var(--ficus-blue); color: white;
+    border-color: var(--ficus-blue); box-shadow: 0 4px 15px rgba(0,113,188,0.3);
+  }
+
+  /* ── News Main Area ── */
+  .news-main-2080 { 
+    padding: 5rem 2rem; 
+    max-width: 1400px; 
+    margin: 0 auto; 
+    min-height: 60vh;
+  }
+
+  /* ── Grid View ── */
+  .news-grid-2080 { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(320px, 400px)); 
+    justify-content: center; 
+    gap: 2.5rem; 
+    width: 100%;
+    animation: fadeInUp2080 0.5s ease forwards;
+  }
+  .news-card-2080 {
+    background: rgba(244,239,234,0.03); backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease; 
+    display: flex; flex-direction: column;
+    height: 100%; width: 100%;
+  }
+  .news-card-2080:hover {
+    transform: translateY(-6px); 
+    box-shadow: 0 20px 40px -10px rgba(0,113,188,0.2);
+    border-color: var(--ficus-blue);
+  }
+
+  .card-media-2080 { position: relative; height: 220px; overflow: hidden; background: var(--ficus-charcoal); }
+  .card-media-2080 img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.85;
+    transition: transform 0.8s ease, opacity 0.5s;
+  }
+  .news-card-2080:hover .card-media-2080 img { transform: scale(1.08); opacity: 1; }
+  
+  .card-tag-2080 {
+    position: absolute; top: 1.2rem; left: 1.2rem;
+    padding: 0.4rem 1.2rem; border-radius: 6px; font-size: 0.7rem;
+    font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em;
+    backdrop-filter: blur(8px); box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  .card-tag-2080.agriculture { background: var(--ficus-green); color: white; }
+  .card-tag-2080.education { background: var(--ficus-blue); color: white; }
+  .card-tag-2080.health { background: var(--ficus-yellow); color: var(--ficus-charcoal); }
+  .card-tag-2080.environment { background: var(--ficus-green); color: white; }
+  
+  .card-body-2080 { padding: 2rem; display: flex; flex-direction: column; flex: 1; }
+  .card-meta-2080 {
+    display: flex; justify-content: space-between; font-size: 0.7rem;
+    font-weight: 600; letter-spacing: 0.1em; color: rgba(244,239,234,0.5); margin-bottom: 1.2rem;
+  }
+  .card-title-2080 { 
+    font-size: 1.4rem; font-weight: 800; line-height: 1.3; 
+    margin-bottom: 1rem; color: white; transition: color 0.3s ease; 
+  }
+  .news-card-2080:hover .card-title-2080 { color: var(--ficus-blue); }
+  .card-excerpt-2080 {
+    color: rgba(244,239,234,0.7); font-size: 0.95rem; line-height: 1.6;
+    margin-bottom: 2rem; flex: 1;
+  }
+
+  .card-read-more-2080 {
+    background: none; border: none; color: var(--ficus-blue); font-weight: 700;
+    text-align: left; padding: 0.5rem 0; cursor: pointer; font-size: 0.85rem;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    transition: 0.3s; margin-top: auto; display: inline-flex; align-items: center; gap: 0.6rem;
+  }
+  .card-read-more-2080::after { content: "→"; transition: transform 0.3s ease; }
+  .card-read-more-2080:hover::after { transform: translateX(8px); color: var(--ficus-green); }
+  .card-read-more-2080:hover { color: var(--ficus-green); }
+
+  .no-results-2080 {
+    display: none; grid-column: 1 / -1; text-align: center; padding: 4rem;
+    border: 1px dashed rgba(255,255,255,0.15); border-radius: 12px;
+    color: rgba(244,239,234,0.5); font-weight: 600; letter-spacing: 0.1em;
+  }
+
+  /* ── INLINE ARTICLE VIEW (Replaces the Grid Seamlessly) ── */
+  .article-view-2080 {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--ficus-charcoal);
+    border: 1px solid rgba(0,113,188,0.3);
+    border-radius: 16px;
+    padding: 3rem;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    animation: fadeInUp2080 0.5s ease forwards;
+    scroll-margin-top: 100px; 
+  }
+
+  /* Top Close Button */
+  .article-header-actions {
+    display: flex; justify-content: flex-end; margin-bottom: 1.5rem;
+  }
+  .article-close-top-btn {
+    background: transparent; border: 1px solid rgba(244,239,234,0.2); color: var(--ficus-sand);
+    padding: 0.5rem 1rem; border-radius: 6px; font-weight: 600; font-size: 0.85rem;
+    cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem;
+  }
+  .article-close-top-btn:hover { background: var(--ficus-blue); color: white; border-color: var(--ficus-blue); }
+
+  .gallery-wrapper-2080 { width: 100%; overflow: hidden; border-radius: 12px; margin-bottom: 2.5rem; }
+  .article-image-gallery-2080 {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+  }
+  .article-img-2080 {
+    width: 100%; height: 280px; object-fit: cover;
+    border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .article-content-2080 {
+    color: rgba(244,239,234,0.85); line-height: 1.8; font-size: 1.05rem;
+    margin-bottom: 3rem; white-space: pre-wrap;
+  }
+
+  /* STRICTLY HORIZONTAL ACTION BUTTONS */
+  .article-actions-2080 {
+    display: flex; 
+    flex-direction: row !important; /* Force horizontal */
+    flex-wrap: nowrap !important; /* Prevent stacking */
+    gap: 0.8rem; 
+    justify-content: space-between;
+    border-top: 1px solid rgba(255,255,255,0.1); 
+    padding-top: 2rem;
+    width: 100%;
+  }
+  .action-btn-2080 {
+    flex: 1 1 0; 
+    min-width: 0; 
+    padding: 1rem 0.5rem; 
+    border-radius: 8px; 
+    font-weight: 800; 
+    font-size: clamp(0.6rem, 2.5vw, 0.95rem); 
+    line-height: 1.2;
+    text-decoration: none; 
+    transition: all 0.3s ease; 
+    text-align: center;
+    display: flex; align-items: center; justify-content: center;
+    white-space: normal; 
+  }
+  
+  .jobs-btn-2080 { background: var(--ficus-blue); color: white; border: 1px solid var(--ficus-blue); }
+  .donate-btn-2080 { background: var(--ficus-green); color: white; border: 1px solid var(--ficus-green); }
+  .partner-btn-2080 { background: transparent; border: 1px solid var(--ficus-sand); color: var(--ficus-sand); }
+  .action-btn-2080:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); filter: brightness(1.1); }
+
+  .article-footer-2080 {
+    margin-top: 2rem; padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    display: flex; justify-content: center;
+  }
+  .article-back-btn-2080 {
+    background: transparent; border: 1px solid var(--ficus-blue); color: var(--ficus-blue);
+    padding: 0.8rem 2.5rem; border-radius: 8px; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.1em;
+    cursor: pointer; display: inline-flex; align-items: center; gap: 0.6rem;
+    transition: all 0.3s ease;
+  }
+  .article-back-btn-2080:hover { background: var(--ficus-blue); color: white; }
+
+  /* ── Newsletter ── */
+  .newsletter-2080 {
+    background: linear-gradient(180deg, rgba(0,113,188,0.05) 0%, var(--ficus-charcoal) 100%);
+    border-top: 1px solid rgba(255,255,255,0.05); padding: 6rem 2rem;
+  }
+  .newsletter-grid-2080 {
+    max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap;
+    gap: 4rem; align-items: center; justify-content: space-between;
+  }
+  .newsletter-text-2080 h2 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 900; text-transform: uppercase; line-height: 1.1; margin-bottom: 1rem; }
+  .text-blue-2080 { color: var(--ficus-blue); }
+  .newsletter-text-2080 p { color: rgba(244,239,234,0.8); font-size: 1.1rem; max-width: 400px; }
+  .newsletter-form-2080 { flex: 1 1 350px; display: flex; flex-direction: column; gap: 1rem; }
+  .newsletter-form-2080 input {
+    padding: 1.2rem 1.5rem; background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px; color: white; outline: none; transition: border-color 0.3s ease;
+  }
+  .newsletter-form-2080 input:focus { border-color: var(--ficus-blue); }
+  .submit-btn-2080 {
+    position: relative; padding: 1.2rem; background: var(--ficus-blue);
+    color: white; border: none; border-radius: 8px;
+    font-weight: 800; letter-spacing: 0.05em; cursor: pointer; overflow: hidden; transition: transform 0.3s ease;
+  }
+  .submit-btn-2080:hover { transform: translateY(-3px); }
+
+  /* Animations */
+  @keyframes fadeInUp2080 { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  
+  /* Mobile Overrides */
+  @media (max-width: 768px) {
+    .filter-inner-2080 { 
+      display: grid; 
+      grid-template-columns: repeat(6, 1fr); 
+      gap: 0.5rem; 
+      padding: 0 1rem; 
+      width: 100%;
+    }
+    .filter-btn-2080 {
+      padding: 0.8rem 0; font-size: 0.75rem; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .filter-btn-2080:nth-child(1), .filter-btn-2080:nth-child(2) { grid-column: span 3; }
+    .filter-btn-2080:nth-child(3), .filter-btn-2080:nth-child(4), .filter-btn-2080:nth-child(5) { grid-column: span 2; }
+
+    .article-view-2080 { padding: 1.5rem; width: 100%; }
+    
+    .article-image-gallery-2080 {
+      display: flex; 
+      width: 200%; 
+      gap: 0; margin-bottom: 0;
+      animation: slideMobileImages 12s infinite alternate ease-in-out;
+    }
+    .article-img-2080 {
+      width: 50%; 
+      padding: 0 10px; 
+      height: 220px;
+    }
+  }
+
+  @keyframes slideMobileImages {
+    0%, 35% { transform: translateX(0); }
+    65%, 100% { transform: translateX(-50%); }
+  }
+</style>
+
+<!-- ==================== SCRIPTS ==================== -->
+<script>
+  (function() {
+    // ── Hero particles ──
+    const canvas = document.getElementById('hero-particles');
+    if (canvas) {
+      canvas.width = canvas.parentElement.offsetWidth;
+      canvas.height = canvas.parentElement.offsetHeight;
+      const ctx = canvas.getContext('2d');
+      const particles = Array.from({length: 50}, () => ({
+        x: Math.random() * canvas.width, y: Math.random() * canvas.height,
+        r: Math.random() * 1.2 + 0.5, speed: Math.random() * 0.3 + 0.1,
+        color: `rgba(0,113,188,${Math.random() * 0.15 + 0.05})`
+      }));
+      function draw() {
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        particles.forEach(p => {
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+          ctx.fillStyle = p.color; ctx.fill();
+          p.y -= p.speed;
+          if(p.y < -10) { p.y = canvas.height + 10; p.x = Math.random() * canvas.width; }
+        });
+        requestAnimationFrame(draw);
+      }
+      draw();
+    }
+
+    // ── Filter logic ──
+    const filterBtns = document.querySelectorAll('.filter-btn-2080');
+    const cards = document.querySelectorAll('.news-card-2080');
+    const noResults = document.getElementById('no-results-2080');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        let visible = 0;
+        cards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'flex';
+            visible++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        noResults.style.display = visible === 0 ? 'block' : 'none';
+      });
+    });
+
+    // ── View Swap Logic (Applies Blur and Focuses on Article) ──
+    const newsGrid = document.getElementById('news-grid-2080');
+    const articleView = document.getElementById('article-view-2080');
+    const articleContent = document.getElementById('article-content-2080');
+    const articleImg1 = document.getElementById('article-img-1');
+    const articleImg2 = document.getElementById('article-img-2');
+    
+    const actionJob = document.getElementById('action-job');
+    const actionDonate = document.getElementById('action-donate');
+    const actionPartner = document.getElementById('action-partner');
+
+    const heroSection = document.getElementById('ficus-hero-2080');
+    const filterBar = document.getElementById('ficus-filter-bar-2080');
+    const newsletterSection = document.getElementById('ficus-newsletter-2080');
+
+    const articles = {
+      'agri-1': {
+        title: 'Smart Irrigation Expansion — Volunteers & Donors Wanted',
+        text: `Ficus is scaling its climate‑smart agriculture program across the Lake Zone. We need field volunteers to install AI‑driven moisture sensors and conduct farmer training workshops. Donors can sponsor a complete sensor kit for a village ($150) that reduces water waste by 40%.\n\nVolunteer roles:\n• Sensor installation and maintenance\n• Community training on sustainable irrigation\n• Data collection support\n\nDonor impact:\n• One kit equips 10 smallholder farms\n• Real‑time yield tracking shared with donors\n• Named recognition on our digital dashboard\n\nJoin us in building a food‑secure future for Tanzania.`,
+        img1: 'https://images.unsplash.com/photo-1595804561879-a764d26214ee?auto=format&fit=crop&w=800&q=80',
+        img2: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=800&q=80',
+        jobUrl: '#volunteer-agriculture',
+        donateUrl: '#donate-agriculture',
+        partnerUrl: '#partner-agriculture'
+      },
+      'edu-1': {
+        title: 'Digital Hub Seeks Coding Mentors & Tech Partners',
+        text: `Our Mwanza Digital Hub is opening its doors to 500 youth this quarter. We urgently need volunteer coding mentors (remote and on‑site) to deliver our AI and web development curriculum. Corporate partners can sponsor devices or provide internship opportunities.\n\nVolunteer benefits:\n• Training on our holographic teaching platform\n• Certificate of impact from Ficus\n• Flexible hours (2‑4 per week)\n\nPartnership tiers:\n• Bronze: Sponsor 10 tablets ($2,500)\n• Silver: Fund a full classroom ($10,000)\n• Gold: Name the lab & receive annual impact reports\n\nBe the force behind Tanzania’s next tech generation.`,
+        img1: 'https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=80',
+        img2: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80',
+        jobUrl: '#volunteer-education',
+        donateUrl: '#donate-education',
+        partnerUrl: '#partner-education'
+      },
+      'health-1': {
+        title: 'Mobile Clinic Fleet Needs Medical Volunteers & Fuel Donations',
+        text: `Ficus Health is expanding its AI‑powered mobile clinics to 15 remote villages. We need volunteer doctors, nurses, and community health workers for 2‑week rotations. Fuel and medical supply donations are also critical to keep the fleet moving.\n\nVolunteer positions:\n• General practitioners & nurses\n• Health educators for maternal/child workshops\n• Data analysts to review AI diagnostics\n\nDonation needs:\n• $50 fuels a clinic for one week\n• $200 restocks essential medicines\n• $1,000 sponsors a full village health camp\n\nAll donations are tax‑deductible and come with a personalized impact report.`,
+        img1: 'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80',
+        img2: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80',
+        jobUrl: '#volunteer-health',
+        donateUrl: '#donate-health',
+        partnerUrl: '#partner-health'
+      },
+      'env-1': {
+        title: 'Reforestation Drive Seeks Tree‑Planting Volunteers & Eco‑Partners',
+        text: `Help us plant 100,000 trees this season across the Uluguru Mountains. Volunteers can join weekend planting camps (transport provided), while eco‑partners can fund drone‑based seed dispersal or adopt a forest block.\n\nVolunteer experience:\n• No experience needed – training provided\n• Camping gear and meals included\n• Earn a verified carbon offset certificate\n\nPartnership opportunities:\n• Sponsor a drone planting mission ($5,000)\n• Adopt a 10‑hectare forest ($20,000/year)\n• Co‑brand on satellite monitoring dashboard\n\nLet’s restore Tanzania’s green lungs, together.`,
+        img1: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
+        img2: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80',
+        jobUrl: '#volunteer-environment',
+        donateUrl: '#donate-environment',
+        partnerUrl: '#partner-environment'
+      }
+    };
+
+    function openArticle() {
+      // Hide Grid
+      newsGrid.style.display = 'none';
+      
+      // Add blur class to other sections
+      heroSection.classList.add('is-blurred-section');
+      filterBar.classList.add('is-blurred-section');
+      newsletterSection.classList.add('is-blurred-section');
+      
+      // Show Article
+      articleView.style.display = 'block';
+      
+      // Smooth scroll exactly to the article
+      setTimeout(() => {
+        articleView.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    }
+
+    function closeArticle() {
+      // Hide Article
+      articleView.style.display = 'none';
+      
+      // Restore Grid and remove blur
+      newsGrid.style.display = 'grid';
+      heroSection.classList.remove('is-blurred-section');
+      filterBar.classList.remove('is-blurred-section');
+      newsletterSection.classList.remove('is-blurred-section');
+      
+      // Smooth scroll back to the filter bar
+      setTimeout(() => {
+        filterBar.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    }
+
+    // Read More Buttons (Open Article)
+    document.querySelectorAll('.card-read-more-2080').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const articleId = btn.dataset.article;
+        const article = articles[articleId];
+        if (article) {
+          articleContent.innerHTML = `<h2 style="font-size:2.2rem; font-weight:800; margin-bottom:1.2rem; color:var(--ficus-blue); line-height:1.2;">${article.title}</h2><p>${article.text.replace(/\n/g, '<br>')}</p>`;
+          articleImg1.src = article.img1;
+          articleImg2.src = article.img2;
+          actionJob.href = article.jobUrl;
+          actionDonate.href = article.donateUrl;
+          actionPartner.href = article.partnerUrl;
+          openArticle();
+        }
+      });
+    });
+
+    // Close Buttons
+    document.getElementById('article-close-top-btn').addEventListener('click', closeArticle);
+    document.getElementById('article-back-btn-2080').addEventListener('click', closeArticle);
+
+    // ── Newsletter submit ──
+    document.getElementById('newsletter-form-2080').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('You are now synced to the Ficus neural feed. Welcome aboard!');
+    });
+  })();
+</script>
 
     <div id="ficus-footer"></div>
     <script src="script.js"></script>
