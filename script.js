@@ -45,7 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
                             <img src="picha/fodo logo.png" alt="Ficus Logo" class="h-16 lg:h-20 w-auto object-contain">
                             
                             <!-- If your PNG already has the word "FICUS" inside it, you can delete the <span> below. Otherwise, leave it. -->
-                            <span class="font-black text-2xl md:text-3xl tracking-tight">FICUS</span>
+                            <span class="font-black text-2xl md:text-3xl tracking-tight">FIDO</span>
+                            
 
                         </div>
 
