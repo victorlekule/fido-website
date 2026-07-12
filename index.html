@@ -1,1308 +1,1628 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FIDO</title>    
+    <title>FIDO</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        body { padding-top: 80px; } 
+        body {
+            padding-top: 80px;
+        }
     </style>
 </head>
+
 <body class="bg-gray-50 cursor-default">
 
     <div id="ficus-header-container"></div>
 
-<section class="relative w-full h-[80vh] min-h-[500px] sm:h-[85vh] sm:min-h-[600px] lg:h-[95vh] lg:min-h-[750px] overflow-hidden bg-deep-black">
-    
-    <!-- SLIDING IMAGE TRACK (Background) -->
-    <div id="fido-hero-track" class="flex w-full h-full" style="transform: translateX(-100%);">
-        
-        <!-- Image 1 -->
-        <div class="w-full h-full flex-shrink-0 relative slide-item">
-            <img src="picha/1 (14).jpg" class="w-full h-full object-cover object-top" alt="Agriculture">
-        </div>
-        <!-- Image 2 -->
-        <div class="w-full h-full flex-shrink-0 relative slide-item">
-            <img src="picha/1 (15).jpg" class="w-full h-full object-cover object-top" alt="Education">
-        </div>
-        <!-- Image 3 -->
-        <div class="w-full h-full flex-shrink-0 relative slide-item">
-            <img src="picha/1 (16).jpg" class="w-full h-full object-cover object-top" alt="Community">
-        </div>
-        <!-- Image 4 -->
-        <div class="w-full h-full flex-shrink-0 relative slide-item">
-            <img src="picha/1 (17).jpg" class="w-full h-full object-cover object-top" alt="Environment">
-        </div>
-        <!-- Image 5 -->
-        <div class="w-full h-full flex-shrink-0 relative slide-item">
-            <img src="picha/1 (18).jpg" class="w-full h-full object-cover object-top" alt="Innovation">
-        </div>
-        <!-- Image 6 -->
-        <div class="w-full h-full flex-shrink-0 relative slide-item">
-            <img src="picha/1 (19).jpg" class="w-full h-full object-cover object-top" alt="Livelihoods">
-        </div>
+    <!---Hero section-->
+    <section
+        class="relative w-full h-[70vh] min-h-[500px] sm:h-[85vh] sm:min-h-[600px] lg:h-[80vh] lg:min-h-[750px] overflow-hidden bg-black">
 
-    </div>
-
-    <!-- GRADIENT OVERLAY -->
-    <div class="absolute inset-0 bg-gradient-to-r from-blue-900/95 via-blue-900/70 to-transparent z-10 pointer-events-none"></div>
-
-    <!-- DYNAMIC TEXT CONTENT (Left Side) -->
-    <div class="absolute inset-0 z-20 flex flex-col justify-center px-4 sm:px-12 lg:px-24 w-full md:w-2/3 lg:w-1/2 xl:w-[45%]">
-        
-        <!-- Text Wrapper -->
-        <div id="fido-text-container" class="relative w-full h-[350px] sm:h-[320px] max-w-2xl">
-            
-            <!-- Text 1 -->
-            <div class="hero-text absolute inset-0 transition-all duration-700 ease-in-out opacity-100 translate-y-0 flex flex-col justify-center" data-index="0">
-                <span class="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-2 block">01 / Agriculture</span>
-                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-400 leading-tight mb-3 drop-shadow-md pb-1">
-                    Empowering Smallholder Farmers
-                </h1>
-                <p class="text-white/90 text-sm sm:text-lg lg:text-xl mb-5 sm:mb-8 leading-relaxed">
-                    Equipping local communities with modern tools and sustainable practices to thrive and grow their agricultural futures.
-                </p>
-                <div class="flex flex-wrap gap-2 sm:gap-4 mt-2">
-                    <a href="donate.html" class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Donate</a>
-                    <a href="thems.html" class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Our Themes</a>
-                    <a href="program.html" class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Program</a>
-                </div>
+        <!-- BACKGROUND IMAGES (Crossfading) -->
+        <div id="hero-image-container" class="absolute inset-0 z-0">
+            <!-- All images are positioned absolutely and will fade in/out -->
+            <div class="hero-bg-image absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out"
+                data-index="0">
+                <img src="pic/agriculture2.jpg" class="w-full h-full object-cover" alt="Agriculture">
             </div>
-
-            <!-- Text 2 -->
-            <div class="hero-text absolute inset-0 transition-all duration-700 ease-in-out opacity-0 translate-y-10 pointer-events-none flex flex-col justify-center" data-index="1">
-                <span class="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-2 block">02 / Education</span>
-                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-400 leading-tight mb-3 drop-shadow-md pb-1">
-                    Nurturing the Next Generation
-                </h1>
-                <p class="text-white/90 text-sm sm:text-lg lg:text-xl mb-5 sm:mb-8 leading-relaxed">
-                    Providing access to quality education and resources to unlock the potential of youth across Tanzania.
-                </p>
-                <div class="flex flex-wrap gap-2 sm:gap-4 mt-2">
-                    <a href="donate.html" class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Donate</a>
-                    <a href="thems.html" class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Our Themes</a>
-                    <a href="program.html" class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Program</a>
-                </div>
+            <div class="hero-bg-image absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out"
+                data-index="1">
+                <img src="pic/education.jpg" class="w-full h-full object-cover" alt="Education">
             </div>
-
-            <!-- Text 3 -->
-            <div class="hero-text absolute inset-0 transition-all duration-700 ease-in-out opacity-0 translate-y-10 pointer-events-none flex flex-col justify-center" data-index="2">
-                <span class="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-2 block">03 / Community</span>
-                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-400 leading-tight mb-3 drop-shadow-md pb-1">
-                    Building Resilient Communities
-                </h1>
-                <p class="text-white/90 text-sm sm:text-lg lg:text-xl mb-5 sm:mb-8 leading-relaxed">
-                    Fostering unity and resilience through collaborative programs that uplift women and vulnerable groups.
-                </p>
-                <div class="flex flex-wrap gap-2 sm:gap-4 mt-2">
-                    <a href="donate.html" class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Donate</a>
-                    <a href="thems.html" class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Our Themes</a>
-                    <a href="program.html" class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Program</a>
-                </div>
+            <div class="hero-bg-image absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out"
+                data-index="2">
+                <img src="pic/community.jpg" class="w-full h-full object-cover" alt="Community">
             </div>
-
-            <!-- Text 4 -->
-            <div class="hero-text absolute inset-0 transition-all duration-700 ease-in-out opacity-0 translate-y-10 pointer-events-none flex flex-col justify-center" data-index="3">
-                <span class="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-2 block">04 / Environment</span>
-                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-400 leading-tight mb-3 drop-shadow-md pb-1">
-                    Protecting Our Natural Heritage
-                </h1>
-                <p class="text-white/90 text-sm sm:text-lg lg:text-xl mb-5 sm:mb-8 leading-relaxed">
-                    Championing environmental conservation and sustainable practices to secure a greener tomorrow.
-                </p>
-                <div class="flex flex-wrap gap-2 sm:gap-4 mt-2">
-                    <a href="donate.html" class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Donate</a>
-                    <a href="thems.html" class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Our Themes</a>
-                    <a href="program.html" class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Program</a>
-                </div>
+            <div class="hero-bg-image absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out"
+                data-index="3">
+                <img src="pic/env.jpg" class="w-full h-full object-cover" alt="Environment">
             </div>
-
-            <!-- Text 5 -->
-            <div class="hero-text absolute inset-0 transition-all duration-700 ease-in-out opacity-0 translate-y-10 pointer-events-none flex flex-col justify-center" data-index="4">
-                <span class="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-2 block">05 / Innovation</span>
-                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-400 leading-tight mb-3 drop-shadow-md pb-1">
-                    Driving Local Innovation
-                </h1>
-                <p class="text-white/90 text-sm sm:text-lg lg:text-xl mb-5 sm:mb-8 leading-relaxed">
-                    Integrating modern technology and creative solutions to solve everyday challenges in rural areas.
-                </p>
-                <div class="flex flex-wrap gap-2 sm:gap-4 mt-2">
-                    <a href="donate.html" class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Donate</a>
-                    <a href="thems.html" class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Our Themes</a>
-                    <a href="program.html" class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Program</a>
-                </div>
+            <div class="hero-bg-image absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out"
+                data-index="4">
+                <img src="pic/innovation.jpg" class="w-full h-full object-cover" alt="Innovation">
             </div>
-
-            <!-- Text 6 -->
-            <div class="hero-text absolute inset-0 transition-all duration-700 ease-in-out opacity-0 translate-y-10 pointer-events-none flex flex-col justify-center" data-index="5">
-                <span class="text-yellow-400 font-bold tracking-widest uppercase text-sm mb-2 block">06 / Livelihoods</span>
-                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-400 leading-tight mb-3 drop-shadow-md pb-1">
-                    Sustainable Livelihoods for All
-                </h1>
-                <p class="text-white/90 text-sm sm:text-lg lg:text-xl mb-5 sm:mb-8 leading-relaxed">
-                    Creating economic opportunities that empower families to build self-reliant, prosperous lives.
-                </p>
-                <div class="flex flex-wrap gap-2 sm:gap-4 mt-2">
-                    <a href="donate.html" class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Donate</a>
-                    <a href="thems.html" class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Our Themes</a>
-                    <a href="program.html" class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Program</a>
-                </div>
+            <div class="hero-bg-image absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out"
+                data-index="5">
+                <img src="pic/livesstock.jpg" class="w-full h-full object-cover" alt="Livelihoods">
             </div>
-
-        </div>
-    </div>
-
-    <!-- CONTROLS (Bottom Right) -->
-    <div class="absolute bottom-6 right-4 sm:bottom-12 sm:right-12 z-30 flex items-center gap-3 sm:gap-6 bg-blue-900/40 backdrop-blur-md px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-white/20 shadow-xl">
-        
-        <!-- Prev Arrow -->
-        <button id="btn-prev" aria-label="Previous slide" class="text-white hover:text-yellow-400 transition-colors focus:outline-none">
-            <svg class="w-5 h-5 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-        </button>
-
-        <!-- Dots -->
-        <div class="flex gap-2 sm:gap-3" id="dot-container">
-            <!-- Dots generated by JS to match original count -->
         </div>
 
-        <!-- Next Arrow -->
-        <button id="btn-next" aria-label="Next slide" class="text-white hover:text-yellow-400 transition-colors focus:outline-none">
-            <svg class="w-5 h-5 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-        </button>
-        
-    </div>
+        <!-- GRADIENT OVERLAY (same as before) -->
+        <div
+            class="absolute inset-0 bg-gradient-to-r from-black/95 via-black/45 to-transparent z-10 pointer-events-none">
+        </div>
 
-</section>
+        <!-- DYNAMIC TEXT CONTENT (Left Side) -->
+        <div
+            class="absolute inset-0 z-20 flex flex-col justify-center px-4 sm:px-12 lg:px-24 w-full md:w-2/3 lg:w-1/2 xl:w-[45%]">
+            <div id="fido-text-container" class="relative w-full h-[350px] sm:h-[320px] max-w-2xl">
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const track = document.getElementById('fido-hero-track');
-        let slides = Array.from(document.querySelectorAll('.slide-item'));
-        const textBlocks = document.querySelectorAll('.hero-text');
-        const dotContainer = document.getElementById('dot-container');
-        const prevBtn = document.getElementById('btn-prev');
-        const nextBtn = document.getElementById('btn-next');
-        
-        const originalTotal = slides.length;
-        
-        // 1. Generate Dots
-        for(let i=0; i<originalTotal; i++){
-            const dot = document.createElement('button');
-            dot.className = `slide-dot w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${i === 0 ? 'bg-yellow-400 shadow-[0_0_8px_rgba(250,204,21,0.8)]' : 'bg-white/50 hover:bg-white'}`;
-            dot.dataset.index = i;
-            dotContainer.appendChild(dot);
-        }
-        const dots = document.querySelectorAll('.slide-dot');
+                <!-- Text 1 -->
+                <div class="hero-text absolute inset-0 transition-all duration-700 ease-in-out opacity-100 translate-y-0 flex flex-col justify-center"
+                    data-index="0">
+                    <span class="text-white font-bold tracking-widest uppercase text-sm mb-2 block">01 /
+                        Agriculture</span>
+                    <h1
+                        class="text-3xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-ficus-yellow to-ficus-yellow leading-tight mb-3 drop-shadow-md pb-1">
+                        Empowering Smallholder Farmers</h1>
+                    <p class="text-white/90 text-sm sm:text-lg lg:text-xl mb-5 sm:mb-8 leading-relaxed">Equipping local
+                        communities with modern tools and sustainable practices to thrive and grow their agricultural
+                        futures.</p>
+                    <div class="flex flex-wrap gap-2 sm:gap-4 mt-2">
+                        <a href="donate.html"
+                            class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Donate</a>
+                        <a href="thems.html"
+                            class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Our
+                            Themes</a>
+                        <a href="program.html"
+                            class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Program</a>
+                    </div>
+                </div>
 
-        // 2. Clone first and last slide for seamless infinite loop
-        const firstClone = slides[0].cloneNode(true);
-        const lastClone = slides[slides.length - 1].cloneNode(true);
-        
-        track.appendChild(firstClone);
-        track.insertBefore(lastClone, slides[0]);
+                <!-- Text 2 -->
+                <div class="hero-text absolute inset-0 transition-all duration-700 ease-in-out opacity-0 translate-y-10 pointer-events-none flex flex-col justify-center"
+                    data-index="1">
+                    <span class="text-white font-bold tracking-widest uppercase text-sm mb-2 block">02 /
+                        Education</span>
+                    <h1
+                        class="text-3xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-ficus-yellow to-ficus-yellow leading-tight mb-3 drop-shadow-md pb-1">
+                        Nurturing the Next Generation</h1>
+                    <p class="text-white/90 text-sm sm:text-lg lg:text-xl mb-5 sm:mb-8 leading-relaxed">Providing access
+                        to quality education and resources to unlock the potential of youth across Tanzania.</p>
+                    <div class="flex flex-wrap gap-2 sm:gap-4 mt-2">
+                        <a href="donate.html"
+                            class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Donate</a>
+                        <a href="thems.html"
+                            class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Our
+                            Themes</a>
+                        <a href="program.html"
+                            class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Program</a>
+                    </div>
+                </div>
 
-        let currentIndex = 1; // Start at index 1 (the first real slide)
-        let autoSlideInterval;
-        let isTransitioning = false;
+                <!-- Text 3 -->
+                <div class="hero-text absolute inset-0 transition-all duration-700 ease-in-out opacity-0 translate-y-10 pointer-events-none flex flex-col justify-center"
+                    data-index="2">
+                    <span class="text-white font-bold tracking-widest uppercase text-sm mb-2 block">03 /
+                        Community</span>
+                    <h1
+                        class="text-3xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-ficus-yellow to-yellow-400 leading-tight mb-3 drop-shadow-md pb-1">
+                        Building Resilient Communities</h1>
+                    <p class="text-white/90 text-sm sm:text-lg lg:text-xl mb-5 sm:mb-8 leading-relaxed">Fostering unity
+                        and resilience through collaborative programs that uplift women and vulnerable groups.</p>
+                    <div class="flex flex-wrap gap-2 sm:gap-4 mt-2">
+                        <a href="donate.html"
+                            class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Donate</a>
+                        <a href="thems.html"
+                            class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Our
+                            Themes</a>
+                        <a href="program.html"
+                            class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Program</a>
+                    </div>
+                </div>
 
-        // Function to update the Text and Dots based on the REAL index (0-5)
-        function updateUI(realIndex) {
-            textBlocks.forEach((text, i) => {
-                if (i === realIndex) {
-                    text.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
-                    text.classList.add('opacity-100', 'translate-y-0');
-                } else {
-                    text.classList.remove('opacity-100', 'translate-y-0');
-                    text.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
-                }
-            });
+                <!-- Text 4 -->
+                <div class="hero-text absolute inset-0 transition-all duration-700 ease-in-out opacity-0 translate-y-10 pointer-events-none flex flex-col justify-center"
+                    data-index="3">
+                    <span class="text-white font-bold tracking-widest uppercase text-sm mb-2 block">04 /
+                        Environment</span>
+                    <h1
+                        class="text-3xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-ficus-yellow to-yellow-400 leading-tight mb-3 drop-shadow-md pb-1">
+                        Protecting Our Natural Heritage</h1>
+                    <p class="text-white/90 text-sm sm:text-lg lg:text-xl mb-5 sm:mb-8 leading-relaxed">Championing
+                        environmental conservation and sustainable practices to secure a greener tomorrow.</p>
+                    <div class="flex flex-wrap gap-2 sm:gap-4 mt-2">
+                        <a href="donate.html"
+                            class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Donate</a>
+                        <a href="thems.html"
+                            class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Our
+                            Themes</a>
+                        <a href="program.html"
+                            class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Program</a>
+                    </div>
+                </div>
 
-            dots.forEach((dot, i) => {
-                if (i === realIndex) {
-                    dot.classList.add('bg-yellow-400', 'shadow-[0_0_8px_rgba(250,204,21,0.8)]');
-                    dot.classList.remove('bg-white/50');
-                } else {
-                    dot.classList.remove('bg-yellow-400', 'shadow-[0_0_8px_rgba(250,204,21,0.8)]');
-                    dot.classList.add('bg-white/50');
-                }
-            });
-        }
+                <!-- Text 5 -->
+                <div class="hero-text absolute inset-0 transition-all duration-700 ease-in-out opacity-0 translate-y-10 pointer-events-none flex flex-col justify-center"
+                    data-index="4">
+                    <span class="text-white font-bold tracking-widest uppercase text-sm mb-2 block">05 /
+                        Innovation</span>
+                    <h1
+                        class="text-3xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-ficus-yellow to-yellow-400 leading-tight mb-3 drop-shadow-md pb-1">
+                        Driving Local Innovation</h1>
+                    <p class="text-white/90 text-sm sm:text-lg lg:text-xl mb-5 sm:mb-8 leading-relaxed">Integrating
+                        modern technology and creative solutions to solve everyday challenges in rural areas.</p>
+                    <div class="flex flex-wrap gap-2 sm:gap-4 mt-2">
+                        <a href="donate.html"
+                            class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Donate</a>
+                        <a href="thems.html"
+                            class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Our
+                            Themes</a>
+                        <a href="program.html"
+                            class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Program</a>
+                    </div>
+                </div>
 
-        // Main slider movement function
-        function updateSlider(index, animate = true) {
-            if (animate) {
-                track.style.transition = 'transform 1000ms ease-in-out';
-            } else {
-                track.style.transition = 'none';
+                <!-- Text 6 -->
+                <div class="hero-text absolute inset-0 transition-all duration-700 ease-in-out opacity-0 translate-y-10 pointer-events-none flex flex-col justify-center"
+                    data-index="5">
+                    <span class="text-white font-bold tracking-widest uppercase text-sm mb-2 block">06 /
+                        Livelihoods</span>
+                    <h1
+                        class="text-3xl sm:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-ficus-yellow to-yellow-400 leading-tight mb-3 drop-shadow-md pb-1">
+                        Sustainable Livelihoods for All</h1>
+                    <p class="text-white/90 text-sm sm:text-lg lg:text-xl mb-5 sm:mb-8 leading-relaxed">Creating
+                        economic opportunities that empower families to build self-reliant, prosperous lives.</p>
+                    <div class="flex flex-wrap gap-2 sm:gap-4 mt-2">
+                        <a href="donate.html"
+                            class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Donate</a>
+                        <a href="thems.html"
+                            class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Our
+                            Themes</a>
+                        <a href="program.html"
+                            class="inline-block bg-white text-gray-900 px-4 py-2 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:bg-yellow-400 transition-all duration-300 shadow-lg transform hover:-translate-y-1">Program</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CONTROLS (Bottom Right) -->
+        <div
+            class="absolute bottom-6 right-4 sm:bottom-12 sm:right-12 z-30 flex items-center gap-3 sm:gap-6 bg-ficus-blue/80 backdrop-blur-md px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-white/20 shadow-xl">
+            <button id="btn-prev" aria-label="Previous slide"
+                class="text-white hover:text-yellow-400 transition-colors focus:outline-none">
+                <svg class="w-5 h-5 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <div class="flex gap-2 sm:gap-3" id="dot-container"></div>
+            <button id="btn-next" aria-label="Next slide"
+                class="text-white hover:text-yellow-400 transition-colors focus:outline-none">
+                <svg class="w-5 h-5 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+
+    </section>
+
+    <script>
+        (function () {
+            const bgImages = document.querySelectorAll('.hero-bg-image');
+            const textBlocks = document.querySelectorAll('.hero-text');
+            const dotContainer = document.getElementById('dot-container');
+            const prevBtn = document.getElementById('btn-prev');
+            const nextBtn = document.getElementById('btn-next');
+            const totalSlides = bgImages.length;
+            let currentIndex = 0;
+            let autoTimer;
+
+            // Create dots
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('button');
+                dot.className = `slide-dot w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${i === 0 ? 'bg-yellow-400 shadow-[0_0_8px_rgba(250,204,21,0.8)]' : 'bg-white/50 hover:bg-white'}`;
+                dot.dataset.index = i;
+                dotContainer.appendChild(dot);
             }
-            track.style.transform = `translateX(-${index * 100}%)`;
-            currentIndex = index;
+            const dots = document.querySelectorAll('.slide-dot');
 
-            // Calculate real index (0-5) for UI updates
-            let realIndex = index - 1;
-            if (index === 0) realIndex = originalTotal - 1; // If on last clone, show last UI
-            if (index === originalTotal + 1) realIndex = 0; // If on first clone, show first UI
-            
-            updateUI(realIndex);
-        }
+            function goToSlide(index) {
+                if (index === currentIndex) return;
 
-        // Invisible reset when reaching the cloned slides
-        track.addEventListener('transitionend', () => {
-            isTransitioning = false;
-            
-            if (currentIndex === originalTotal + 1) {
-                // If we slid past the last image into the first-clone, instantly jump to real first image
-                updateSlider(1, false);
+                // Fade out current image and text
+                bgImages[currentIndex].classList.remove('opacity-100');
+                bgImages[currentIndex].classList.add('opacity-0');
+                textBlocks[currentIndex].classList.remove('opacity-100', 'translate-y-0');
+                textBlocks[currentIndex].classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+
+                // Fade in new image and text
+                bgImages[index].classList.remove('opacity-0');
+                bgImages[index].classList.add('opacity-100');
+                textBlocks[index].classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+                textBlocks[index].classList.add('opacity-100', 'translate-y-0');
+
+                // Update dots
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.add('bg-yellow-400', 'shadow-[0_0_8px_rgba(250,204,21,0.8)]');
+                        dot.classList.remove('bg-white/50');
+                    } else {
+                        dot.classList.remove('bg-yellow-400', 'shadow-[0_0_8px_rgba(250,204,21,0.8)]');
+                        dot.classList.add('bg-white/50');
+                    }
+                });
+
+                currentIndex = index;
             }
-            if (currentIndex === 0) {
-                // If we slid backwards past the first image into the last-clone, instantly jump to real last image
-                updateSlider(originalTotal, false);
+
+            function nextSlide() {
+                const nextIndex = (currentIndex + 1) % totalSlides;
+                goToSlide(nextIndex);
             }
-        });
 
-        function goNext() {
-            if (isTransitioning) return; // Prevent spam clicking
-            isTransitioning = true;
-            updateSlider(currentIndex + 1);
-        }
+            function prevSlide() {
+                const prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                goToSlide(prevIndex);
+            }
 
-        function goPrev() {
-            if (isTransitioning) return; // Prevent spam clicking
-            isTransitioning = true;
-            updateSlider(currentIndex - 1);
-        }
-
-        // Event Listeners
-        nextBtn.addEventListener('click', () => {
-            goNext();
-            resetTimer();
-        });
-
-        prevBtn.addEventListener('click', () => {
-            goPrev();
-            resetTimer();
-        });
-
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                if (isTransitioning) return;
-                isTransitioning = true;
-                updateSlider(index + 1); // +1 because track has a clone at index 0
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
                 resetTimer();
             });
-        });
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                resetTimer();
+            });
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const index = parseInt(dot.dataset.index, 10);
+                    goToSlide(index);
+                    resetTimer();
+                });
+            });
 
-        // Auto-play Timer
-        function startTimer() {
-            autoSlideInterval = setInterval(goNext, 6000); // Changes slide every 6 seconds
-        }
-
-        function resetTimer() {
-            clearInterval(autoSlideInterval);
+            // Auto-play
+            function startTimer() {
+                autoTimer = setInterval(nextSlide, 5000);
+            }
+            function resetTimer() {
+                clearInterval(autoTimer);
+                startTimer();
+            }
             startTimer();
+
+            // Initialize: ensure first image is visible and first text active
+            bgImages[0].classList.add('opacity-100');
+            textBlocks[0].classList.add('opacity-100', 'translate-y-0');
+        })();
+    </script>
+
+    <!--about us-->
+
+    <section id="about" class="relative py-16 lg:py-32 bg-white overflow-hidden z-0">
+
+        <!-- Subtle Background Elements for Premium Feel -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-72 h-72 bg-yellow-400/10 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-blue-900/5 rounded-full blur-3xl -z-10"></div>
+
+        <div
+            class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal-on-scroll">
+
+            <!-- LEFT COLUMN: TEXT CONTENT -->
+            <div class="space-y-8 z-10 order-2 lg:order-1">
+
+                <!-- Premium Badge -->
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-gray-100">
+                    <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
+                    <span class="text-ficus-blue font-bold text-xs sm:text-sm tracking-widest uppercase">Who We
+                        Are</span>
+                </div>
+
+                <!-- Headline -->
+                <h2
+                    class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-ficus-charcoal leading-[1.15] tracking-tight">
+                    We are <span class="text-ficus-blue relative inline-block">FIDO.
+                        <!-- Sleek Underline -->
+                        <svg class="absolute w-full h-3 -bottom-2 left-0 text-yellow-400 opacity-80"
+                            viewBox="0 0 100 10" preserveAspectRatio="none">
+                            <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="4" stroke-linecap="round"
+                                fill="transparent" />
+                        </svg>
+                    </span>
+                </h2>
+
+                <!-- Editorial Paragraph -->
+                <div class="pl-5 border-l-4 border-yellow-400">
+                    <p class="text-base sm:text-lg lg:text-xl text-ficus-charcoal/80 leading-relaxed font-medium">
+                        Ficus Development Organization is a Tanzanian non‑profit working hand‑in‑hand with vulnerable
+                        communities to break the cycle of poverty. From climate‑smart farming to digital literacy, our
+                        integrated approach ensures no one is left behind.
+                    </p>
+                </div>
+
+                <!-- Value Pillars List -->
+                <ul class="space-y-4 pt-2">
+                    <!-- Climate-Smart Farming -->
+                    <li class="flex items-center gap-4">
+                        <div
+                            class="flex-shrink-0 w-10 h-10 rounded-full bg-ficus-yellow flex items-center justify-center text-black">
+                            <i class="fas fa-seedling text-lg"></i>
+                        </div>
+                        <span class="text-ficus-charcoal font-bold text-base sm:text-lg">Climate-Smart Farming</span>
+                    </li>
+
+                    <!-- Youth & Women Empowerment -->
+                    <li class="flex items-center gap-4">
+                        <div
+                            class="flex-shrink-0 w-10 h-10 rounded-full bg-ficus-yellow flex items-center justify-center text-black">
+                            <i class="fas fa-users text-lg"></i>
+                        </div>
+                        <span class="text-ficus-charcoal font-bold text-base sm:text-lg">Youth & Women
+                            Empowerment</span>
+                    </li>
+
+                    <!-- Digital Literacy & Innovation -->
+                    <li class="flex items-center gap-4">
+                        <div
+                            class="flex-shrink-0 w-10 h-10 rounded-full bg-ficus-yellow flex items-center justify-center text-black">
+                            <i class="fas fa-laptop-code text-lg"></i>
+                        </div>
+                        <span class="text-ficus-charcoal font-bold text-base sm:text-lg">Digital Literacy &
+                            Innovation</span>
+                    </li>
+                </ul>
+
+                <!-- Action Button -->
+                <div class="pt-4">
+                    <a href="about.html"
+                        class="group inline-flex w-full sm:w-auto justify-center items-center gap-3 bg-ficus-blue text-white px-8 py-4 rounded-full font-bold text-base lg:text-lg hover:bg-ficus-charcoal transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                        Learn About Our Mission
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: LAYERED IMAGE COMPOSITION -->
+            <div class="relative order-1 lg:order-2 mt-4 lg:mt-0 px-4 sm:px-8 lg:px-0">
+
+                <!-- Main Image -->
+                <div
+                    class="relative z-10 w-full h-[350px] sm:h-[450px] lg:h-[600px] rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-black/5">
+                    <!-- Added a slight zoom-out animation on hover for a premium feel -->
+                    <img src="picha/1 (20).jpg" alt="FIDO Community Work"
+                        class="w-full h-full object-cover transform transition-transform duration-1000 hover:scale-105">
+
+                    <!-- Subtle Gradient Overlay on image -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60">
+                    </div>
+                </div>
+
+                <!-- Decorative Outline Behind Image -->
+                <div
+                    class="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-full h-full rounded-[2rem] border-4 border-yellow-400/40 z-0">
+                </div>
+
+                <!-- Floating Stats Card (The Eye-Catching Element) -->
+                <!-- Positioned to break out of the main image frame -->
+                <div
+                    class="absolute -bottom-6 -left-2 sm:-left-8 lg:-left-12 z-20 bg-white/95 backdrop-blur-md p-4 sm:p-6 rounded-2xl shadow-2xl ring-1 ring-black/5 flex items-center gap-4 sm:gap-5 animate-[bounce_4s_infinite]">
+
+                    <div
+                        class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-yellow-400 flex justify-center items-center flex-shrink-0">
+                        <svg class="w-6 h-6 sm:w-8 sm:h-8 text-blue-900" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                            </path>
+                        </svg>
+                    </div>
+
+                    <div>
+                        <p class="text-2xl sm:text-3xl font-extrabold text-ficus-blue leading-none">10,000+</p>
+                        <p class="text-xs sm:text-sm text-ficus-charcoal/70 font-bold uppercase tracking-wide mt-1">
+                            Lives Impacted</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+    <!---themes-->
+    <!-- Modern Premium Themes Section – clean, powerful, professional -->
+    <style>
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
-        // Initialize
-        startTimer();
-    });
-</script>
+        .animate-slideInRight {
+            opacity: 0;
+            animation: slideInRight 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
 
-<section id="about" class="relative py-16 lg:py-32 bg-white overflow-hidden z-0">
-    
-    <!-- Subtle Background Elements for Premium Feel -->
-    <div class="absolute top-0 right-0 -mr-20 -mt-20 w-72 h-72 bg-yellow-400/10 rounded-full blur-3xl -z-10"></div>
-    <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-blue-900/5 rounded-full blur-3xl -z-10"></div>
+        /* Smooth scrollbar hide for mobile */
+        #carousel-track::-webkit-scrollbar {
+            display: none;
+        }
 
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center reveal-on-scroll">
-        
-        <!-- LEFT COLUMN: TEXT CONTENT -->
-        <div class="space-y-8 z-10 order-2 lg:order-1">
-            
-            <!-- Premium Badge -->
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white shadow-sm border border-gray-100">
-                <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span>
-                <span class="text-blue-900 font-bold text-xs sm:text-sm tracking-widest uppercase">Who We Are</span>
+        #carousel-track {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+
+    <section id="themes" class="relative py-16 lg:py-28 overflow-hidden" style="background-color: #0071BC;">
+        <!-- Subtle dot pattern overlay -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none"
+            style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 40px 40px;">
+        </div>
+        <!-- Diagonal accent for depth -->
+        <div
+            class="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-r from-white/5 to-transparent -skew-y-2 origin-top-left">
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Powerful Heading -->
+            <div class="text-center mb-12 lg:mb-16 space-y-4">
+                <div
+                    class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 text-white text-xs font-bold tracking-widest uppercase shadow-lg">
+                    <span class="w-2 h-2 rounded-full bg-yellow-400"></span> Focus Areas
+                </div>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight">
+                    Our <span class="text-yellow-400">Themes</span>
+                </h2>
+                <p class="text-white/80 text-lg max-w-2xl mx-auto">Discover how we transform communities through
+                    focused, impactful initiatives.</p>
             </div>
-            
-            <!-- Headline -->
-            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-ficus-charcoal leading-[1.15] tracking-tight">
-                We are <span class="text-blue-900 relative inline-block">FIDO.
-                    <!-- Sleek Underline -->
-                    <svg class="absolute w-full h-3 -bottom-2 left-0 text-yellow-400 opacity-80" viewBox="0 0 100 10" preserveAspectRatio="none">
-                        <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="4" stroke-linecap="round" fill="transparent"/>
-                    </svg>
-                </span>
-            </h2>
-            
-            <!-- Editorial Paragraph -->
-            <div class="pl-5 border-l-4 border-yellow-400">
-                <p class="text-base sm:text-lg lg:text-xl text-ficus-charcoal/80 leading-relaxed font-medium">
-                    Ficus Development Organization is a Tanzanian non‑profit working hand‑in‑hand with vulnerable communities to break the cycle of poverty. From climate‑smart farming to digital literacy, our integrated approach ensures no one is left behind.
+
+            <!-- Cards: Grid on desktop, smooth scroll on mobile -->
+            <div id="carousel-viewport" class="relative">
+                <div id="carousel-track"
+                    class="flex lg:grid lg:grid-cols-3 gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth lg:overflow-visible pb-4 lg:pb-0">
+
+                    <!-- Card 1 -->
+                    <div class="carousel-card shrink-0 w-[85vw] sm:w-[320px] lg:w-auto snap-center rounded-3xl bg-white shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-500 group overflow-hidden flex flex-col animate-slideInRight"
+                        data-delay="0">
+                        <div class="h-44 overflow-hidden">
+                            <img src="pic/education2.jpg"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                alt="Education">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-ficus-yellow flex items-center justify-center text-black">
+                                    <i class="fas fa-graduation-cap text-lg"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Education & Skills</h3>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-5 flex-1 line-clamp-3">
+                                Building brighter futures through quality learning and vocational training for youth and
+                                adults.
+                            </p>
+                            <a href="themes.html"
+                                class="inline-flex items-center text-ficus-blue font-semibold text-sm hover:text-yellow-500 transition-colors">
+                                Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="carousel-card shrink-0 w-[85vw] sm:w-[320px] lg:w-auto snap-center rounded-3xl bg-white shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-500 group overflow-hidden flex flex-col animate-slideInRight"
+                        data-delay="100">
+                        <div class="h-44 overflow-hidden">
+                            <img src="pic/health.jpg"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                alt="Health">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-ficus-yellow flex items-center justify-center text-black">
+                                    <i class="fas fa-heartbeat text-lg"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Health & Wellbeing</h3>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-5 flex-1 line-clamp-3">
+                                Ensuring access to essential healthcare, sanitation, and nutrition for all community
+                                members.
+                            </p>
+                            <a href="themes.html"
+                                class="inline-flex items-center text-ficus-blue font-semibold text-sm hover:text-yellow-500 transition-colors">
+                                Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="carousel-card shrink-0 w-[85vw] sm:w-[320px] lg:w-auto snap-center rounded-3xl bg-white shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-500 group overflow-hidden flex flex-col animate-slideInRight"
+                        data-delay="200">
+                        <div class="h-44 overflow-hidden">
+                            <img src="pic/agriculture2.jpg"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                alt="Agriculture">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-ficus-yellow flex items-center justify-center text-black">
+                                    <i class="fas fa-seedling text-lg"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Agriculture</h3>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-5 flex-1 line-clamp-3">
+                                Climate‑smart farming techniques that increase yields and build resilient livelihoods.
+                            </p>
+                            <a href="themes.html"
+                                class="inline-flex items-center text-ficus-blue font-semibold text-sm hover:text-yellow-500 transition-colors">
+                                Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="carousel-card shrink-0 w-[85vw] sm:w-[320px] lg:w-auto snap-center rounded-3xl bg-white shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-500 group overflow-hidden flex flex-col animate-slideInRight"
+                        data-delay="300">
+                        <div class="h-44 overflow-hidden">
+                            <img src="pic/enviroment2.jpg"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                alt="Environment">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-ficus-yellow flex items-center justify-center text-black">
+                                    <i class="fas fa-leaf text-lg"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Environment</h3>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-5 flex-1 line-clamp-3">
+                                Protecting natural resources and strengthening community resilience against climate
+                                shocks.
+                            </p>
+                            <a href="themes.html"
+                                class="inline-flex items-center text-ficus-blue font-semibold text-sm hover:text-yellow-500 transition-colors">
+                                Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="carousel-card shrink-0 w-[85vw] sm:w-[320px] lg:w-auto snap-center rounded-3xl bg-white shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-500 group overflow-hidden flex flex-col animate-slideInRight"
+                        data-delay="400">
+                        <div class="h-44 overflow-hidden">
+                            <img src="pic/innovation2.jpg"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                alt="Innovation">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-ficus-yellow flex items-center justify-center text-black">
+                                    <i class="fas fa-laptop-code text-lg"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Tech & Innovation</h3>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-5 flex-1 line-clamp-3">
+                                Deploying digital solutions for inclusive, modern development across all sectors.
+                            </p>
+                            <a href="themes.html"
+                                class="inline-flex items-center text-ficus-blue font-semibold text-sm hover:text-yellow-500 transition-colors">
+                                Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="carousel-card shrink-0 w-[85vw] sm:w-[320px] lg:w-auto snap-center rounded-3xl bg-white shadow-2xl hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-500 group overflow-hidden flex flex-col animate-slideInRight"
+                        data-delay="500">
+                        <div class="h-44 overflow-hidden">
+                            <img src="pic/economic.jpg"
+                                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                alt="Livelihoods">
+                        </div>
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-ficus-yellow flex items-center justify-center text-black">
+                                    <i class="fas fa-hand-holding-usd text-lg"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-gray-900">Economic Empowerment</h3>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-5 flex-1 line-clamp-3">
+                                Driving women and youth entrepreneurship for financial independence and growth.
+                            </p>
+                            <a href="themes.html"
+                                class="inline-flex items-center text-ficus-blue font-semibold text-sm hover:text-yellow-500 transition-colors">
+                                Learn more <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Mobile scroll controls -->
+                <div class="flex lg:hidden justify-center mt-6 gap-4">
+                    <button id="scroll-left"
+                        class="p-3 rounded-full bg-white/20 backdrop-blur border border-white/30 text-white hover:bg-white/30 transition-all duration-300 shadow-lg">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <button id="scroll-right"
+                        class="p-3 rounded-full bg-white/20 backdrop-blur border border-white/30 text-white hover:bg-white/30 transition-all duration-300 shadow-lg">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (function () {
+            // Slide-in animation on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const card = entry.target;
+                        const delay = parseInt(card.getAttribute('data-delay')) || 0;
+                        card.style.animationDelay = `${delay}ms`;
+                        card.classList.add('animate-slideInRight');
+                        observer.unobserve(card);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('#themes .carousel-card').forEach(card => observer.observe(card));
+
+            // Mobile scroll navigation
+            const track = document.getElementById('carousel-track');
+            const leftBtn = document.getElementById('scroll-left');
+            const rightBtn = document.getElementById('scroll-right');
+            if (track && leftBtn && rightBtn) {
+                leftBtn.addEventListener('click', () => {
+                    track.scrollBy({ left: -300, behavior: 'smooth' });
+                });
+                rightBtn.addEventListener('click', () => {
+                    track.scrollBy({ left: 300, behavior: 'smooth' });
+                });
+            }
+        })();
+    </script>
+
+
+
+    <!-- Include your existing Carousel Javascript Logic below this -->
+
+    <section id="featured-programs" class="py-20 lg:py-32 bg-white relative">
+
+        <div
+            class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 relative items-start">
+
+            <!-- LEFT COLUMN: Sticky Context (Stays pinned while scrolling) -->
+            <div
+                class="lg:col-span-4 lg:sticky lg:top-32 z-10 flex flex-col justify-center h-auto lg:h-[calc(100vh-250px)] pb-10 lg:pb-0">
+
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ficus-blue border border-blue-100 w-max mb-6">
+                    <span class="w-2 h-2 rounded-full bg-ficus-yellow animate-pulse"></span>
+                    <span class="text-white font-bold text-xs sm:text-sm tracking-widest uppercase">Impact In
+                        Action</span>
+                </div>
+
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-[1.1]">
+                    Featured Programs
+                </h2>
+
+                <p class="text-gray-600 text-base sm:text-lg mb-10 leading-relaxed max-w-md">
+                    Scroll to discover how our targeted initiatives are transforming communities, building resilience,
+                    and creating sustainable futures across Tanzania.
                 </p>
+
+                <div>
+                    <a href="program.html"
+                        class="inline-flex items-center gap-3 bg-ficus-blue text-white px-8 py-3.5 rounded-full font-bold hover:bg-yellow-400 hover:text-gray-900 transition-colors duration-300 shadow-lg group">
+                        View All Initiatives
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
             </div>
 
-            <!-- Value Pillars List -->
-            <ul class="space-y-4 pt-2">
-                <li class="flex items-center gap-4">
-                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-900/10 flex items-center justify-center text-blue-900">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <!-- RIGHT COLUMN: Stacked Scrolling Cards -->
+            <div class="lg:col-span-8 lg:pl-10 flex flex-col gap-10 lg:gap-0 lg:space-y-[8vh] pb-10 lg:pb-32">
+
+                <!-- Card 1 (Base Layer) -->
+                <div
+                    class="bg-white rounded-[2rem] lg:rounded-[3rem] p-6 sm:p-8 lg:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.08)] lg:sticky lg:top-[100px] z-[1] transform transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+                    <div class="flex flex-col lg:flex-row gap-8 items-center">
+                        <div class="w-full lg:w-1/2 h-[250px] sm:h-[300px] rounded-3xl overflow-hidden relative">
+                            <img src="pic/agriculture3.jpg" alt="Agriculture"
+                                class="absolute inset-0 w-full h-full object-cover">
+                            <div
+                                class="absolute top-4 left-4 bg-ficus-yellow backdrop-blur px-4 py-1.5 rounded-full text-xs font-bold text-black uppercase tracking-wider">
+                                01 / Agriculture</div>
+                        </div>
+                        <div class="w-full lg:w-1/2 flex flex-col justify-center">
+                            <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Climate-Smart Farming</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Equipping rural farmers with drought-resistant seeds and modern irrigation technology to
+                                combat climate change and double crop yields.
+                            </p>
+                            <div class="flex gap-6 pt-4 border-t border-gray-100 mb-6">
+                                <div>
+                                    <p class="text-2xl font-black text-ficus-blue">2,500+</p>
+                                    <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Farmers</p>
+                                </div>
+                                <div>
+                                    <p class="text-2xl font-black text-ficus-blue">40%</p>
+                                    <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Yield
+                                        Growth</p>
+                                </div>
+                            </div>
+                            <!-- Added Button -->
+                            <a href="program.html"
+                                class="inline-flex items-center text-ficus-blue font-bold hover:text-ficus-yellow transition-colors duration-300 text-sm sm:text-base group/btn">
+                                Read Case Study
+                                <svg class="ml-2 w-5 h-5 group-hover/btn:translate-x-2 transition-transform" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                    <span class="text-ficus-charcoal font-bold text-base sm:text-lg">Climate-Smart Farming</span>
-                </li>
-                <li class="flex items-center gap-4">
-                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-900/10 flex items-center justify-center text-blue-900">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+
+                <!-- Card 2 (Overlaps Card 1) -->
+                <div
+                    class="bg-gray-50 rounded-[2rem] lg:rounded-[3rem] p-6 sm:p-8 lg:p-10 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] lg:sticky lg:top-[140px] z-[2] transform transition-all duration-500 hover:-translate-y-2 border border-gray-200">
+                    <div class="flex flex-col lg:flex-row gap-8 items-center">
+                        <div class="w-full lg:w-1/2 h-[250px] sm:h-[300px] rounded-3xl overflow-hidden relative">
+                            <img src="pic/tech.jpg" alt="Education" class="absolute inset-0 w-full h-full object-cover">
+                            <div
+                                class="absolute top-4 left-4 bg-ficus-yellow backdrop-blur px-4 py-1.5 rounded-full text-xs font-bold text-black uppercase tracking-wider">
+                                02 / Education</div>
+                        </div>
+                        <div class="w-full lg:w-1/2 flex flex-col justify-center">
+                            <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Youth Digital Hubs</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Bridging the digital divide by establishing technology centers in underserved
+                                communities, providing vital software and hardware skills.
+                            </p>
+                            <div class="flex gap-6 pt-4 border-t border-gray-200 mb-6">
+                                <div>
+                                    <p class="text-2xl font-black text-ficus-blue">12</p>
+                                    <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Tech Hubs
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="text-2xl font-black text-ficus-blue">5,000</p>
+                                    <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Students
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- Added Button -->
+                            <a href="program.html"
+                                class="inline-flex items-center text-ficus-blue font-bold hover:text-ficus-yellow transition-colors duration-300 text-sm sm:text-base group/btn">
+                                Read Case Study
+                                <svg class="ml-2 w-5 h-5 group-hover/btn:translate-x-2 transition-transform" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                    <span class="text-ficus-charcoal font-bold text-base sm:text-lg">Youth & Women Empowerment</span>
-                </li>
-                <li class="flex items-center gap-4">
-                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-900/10 flex items-center justify-center text-blue-900">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </div>
+
+                <!-- Card 3 (Overlaps Card 2) -->
+                <div
+                    class="bg-blue-50 rounded-[2rem] lg:rounded-[3rem] p-6 sm:p-8 lg:p-10 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] lg:sticky lg:top-[180px] z-[3] transform transition-all duration-500 hover:-translate-y-2 border border-blue-100">
+                    <div class="flex flex-col lg:flex-row gap-8 items-center">
+                        <div class="w-full lg:w-1/2 h-[250px] sm:h-[300px] rounded-3xl overflow-hidden relative">
+                            <img src="pic/comm.jpg" alt="Health" class="absolute inset-0 w-full h-full object-cover">
+                            <div
+                                class="absolute top-4 left-4 bg-ficus-yellow backdrop-blur px-4 py-1.5 rounded-full text-xs font-bold text-black uppercase tracking-wider">
+                                03 / Health</div>
+                        </div>
+                        <div class="w-full lg:w-1/2 flex flex-col justify-center">
+                            <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Community Wellbeing</h3>
+                            <p class="text-gray-600 mb-6 leading-relaxed">
+                                Deploying mobile health clinics and sanitation education to remote areas, drastically
+                                reducing preventable diseases among vulnerable populations.
+                            </p>
+                            <div class="flex gap-6 pt-4 border-t border-blue-200/50 mb-6">
+                                <div>
+                                    <p class="text-2xl font-black text-ficus-blue">30+</p>
+                                    <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Communities
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="text-2xl font-black text-ficus-blue">10k</p>
+                                    <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Treated</p>
+                                </div>
+                            </div>
+                            <!-- Added Button -->
+                            <a href="program.html"
+                                class="inline-flex items-center text-ficus-blue font-bold hover:text-ficus-yellow transition-colors duration-300 text-sm sm:text-base group/btn">
+                                Read Case Study
+                                <svg class="ml-2 w-5 h-5 group-hover/btn:translate-x-2 transition-transform" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                    <span class="text-ficus-charcoal font-bold text-base sm:text-lg">Digital Literacy & Innovation</span>
-                </li>
-            </ul>
-            
-            <!-- Action Button -->
-            <div class="pt-4">
-                <a href="about.html" class="group inline-flex w-full sm:w-auto justify-center items-center gap-3 bg-blue-900 text-white px-8 py-4 rounded-full font-bold text-base lg:text-lg hover:bg-ficus-charcoal transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-1">
-                    Learn About Our Mission 
-                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!--impact-->
+    <section id="impact" class="relative py-16 lg:py-28 bg-black text-white overflow-hidden">
+        <!-- Dynamic background lines -->
+        <div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+            <div
+                class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-ficus-yellow/30 via-transparent to-transparent">
+            </div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-ficus-yellow/20 blur-3xl"></div>
+            <div class="absolute top-10 right-10 w-64 h-64 rounded-full bg-ficus-yellow/10 blur-2xl"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Powerful heading -->
+            <div class="text-center mb-12 lg:mb-20 space-y-4">
+                <div
+                    class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur border border-white/20 text-ficus-yellow text-sm font-bold tracking-widest uppercase">
+                    <span class="w-2 h-2 rounded-full bg-ficus-yellow animate-pulse"></span> By the Numbers
+                </div>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+                    Our <span class="text-ficus-yellow">Impact</span> in Numbers
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-ficus-yellow to-transparent mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-12 lg:mb-20">
+
+                <!-- Stat 1 -->
+                <div
+                    class="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 sm:p-8 lg:p-10 text-center hover:bg-white/10 hover:border-ficus-yellow/50 transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-2xl">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-b from-ficus-yellow/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="text-4xl sm:text-5xl lg:text-7xl font-black text-ficus-yellow mb-2 tracking-tighter flex justify-center items-baseline">
+                            <span class="fido-counter" data-target="1200">0</span>
+                            <span class="text-2xl lg:text-4xl ml-1">+</span>
+                        </div>
+                        <p class="text-white/70 text-sm sm:text-base lg:text-lg font-semibold">Farmers Trained</p>
+                    </div>
+                </div>
+
+                <!-- Stat 2 -->
+                <div
+                    class="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 sm:p-8 lg:p-10 text-center hover:bg-white/10 hover:border-ficus-yellow/50 transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-2xl">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-b from-ficus-yellow/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="text-4xl sm:text-5xl lg:text-7xl font-black text-ficus-yellow mb-2 tracking-tighter flex justify-center items-baseline">
+                            <span class="fido-counter" data-target="5000">0</span>
+                            <span class="text-2xl lg:text-4xl ml-1">+</span>
+                        </div>
+                        <p class="text-white/70 text-sm sm:text-base lg:text-lg font-semibold">Children Supported</p>
+                    </div>
+                </div>
+
+                <!-- Stat 3 -->
+                <div
+                    class="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 sm:p-8 lg:p-10 text-center hover:bg-white/10 hover:border-ficus-yellow/50 transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-2xl">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-b from-ficus-yellow/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="text-4xl sm:text-5xl lg:text-7xl font-black text-ficus-yellow mb-2 tracking-tighter flex justify-center items-baseline">
+                            <span class="fido-counter" data-target="800">0</span>
+                            <span class="text-2xl lg:text-4xl ml-1">+</span>
+                        </div>
+                        <p class="text-white/70 text-sm sm:text-base lg:text-lg font-semibold">Women & Youth</p>
+                    </div>
+                </div>
+
+                <!-- Stat 4 -->
+                <div
+                    class="group relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 sm:p-8 lg:p-10 text-center hover:bg-white/10 hover:border-ficus-yellow/50 transition-all duration-500 hover:-translate-y-2 shadow-lg hover:shadow-2xl">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-b from-ficus-yellow/10 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="text-4xl sm:text-5xl lg:text-7xl font-black text-ficus-yellow mb-2 tracking-tighter flex justify-center items-baseline">
+                            <span class="fido-counter" data-target="15">0</span>
+                            <span class="text-2xl lg:text-4xl ml-1">+</span>
+                        </div>
+                        <p class="text-white/70 text-sm sm:text-base lg:text-lg font-semibold">Community Partners</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center">
+                <a href="program.html"
+                    class="inline-flex items-center gap-3 px-8 py-4 bg-ficus-yellow text-black font-bold text-sm lg:text-base rounded-full hover:bg-white hover:text-ficus-blue transition-all duration-300 shadow-2xl hover:shadow-ficus-yellow/20 hover:-translate-y-1">
+                    See Our Full Impact
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
                 </a>
             </div>
         </div>
+    </section>
 
-        <!-- RIGHT COLUMN: LAYERED IMAGE COMPOSITION -->
-        <div class="relative order-1 lg:order-2 mt-4 lg:mt-0 px-4 sm:px-8 lg:px-0">
-            
-            <!-- Main Image -->
-            <div class="relative z-10 w-full h-[350px] sm:h-[450px] lg:h-[600px] rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-black/5">
-                <!-- Added a slight zoom-out animation on hover for a premium feel -->
-                <img src="picha/1 (20).jpg" alt="FIDO Community Work" class="w-full h-full object-cover transform transition-transform duration-1000 hover:scale-105">
-                
-                <!-- Subtle Gradient Overlay on image -->
-                <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-60"></div>
+    <!-- Counter Animation Script (place once before </body>) -->
+    <script>
+        (function () {
+            const section = document.getElementById('impact');
+            if (!section) return;
+            const counters = section.querySelectorAll('.fido-counter');
+            if (!counters.length) return;
+
+            let animated = false;
+
+            function animateCounter(el) {
+                const target = parseInt(el.getAttribute('data-target'), 10);
+                if (isNaN(target)) return;
+                let current = 0;
+                const duration = 2000; // 2 seconds
+                const stepTime = Math.abs(Math.floor(duration / target));
+                const step = target > 100 ? Math.ceil(target / 100) : 1; // adjust step for performance
+
+                function updateCounter() {
+                    current += step;
+                    if (current >= target) {
+                        el.textContent = target;
+                        return;
+                    }
+                    el.textContent = current;
+                    requestAnimationFrame(updateCounter);
+                }
+
+                // Use setTimeout to ensure zero delay before starting
+                setTimeout(() => {
+                    requestAnimationFrame(updateCounter);
+                }, 0);
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !animated) {
+                        animated = true;
+                        counters.forEach(counter => animateCounter(counter));
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(section);
+        })();
+    </script>
+
+
+
+    <!--involve-->
+
+
+    <section id="get-involved" class="py-16 lg:py-28 relative overflow-hidden bg-white scroll-mt-24">
+        <!-- Premium Decorative Background Elements -->
+        <div
+            class="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-900/5 rounded-full mix-blend-multiply filter blur-[80px] opacity-70 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-ficus-yellow/5 rounded-full mix-blend-multiply filter blur-[100px] opacity-70 transform translate-x-1/3 translate-y-1/3 pointer-events-none">
+        </div>
+
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 reveal-on-scroll">
+
+            <!-- Header Section -->
+            <div
+                class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center justify-between mb-12 lg:mb-20">
+                <div class="lg:w-3/5">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-900/5 border border-blue-900/10 text-ficus-blue font-semibold text-sm mb-6">
+                        <span class="w-2 h-2 rounded-full bg-blue-900 animate-pulse"></span>
+                        Make an Impact
+                    </div>
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-ficus-charcoal mb-6 tracking-tight">
+                        Join the <span class="text-transparent bg-clip-text bg-ficus-blue">Movement</span>
+                    </h2>
+                    <p class="text-lg lg:text-xl text-ficus-charcoal/70 max-w-2xl leading-relaxed font-light">
+                        Be a part of the change. There are many ways you can help us build resilient, empowered
+                        communities across Tanzania.
+                    </p>
+                </div>
+                <div class="lg:w-2/5 flex justify-start lg:justify-end">
+                    <a href="involved.html"
+                        class="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-ficus-blue text-ficus-yellow px-8 py-4 lg:px-10 lg:py-5 rounded-full font-bold text-base lg:text-lg transition-all duration-300 shadow-[0_8px_30px_rgb(30,58,138,0.3)] hover:bg-yellow-400 hover:text-black hover:shadow-[0_15px_40px_rgba(250,204,21,0.4)] hover:-translate-y-1 overflow-hidden">
+                        <span class="relative z-10 flex items-center gap-2">
+                            Get Started Today
+                            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </span>
+                    </a>
+                </div>
             </div>
 
-            <!-- Decorative Outline Behind Image -->
-            <div class="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-full h-full rounded-[2rem] border-4 border-yellow-400/40 z-0"></div>
+            <!-- Cards Track -->
+            <div class="relative w-full overflow-hidden py-4" id="involved-viewport">
 
-            <!-- Floating Stats Card (The Eye-Catching Element) -->
-            <!-- Positioned to break out of the main image frame -->
-            <div class="absolute -bottom-6 -left-2 sm:-left-8 lg:-left-12 z-20 bg-white/95 backdrop-blur-md p-4 sm:p-6 rounded-2xl shadow-2xl ring-1 ring-black/5 flex items-center gap-4 sm:gap-5 animate-[bounce_4s_infinite]">
-                
-                <div class="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-yellow-400 flex justify-center items-center flex-shrink-0">
-                    <svg class="w-6 h-6 sm:w-8 sm:h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                <div class="flex flex-nowrap lg:grid lg:grid-cols-3 transition-transform duration-700 ease-out gap-6 sm:gap-8 lg:gap-10"
+                    id="involved-track">
+
+                    <!-- Donate Card -->
+                    <div
+                        class="involved-card shrink-0 w-full sm:w-[400px] lg:w-auto bg-white border border-ficus-blue p-8 lg:p-10 rounded-[32px] hover:shadow-[0_20px_50px_rgba(0,0,0,0.07)] transition-all duration-500 group flex flex-col h-full relative overflow-hidden cursor-pointer hover:-translate-y-2">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-ficus-blue rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110">
+                        </div>
+
+                        <div
+                            class="w-16 h-16 lg:w-20 lg:h-20 bg-ficus-yellow rounded-2xl flex items-center justify-center text-black mb-8 group-hover:scale-110 transition-transform duration-500 border border-ficus-yellow/20">
+                            <svg class="w-8 h-8 lg:w-10 lg:h-10 text-black" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                </path>
+                            </svg>
+                        </div>
+
+                        <h3
+                            class="text-2xl lg:text-3xl font-bold text-ficus-blue mb-4 group-hover:text-ficus-green transition-colors">
+                            Donate</h3>
+                        <p class="text-ficus-charcoal/60 text-base lg:text-lg mb-8 flex-grow">Every contribution plants
+                            a seed of change in vulnerable communities, providing essential resources where they are
+                            needed most.</p>
+
+                        <div
+                            class="flex items-center text-sm font-bold text-ficus-blue group-hover:gap-3 gap-2 transition-all">
+                            Make a Donation <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Volunteer Card -->
+                    <div
+                        class="involved-card shrink-0 w-full sm:w-[400px] lg:w-auto bg-white border border-ficus-blue p-8 lg:p-10 rounded-[32px] hover:shadow-[0_20px_50px_rgba(30,58,138,0.07)] transition-all duration-500 group flex flex-col h-full relative overflow-hidden cursor-pointer hover:-translate-y-2">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-ficus-blue rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110">
+                        </div>
+
+                        <div
+                            class="w-16 h-16 lg:w-20 lg:h-20 bg-ficus-yellow rounded-2xl flex items-center justify-center text-black  mb-8 group-hover:scale-110 transition-transform duration-500 border border-blue-900/20">
+                            <svg class="w-8 h-8 lg:w-10 lg:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                                </path>
+                            </svg>
+                        </div>
+
+                        <h3
+                            class="text-2xl lg:text-3xl font-bold text-ficus-blue mb-4 group-hover:text-ficus-green transition-colors">
+                            Volunteer</h3>
+                        <p class="text-ficus-charcoal/60 text-base lg:text-lg mb-8 flex-grow">Share your time and
+                            professional skills on the ground or digitally to support our mission and drive real change.
+                        </p>
+
+                        <div
+                            class="flex items-center text-sm font-bold text-ficus-blue group-hover:gap-3 gap-2 transition-all">
+                            Join the Team <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Partner Card -->
+                    <div
+                        class="involved-card shrink-0 w-full sm:w-[400px] lg:w-auto bg-white border border-ficus-blue p-8 lg:p-10 rounded-[32px] hover:shadow-[0_20px_50px_rgba(22,163,74,0.07)] transition-all duration-500 group flex flex-col h-full relative overflow-hidden cursor-pointer hover:-translate-y-2">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-ficus-blue rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110">
+                        </div>
+
+                        <div
+                            class="w-16 h-16 lg:w-20 lg:h-20 bg-ficus-yellow rounded-2xl flex items-center justify-center text-black mb-8 group-hover:scale-110 transition-transform duration-500 border border-green-600/20">
+                            <svg class="w-8 h-8 lg:w-10 lg:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1">
+                                </path>
+                            </svg>
+                        </div>
+
+                        <h3
+                            class="text-2xl lg:text-3xl font-bold text-ficus-blue mb-4 group-hover:text-green-600 transition-colors">
+                            Partner</h3>
+                        <p class="text-ficus-charcoal/60 text-base lg:text-lg mb-8 flex-grow">Collaborate with us
+                            through strategic partnerships to scale our impact, share resources, and reach more
+                            families.</p>
+
+                        <div
+                            class="flex items-center text-sm font-bold text-ficus-blue group-hover:gap-3 gap-2 transition-all">
+                            Let's Collaborate <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Mobile Pagination Dots -->
+            <div class="flex lg:hidden justify-center items-center mt-10 gap-3" id="involved-dots">
+                <button class="w-3 h-3 rounded-full bg-blue-900 transition-all w-8"></button>
+                <button class="w-3 h-3 rounded-full bg-gray-300 transition-all"></button>
+                <button class="w-3 h-3 rounded-full bg-gray-300 transition-all"></button>
+            </div>
+
+        </div>
+    </section>
+
+    <!--news-->
+    <section id="news-updates" class="py-16 lg:py-32 bg-white relative overflow-hidden scroll-mt-24">
+        <!-- Subtle Premium Background Elements -->
+        <div
+            class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-40">
+        </div>
+        <div
+            class="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-900/5 rounded-full filter blur-[120px] opacity-70 pointer-events-none">
+        </div>
+
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 reveal-on-scroll">
+
+            <!-- Header Section: Split Design for Desktop -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 lg:mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <div
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-900 font-semibold text-xs tracking-wider uppercase mb-6 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                        Newsroom
+                    </div>
+                    <h2
+                        class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-ficus-charcoal tracking-tight leading-tight">
+                        Latest Activity & <br class="hidden md:block" />
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-600">On-the-Ground
+                            Impact</span>
+                    </h2>
+                </div>
+
+                <a href="news.html"
+                    class="hidden md:inline-flex items-center gap-2 px-6 py-3.5 rounded-full border-2 border-gray-100 hover:border-blue-900 text-ficus-charcoal hover:text-blue-900 font-bold transition-all duration-300 group">
+                    View Full Archive
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                     </svg>
-                </div>
-                
-                <div>
-                    <p class="text-2xl sm:text-3xl font-extrabold text-blue-900 leading-none">10,000+</p>
-                    <p class="text-xs sm:text-sm text-ficus-charcoal/70 font-bold uppercase tracking-wide mt-1">Lives Impacted</p>
-                </div>
-                
+                </a>
             </div>
-            
-        </div>
-        
-    </div>
-</section>
 
+            <!-- The Bento Grid Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
 
-<section id="themes" class="py-16 lg:py-32 bg-ficus-green relative overflow-hidden">
-    
-    <!-- Premium Background Accent -->
-    <div class="absolute top-0 left-0 w-full h-1/2 bg-blue-900 -skew-y-2 origin-top-left -z-10"></div>
+                <!-- Featured Main Article (Spans 8 columns on desktop) -->
+                <!-- FIX: Adjusted min-heights for mobile responsiveness (min-h-[350px]) -->
+                <article
+                    class="lg:col-span-8 group relative rounded-[32px] lg:rounded-[40px] overflow-hidden min-h-[350px] md:min-h-[450px] lg:min-h-[550px] flex flex-col justify-end p-0 shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
+                    <!-- Background Image (clean, no overlay obscuring) -->
+                    <img src="pic/agriculture.jpg" alt="Tech training in Mwanza"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
 
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 z-10 relative">
-        
-        <!-- Section Header -->
-        <div class="text-center max-w-3xl mx-auto mb-12 lg:mb-20 space-y-4">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white shadow-sm border border-gray-100">
-                <span class="w-2 h-2 rounded-full bg-white"></span>
-                <span class="text-black font-bold text-xs sm:text-sm tracking-widest uppercase">Our Focus Areas</span>
+                    <!-- Gradient overlay that only covers the bottom 25% of the image, quickly fading to transparent -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 via-20% to-transparent">
+                    </div>
+
+                    <!-- Content block: pinned to bottom, minimal vertical height -->
+                    <div
+                        class="relative z-10 w-full px-6 pb-6 sm:px-8 sm:pb-8 lg:px-12 lg:pb-12 flex flex-col justify-end">
+                        <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-3">
+                            <span
+                                class="bg-blue-600 text-white text-[10px] sm:text-xs font-bold px-3 py-1.5 rounded-full tracking-wider uppercase">Press
+                                Release</span>
+                            <span class="text-white/80 text-xs sm:text-sm font-medium">May 10, 2026 • Mwanza</span>
+                        </div>
+                        <h3
+                            class="text-base sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 sm:mb-3 leading-tight group-hover:text-ficus-yellow transition-colors duration-300">
+                            FIDO Launches New Digital Literacy Campaign for the Lake Zone
+                        </h3>
+                        <p class="text-white/80 text-sm md:text-base mb-4 line-clamp-1 md:line-clamp-2 font-light">
+                            To bridge the digital divide, we are rolling out a comprehensive training program.
+                        </p>
+                        <a href="news.html"
+                            class="inline-flex items-center gap-2 text-white font-bold group-hover:gap-4 transition-all w-fit">
+                            Read Story
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Secondary Column (Spans 4 columns on desktop) -->
+                <div class="lg:col-span-4 flex flex-col gap-6 lg:gap-8">
+
+                    <!-- Secondary Article 1: Solid Brand Color -->
+                    <article
+                        class="flex-1 bg-ficus-blue rounded-[32px] p-6 sm:p-8 lg:p-10 text-white flex flex-col justify-between group shadow-xl relative overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-[100px]"></div>
+
+                        <div>
+                            <div class="flex items-center gap-3 mb-6">
+                                <span
+                                    class="text-yellow-400 text-[10px] sm:text-xs font-bold border border-white px-3 py-1.5 rounded-full tracking-wider uppercase">Partnerships</span>
+                            </div>
+                            <!-- FIX: Changed invalid 'text-1xl' to 'text-xl' -->
+                            <h3
+                                class="text-xl sm:text-2xl font-bold mb-4 leading-snug group-hover:text-ficus-yellow transition-colors">
+                                Expanding Our Agricultural Support Network
+                            </h3>
+                            <p class="text-white/90 text-sm leading-relaxed mb-6">
+                                Secured funding to provide drought-resistant seeds to over 500 rural families.
+                            </p>
+                        </div>
+
+                        <div class="flex items-center justify-between text-sm font-bold text-ficus-yellow mt-auto">
+                            <span>April 28, 2026</span>
+                            <!-- FIX: Changed to an actual <a> tag with an href -->
+                            <a href="involved.html" aria-label="Read more"
+                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-ficus-yellow group-hover:text-blue-900 transition-colors relative z-20">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Secondary Article 2: Clean White Card -->
+                    <article
+                        class="flex-1 bg-black border border-gray-100 rounded-[32px] p-6 sm:p-8 lg:p-10 flex flex-col justify-between group transition-all duration-300 hover:shadow-[0_15px_40px_rgba(0,0,0,0.06)] hover:border-blue-900/20">
+                        <div>
+                            <div
+                                class="flex items-center gap-3 mb-6 text-[10px] sm:text-xs font-bold text-white uppercase tracking-wider">
+                                <span>Community</span>
+                                <span class="w-1 h-1 rounded-full bg-yellow-400"></span>
+                                <span>Mar 15, 2026</span>
+                            </div>
+                            <!-- FIX: Changed invalid 'text-1xl' to 'text-xl' -->
+                            <h3
+                                class="text-xl sm:text-2xl font-bold text-yellow-400 mb-4 leading-snug group-hover:text-whie transition-colors">
+                                Annual Volunteer Drive Exceeds Expectations
+                            </h3>
+                            <p class="text-white/90 text-sm leading-relaxed mb-6 line-clamp-2">
+                                Over 200 community members joined our weekend initiative to repair local school
+                                infrastructures.
+                            </p>
+                        </div>
+
+                        <!-- FIX: Changed to an actual <a> tag with an href -->
+                        <a href="involved.html"
+                            class="text-sm font-bold text-ficus-yellow flex items-center gap-2 group-hover:gap-3 transition-all mt-auto w-fit relative z-20">
+                            Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </article>
+
+                </div>
             </div>
-            <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-yellow-400">Our Themes</h2>
-            <div class="w-24 h-1.5 bg-yellow-400 mx-auto rounded-full mt-4"></div>
+
+            <!-- Mobile View All CTA -->
+            <div class="mt-8 text-center md:hidden">
+                <a href="news.html"
+                    class="w-full inline-flex justify-center items-center gap-2 px-6 py-4 rounded-full bg-gray-50 text-ficus-charcoal font-bold transition-colors hover:bg-gray-100">
+                    View Full Archive
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+
         </div>
+    </section>
 
-        <!-- Carousel Viewport -->
-        <div class="relative w-full overflow-hidden pb-8" id="carousel-viewport">
 
-            <div class="flex flex-nowrap transition-transform duration-700 ease-out gap-6 lg:gap-8" id="carousel-track">
-                
-                <!-- Card 1: Education -->
-                <div class="carousel-card shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-21px)] group relative rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-[400px] lg:h-[450px]">
-                    <!-- Background Image -->
-                    <img src="picha/1 (15).jpg" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" alt="Education">
-                    <!-- Gradient Overlay -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/40 to-transparent transition-opacity duration-500 group-hover:opacity-95"></div>
-                    
-                    <!-- Content -->
-                    <div class="absolute inset-0 p-8 flex flex-col justify-end z-10 pointer-events-none">
-                        <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/30 mb-6 group-hover:-translate-y-2 transition-transform duration-500">
-                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path></svg>
-                        </div>
-                        <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3 group-hover:-translate-y-2 transition-transform duration-500 delay-75">Education & Skills</h3>
-                        <p class="text-white/80 leading-relaxed mb-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 h-0 group-hover:h-auto overflow-hidden">
-                            Building brighter futures through quality learning and vocational training.
-                        </p>
-                        <a href="program.html" class="pointer-events-auto inline-flex items-center text-yellow-400 font-bold group-hover:translate-x-2 transition-transform duration-500">
-                            Read More <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Card 2: Health -->
-                <div class="carousel-card shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-21px)] group relative rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-[400px] lg:h-[450px]">
-                    <img src="picha/1 (20).jpg" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" alt="Health">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/40 to-transparent transition-opacity duration-500 group-hover:opacity-95"></div>
-                    
-                    <div class="absolute inset-0 p-8 flex flex-col justify-end z-10 pointer-events-none">
-                        <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/30 mb-6 group-hover:-translate-y-2 transition-transform duration-500">
-                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                        </div>
-                        <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3 group-hover:-translate-y-2 transition-transform duration-500 delay-75">Health & Wellbeing</h3>
-                        <p class="text-white/80 leading-relaxed mb-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 h-0 group-hover:h-auto overflow-hidden">
-                            Ensuring access to essential healthcare, sanitation, and nutrition for all.
-                        </p>
-                        <a href="program.html" class="pointer-events-auto inline-flex items-center text-yellow-400 font-bold group-hover:translate-x-2 transition-transform duration-500">
-                            Read More <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </a>
-                    </div>
-                </div>
 
-                <!-- Card 3: Agriculture -->
-                <div class="carousel-card shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-21px)] group relative rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-[400px] lg:h-[450px]">
-                    <img src="picha/1 (14).jpg" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" alt="Agriculture">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/40 to-transparent transition-opacity duration-500 group-hover:opacity-95"></div>
-                    
-                    <div class="absolute inset-0 p-8 flex flex-col justify-end z-10 pointer-events-none">
-                        <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/30 mb-6 group-hover:-translate-y-2 transition-transform duration-500">
-                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3 group-hover:-translate-y-2 transition-transform duration-500 delay-75">Agriculture</h3>
-                        <p class="text-white/80 leading-relaxed mb-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 h-0 group-hover:h-auto overflow-hidden">
-                            Climate‑smart farming techniques designed to yield better incomes.
-                        </p>
-                        <a href="program.html" class="pointer-events-auto inline-flex items-center text-yellow-400 font-bold group-hover:translate-x-2 transition-transform duration-500">
-                            Read More <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card 4: Environment -->
-                <div class="carousel-card shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-21px)] group relative rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-[400px] lg:h-[450px]">
-                    <img src="picha/1 (17).jpg" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" alt="Environment">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/40 to-transparent transition-opacity duration-500 group-hover:opacity-95"></div>
-                    
-                    <div class="absolute inset-0 p-8 flex flex-col justify-end z-10 pointer-events-none">
-                        <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/30 mb-6 group-hover:-translate-y-2 transition-transform duration-500">
-                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
-                        </div>
-                        <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3 group-hover:-translate-y-2 transition-transform duration-500 delay-75">Environment</h3>
-                        <p class="text-white/80 leading-relaxed mb-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 h-0 group-hover:h-auto overflow-hidden">
-                            Protecting natural resources and strengthening community resilience.
-                        </p>
-                        <a href="program.html" class="pointer-events-auto inline-flex items-center text-yellow-400 font-bold group-hover:translate-x-2 transition-transform duration-500">
-                            Read More <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card 5: Innovation -->
-                <div class="carousel-card shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-21px)] group relative rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-[400px] lg:h-[450px]">
-                    <img src="picha/1 (18).jpg" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" alt="Innovation">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/40 to-transparent transition-opacity duration-500 group-hover:opacity-95"></div>
-                    
-                    <div class="absolute inset-0 p-8 flex flex-col justify-end z-10 pointer-events-none">
-                        <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/30 mb-6 group-hover:-translate-y-2 transition-transform duration-500">
-                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        </div>
-                        <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3 group-hover:-translate-y-2 transition-transform duration-500 delay-75">Tech & Innovation</h3>
-                        <p class="text-white/80 leading-relaxed mb-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 h-0 group-hover:h-auto overflow-hidden">
-                            Deploying digital solutions for inclusive, modern development.
-                        </p>
-                        <a href="#tech" class="pointer-events-auto inline-flex items-center text-yellow-400 font-bold group-hover:translate-x-2 transition-transform duration-500">
-                            Read More <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Card 6: Livelihoods -->
-                <div class="carousel-card shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-21px)] group relative rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 h-[400px] lg:h-[450px]">
-                    <img src="picha/1 (19).jpg" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" alt="Livelihoods">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/40 to-transparent transition-opacity duration-500 group-hover:opacity-95"></div>
-                    
-                    <div class="absolute inset-0 p-8 flex flex-col justify-end z-10 pointer-events-none">
-                        <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center border border-white/30 mb-6 group-hover:-translate-y-2 transition-transform duration-500">
-                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                        <h3 class="text-2xl lg:text-3xl font-bold text-white mb-3 group-hover:-translate-y-2 transition-transform duration-500 delay-75">Economic Empowerment</h3>
-                        <p class="text-white/80 leading-relaxed mb-6 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 h-0 group-hover:h-auto overflow-hidden">
-                            Driving women and youth entrepreneurship for financial independence.
-                        </p>
-                        <a href="#econ" class="pointer-events-auto inline-flex items-center text-yellow-400 font-bold group-hover:translate-x-2 transition-transform duration-500">
-                            Read More <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </a>
-                    </div>
-                </div>
-                
+    <section class="relative py-20 lg:py-28 overflow-hidden bg-ficus-blue">
+        <!-- Background glow effect -->
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-ficus-yellow/10 blur-[120px]">
+            </div>
+            <div class="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full bg-ficus-yellow/5 blur-[100px]">
             </div>
         </div>
 
-        <!-- Carousel Dots Container -->
-        <div class="flex justify-center items-center mt-8 gap-3" id="carousel-dots">
-            <!-- JavaScript will populate dots here -->
+        <!-- Subtle grid pattern -->
+        <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+            <div
+                class="h-full w-full bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[size:40px_40px]">
+            </div>
         </div>
 
-    </div>
-</section>
-
-<!-- Include your existing Carousel Javascript Logic below this -->
-
-<section id="featured-programs" class="py-20 lg:py-32 bg-white relative">
-    
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 relative items-start">
-        
-        <!-- LEFT COLUMN: Sticky Context (Stays pinned while scrolling) -->
-        <div class="lg:col-span-4 lg:sticky lg:top-32 z-10 flex flex-col justify-center h-auto lg:h-[calc(100vh-250px)] pb-10 lg:pb-0">
-            
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 w-max mb-6">
-                <span class="w-2 h-2 rounded-full bg-blue-900 animate-pulse"></span>
-                <span class="text-blue-900 font-bold text-xs sm:text-sm tracking-widest uppercase">Impact In Action</span>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Premium badge -->
+            <div
+                class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-ficus-yellow text-xs sm:text-sm font-bold tracking-widest uppercase mb-6">
+                <span class="relative flex h-2 w-2">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-ficus-yellow opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-ficus-yellow"></span>
+                </span>
+                Join Our Mission
             </div>
-            
-            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-[1.1]">
-                Featured Programs
+
+            <!-- Powerful heading -->
+            <h2
+                class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4 lg:mb-6 leading-tight">
+                Be Part of<br class="sm:hidden"> <span class="text-ficus-yellow">Lasting Change</span>
             </h2>
-            
-            <p class="text-gray-600 text-base sm:text-lg mb-10 leading-relaxed max-w-md">
-                Scroll to discover how our targeted initiatives are transforming communities, building resilience, and creating sustainable futures across Tanzania.
+
+            <!-- Your provided description -->
+            <p
+                class="text-base sm:text-lg lg:text-xl text-white/80 max-w-3xl mx-auto mb-10 lg:mb-12 leading-relaxed font-medium">
+                Ficus is a community‑driven non‑profit dedicated to sustainable agriculture, quality education, clean
+                water, and economic empowerment across Africa. We believe in lasting, locally‑led change.
             </p>
 
-            <div>
-                <a href="program.html" class="inline-flex items-center gap-3 bg-blue-900 text-white px-8 py-3.5 rounded-full font-bold hover:bg-yellow-400 hover:text-gray-900 transition-colors duration-300 shadow-lg group">
-                    View All Initiatives
-                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 lg:gap-6">
+                <!-- Primary: yellow bg -->
+                <a href="donate.html"
+                    class="group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 bg-ficus-yellow text-black font-bold text-base lg:text-lg rounded-full hover:bg-white hover:text-ficus-blue transition-all duration-300 shadow-2xl hover:shadow-[0_15px_40px_rgba(250,204,21,0.3)] hover:-translate-y-1">
+                    Donate Now
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+                <!-- Secondary: outline white -->
+                <a href="about.html"
+                    class="group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 border-2 border-white/30 text-white font-bold text-base lg:text-lg rounded-full hover:bg-white hover:text-ficus-blue transition-all duration-300 hover:border-white">
+                    Learn More
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
                 </a>
             </div>
         </div>
-
-        <!-- RIGHT COLUMN: Stacked Scrolling Cards -->
-        <div class="lg:col-span-8 lg:pl-10 flex flex-col gap-10 lg:gap-0 lg:space-y-[8vh] pb-10 lg:pb-32">
-            
-            <!-- Card 1 (Base Layer) -->
-            <div class="bg-white rounded-[2rem] lg:rounded-[3rem] p-6 sm:p-8 lg:p-10 shadow-[0_10px_40px_rgba(0,0,0,0.08)] lg:sticky lg:top-[100px] z-[1] transform transition-all duration-500 hover:-translate-y-2 border border-gray-100">
-                <div class="flex flex-col lg:flex-row gap-8 items-center">
-                    <div class="w-full lg:w-1/2 h-[250px] sm:h-[300px] rounded-3xl overflow-hidden relative">
-                        <img src="picha/1 (14).jpg" alt="Agriculture" class="absolute inset-0 w-full h-full object-cover">
-                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-1.5 rounded-full text-xs font-bold text-blue-900 uppercase tracking-wider">01 / Agriculture</div>
-                    </div>
-                    <div class="w-full lg:w-1/2 flex flex-col justify-center">
-                        <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Climate-Smart Farming</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed">
-                            Equipping rural farmers with drought-resistant seeds and modern irrigation technology to combat climate change and double crop yields.
-                        </p>
-                        <div class="flex gap-6 pt-4 border-t border-gray-100 mb-6">
-                            <div>
-                                <p class="text-2xl font-black text-blue-900">2,500+</p>
-                                <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Farmers</p>
-                            </div>
-                            <div>
-                                <p class="text-2xl font-black text-blue-900">40%</p>
-                                <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Yield Growth</p>
-                            </div>
-                        </div>
-                        <!-- Added Button -->
-                        <a href="program.html" class="inline-flex items-center text-blue-900 font-bold hover:text-yellow-500 transition-colors duration-300 text-sm sm:text-base group/btn">
-                            Read Case Study 
-                            <svg class="ml-2 w-5 h-5 group-hover/btn:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 2 (Overlaps Card 1) -->
-            <div class="bg-gray-50 rounded-[2rem] lg:rounded-[3rem] p-6 sm:p-8 lg:p-10 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] lg:sticky lg:top-[140px] z-[2] transform transition-all duration-500 hover:-translate-y-2 border border-gray-200">
-                <div class="flex flex-col lg:flex-row gap-8 items-center">
-                    <div class="w-full lg:w-1/2 h-[250px] sm:h-[300px] rounded-3xl overflow-hidden relative">
-                        <img src="picha/1 (15).jpg" alt="Education" class="absolute inset-0 w-full h-full object-cover">
-                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-1.5 rounded-full text-xs font-bold text-blue-900 uppercase tracking-wider">02 / Education</div>
-                    </div>
-                    <div class="w-full lg:w-1/2 flex flex-col justify-center">
-                        <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Youth Digital Hubs</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed">
-                            Bridging the digital divide by establishing technology centers in underserved communities, providing vital software and hardware skills.
-                        </p>
-                        <div class="flex gap-6 pt-4 border-t border-gray-200 mb-6">
-                            <div>
-                                <p class="text-2xl font-black text-blue-900">12</p>
-                                <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Tech Hubs</p>
-                            </div>
-                            <div>
-                                <p class="text-2xl font-black text-blue-900">5,000</p>
-                                <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Students</p>
-                            </div>
-                        </div>
-                        <!-- Added Button -->
-                        <a href="program.html" class="inline-flex items-center text-blue-900 font-bold hover:text-yellow-500 transition-colors duration-300 text-sm sm:text-base group/btn">
-                            Read Case Study 
-                            <svg class="ml-2 w-5 h-5 group-hover/btn:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3 (Overlaps Card 2) -->
-            <div class="bg-blue-50 rounded-[2rem] lg:rounded-[3rem] p-6 sm:p-8 lg:p-10 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] lg:sticky lg:top-[180px] z-[3] transform transition-all duration-500 hover:-translate-y-2 border border-blue-100">
-                <div class="flex flex-col lg:flex-row gap-8 items-center">
-                    <div class="w-full lg:w-1/2 h-[250px] sm:h-[300px] rounded-3xl overflow-hidden relative">
-                        <img src="picha/1 (20).jpg" alt="Health" class="absolute inset-0 w-full h-full object-cover">
-                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-1.5 rounded-full text-xs font-bold text-blue-900 uppercase tracking-wider">03 / Health</div>
-                    </div>
-                    <div class="w-full lg:w-1/2 flex flex-col justify-center">
-                        <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">Community Wellbeing</h3>
-                        <p class="text-gray-600 mb-6 leading-relaxed">
-                            Deploying mobile health clinics and sanitation education to remote areas, drastically reducing preventable diseases among vulnerable populations.
-                        </p>
-                        <div class="flex gap-6 pt-4 border-t border-blue-200/50 mb-6">
-                            <div>
-                                <p class="text-2xl font-black text-blue-900">30+</p>
-                                <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Communities</p>
-                            </div>
-                            <div>
-                                <p class="text-2xl font-black text-blue-900">10k</p>
-                                <p class="text-xs text-gray-500 font-bold uppercase tracking-wider mt-1">Treated</p>
-                            </div>
-                        </div>
-                        <!-- Added Button -->
-                        <a href="#health-program" class="inline-flex items-center text-blue-900 font-bold hover:text-yellow-500 transition-colors duration-300 text-sm sm:text-base group/btn">
-                            Read Case Study 
-                            <svg class="ml-2 w-5 h-5 group-hover/btn:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section id="impact" class="py-10 lg:py-24 bg-black text-white relative border-y-4 lg:border-y-8 border-ficus-yellow">
-    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent bg-[length:20px_20px]"></div>
-    
-    <div class="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 text-center reveal-on-scroll">
-        <h2 class="text-3xl md:text-5xl font-bold mb-8 lg:mb-16">Our Impact in Numbers</h2>
-        
-        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-12 mb-8 lg:mb-16">
-            
-            <div class="p-2 sm:p-4 lg:p-6 flex flex-col justify-center">
-                <div class="text-4xl sm:text-5xl lg:text-7xl font-black text-ficus-yellow mb-1 lg:mb-4 tracking-tighter flex justify-center items-center">
-                    <span class="fido-counter" data-target="1200">0</span>
-                    <span class="text-2xl lg:text-4xl ml-0.5">+</span>
-                </div>
-                <p class="text-ficus-sand text-xs sm:text-sm lg:text-lg font-medium leading-tight px-2">Farmers Trained</p>
-            </div>
-            
-            <div class="p-2 sm:p-4 lg:p-6 flex flex-col justify-center">
-                <div class="text-4xl sm:text-5xl lg:text-7xl font-black text-ficus-yellow mb-1 lg:mb-4 tracking-tighter flex justify-center items-center">
-                    <span class="fido-counter" data-target="5000">0</span>
-                    <span class="text-2xl lg:text-4xl ml-0.5">+</span>
-                </div>
-                <p class="text-ficus-sand text-xs sm:text-sm lg:text-lg font-medium leading-tight px-2">Children Supported</p>
-            </div>
-            
-            <div class="p-2 sm:p-4 lg:p-6 flex flex-col justify-center">
-                <div class="text-4xl sm:text-5xl lg:text-7xl font-black text-ficus-yellow mb-1 lg:mb-4 tracking-tighter flex justify-center items-center">
-                    <span class="fido-counter" data-target="800">0</span>
-                    <span class="text-2xl lg:text-4xl ml-0.5">+</span>
-                </div>
-                <p class="text-ficus-sand text-xs sm:text-sm lg:text-lg font-medium leading-tight px-2">Women & Youth</p>
-            </div>
-            
-            <div class="p-2 sm:p-4 lg:p-6 flex flex-col justify-center">
-                <div class="text-4xl sm:text-5xl lg:text-7xl font-black text-ficus-yellow mb-1 lg:mb-4 tracking-tighter flex justify-center items-center">
-                    <span class="fido-counter" data-target="15">0</span>
-                    <span class="text-2xl lg:text-4xl ml-0.5">+</span>
-                </div>
-                <p class="text-ficus-sand text-xs sm:text-sm lg:text-lg font-medium leading-tight px-2">Community Partners</p>
-            </div>
-        </div>
-        
-        <a href="#impact-page" class="inline-flex justify-center w-full sm:w-auto bg-ficus-yellow text-blue-900 px-6 py-3.5 lg:px-10 lg:py-4 rounded-full font-bold text-sm lg:text-lg hover:bg-white transition-all duration-300 shadow-xl hover:-translate-y-1">
-            See Our Full Impact
-        </a>
-    </div>
-</section>
-
-<section id="get-involved" class="py-16 lg:py-28 relative overflow-hidden bg-white scroll-mt-24">
-    <!-- Premium Decorative Background Elements -->
-    <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-900/5 rounded-full mix-blend-multiply filter blur-[80px] opacity-70 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-    <div class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-ficus-yellow/5 rounded-full mix-blend-multiply filter blur-[100px] opacity-70 transform translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
-
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 reveal-on-scroll">
-        
-        <!-- Header Section -->
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center justify-between mb-12 lg:mb-20">
-            <div class="lg:w-3/5">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-900/5 border border-blue-900/10 text-blue-900 font-semibold text-sm mb-6">
-                    <span class="w-2 h-2 rounded-full bg-blue-900 animate-pulse"></span>
-                    Make an Impact
-                </div>
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-ficus-charcoal mb-6 tracking-tight">
-                    Join the <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-600">Movement</span>
-                </h2>
-                <p class="text-lg lg:text-xl text-ficus-charcoal/70 max-w-2xl leading-relaxed font-light">
-                    Be a part of the change. There are many ways you can help us build resilient, empowered communities across Tanzania.
-                </p>
-            </div>
-            <div class="lg:w-2/5 flex justify-start lg:justify-end">
-                <a href="involved.html" class="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-blue-900 text-white px-8 py-4 lg:px-10 lg:py-5 rounded-full font-bold text-base lg:text-lg transition-all duration-300 shadow-[0_8px_30px_rgb(30,58,138,0.3)] hover:shadow-[0_15px_40px_rgb(30,58,138,0.4)] hover:-translate-y-1 overflow-hidden">
-                    <span class="relative z-10 flex items-center gap-2">
-                        Get Started Today
-                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                    </span>
-                    <div class="absolute inset-0 bg-gradient-to-r from-blue-800 to-blue-950 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </a>
-            </div>
-        </div>
-        
-        <!-- Cards Track -->
-        <div class="relative w-full overflow-hidden py-4" id="involved-viewport">
-
-            <div class="flex flex-nowrap lg:grid lg:grid-cols-3 transition-transform duration-700 ease-out gap-6 sm:gap-8 lg:gap-10" id="involved-track">
-                
-                <!-- Donate Card -->
-                <div class="involved-card shrink-0 w-full sm:w-[400px] lg:w-auto bg-white border border-gray-100/80 p-8 lg:p-10 rounded-[32px] hover:shadow-[0_20px_50px_rgba(0,0,0,0.07)] transition-all duration-500 group flex flex-col h-full relative overflow-hidden cursor-pointer hover:-translate-y-2">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-ficus-yellow/10 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
-                    
-                    <div class="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-ficus-yellow/20 to-ficus-yellow/5 rounded-2xl flex items-center justify-center text-ficus-yellow mb-8 group-hover:scale-110 transition-transform duration-500 border border-ficus-yellow/20">
-                        <svg class="w-8 h-8 lg:w-10 lg:h-10 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                    </div>
-                    
-                    <h3 class="text-2xl lg:text-3xl font-bold text-ficus-charcoal mb-4 group-hover:text-yellow-600 transition-colors">Donate</h3>
-                    <p class="text-ficus-charcoal/60 text-base lg:text-lg mb-8 flex-grow">Every contribution plants a seed of change in vulnerable communities, providing essential resources where they are needed most.</p>
-                    
-                    <div class="flex items-center text-sm font-bold text-yellow-600 group-hover:gap-3 gap-2 transition-all">
-                        Make a Donation <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </div>
-                </div>
-                
-                <!-- Volunteer Card -->
-                <div class="involved-card shrink-0 w-full sm:w-[400px] lg:w-auto bg-white border border-gray-100/80 p-8 lg:p-10 rounded-[32px] hover:shadow-[0_20px_50px_rgba(30,58,138,0.07)] transition-all duration-500 group flex flex-col h-full relative overflow-hidden cursor-pointer hover:-translate-y-2">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-900/5 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
-                    
-                    <div class="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-blue-900/20 to-blue-900/5 rounded-2xl flex items-center justify-center text-blue-900 mb-8 group-hover:scale-110 transition-transform duration-500 border border-blue-900/20">
-                        <svg class="w-8 h-8 lg:w-10 lg:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                    </div>
-                    
-                    <h3 class="text-2xl lg:text-3xl font-bold text-ficus-charcoal mb-4 group-hover:text-blue-900 transition-colors">Volunteer</h3>
-                    <p class="text-ficus-charcoal/60 text-base lg:text-lg mb-8 flex-grow">Share your time and professional skills on the ground or digitally to support our mission and drive real change.</p>
-                    
-                    <div class="flex items-center text-sm font-bold text-blue-900 group-hover:gap-3 gap-2 transition-all">
-                        Join the Team <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </div>
-                </div>
-                
-                <!-- Partner Card -->
-                <div class="involved-card shrink-0 w-full sm:w-[400px] lg:w-auto bg-white border border-gray-100/80 p-8 lg:p-10 rounded-[32px] hover:shadow-[0_20px_50px_rgba(22,163,74,0.07)] transition-all duration-500 group flex flex-col h-full relative overflow-hidden cursor-pointer hover:-translate-y-2">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-green-600/5 rounded-bl-[100px] -z-10 transition-transform group-hover:scale-110"></div>
-                    
-                    <div class="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-green-600/20 to-green-600/5 rounded-2xl flex items-center justify-center text-green-600 mb-8 group-hover:scale-110 transition-transform duration-500 border border-green-600/20">
-                        <svg class="w-8 h-8 lg:w-10 lg:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
-                    </div>
-                    
-                    <h3 class="text-2xl lg:text-3xl font-bold text-ficus-charcoal mb-4 group-hover:text-green-600 transition-colors">Partner</h3>
-                    <p class="text-ficus-charcoal/60 text-base lg:text-lg mb-8 flex-grow">Collaborate with us through strategic partnerships to scale our impact, share resources, and reach more families.</p>
-                    
-                    <div class="flex items-center text-sm font-bold text-green-600 group-hover:gap-3 gap-2 transition-all">
-                        Let's Collaborate <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-
-        <!-- Mobile Pagination Dots -->
-        <div class="flex lg:hidden justify-center items-center mt-10 gap-3" id="involved-dots">
-            <button class="w-3 h-3 rounded-full bg-blue-900 transition-all w-8"></button>
-            <button class="w-3 h-3 rounded-full bg-gray-300 transition-all"></button>
-            <button class="w-3 h-3 rounded-full bg-gray-300 transition-all"></button>
-        </div>
-        
-    </div>
-</section>
+    </section>
 
 
-<section id="news-updates" class="py-16 lg:py-32 bg-white relative overflow-hidden scroll-mt-24">
-    <!-- Subtle Premium Background Elements -->
-    <div class="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:24px_24px] opacity-40"></div>
-    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-900/5 rounded-full filter blur-[120px] opacity-70 pointer-events-none"></div>
-    
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 reveal-on-scroll">
-        
-        <!-- Header Section: Split Design for Desktop -->
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 lg:mb-16 gap-6">
-            <div class="max-w-2xl">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-blue-900 font-semibold text-xs tracking-wider uppercase mb-6 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
-                    Newsroom
-                </div>
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-ficus-charcoal tracking-tight leading-tight">
-                    Latest Activity & <br class="hidden md:block" /> 
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-600">On-the-Ground Impact</span>
-                </h2>
-            </div>
-            
-            <a href="news.html" class="hidden md:inline-flex items-center gap-2 px-6 py-3.5 rounded-full border-2 border-gray-100 hover:border-blue-900 text-ficus-charcoal hover:text-blue-900 font-bold transition-all duration-300 group">
-                View Full Archive
-                <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-            </a>
-        </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // ---------------------------------------------------------
+            // GET INVOLVED CAROUSEL LOGIC
+            // ---------------------------------------------------------
+            const track = document.getElementById('involved-track');
+            const dotsContainer = document.getElementById('involved-dots');
+            const originalCards = Array.from(document.querySelectorAll('.involved-card'));
+            const totalOriginalCards = originalCards.length;
 
-        <!-- The Bento Grid Layout -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
-            
-            <!-- Featured Main Article (Spans 8 columns on desktop) -->
-            <!-- FIX: Adjusted min-heights for mobile responsiveness (min-h-[350px]) -->
-            <article class="lg:col-span-8 group relative rounded-[32px] lg:rounded-[40px] overflow-hidden min-h-[350px] md:min-h-[450px] lg:min-h-[550px] flex flex-col justify-end p-6 sm:p-8 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.05)]">
-                <!-- Background Image & Gradient Overlay -->
-                <img src="picha/1 (23).jpg" alt="Tech training in Mwanza" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
-                <div class="absolute inset-0 bg-gradient-to-t from-ficus-charcoal/90 via-ficus-charcoal/40 to-transparent"></div>
-                
-                <!-- Content overlay -->
-                <div class="relative z-10 w-full md:w-4/5 lg:w-3/4">
-                    <div class="flex flex-wrap items-center gap-2 sm:gap-3 mb-4 sm:mb-5">
-                        <span class="bg-blue-600 text-white text-[10px] sm:text-xs font-bold px-3 py-1.5 rounded-full tracking-wider uppercase">Press Release</span>
-                        <span class="text-white/80 text-xs sm:text-sm font-medium">May 10, 2026 • Mwanza</span>
-                    </div>
-                    
-                    <!-- FIX: Scaled down base mobile text to 'text-lg' and tightened bottom margin 'mb-3' -->
-                    <h3 class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-6 leading-tight group-hover:text-ficus-yellow transition-colors duration-300">
-                        FIDO Launches New Digital Literacy Campaign for the Lake Zone
-                    </h3>
-                    
-                    <!-- FIX: Adjusted line clamp and text size for mobile -->
-                    <p class="text-white/80 text-sm md:text-base lg:text-lg mb-6 sm:mb-8 line-clamp-2 md:line-clamp-none font-light">
-                        To bridge the digital divide, we are rolling out a comprehensive training program aimed at empowering local entrepreneurs and students with essential technology skills.
-                    </p>
-                    
-                    <!-- FIX: Changed to an actual <a> tag with an href -->
-                    <a href="news.html" class="inline-flex items-center gap-2 text-white font-bold group-hover:gap-4 transition-all relative z-20 w-fit">
-                        Read Story <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </a>
-                </div>
-            </article>
+            if (!track || totalOriginalCards === 0) return;
 
-            <!-- Secondary Column (Spans 4 columns on desktop) -->
-            <div class="lg:col-span-4 flex flex-col gap-6 lg:gap-8">
-                
-                <!-- Secondary Article 1: Solid Brand Color -->
-                <article class="flex-1 bg-ficus-blue rounded-[32px] p-6 sm:p-8 lg:p-10 text-white flex flex-col justify-between group shadow-xl relative overflow-hidden transition-transform duration-300 hover:-translate-y-1">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-bl-[100px]"></div>
-                    
-                    <div>
-                        <div class="flex items-center gap-3 mb-6">
-                            <span class="text-yellow-400 text-[10px] sm:text-xs font-bold border border-white px-3 py-1.5 rounded-full tracking-wider uppercase">Partnerships</span>
-                        </div>
-                        <!-- FIX: Changed invalid 'text-1xl' to 'text-xl' -->
-                        <h3 class="text-xl sm:text-2xl font-bold mb-4 leading-snug group-hover:text-ficus-yellow transition-colors">
-                            Expanding Our Agricultural Support Network
-                        </h3>
-                        <p class="text-white/90 text-sm leading-relaxed mb-6">
-                            Secured funding to provide drought-resistant seeds to over 500 rural families.
-                        </p>
-                    </div>
-                    
-                    <div class="flex items-center justify-between text-sm font-bold text-ficus-yellow mt-auto">
-                        <span>April 28, 2026</span>
-                        <!-- FIX: Changed to an actual <a> tag with an href -->
-                        <a href="involved.html" aria-label="Read more" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-ficus-yellow group-hover:text-blue-900 transition-colors relative z-20">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                        </a>
-                    </div>
-                </article>
+            let currentIndex = 0;
+            let autoSlideInterval;
+            let isTransitioning = false;
 
-                <!-- Secondary Article 2: Clean White Card -->
-                <article class="flex-1 bg-ficus-green border border-gray-100 rounded-[32px] p-6 sm:p-8 lg:p-10 flex flex-col justify-between group transition-all duration-300 hover:shadow-[0_15px_40px_rgba(0,0,0,0.06)] hover:border-blue-900/20">
-                    <div>
-                        <div class="flex items-center gap-3 mb-6 text-[10px] sm:text-xs font-bold text-white uppercase tracking-wider">
-                            <span>Community</span>
-                            <span class="w-1 h-1 rounded-full bg-yellow-400"></span>
-                            <span>Mar 15, 2026</span>
-                        </div>
-                        <!-- FIX: Changed invalid 'text-1xl' to 'text-xl' -->
-                        <h3 class="text-xl sm:text-2xl font-bold text-yellow-400 mb-4 leading-snug group-hover:text-blue-900 transition-colors">
-                            Annual Volunteer Drive Exceeds Expectations
-                        </h3>
-                        <p class="text-white/90 text-sm leading-relaxed mb-6 line-clamp-2">
-                            Over 200 community members joined our weekend initiative to repair local school infrastructures.
-                        </p>
-                    </div>
-                    
-                    <!-- FIX: Changed to an actual <a> tag with an href -->
-                    <a href="involved.html" class="text-sm font-bold text-blue-900 flex items-center gap-2 group-hover:gap-3 transition-all mt-auto w-fit relative z-20">
-                        Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                    </a>
-                </article>
+            function setupSeamlessLoop() {
+                const existingClones = document.querySelectorAll('.cloned-card');
+                existingClones.forEach(clone => clone.remove());
 
-            </div>
-        </div>
-        
-        <!-- Mobile View All CTA -->
-        <div class="mt-8 text-center md:hidden">
-            <a href="news.html" class="w-full inline-flex justify-center items-center gap-2 px-6 py-4 rounded-full bg-gray-50 text-ficus-charcoal font-bold transition-colors hover:bg-gray-100">
-                View Full Archive
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-            </a>
-        </div>
-        
-    </div>
-</section>
-
-
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // ---------------------------------------------------------
-    // GET INVOLVED CAROUSEL LOGIC
-    // ---------------------------------------------------------
-    const track = document.getElementById('involved-track');
-    const dotsContainer = document.getElementById('involved-dots');
-    const originalCards = Array.from(document.querySelectorAll('.involved-card'));
-    const totalOriginalCards = originalCards.length;
-    
-    if (!track || totalOriginalCards === 0) return;
-
-    let currentIndex = 0;
-    let autoSlideInterval;
-    let isTransitioning = false;
-
-    function setupSeamlessLoop() {
-        const existingClones = document.querySelectorAll('.cloned-card');
-        existingClones.forEach(clone => clone.remove());
-
-        if (window.innerWidth < 1024) {
-            const firstClone = originalCards[0].cloneNode(true);
-            firstClone.classList.add('cloned-card', 'lg:hidden'); 
-            track.appendChild(firstClone);
-        }
-    }
-
-    function initDots() {
-        dotsContainer.innerHTML = '';
-        if (window.innerWidth >= 1024) return;
-
-        originalCards.forEach((_, i) => {
-            const dot = document.createElement('button');
-            dot.className = `h-2 rounded-full transition-all duration-300 ${i === 0 ? 'bg-blue-900 w-6' : 'bg-gray-300 w-2'}`;
-            dot.addEventListener('click', () => {
-                if (!isTransitioning) goToSlide(i);
-            });
-            dotsContainer.appendChild(dot);
-        });
-    }
-
-    function goToSlide(index) {
-        if (window.innerWidth >= 1024) {
-            track.style.transform = 'translateX(0)';
-            return;
-        }
-
-        isTransitioning = true;
-        track.style.transition = 'transform 0.4s ease-out';
-        
-        currentIndex = index;
-        const offset = currentIndex * 100;
-        const gapOffset = currentIndex * 16;
-        track.style.transform = `translateX(calc(-${offset}% - ${gapOffset}px))`;
-
-        const dotIndex = currentIndex === totalOriginalCards ? 0 : currentIndex;
-        const dots = dotsContainer.querySelectorAll('button');
-        dots.forEach((dot, i) => {
-            if (i === dotIndex) {
-                dot.classList.replace('bg-gray-300', 'bg-blue-900');
-                dot.classList.replace('w-2', 'w-6');
-            } else {
-                dot.classList.replace('bg-blue-900', 'bg-gray-300');
-                dot.classList.replace('w-6', 'w-2');
+                if (window.innerWidth < 1024) {
+                    const firstClone = originalCards[0].cloneNode(true);
+                    firstClone.classList.add('cloned-card', 'lg:hidden');
+                    track.appendChild(firstClone);
+                }
             }
-        });
-    }
 
-    track.addEventListener('transitionend', () => {
-        isTransitioning = false;
-        if (currentIndex === totalOriginalCards) {
-            track.style.transition = 'none';
-            currentIndex = 0;
-            track.style.transform = `translateX(0px)`;
-            void track.offsetWidth; 
-        }
-    });
+            function initDots() {
+                dotsContainer.innerHTML = '';
+                if (window.innerWidth >= 1024) return;
 
-    function startAutoSlide() {
-        clearInterval(autoSlideInterval);
-        autoSlideInterval = setInterval(() => {
-            if (!isTransitioning) goToSlide(currentIndex + 1);
-        }, 4000);
-    }
+                originalCards.forEach((_, i) => {
+                    const dot = document.createElement('button');
+                    dot.className = `h-2 rounded-full transition-all duration-300 ${i === 0 ? 'bg-blue-900 w-6' : 'bg-gray-300 w-2'}`;
+                    dot.addEventListener('click', () => {
+                        if (!isTransitioning) goToSlide(i);
+                    });
+                    dotsContainer.appendChild(dot);
+                });
+            }
 
-    setupSeamlessLoop();
-    initDots();
-    if (window.innerWidth < 1024) startAutoSlide();
+            function goToSlide(index) {
+                if (window.innerWidth >= 1024) {
+                    track.style.transform = 'translateX(0)';
+                    return;
+                }
 
-    // --- TOUCH SWIPE LOGIC FOR GET INVOLVED ---
-    let touchStartX = 0;
-    let touchCurrentX = 0;
-    let isDraggingTouch = false;
+                isTransitioning = true;
+                track.style.transition = 'transform 0.4s ease-out';
 
-    track.addEventListener('touchstart', e => {
-        if (window.innerWidth >= 1024) return;
-        touchStartX = e.touches[0].clientX;
-        isDraggingTouch = true;
-        clearInterval(autoSlideInterval);
-        track.style.transition = 'none'; 
-    }, {passive: true});
+                currentIndex = index;
+                const offset = currentIndex * 100;
+                const gapOffset = currentIndex * 16;
+                track.style.transform = `translateX(calc(-${offset}% - ${gapOffset}px))`;
 
-    track.addEventListener('touchmove', e => {
-        if (!isDraggingTouch || window.innerWidth >= 1024) return;
-        touchCurrentX = e.touches[0].clientX;
-        const deltaX = touchCurrentX - touchStartX;
-        
-        const offset = currentIndex * 100;
-        const gapOffset = currentIndex * 16;
-        
-        track.style.transform = `translateX(calc(-${offset}% - ${gapOffset}px + ${deltaX}px))`;
-    }, {passive: true});
+                const dotIndex = currentIndex === totalOriginalCards ? 0 : currentIndex;
+                const dots = dotsContainer.querySelectorAll('button');
+                dots.forEach((dot, i) => {
+                    if (i === dotIndex) {
+                        dot.classList.replace('bg-gray-300', 'bg-blue-900');
+                        dot.classList.replace('w-2', 'w-6');
+                    } else {
+                        dot.classList.replace('bg-blue-900', 'bg-gray-300');
+                        dot.classList.replace('w-6', 'w-2');
+                    }
+                });
+            }
 
-    track.addEventListener('touchend', e => {
-        if (window.innerWidth >= 1024) return;
-        isDraggingTouch = false;
-        const touchEndX = e.changedTouches[0].clientX;
-        const deltaX = touchEndX - touchStartX;
-        
-        track.style.transition = 'transform 0.4s ease-out'; 
-        
-        const swipeThreshold = 50; 
-        
-        if (deltaX < -swipeThreshold) {
-            if (!isTransitioning) goToSlide(currentIndex + 1);
-        } else if (deltaX > swipeThreshold) {
-            if (!isTransitioning) {
-                if (currentIndex === 0) {
+            track.addEventListener('transitionend', () => {
+                isTransitioning = false;
+                if (currentIndex === totalOriginalCards) {
                     track.style.transition = 'none';
-                    currentIndex = totalOriginalCards;
-                    const offset = currentIndex * 100;
-                    const gapOffset = currentIndex * 16;
-                    track.style.transform = `translateX(calc(-${offset}% - ${gapOffset}px))`;
+                    currentIndex = 0;
+                    track.style.transform = `translateX(0px)`;
                     void track.offsetWidth;
-                    
-                    setTimeout(() => {
-                        track.style.transition = 'transform 0.4s ease-out';
-                        goToSlide(currentIndex - 1);
-                    }, 20);
-                } else {
-                    goToSlide(currentIndex - 1);
                 }
-            }
-        } else {
-            goToSlide(currentIndex);
-        }
-        startAutoSlide(); 
-    }, {passive: true});
-
-    window.addEventListener('resize', () => {
-        setupSeamlessLoop();
-        initDots();
-        currentIndex = 0;
-        track.style.transition = 'none';
-        track.style.transform = 'translateX(0)';
-        clearInterval(autoSlideInterval);
-        if (window.innerWidth < 1024) startAutoSlide();
-    });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-    // ---------------------------------------------------------
-    // OUR THEMES CAROUSEL LOGIC
-    // ---------------------------------------------------------
-    const programTrack = document.getElementById('carousel-track');
-    const programDotsContainer = document.getElementById('carousel-dots');
-    const programCards = Array.from(document.querySelectorAll('.carousel-card'));
-    const totalOriginalCards = programCards.length;
-    
-    if (!programTrack || totalOriginalCards === 0) return;
-
-    let currentIndex = 0;
-    let autoSlideInterval;
-    let isTransitioning = false;
-    let cardsPerView = getCardsPerView();
-
-    function getCardsPerView() {
-        if (window.innerWidth >= 1024) return 3; 
-        if (window.innerWidth >= 768) return 2;  
-        return 1;                                
-    }
-
-    function setupSeamlessLoop() {
-        const existingClones = document.querySelectorAll('.program-clone');
-        existingClones.forEach(clone => clone.remove());
-
-        for (let i = 0; i < cardsPerView; i++) {
-            if (programCards[i]) {
-                const clone = programCards[i].cloneNode(true);
-                clone.classList.add('program-clone'); 
-                programTrack.appendChild(clone);
-            }
-        }
-    }
-
-    function initDots() {
-        programDotsContainer.innerHTML = '';
-        for (let i = 0; i < totalOriginalCards; i++) {
-            const dot = document.createElement('button');
-            dot.className = `h-2 rounded-full transition-all duration-300 ${i === 0 ? 'bg-blue-900 w-8' : 'bg-gray-300 w-3 hover:bg-blue-400'}`;
-            dot.addEventListener('click', () => {
-                if (!isTransitioning) goToSlide(i);
             });
-            programDotsContainer.appendChild(dot);
-        }
-    }
 
-    function goToSlide(index) {
-        isTransitioning = true;
-        programTrack.style.transition = 'transform 0.4s ease-out';
-        
-        currentIndex = index;
-        const percentageToMove = currentIndex * (100 / cardsPerView);
-        let gapSize = window.innerWidth >= 1024 ? 32 : window.innerWidth >= 768 ? 24 : 16;
-        const gapOffset = currentIndex * gapSize; 
-
-        programTrack.style.transform = `translateX(calc(-${percentageToMove}% - ${gapOffset}px))`;
-
-        const dotIndex = currentIndex % totalOriginalCards; 
-        const dots = programDotsContainer.querySelectorAll('button');
-        dots.forEach((dot, i) => {
-            if (i === dotIndex) {
-                dot.classList.remove('bg-gray-300', 'w-3', 'hover:bg-blue-400');
-                dot.classList.add('bg-blue-900', 'w-8');
-            } else {
-                dot.classList.remove('bg-blue-900', 'w-8');
-                dot.classList.add('bg-gray-300', 'w-3', 'hover:bg-blue-400');
+            function startAutoSlide() {
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = setInterval(() => {
+                    if (!isTransitioning) goToSlide(currentIndex + 1);
+                }, 4000);
             }
-        });
-    }
 
-    programTrack.addEventListener('transitionend', () => {
-        isTransitioning = false;
-        if (currentIndex === totalOriginalCards) {
-            programTrack.style.transition = 'none';
-            currentIndex = 0;
-            programTrack.style.transform = `translateX(0px)`;
-            void programTrack.offsetWidth; 
-        }
-    });
-
-    function startAutoSlide() {
-        clearInterval(autoSlideInterval);
-        autoSlideInterval = setInterval(() => {
-            if (!isTransitioning) {
-                goToSlide(currentIndex + 1);
-            }
-        }, 4000);
-    }
-
-    setupSeamlessLoop();
-    initDots();
-    startAutoSlide();
-
-    // --- TOUCH SWIPE LOGIC FOR OUR THEMES ---
-    let pTouchStartX = 0;
-    let pTouchCurrentX = 0;
-    let pIsDraggingTouch = false;
-
-    programTrack.addEventListener('touchstart', e => {
-        if (window.innerWidth >= 1024) return;
-        pTouchStartX = e.touches[0].clientX;
-        pIsDraggingTouch = true;
-        clearInterval(autoSlideInterval);
-        programTrack.style.transition = 'none';
-    }, {passive: true});
-
-    programTrack.addEventListener('touchmove', e => {
-        if (!pIsDraggingTouch || window.innerWidth >= 1024) return;
-        pTouchCurrentX = e.touches[0].clientX;
-        const deltaX = pTouchCurrentX - pTouchStartX;
-        
-        const percentageToMove = currentIndex * (100 / cardsPerView);
-        let gapSize = window.innerWidth >= 1024 ? 32 : window.innerWidth >= 768 ? 24 : 16;
-        const gapOffset = currentIndex * gapSize; 
-
-        programTrack.style.transform = `translateX(calc(-${percentageToMove}% - ${gapOffset}px + ${deltaX}px))`;
-    }, {passive: true});
-
-    programTrack.addEventListener('touchend', e => {
-        if (window.innerWidth >= 1024) return;
-        pIsDraggingTouch = false;
-        const touchEndX = e.changedTouches[0].clientX;
-        const deltaX = touchEndX - pTouchStartX;
-        
-        programTrack.style.transition = 'transform 0.4s ease-out';
-        
-        const swipeThreshold = 50;
-        if (deltaX < -swipeThreshold) {
-            if (!isTransitioning) goToSlide(currentIndex + 1);
-        } else if (deltaX > swipeThreshold) {
-            if (!isTransitioning) {
-                if (currentIndex === 0) {
-                    programTrack.style.transition = 'none';
-                    currentIndex = totalOriginalCards;
-                    const percentageToMove = currentIndex * (100 / cardsPerView);
-                    let gapSize = window.innerWidth >= 1024 ? 32 : window.innerWidth >= 768 ? 24 : 16;
-                    const gapOffset = currentIndex * gapSize; 
-                    programTrack.style.transform = `translateX(calc(-${percentageToMove}% - ${gapOffset}px))`;
-                    void programTrack.offsetWidth;
-                    
-                    setTimeout(() => {
-                        programTrack.style.transition = 'transform 0.4s ease-out';
-                        goToSlide(currentIndex - 1);
-                    }, 20);
-                } else {
-                    goToSlide(currentIndex - 1);
-                }
-            }
-        } else {
-            goToSlide(currentIndex);
-        }
-        startAutoSlide();
-    }, {passive: true});
-
-    window.addEventListener('resize', () => {
-        const newCardsPerView = getCardsPerView();
-        if (newCardsPerView !== cardsPerView) {
-            cardsPerView = newCardsPerView;
             setupSeamlessLoop();
             initDots();
-            currentIndex = 0;
-            programTrack.style.transition = 'none';
-            programTrack.style.transform = 'translateX(0)';
-            clearInterval(autoSlideInterval);
-            startAutoSlide();
-        }
-    });
-});
-</script>
+            if (window.innerWidth < 1024) startAutoSlide();
+
+            // --- TOUCH SWIPE LOGIC FOR GET INVOLVED ---
+            let touchStartX = 0;
+            let touchCurrentX = 0;
+            let isDraggingTouch = false;
+
+            track.addEventListener('touchstart', e => {
+                if (window.innerWidth >= 1024) return;
+                touchStartX = e.touches[0].clientX;
+                isDraggingTouch = true;
+                clearInterval(autoSlideInterval);
+                track.style.transition = 'none';
+            }, { passive: true });
+
+            track.addEventListener('touchmove', e => {
+                if (!isDraggingTouch || window.innerWidth >= 1024) return;
+                touchCurrentX = e.touches[0].clientX;
+                const deltaX = touchCurrentX - touchStartX;
+
+                const offset = currentIndex * 100;
+                const gapOffset = currentIndex * 16;
+
+                track.style.transform = `translateX(calc(-${offset}% - ${gapOffset}px + ${deltaX}px))`;
+            }, { passive: true });
+
+            track.addEventListener('touchend', e => {
+                if (window.innerWidth >= 1024) return;
+                isDraggingTouch = false;
+                const touchEndX = e.changedTouches[0].clientX;
+                const deltaX = touchEndX - touchStartX;
+
+                track.style.transition = 'transform 0.4s ease-out';
+
+                const swipeThreshold = 50;
+
+                if (deltaX < -swipeThreshold) {
+                    if (!isTransitioning) goToSlide(currentIndex + 1);
+                } else if (deltaX > swipeThreshold) {
+                    if (!isTransitioning) {
+                        if (currentIndex === 0) {
+                            track.style.transition = 'none';
+                            currentIndex = totalOriginalCards;
+                            const offset = currentIndex * 100;
+                            const gapOffset = currentIndex * 16;
+                            track.style.transform = `translateX(calc(-${offset}% - ${gapOffset}px))`;
+                            void track.offsetWidth;
+
+                            setTimeout(() => {
+                                track.style.transition = 'transform 0.4s ease-out';
+                                goToSlide(currentIndex - 1);
+                            }, 20);
+                        } else {
+                            goToSlide(currentIndex - 1);
+                        }
+                    }
+                } else {
+                    goToSlide(currentIndex);
+                }
+                startAutoSlide();
+            }, { passive: true });
+
+            window.addEventListener('resize', () => {
+                setupSeamlessLoop();
+                initDots();
+                currentIndex = 0;
+                track.style.transition = 'none';
+                track.style.transform = 'translateX(0)';
+                clearInterval(autoSlideInterval);
+                if (window.innerWidth < 1024) startAutoSlide();
+            });
+        });
+
+
+    </script>
 
 
 
 
-<div id="ficus-footer"></div>
+    <div id="ficus-footer"></div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

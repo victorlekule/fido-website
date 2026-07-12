@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FIDO</title>    
+    <title>FIDO</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         /* Premium Morphed Shapes & Floating Animations */
         @keyframes morphShape {
-            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+
+            0%,
+            100% {
+                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            }
+
+            50% {
+                border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+            }
         }
-        .animate-morph { animation: morphShape 10s ease-in-out infinite; }
-        
+
+        .animate-morph {
+            animation: morphShape 10s ease-in-out infinite;
+        }
+
         .reveal-on-scroll {
             opacity: 0;
             transform: translateY(40px);
             transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
         }
+
         .reveal-on-scroll.is-visible {
             opacity: 1;
             transform: translateY(0);
@@ -32,6 +44,7 @@
             transition: max-height 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
             opacity: 0;
         }
+
         .details-wrapper.open {
             max-height: 1200px;
             opacity: 1;
@@ -39,296 +52,450 @@
         }
     </style>
 </head>
+
 <body class="bg-gray-50 cursor-default">
 
     <div id="ficus-header-container"></div>
 
-<!-- ================= HERO SECTION ================= -->
-<section class="relative min-h-[50vh] lg:min-h-[70vh] flex items-center bg-blue-900 overflow-hidden pt-24 pb-12 lg:pt-32 lg:pb-20">
-    <div class="absolute top-0 right-0 w-[400px] h-[400px] lg:w-[800px] lg:h-[800px] bg-ficus-yellow/10 rounded-full blur-[100px] lg:blur-[150px] pointer-events-none"></div>
-    <div class="absolute bottom-0 left-0 w-[300px] h-[300px] lg:w-[600px] lg:h-[600px] bg-blue-500/10 rounded-full blur-[80px] lg:blur-[120px] pointer-events-none"></div>
+    <!-- ================= HERO SECTION ================= -->
+    <section
+        class="relative min-h-[50vh] lg:min-h-[70vh] flex items-center bg-ficus-blue overflow-hidden pt-24 pb-12 lg:pt-32 lg:pb-20">
+        <div
+            class="absolute top-0 right-0 w-[400px] h-[400px] lg:w-[800px] lg:h-[800px] bg-ficus-yellow/10 rounded-full blur-[100px] lg:blur-[150px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[300px] h-[300px] lg:w-[600px] lg:h-[600px] bg-blue-500/10 rounded-full blur-[80px] lg:blur-[120px] pointer-events-none">
+        </div>
 
-    <div class="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 w-full text-center">
-        <div class="reveal-on-scroll max-w-5xl mx-auto">
-            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-ficus-yellow font-bold text-xs tracking-widest uppercase mb-6 backdrop-blur-sm">
-                <span class="w-2 h-2 rounded-full bg-ficus-yellow animate-pulse"></span>
-                Our Core Programs
+        <div class="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 w-full text-center mt-16">
+            <div class="reveal-on-scroll max-w-5xl mx-auto">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-ficus-yellow font-bold text-xs tracking-widest uppercase mb-6 backdrop-blur-sm">
+                    <span class="w-2 h-2 rounded-full bg-ficus-yellow animate-pulse "></span>
+                    Our Core Programs
+                </div>
+
+                <h1
+                    class="text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] font-extrabold text-white leading-[1.1] tracking-tight mb-8">
+                    Integrated Solutions for <br class="hidden lg:block"> <span class="text-ficus-yellow">Lasting
+                        Change.</span>
+                </h1>
+
+                <p class="text-lg md:text-2xl text-blue-100/80 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+                    Six interconnected themes designed to address the root causes of poverty, drive sustainable
+                    development, and build absolute self‑reliance across Tanzania.
+                </p>
+
+                <a href="involved.html"
+                    class="inline-flex items-center justify-center w-full sm:w-auto gap-3 bg-ficus-yellow text-black px-8 py-4 lg:px-12 lg:py-5 rounded-full font-black text-base lg:text-lg hover:bg-white transition-all duration-300 shadow-[0_15px_40px_rgba(234,179,8,0.25)] hover:shadow-[0_20px_50px_rgba(234,179,8,0.4)] hover:-translate-y-1">
+                    Support Our Mission
+                    <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
             </div>
-            
-            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] font-extrabold text-white leading-[1.1] tracking-tight mb-8">
-                Integrated Solutions for <br class="hidden lg:block"> <span class="text-ficus-yellow">Lasting Change.</span>
-            </h1>
-            
-            <p class="text-lg md:text-2xl text-blue-100/80 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-                Six interconnected themes designed to address the root causes of poverty, drive sustainable development, and build absolute self‑reliance across Tanzania.
+        </div>
+    </section>
+
+    <!-- ================= 01 EDUCATION (Image Left) ================= -->
+    <section id="education" class="py-16 lg:py-32 bg-white overflow-hidden">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+                <!-- Image Left -->
+                <div class="lg:col-span-5 order-1 reveal-on-scroll relative group">
+                    <div
+                        class="absolute -inset-4 bg-ficus-sand/40 rounded-[32px] transform -rotate-3 transition-transform duration-500 group-hover:-rotate-1 z-0">
+                    </div>
+                    <div
+                        class="relative z-10 w-full aspect-[4/3] lg:aspect-auto lg:h-[650px] rounded-[24px] overflow-hidden shadow-2xl">
+                        <img src="picha/1 (21).jpg"
+                            class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                            alt="Education">
+                    </div>
+                </div>
+
+                <!-- Text Right -->
+                <div class="lg:col-span-7 order-2 reveal-on-scroll">
+                    <span
+                        class="text-ficus-blue font-black tracking-widest uppercase text-xs lg:text-sm mb-4 block">Program
+                        01 — Quality Learning</span>
+                    <h2
+                        class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-ficus-charcoal mb-6 tracking-tight leading-tight">
+                        Unlocking Potential Through Education</h2>
+                    <p class="text-lg lg:text-xl text-ficus-charcoal/70 leading-relaxed mb-10 font-light">We improve
+                        access to quality education, vocational training, and life skills for children and youth. Our
+                        mission is to ensure learning translates directly into sustainable livelihoods.</p>
+
+                    <!-- Comprehensive Info Grid -->
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl border-t-4 border-t-ficus-yellow">
+                            <h4 class="font-bold text-ficus-blue mb-2">Infrastructure & Resources</h4>
+                            <p class="text-sm text-ficus-charcoal/70 leading-relaxed">We renovate classrooms and provide
+                                essential learning materials like books, desks, and solar lighting to rural schools in
+                                the Lake Zone.</p>
+                        </div>
+                        <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl border-t-4 border-t-ficus-yellow">
+                            <h4 class="font-bold text-ficus-blue mb-2">Vocational Training</h4>
+                            <p class="text-sm text-ficus-charcoal/70 leading-relaxed">For out-of-school youth, we
+                                provide practical skills in carpentry, tailoring, and electrical works alongside
+                                business management.</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 border border-gray-100 p-6 rounded-2xl border-t-4 border-t-ficus-yellow sm:col-span-2">
+                            <h4 class="font-bold text-ficus-blue mb-2">Teacher Support & Inclusion</h4>
+                            <p class="text-sm text-ficus-charcoal/70 leading-relaxed">We collaborate with local
+                                governments to provide pedagogical workshops, with a strong focus on inclusive education
+                                for children with disabilities.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 02 HEALTH (Image Right) ================= -->
+    <section id="health" class="py-16 lg:py-32 bg-ficus-sand/20 overflow-hidden border-y border-gray-100">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+                <!-- Text Left -->
+                <div class="lg:col-span-7 order-2 lg:order-1 reveal-on-scroll">
+                    <span
+                        class="text-ficus-blue font-black tracking-widest uppercase text-xs lg:text-sm mb-4 block">Program
+                        02 — Community Health</span>
+                    <h2
+                        class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-ficus-charcoal mb-6 tracking-tight leading-tight">
+                        Healthy Communities, Brighter Futures</h2>
+                    <p class="text-lg lg:text-xl text-ficus-charcoal/70 leading-relaxed mb-10 font-light">We promote
+                        health education, disease prevention, and access to health insurance for underserved families.
+                        Good health is the absolute foundation of a thriving economy.</p>
+
+                    <!-- Comprehensive Info Grid -->
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div
+                            class="bg-white border border-gray-100 p-6 rounded-2xl border-l-4 border-l-ficus-blue shadow-sm">
+                            <h4 class="font-bold text-ficus-blue mb-2">Maternal & Child Health</h4>
+                            <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Training community health workers
+                                to support expectant mothers with crucial prenatal care and nutritional guidance.</p>
+                        </div>
+                        <div
+                            class="bg-white border border-gray-100 p-6 rounded-2xl border-l-4 border-l-ficus-blue shadow-sm">
+                            <h4 class="font-bold text-ficus-blue mb-2">Health Insurance</h4>
+                            <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Advocating and facilitating
+                                enrollment in the Community Health Fund (CHF) to prevent medical-induced poverty.</p>
+                        </div>
+                        <div
+                            class="bg-white border border-gray-100 p-6 rounded-2xl border-l-4 border-l-ficus-blue shadow-sm sm:col-span-2">
+                            <h4 class="font-bold text-ficus-blue mb-2">WASH Initiatives</h4>
+                            <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Constructing clean water points
+                                and promoting sanitation/hygiene in schools to drastically reduce the spread of
+                                water-borne illnesses.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Right -->
+                <div class="lg:col-span-5 order-1 lg:order-2 reveal-on-scroll relative group">
+                    <div
+                        class="absolute -inset-4 bg-blue-900/10 rounded-[32px] transform rotate-3 transition-transform duration-500 group-hover:rotate-1 z-0">
+                    </div>
+                    <div
+                        class="relative z-10 w-full aspect-[4/3] lg:aspect-auto lg:h-[650px] rounded-[24px] overflow-hidden shadow-2xl">
+                        <img src="picha/1 (17).jpg"
+                            class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                            alt="Health">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 03 AGRICULTURE (Image Left) ================= -->
+    <section id="agriculture" class="py-16 lg:py-32 bg-white overflow-hidden">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+                <!-- Image Left -->
+                <div class="lg:col-span-5 order-1 reveal-on-scroll relative group">
+                    <div
+                        class="absolute -inset-4 bg-green-50 rounded-[32px] transform -rotate-3 transition-transform duration-500 group-hover:-rotate-1 z-0">
+                    </div>
+                    <div
+                        class="relative z-10 w-full aspect-[4/3] lg:aspect-auto lg:h-[650px] rounded-[24px] overflow-hidden shadow-2xl">
+                        <img src="picha/1 (19).jpg"
+                            class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                            alt="Agriculture">
+                    </div>
+                </div>
+
+                <!-- Text Right -->
+                <div class="lg:col-span-7 order-2 reveal-on-scroll">
+                    <span
+                        class="text-green-600 font-black tracking-widest uppercase text-xs lg:text-sm mb-4 block">Program
+                        03 — Sustainable Farming</span>
+                    <h2
+                        class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-ficus-charcoal mb-6 tracking-tight leading-tight">
+                        Growing Resilience from the Ground Up</h2>
+                    <p class="text-lg lg:text-xl text-ficus-charcoal/70 leading-relaxed mb-10 font-light">Through
+                        climate‑smart training and agribusiness support, we help smallholder farmers increase yields,
+                        adapt to climate change, and secure their families’ food and income.</p>
+
+                    <!-- Comprehensive Info Grid -->
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl border-t-4 border-t-green-600">
+                            <h4 class="font-bold text-green-600 mb-2">Climate-Smart Agri (CSA)</h4>
+                            <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Providing training on conservation
+                                tillage, crop diversification, and micro-irrigation systems to fight erratic weather.
+                            </p>
+                        </div>
+                        <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl border-t-4 border-t-green-600">
+                            <h4 class="font-bold text-green-600 mb-2">Direct Market Linkages</h4>
+                            <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Connecting smallholder
+                                cooperatives directly with wholesalers in Mwanza to bypass predatory middlemen.</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 border border-gray-100 p-6 rounded-2xl border-t-4 border-t-green-600 sm:col-span-2">
+                            <h4 class="font-bold text-green-600 mb-2">Women in Agriculture</h4>
+                            <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Establishing specialized support
+                                groups for female farmers to gain critical land-use rights and high-level financial
+                                literacy.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 04 ENVIRONMENT (Dark Theme - Image Right) ================= -->
+    <section id="environment" class="py-16 lg:py-32 bg-ficus-blue text-white overflow-hidden">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+                <!-- Text Left -->
+                <div class="lg:col-span-7 order-2 lg:order-1 reveal-on-scroll">
+                    <span
+                        class="text-ficus-yellow font-black tracking-widest uppercase text-xs lg:text-sm mb-4 block">Program
+                        04 — Nature Conservation</span>
+                    <h2
+                        class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+                        Protecting Nature, Securing Tomorrow</h2>
+                    <p class="text-lg lg:text-xl text-blue-100/80 leading-relaxed mb-10 font-light">We lead
+                        community‑based conservation and environmental awareness projects that restore vital ecosystems
+                        and build long-term climate resilience.</p>
+
+                    <!-- Comprehensive Info Grid -->
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div
+                            class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl border-l-4 border-l-ficus-yellow">
+                            <h4 class="font-bold text-ficus-yellow mb-2">Agroforestry Integration</h4>
+                            <p class="text-sm text-blue-50/80 leading-relaxed">Integrating strategic tree planting with
+                                local farming to rapidly improve soil health and provide sustainable firewood.</p>
+                        </div>
+                        <div
+                            class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl border-l-4 border-l-ficus-yellow">
+                            <h4 class="font-bold text-ficus-yellow mb-2">Clean Energy Adoption</h4>
+                            <p class="text-sm text-blue-50/80 leading-relaxed">Promoting the widespread use of
+                                fuel-efficient stoves to reduce massive deforestation in rural districts.</p>
+                        </div>
+                        <div
+                            class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl border-l-4 border-l-ficus-yellow sm:col-span-2">
+                            <h4 class="font-bold text-ficus-yellow mb-2">Youth Conservation Clubs</h4>
+                            <p class="text-sm text-blue-50/80 leading-relaxed">Establishing active environmental clubs
+                                in primary and secondary schools to raise a green-conscious generation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Right -->
+                <div class="lg:col-span-5 order-1 lg:order-2 reveal-on-scroll relative group">
+                    <div
+                        class="absolute -inset-4 bg-ficus-yellow/20 rounded-[32px] transform rotate-3 transition-transform duration-500 group-hover:rotate-1 z-0">
+                    </div>
+                    <div
+                        class="relative z-10 w-full aspect-[4/3] lg:aspect-auto lg:h-[650px] rounded-[24px] overflow-hidden shadow-2xl">
+                        <img src="picha/1 (18).jpg"
+                            class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                            alt="Environment">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 05 TECH & INNOVATION (Image Left) ================= -->
+    <section id="tech" class="py-16 lg:py-32 bg-white overflow-hidden border-b border-gray-50">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+                <!-- Image Left -->
+                <div class="lg:col-span-5 order-1 reveal-on-scroll relative group">
+                    <div
+                        class="absolute -inset-4 bg-ficus-blue/10 rounded-[32px] transform -rotate-3 transition-transform duration-500 group-hover:-rotate-1 z-0">
+                    </div>
+                    <div
+                        class="relative z-10 w-full aspect-[4/3] lg:aspect-auto lg:h-[650px] rounded-[24px] overflow-hidden shadow-2xl">
+                        <img src="picha/1 (24).jpg"
+                            class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                            alt="Innovation">
+                    </div>
+                </div>
+
+                <!-- Text Right -->
+                <div class="lg:col-span-7 order-2 reveal-on-scroll">
+                    <span
+                        class="text-ficus-blue font-black tracking-widest uppercase text-xs lg:text-sm mb-4 block">Program
+                        05 — Digital Inclusion</span>
+                    <h2
+                        class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-ficus-charcoal mb-6 tracking-tight leading-tight">
+                        Innovation for Inclusion</h2>
+                    <p class="text-lg lg:text-xl text-ficus-charcoal/70 leading-relaxed mb-10 font-light">We heavily
+                        integrate AgriTech and EdTech into our programs to bridge the digital divide. From mobile apps
+                        for farmers to digital classrooms, we make tech a tool for equity.</p>
+
+                    <!-- Comprehensive Info Grid -->
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl border-t-4 border-t-ficus-blue">
+                            <h4 class="font-bold text-ficus-blue mb-2">Digital Learning Centers</h4>
+                            <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Establishing internet-enabled hubs
+                                in Mwanza where rural youth can learn coding and digital marketing.</p>
+                        </div>
+                        <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl border-t-4 border-t-ficus-blue">
+                            <h4 class="font-bold text-ficus-blue mb-2">Data for Farmers</h4>
+                            <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Utilizing SMS platforms to provide
+                                real-time weather and market price alerts to isolated smallholders.</p>
+                        </div>
+                        <div
+                            class="bg-gray-50 border border-gray-100 p-6 rounded-2xl border-t-4 border-t-ficus-blue sm:col-span-2">
+                            <h4 class="font-bold text-ficus-blue mb-2">GreenTech Incubation</h4>
+                            <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Incubating and funding local
+                                grassroots innovations that focus specifically on renewable energy and water recycling
+                                technology.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 06 ECONOMY (Image Right) ================= -->
+    <section id="economy" class="py-16 lg:py-32 bg-ficus-yellow overflow-hidden">
+        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+
+                <!-- Text Left -->
+                <div class="lg:col-span-7 order-2 lg:order-1 reveal-on-scroll">
+                    <span class="text-black font-black tracking-widest uppercase text-xs lg:text-sm mb-4 block">Program
+                        06 — Self‑Reliance</span>
+                    <h2
+                        class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+                        From Survival to Self‑Reliance</h2>
+                    <p class="text-lg lg:text-xl text-ficus-black leading-relaxed mb-10 font-light">We support
+                        entrepreneurship and savings groups—especially prioritizing women and youth—to break the cycle
+                        of poverty permanently.</p>
+
+                    <!-- Comprehensive Info Grid -->
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div
+                            class="bg-white border border-gray-100 p-6 rounded-2xl border-l-4 border-l-black shadow-sm">
+                            <h4 class="font-bold text-ficus-charcoal mb-2">VICOBA Support</h4>
+                            <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Strengthening Village Community
+                                Bank groups through intensive training on book-keeping and safe loan management.</p>
+                        </div>
+                        <div
+                            class="bg-white border border-gray-100 p-6 rounded-2xl border-l-4 border-l-black shadow-sm">
+                            <h4 class="font-bold text-ficus-charcoal mb-2">Youth Incubation</h4>
+                            <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Providing small seed grants,
+                                workspace, and mentorship to youth starting small businesses in Mwanza city.</p>
+                        </div>
+                        <div
+                            class="bg-white border border-gray-100 p-6 rounded-2xl border-l-4 border-l-black shadow-sm sm:col-span-2">
+                            <h4 class="font-bold text-ficus-charcoal mb-2">Agricultural Value-Addition</h4>
+                            <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Training farmers on food
+                                processing techniques (like solar drying or vacuum packaging) to exponentially increase
+                                profit margins.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Right -->
+                <div class="lg:col-span-5 order-1 lg:order-2 reveal-on-scroll relative group">
+                    <div
+                        class="absolute -inset-4 bg-orange-500/10 rounded-[32px] transform rotate-3 transition-transform duration-500 group-hover:rotate-1 z-0">
+                    </div>
+                    <div
+                        class="relative z-10 w-full aspect-[4/3] lg:aspect-auto lg:h-[650px] rounded-[24px] overflow-hidden shadow-2xl">
+                        <img src="picha/1 (22).jpg"
+                            class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                            alt="Economic Empowerment">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FINAL CTA ================= -->
+    <section class="py-16 lg:py-24 mb-10 bg-green-600 text-center relative overflow-hidden">
+        <!-- Subtle dot pattern -->
+        <div
+            class="absolute inset-0 bg-[radial-gradient(white_1px,transparent_1px)] [background-size:20px_20px] opacity-10">
+        </div>
+        <!-- Soft glow -->
+        <div class="absolute -top-20 -left-20 w-80 h-80 bg-yellow-400/20 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-20 -right-20 w-80 h-80 bg-yellow-400/10 rounded-full blur-3xl"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 reveal-on-scroll">
+            <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur border border-white/30 text-white text-xs font-bold tracking-widest uppercase mb-6">
+                <span class="w-2 h-2 rounded-full bg-yellow-400 animate-pulse"></span> Take Action
+            </div>
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight leading-tight">
+                Fuel the <span class="text-yellow-400">Mission.</span>
+            </h2>
+            <p class="text-lg sm:text-2xl text-white/80 mb-10 font-light leading-relaxed max-w-3xl mx-auto">
+                Your support enables us to continue these integrated solutions across Tanzania. Together, we are a
+                promise.
             </p>
-            
-            <a href="#donate" class="inline-flex items-center justify-center w-full sm:w-auto gap-3 bg-ficus-yellow text-blue-900 px-8 py-4 lg:px-12 lg:py-5 rounded-full font-black text-base lg:text-lg hover:bg-white transition-all duration-300 shadow-[0_15px_40px_rgba(234,179,8,0.25)] hover:shadow-[0_20px_50px_rgba(234,179,8,0.4)] hover:-translate-y-1">
-                Support Our Mission
-                <svg class="w-5 h-5 lg:w-6 lg:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            <a href="donate.html"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-yellow-400 text-green-900 px-10 py-5 lg:px-12 lg:py-6 rounded-full font-black text-lg hover:bg-white hover:text-green-700 transition-all shadow-[0_15px_30px_rgba(0,0,0,0.15)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.25)] hover:-translate-y-1">
+                Donate Where It’s Needed
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                    </path>
+                </svg>
             </a>
         </div>
-    </div>
-</section>
-
-<!-- ================= 01 EDUCATION (Image Left) ================= -->
-<section id="education" class="py-16 lg:py-32 bg-white overflow-hidden">
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-            
-            <!-- Image Left -->
-            <div class="lg:col-span-5 order-1 reveal-on-scroll relative group">
-                <div class="absolute -inset-4 bg-ficus-sand/40 rounded-[32px] transform -rotate-3 transition-transform duration-500 group-hover:-rotate-1 z-0"></div>
-                <div class="relative z-10 w-full aspect-[4/3] lg:aspect-auto lg:h-[650px] rounded-[24px] overflow-hidden shadow-2xl">
-                    <img src="picha/1 (21).jpg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Education">
-                </div>
-            </div>
-
-            <!-- Text Right -->
-            <div class="lg:col-span-7 order-2 reveal-on-scroll">
-                <span class="text-ficus-yellow font-black tracking-widest uppercase text-xs lg:text-sm mb-4 block">Program 01 — Quality Learning</span>
-                <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-ficus-charcoal mb-6 tracking-tight leading-tight">Unlocking Potential Through Education</h2>
-                <p class="text-lg lg:text-xl text-ficus-charcoal/70 leading-relaxed mb-10 font-light">We improve access to quality education, vocational training, and life skills for children and youth. Our mission is to ensure learning translates directly into sustainable livelihoods.</p>
-                
-                <!-- Comprehensive Info Grid -->
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl border-t-4 border-t-ficus-yellow">
-                        <h4 class="font-bold text-blue-900 mb-2">Infrastructure & Resources</h4>
-                        <p class="text-sm text-ficus-charcoal/70 leading-relaxed">We renovate classrooms and provide essential learning materials like books, desks, and solar lighting to rural schools in the Lake Zone.</p>
-                    </div>
-                    <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl border-t-4 border-t-ficus-yellow">
-                        <h4 class="font-bold text-blue-900 mb-2">Vocational Training</h4>
-                        <p class="text-sm text-ficus-charcoal/70 leading-relaxed">For out-of-school youth, we provide practical skills in carpentry, tailoring, and electrical works alongside business management.</p>
-                    </div>
-                    <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl border-t-4 border-t-ficus-yellow sm:col-span-2">
-                        <h4 class="font-bold text-blue-900 mb-2">Teacher Support & Inclusion</h4>
-                        <p class="text-sm text-ficus-charcoal/70 leading-relaxed">We collaborate with local governments to provide pedagogical workshops, with a strong focus on inclusive education for children with disabilities.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- ================= 02 HEALTH (Image Right) ================= -->
-<section id="health" class="py-16 lg:py-32 bg-ficus-sand/20 overflow-hidden border-y border-gray-100">
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-            
-            <!-- Text Left -->
-            <div class="lg:col-span-7 order-2 lg:order-1 reveal-on-scroll">
-                <span class="text-blue-900 font-black tracking-widest uppercase text-xs lg:text-sm mb-4 block">Program 02 — Community Health</span>
-                <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-ficus-charcoal mb-6 tracking-tight leading-tight">Healthy Communities, Brighter Futures</h2>
-                <p class="text-lg lg:text-xl text-ficus-charcoal/70 leading-relaxed mb-10 font-light">We promote health education, disease prevention, and access to health insurance for underserved families. Good health is the absolute foundation of a thriving economy.</p>
-                
-                <!-- Comprehensive Info Grid -->
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div class="bg-white border border-gray-100 p-6 rounded-2xl border-l-4 border-l-blue-900 shadow-sm">
-                        <h4 class="font-bold text-blue-900 mb-2">Maternal & Child Health</h4>
-                        <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Training community health workers to support expectant mothers with crucial prenatal care and nutritional guidance.</p>
-                    </div>
-                    <div class="bg-white border border-gray-100 p-6 rounded-2xl border-l-4 border-l-blue-900 shadow-sm">
-                        <h4 class="font-bold text-blue-900 mb-2">Health Insurance</h4>
-                        <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Advocating and facilitating enrollment in the Community Health Fund (CHF) to prevent medical-induced poverty.</p>
-                    </div>
-                    <div class="bg-white border border-gray-100 p-6 rounded-2xl border-l-4 border-l-blue-900 shadow-sm sm:col-span-2">
-                        <h4 class="font-bold text-blue-900 mb-2">WASH Initiatives</h4>
-                        <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Constructing clean water points and promoting sanitation/hygiene in schools to drastically reduce the spread of water-borne illnesses.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Image Right -->
-            <div class="lg:col-span-5 order-1 lg:order-2 reveal-on-scroll relative group">
-                <div class="absolute -inset-4 bg-blue-900/10 rounded-[32px] transform rotate-3 transition-transform duration-500 group-hover:rotate-1 z-0"></div>
-                <div class="relative z-10 w-full aspect-[4/3] lg:aspect-auto lg:h-[650px] rounded-[24px] overflow-hidden shadow-2xl">
-                    <img src="picha/1 (17).jpg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Health">
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- ================= 03 AGRICULTURE (Image Left) ================= -->
-<section id="agriculture" class="py-16 lg:py-32 bg-white overflow-hidden">
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-            
-            <!-- Image Left -->
-            <div class="lg:col-span-5 order-1 reveal-on-scroll relative group">
-                <div class="absolute -inset-4 bg-green-50 rounded-[32px] transform -rotate-3 transition-transform duration-500 group-hover:-rotate-1 z-0"></div>
-                <div class="relative z-10 w-full aspect-[4/3] lg:aspect-auto lg:h-[650px] rounded-[24px] overflow-hidden shadow-2xl">
-                    <img src="picha/1 (19).jpg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Agriculture">
-                </div>
-            </div>
-
-            <!-- Text Right -->
-            <div class="lg:col-span-7 order-2 reveal-on-scroll">
-                <span class="text-green-600 font-black tracking-widest uppercase text-xs lg:text-sm mb-4 block">Program 03 — Sustainable Farming</span>
-                <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-ficus-charcoal mb-6 tracking-tight leading-tight">Growing Resilience from the Ground Up</h2>
-                <p class="text-lg lg:text-xl text-ficus-charcoal/70 leading-relaxed mb-10 font-light">Through climate‑smart training and agribusiness support, we help smallholder farmers increase yields, adapt to climate change, and secure their families’ food and income.</p>
-                
-                <!-- Comprehensive Info Grid -->
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl border-t-4 border-t-green-600">
-                        <h4 class="font-bold text-ficus-charcoal mb-2">Climate-Smart Agri (CSA)</h4>
-                        <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Providing training on conservation tillage, crop diversification, and micro-irrigation systems to fight erratic weather.</p>
-                    </div>
-                    <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl border-t-4 border-t-green-600">
-                        <h4 class="font-bold text-ficus-charcoal mb-2">Direct Market Linkages</h4>
-                        <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Connecting smallholder cooperatives directly with wholesalers in Mwanza to bypass predatory middlemen.</p>
-                    </div>
-                    <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl border-t-4 border-t-green-600 sm:col-span-2">
-                        <h4 class="font-bold text-ficus-charcoal mb-2">Women in Agriculture</h4>
-                        <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Establishing specialized support groups for female farmers to gain critical land-use rights and high-level financial literacy.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- ================= 04 ENVIRONMENT (Dark Theme - Image Right) ================= -->
-<section id="environment" class="py-16 lg:py-32 bg-blue-900 text-white overflow-hidden">
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-            
-            <!-- Text Left -->
-            <div class="lg:col-span-7 order-2 lg:order-1 reveal-on-scroll">
-                <span class="text-ficus-yellow font-black tracking-widest uppercase text-xs lg:text-sm mb-4 block">Program 04 — Nature Conservation</span>
-                <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight leading-tight">Protecting Nature, Securing Tomorrow</h2>
-                <p class="text-lg lg:text-xl text-blue-100/80 leading-relaxed mb-10 font-light">We lead community‑based conservation and environmental awareness projects that restore vital ecosystems and build long-term climate resilience.</p>
-                
-                <!-- Comprehensive Info Grid -->
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl border-l-4 border-l-ficus-yellow">
-                        <h4 class="font-bold text-ficus-yellow mb-2">Agroforestry Integration</h4>
-                        <p class="text-sm text-blue-50/80 leading-relaxed">Integrating strategic tree planting with local farming to rapidly improve soil health and provide sustainable firewood.</p>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl border-l-4 border-l-ficus-yellow">
-                        <h4 class="font-bold text-ficus-yellow mb-2">Clean Energy Adoption</h4>
-                        <p class="text-sm text-blue-50/80 leading-relaxed">Promoting the widespread use of fuel-efficient stoves to reduce massive deforestation in rural districts.</p>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl border-l-4 border-l-ficus-yellow sm:col-span-2">
-                        <h4 class="font-bold text-ficus-yellow mb-2">Youth Conservation Clubs</h4>
-                        <p class="text-sm text-blue-50/80 leading-relaxed">Establishing active environmental clubs in primary and secondary schools to raise a green-conscious generation.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Image Right -->
-            <div class="lg:col-span-5 order-1 lg:order-2 reveal-on-scroll relative group">
-                <div class="absolute -inset-4 bg-ficus-yellow/20 rounded-[32px] transform rotate-3 transition-transform duration-500 group-hover:rotate-1 z-0"></div>
-                <div class="relative z-10 w-full aspect-[4/3] lg:aspect-auto lg:h-[650px] rounded-[24px] overflow-hidden shadow-2xl">
-                    <img src="picha/1 (18).jpg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Environment">
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- ================= 05 TECH & INNOVATION (Image Left) ================= -->
-<section id="tech" class="py-16 lg:py-32 bg-white overflow-hidden border-b border-gray-50">
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-            
-            <!-- Image Left -->
-            <div class="lg:col-span-5 order-1 reveal-on-scroll relative group">
-                <div class="absolute -inset-4 bg-ficus-blue/10 rounded-[32px] transform -rotate-3 transition-transform duration-500 group-hover:-rotate-1 z-0"></div>
-                <div class="relative z-10 w-full aspect-[4/3] lg:aspect-auto lg:h-[650px] rounded-[24px] overflow-hidden shadow-2xl">
-                    <img src="picha/1 (24).jpg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Innovation">
-                </div>
-            </div>
-
-            <!-- Text Right -->
-            <div class="lg:col-span-7 order-2 reveal-on-scroll">
-                <span class="text-ficus-blue font-black tracking-widest uppercase text-xs lg:text-sm mb-4 block">Program 05 — Digital Inclusion</span>
-                <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-ficus-charcoal mb-6 tracking-tight leading-tight">Innovation for Inclusion</h2>
-                <p class="text-lg lg:text-xl text-ficus-charcoal/70 leading-relaxed mb-10 font-light">We heavily integrate AgriTech and EdTech into our programs to bridge the digital divide. From mobile apps for farmers to digital classrooms, we make tech a tool for equity.</p>
-                
-                <!-- Comprehensive Info Grid -->
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl border-t-4 border-t-ficus-blue">
-                        <h4 class="font-bold text-ficus-charcoal mb-2">Digital Learning Centers</h4>
-                        <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Establishing internet-enabled hubs in Mwanza where rural youth can learn coding and digital marketing.</p>
-                    </div>
-                    <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl border-t-4 border-t-ficus-blue">
-                        <h4 class="font-bold text-ficus-charcoal mb-2">Data for Farmers</h4>
-                        <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Utilizing SMS platforms to provide real-time weather and market price alerts to isolated smallholders.</p>
-                    </div>
-                    <div class="bg-gray-50 border border-gray-100 p-6 rounded-2xl border-t-4 border-t-ficus-blue sm:col-span-2">
-                        <h4 class="font-bold text-ficus-charcoal mb-2">GreenTech Incubation</h4>
-                        <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Incubating and funding local grassroots innovations that focus specifically on renewable energy and water recycling technology.</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- ================= 06 ECONOMY (Image Right) ================= -->
-<section id="economy" class="py-16 lg:py-32 bg-ficus-sand/30 overflow-hidden">
-    <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-            
-            <!-- Text Left -->
-            <div class="lg:col-span-7 order-2 lg:order-1 reveal-on-scroll">
-                <span class="text-orange-600 font-black tracking-widest uppercase text-xs lg:text-sm mb-4 block">Program 06 — Self‑Reliance</span>
-                <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-ficus-charcoal mb-6 tracking-tight leading-tight">From Survival to Self‑Reliance</h2>
-                <p class="text-lg lg:text-xl text-ficus-charcoal/70 leading-relaxed mb-10 font-light">We support entrepreneurship and savings groups—especially prioritizing women and youth—to break the cycle of poverty permanently.</p>
-                
-                <!-- Comprehensive Info Grid -->
-                <div class="grid sm:grid-cols-2 gap-6">
-                    <div class="bg-white border border-gray-100 p-6 rounded-2xl border-l-4 border-l-orange-500 shadow-sm">
-                        <h4 class="font-bold text-ficus-charcoal mb-2">VICOBA Support</h4>
-                        <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Strengthening Village Community Bank groups through intensive training on book-keeping and safe loan management.</p>
-                    </div>
-                    <div class="bg-white border border-gray-100 p-6 rounded-2xl border-l-4 border-l-orange-500 shadow-sm">
-                        <h4 class="font-bold text-ficus-charcoal mb-2">Youth Incubation</h4>
-                        <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Providing small seed grants, workspace, and mentorship to youth starting small businesses in Mwanza city.</p>
-                    </div>
-                    <div class="bg-white border border-gray-100 p-6 rounded-2xl border-l-4 border-l-orange-500 shadow-sm sm:col-span-2">
-                        <h4 class="font-bold text-ficus-charcoal mb-2">Agricultural Value-Addition</h4>
-                        <p class="text-sm text-ficus-charcoal/70 leading-relaxed">Training farmers on food processing techniques (like solar drying or vacuum packaging) to exponentially increase profit margins.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Image Right -->
-            <div class="lg:col-span-5 order-1 lg:order-2 reveal-on-scroll relative group">
-                <div class="absolute -inset-4 bg-orange-500/10 rounded-[32px] transform rotate-3 transition-transform duration-500 group-hover:rotate-1 z-0"></div>
-                <div class="relative z-10 w-full aspect-[4/3] lg:aspect-auto lg:h-[650px] rounded-[24px] overflow-hidden shadow-2xl">
-                    <img src="picha/1 (22).jpg" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Economic Empowerment">
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- ================= FINAL CTA ================= -->
-<section class="py-16 lg:py-24 mb-10 bg-ficus-yellow text-center relative overflow-hidden">
-    <div class="absolute inset-0 bg-[radial-gradient(black_1px,transparent_1px)] [background-size:20px_20px] opacity-5"></div>
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 reveal-on-scroll relative z-10">
-        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-blue-900 mb-6 tracking-tight">Fuel the Mission.</h2>
-        <p class="text-lg sm:text-2xl text-blue-900/80 mb-10 font-light leading-relaxed">Your support enables us to continue these integrated solutions across Tanzania. Together, we are a promise.</p>
-        <a href="donate.html" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-blue-900 text-white px-10 py-5 lg:px-12 lg:py-6 rounded-full font-black text-lg hover:bg-ficus-charcoal transition-all shadow-[0_15px_30px_rgba(0,0,0,0.2)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)] hover:-translate-y-1">
-            Donate to Where It’s Needed
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-        </a>
-    </div>
-</section>
+    </section>
 
 
+    <script>
+        (function () {
+            const elements = document.querySelectorAll('.reveal-on-scroll');
+            if (elements.length === 0) return;
 
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
 
-<div id="ficus-footer"></div>
+            elements.forEach(el => observer.observe(el));
+        })();
+    </script>
+
+    <div id="ficus-footer"></div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

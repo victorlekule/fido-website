@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,634 +8,994 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'ficus-yellow': '#F2B705',
-                        'ficus-charcoal': '#1F2933',
-                        'ficus-sand': '#F4EFEA',
-                        'ficus-blue': '#003366',
-                    }
-                }
-            }
-        }
-    </script>
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
-        body { padding-top: 80px; overflow-x: hidden; } 
+        body {
+            padding-top: 80px;
+            overflow-x: hidden;
+        }
+
         .animate-float {
             animation: float 3s ease-in-out infinite;
         }
+
         @keyframes float {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-8px); }
-            100% { transform: translateY(0); }
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
         }
-        
+
         /* Premium Swiper Customizations */
-        .swiper-pagination-bullet { background: rgba(0, 51, 102, 0.3) !important; opacity: 1 !important; }
-        .swiper-pagination-bullet-active { background: #003366 !important; width: 24px !important; border-radius: 4px !important; }
-        .swiper-wrapper { padding-bottom: 40px !important; } /* Space for dots on mobile */
-        
+        .swiper-pagination-bullet {
+            background: rgba(0, 51, 102, 0.3) !important;
+            opacity: 1 !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: #003366 !important;
+            width: 24px !important;
+            border-radius: 4px !important;
+        }
+
+        .swiper-wrapper {
+            padding-bottom: 40px !important;
+        }
+
+        /* Space for dots on mobile */
+
         /* Desktop Override: Turn Swiper back into standard Tailwind Grids */
         @media (min-width: 1024px) {
-            .swiper-wrapper { 
-                transform: translate3d(0px, 0, 0) !important; 
-                flex-wrap: wrap !important; 
-                padding-bottom: 0 !important; 
+            .swiper-wrapper {
+                transform: translate3d(0px, 0, 0) !important;
+                flex-wrap: wrap !important;
+                padding-bottom: 0 !important;
             }
-            .swiper-slide { width: auto !important; height: auto !important; margin-right: 0 !important; }
-            .swiper-pagination { display: none !important; }
+
+            .swiper-slide {
+                width: auto !important;
+                height: auto !important;
+                margin-right: 0 !important;
+            }
+
+            .swiper-pagination {
+                display: none !important;
+            }
         }
     </style>
 </head>
+
 <body class="bg-white font-sans selection:bg-ficus-yellow selection:text-ficus-charcoal cursor-default">
 
     <div id="ficus-header-container"></div>
 
-<!-- ================= MIDNIGHT & GOLD PREMIUM GET INVOLVED PAGE ================= -->
-<style>
-    /* 1. Right-to-Left Scroll Entrance Animation */
-    .reveal-right {
-        opacity: 0;
-        transform: translateX(60px); /* Starts off-screen to the right */
-        transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-    .reveal-right.is-visible {
-        opacity: 1;
-        transform: translateX(0); /* Glides into original position */
-    }
+    <!-- ================= MIDNIGHT & GOLD PREMIUM GET INVOLVED PAGE ================= -->
+    <style>
+        /* 1. Right-to-Left Scroll Entrance Animation */
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            /* Starts off-screen to the right */
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
 
-    /* 2. Left-to-Right Scroll Entrance Animation */
-    .reveal-left {
-        opacity: 0;
-        transform: translateX(-60px); /* Starts off-screen to the left */
-        transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-    }
-    .reveal-left.is-visible {
-        opacity: 1;
-        transform: translateX(0); /* Glides into original position */
-    }
+        .reveal-right.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+            /* Glides into original position */
+        }
 
-    /* Animation Delays for cascading effect */
-    .delay-100 { transition-delay: 100ms; }
-    .delay-200 { transition-delay: 200ms; }
-    .delay-300 { transition-delay: 300ms; }
+        /* 2. Left-to-Right Scroll Entrance Animation */
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            /* Starts off-screen to the left */
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
 
-    /* 3. Premium Swiper Pagination Dots (App-like feel) */
-    .swiper-pagination-bullet {
-        background-color: #94a3b8; /* Slate-400 */
-        opacity: 0.5;
-        transition: all 0.3s ease-in-out;
-        width: 8px;
-        height: 8px;
-        margin: 0 6px !important;
-    }
-    .swiper-pagination-bullet-active {
-        background-color: #fbbf24 !important; /* Amber-400 */
-        opacity: 1 !important;
-        width: 28px !important; /* Elongated pill shape for active dot */
-        border-radius: 8px !important;
-    }
+        .reveal-left.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+            /* Glides into original position */
+        }
 
-    /* 4. Numbered Pagination (For Section 2 & Social Media) */
-    .swiper-pagination-number .swiper-pagination-bullet {
-        background-color: transparent !important;
-        border: 2px solid #94a3b8;
-        color: #94a3b8;
-        opacity: 0.5;
-        width: 32px !important;
-        height: 32px !important;
-        display: inline-flex !important;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 14px;
-        border-radius: 50% !important;
-        margin: 0 6px !important;
-    }
-    .swiper-pagination-number .swiper-pagination-bullet-active {
-        background-color: #fbbf24 !important;
-        border-color: #fbbf24 !important;
-        color: #0f172a !important; /* Slate-900 */
-        opacity: 1 !important;
-    }
-    
-    /* Ensure dots are positioned relative to the container bottom */
-    .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
-        bottom: 0px !important; 
-    }
-</style>
+        /* Animation Delays for cascading effect */
+        .delay-100 {
+            transition-delay: 100ms;
+        }
 
-<div id="main-content" class="font-sans text-slate-800 bg-white w-full overflow-hidden">
+        .delay-200 {
+            transition-delay: 200ms;
+        }
 
-    <!-- 1. CINEMATIC HERO -->
-    <section class="relative min-h-[60vh] lg:min-h-[85vh] flex items-center overflow-hidden bg-slate-900 pt-24 lg:pt-32 pb-16 lg:pb-24">
-        <div class="absolute top-0 right-0 w-[400px] lg:w-[800px] h-[400px] lg:h-[800px] bg-blue-600/20 rounded-full blur-[100px] lg:blur-[150px] pointer-events-none"></div>
-        <div class="absolute bottom-0 left-[-10%] w-[300px] lg:w-[600px] h-[300px] lg:h-[600px] bg-amber-400/10 rounded-full blur-[80px] lg:blur-[120px] pointer-events-none"></div>
+        .delay-300 {
+            transition-delay: 300ms;
+        }
 
-        <div class="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div class="lg:col-span-6 reveal-right text-center lg:text-left order-2 lg:order-1">
-                <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-amber-400 font-bold text-xs lg:text-sm tracking-widest uppercase mb-8 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span> Join the Movement
+        /* 3. Premium Swiper Pagination Dots (App-like feel) */
+        .swiper-pagination-bullet {
+            background-color: #94a3b8;
+            /* Slate-400 */
+            opacity: 0.5;
+            transition: all 0.3s ease-in-out;
+            width: 8px;
+            height: 8px;
+            margin: 0 6px !important;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #fbbf24 !important;
+            /* Amber-400 */
+            opacity: 1 !important;
+            width: 28px !important;
+            /* Elongated pill shape for active dot */
+            border-radius: 8px !important;
+        }
+
+        /* 4. Numbered Pagination (For Section 2 & Social Media) */
+        .swiper-pagination-number .swiper-pagination-bullet {
+            background-color: transparent !important;
+            border: 2px solid #94a3b8;
+            color: #94a3b8;
+            opacity: 0.5;
+            width: 32px !important;
+            height: 32px !important;
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 50% !important;
+            margin: 0 6px !important;
+        }
+
+        .swiper-pagination-number .swiper-pagination-bullet-active {
+            background-color: #fbbf24 !important;
+            border-color: #fbbf24 !important;
+            color: #0f172a !important;
+            /* Slate-900 */
+            opacity: 1 !important;
+        }
+
+        /* Ensure dots are positioned relative to the container bottom */
+        .swiper-horizontal>.swiper-pagination-bullets,
+        .swiper-pagination-bullets.swiper-pagination-horizontal {
+            bottom: 0px !important;
+        }
+    </style>
+
+    <div id="main-content" class="font-sans text-slate-800 bg-white w-full overflow-hidden">
+
+        <!-- 1. CINEMATIC HERO -->
+        <section
+            class="relative min-h-[60vh] lg:min-h-[85vh] flex items-center overflow-hidden bg-ficus-blue pt-24 lg:pt-32 pb-16 lg:pb-24">
+            <div
+                class="absolute top-0 right-0 w-[400px] lg:w-[800px] h-[400px] lg:h-[800px] bg-ficus-yellow rounded-full blur-[100px] lg:blur-[150px] pointer-events-none">
+            </div>
+            <div
+                class="absolute bottom-0 left-[-10%] w-[300px] lg:w-[600px] h-[300px] lg:h-[600px] bg-ficus-blue rounded-full blur-[80px] lg:blur-[120px] pointer-events-none">
+            </div>
+
+            <div
+                class="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                <div class="lg:col-span-6 reveal-right text-center lg:text-left order-2 lg:order-1">
+                    <div
+                        class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-ficus-yellow border border-white/20 backdrop-blur-md text-black font-bold text-xs lg:text-sm tracking-widest uppercase mb-8 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-black animate-pulse"></span> Join the Movement
+                    </div>
+                    <h1
+                        class="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-white leading-[1.05] mb-6 tracking-tight">
+                        Change Starts <br class="hidden lg:block">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">With
+                            You.</span>
+                    </h1>
+                    <p
+                        class="text-lg md:text-2xl text-slate-300 font-light mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        Whether you donate your expertise, your voice, or your resources, your contribution is the
+                        catalyst for sustainable, community-led development in Tanzania.
+                    </p>
+                    <div class="flex justify-center lg:justify-start">
+                        <a href="#roles"
+                            class="bg-amber-400 text-slate-900 px-10 py-5 rounded-full font-black text-lg hover:bg-white transition-all duration-300 shadow-[0_15px_30px_rgba(251,191,36,0.3)] hover:-translate-y-1 inline-flex items-center gap-3">
+                            Discover Your Role <i class="fas fa-arrow-down"></i>
+                        </a>
+                    </div>
                 </div>
-                <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black text-white leading-[1.05] mb-6 tracking-tight">
-                    Change Starts <br class="hidden lg:block"> 
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-200">With You.</span>
-                </h1>
-                <p class="text-lg md:text-2xl text-slate-300 font-light mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                    Whether you donate your expertise, your voice, or your resources, your contribution is the catalyst for sustainable, community-led development in Tanzania.
+
+                <div class="lg:col-span-6 flex justify-center items-center reveal-right order-1 lg:order-2"
+                    style="transition-delay: 150ms;">
+                    <div
+                        class="relative w-full max-w-[320px] sm:max-w-[450px] lg:max-w-[600px] aspect-[4/5] lg:aspect-square rounded-[40px] lg:rounded-[60px] bg-white border border-white/10 overflow-hidden shadow-2xl group hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 p-3 lg:p-4 backdrop-blur-md">
+                        <div class="w-full h-full rounded-[30px] lg:rounded-[48px] overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1000&q=80"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+                                alt="Join FIDO">
+                            <div class="absolute inset-0 bg-slate-900/20 mix-blend-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ROLES SECTION -->
+        <section id="roles" class="py-20 lg:py-32 bg-slate-50 overflow-hidden relative border-b border-slate-200">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+
+                <div class="text-center mb-12 lg:mb-20 reveal-right">
+                    <!-- Premium badge -->
+                    <div
+                        class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-ficus-blue/10 backdrop-blur-sm border border-ficus-blue/20 text-ficus-blue text-sm font-bold tracking-widest uppercase mb-6">
+                        <span class="w-2 h-2 rounded-full bg-ficus-yellow animate-pulse"></span>
+                        Take Action
+                    </div>
+
+                    <!-- Heading with cave-arch underline -->
+                    <h2
+                        class="relative inline-block text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight">
+                        How You Can Help
+                        <span class="absolute left-1/2 -translate-x-1/2 -bottom-5 w-[120%] h-8 text-transparent"
+                            aria-hidden="true">
+                            <svg class="w-full h-full" viewBox="0 0 240 24" preserveAspectRatio="none" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="caveGradientHelp" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.3" />
+                                        <stop offset="50%" stop-color="#f59e0b" stop-opacity="1" />
+                                        <stop offset="100%" stop-color="#fbbf24" stop-opacity="0.3" />
+                                    </linearGradient>
+                                    <filter id="glowHelp" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feGaussianBlur stdDeviation="2" result="blur" />
+                                        <feMerge>
+                                            <feMergeNode in="blur" />
+                                            <feMergeNode in="SourceGraphic" />
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+                                <path d="M0,16 Q60,2 120,16 T240,16" stroke="url(#caveGradientHelp)" stroke-width="3"
+                                    stroke-linecap="round" fill="none" filter="url(#glowHelp)" />
+                                <path d="M20,16 Q60,6 120,16 T220,16" stroke="#fbbf24" stroke-opacity="0.6"
+                                    stroke-width="1.5" stroke-linecap="round" fill="none" />
+                            </svg>
+                        </span>
+                    </h2>
+
+                    <!-- Supporting paragraph -->
+                    <p class="mt-8 text-lg md:text-xl text-slate-600 font-light max-w-3xl mx-auto leading-relaxed">
+                        Your time, resources, and voice can create lasting change. Choose how you’d like to make a
+                        difference today.
+                    </p>
+                </div>
+
+                <!-- DOTS PAGINATION FOR THIS SECTION -->
+                <div class="swiper swiper-roles overflow-visible lg:overflow-hidden p-4 -m-4 pb-12 lg:pb-4">
+                    <div class="swiper-wrapper lg:grid lg:grid-cols-2 lg:gap-12">
+
+                        <!-- Volunteer (From Right) -->
+                        <div
+                            class="swiper-slide reveal-right delay-100 w-full lg:w-auto group bg-white border border-slate-200 shadow-sm rounded-[40px] p-8 lg:p-14 flex flex-col h-auto hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+                            <div class="flex items-center gap-5 mb-8">
+                                <div
+                                    class="w-16 h-16 lg:w-20 lg:h-20 shrink-0 bg-ficus-blue rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
+                                    <i class="fas fa-hands-helping text-2xl lg:text-3xl"></i>
+                                </div>
+                                <h3 class="text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">Volunteer</h3>
+                            </div>
+                            <p class="text-base lg:text-lg text-slate-600 mb-8 leading-relaxed font-light">
+                                We rely on the passion of local Tanzanian talent and international volunteers. By
+                                offering your time and skills, you directly impact our grassroots programs in Mwanza and
+                                Ngara.
+                            </p>
+
+                            <h4 class="font-bold text-ficus-blue mb-4 uppercase tracking-widest text-xs">Currently
+                                Seeking
+                                Experts In:</h4>
+                            <ul class="space-y-3 mb-10 flex-grow">
+                                <li class="flex items-start gap-3"><i
+                                        class="fas fa-check-circle text-ficus-blue mt-1"></i><span
+                                        class="text-slate-700 text-sm lg:text-base"><strong>Education:</strong> Teacher
+                                        training and curriculum development.</span></li>
+                                <li class="flex items-start gap-3"><i
+                                        class="fas fa-check-circle text-ficus-blue mt-1"></i><span
+                                        class="text-slate-700 text-sm lg:text-base"><strong>AgriTech & IT:</strong>
+                                        Developers for mobile farming apps.</span></li>
+                                <li class="flex items-start gap-3"><i
+                                        class="fas fa-check-circle text-ficus-blue mt-1"></i><span
+                                        class="text-slate-700 text-sm lg:text-base"><strong>Healthcare:</strong>
+                                        Community health workers and strategists.</span></li>
+                            </ul>
+
+                            <button onclick="openModal('volunteer-modal')"
+                                class="inline-flex justify-between items-center bg-ficus-blue text-white px-8 py-4 rounded-full font-bold hover:bg-ficus-yellow transition-all duration-300 hover:text-black w-full sm:w-max group/btn shadow-md">
+                                Apply to Volunteer <i
+                                    class="fas fa-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
+                            </button>
+                        </div>
+
+                        <!-- Partner (From Right) -->
+                        <div
+                            class="swiper-slide reveal-right delay-200 w-full lg:w-auto group bg-white border border-slate-200 shadow-sm rounded-[40px] p-8 lg:p-14 flex flex-col h-auto hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+                            <div class="flex items-center gap-5 mb-8">
+                                <div
+                                    class="w-16 h-16 lg:w-20 lg:h-20 shrink-0 bg-amber-400 rounded-2xl flex items-center justify-center text-slate-900 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                                    <i class="fas fa-handshake text-2xl lg:text-3xl"></i>
+                                </div>
+                                <h3 class="text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">Partner With
+                                    Us</h3>
+                            </div>
+                            <p class="text-base lg:text-lg text-slate-600 mb-8 leading-relaxed font-light">
+                                Sustainable development requires collaboration. We build strategic alliances with
+                                institutions that share our vision for an empowered, self-reliant Africa.
+                            </p>
+
+                            <h4 class="font-bold text-amber-600 mb-4 uppercase tracking-widest text-xs">Who We Partner
+                                With:</h4>
+                            <ul class="space-y-3 mb-10 flex-grow">
+                                <li class="flex items-start gap-3"><i
+                                        class="fas fa-check-circle text-amber-500 mt-1"></i><span
+                                        class="text-slate-700 text-sm lg:text-base"><strong>Corporate Entities:</strong>
+                                        CSR funding and resource sharing.</span></li>
+                                <li class="flex items-start gap-3"><i
+                                        class="fas fa-check-circle text-amber-500 mt-1"></i><span
+                                        class="text-slate-700 text-sm lg:text-base"><strong>Universities &
+                                            Research:</strong> Data analysis and student programs.</span></li>
+                                <li class="flex items-start gap-3"><i
+                                        class="fas fa-check-circle text-amber-500 mt-1"></i><span
+                                        class="text-slate-700 text-sm lg:text-base"><strong>Local Government:</strong>
+                                        Scalable infrastructure projects.</span></li>
+                            </ul>
+
+                            <button onclick="openModal('partner-modal')"
+                                class="inline-flex justify-between items-center bg-slate-900 text-white px-8 py-4 rounded-full font-bold hover:bg-amber-400 hover:text-slate-900 transition-all duration-300 text-base w-full sm:w-max group/btn shadow-md">
+                                Become a Partner <i
+                                    class="fas fa-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                    <!-- Default Dots Container -->
+                    <div class="swiper-pagination lg:hidden"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. CAREERS & FUNDRAISE -->
+        <section class="py-20 lg:py-32 bg-ficus-blue overflow-hidden relative">
+            <div
+                class="absolute inset-0 bg-[radial-gradient(white_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.03]">
+            </div>
+
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+                <!-- NUMBERED PAGINATION FOR THIS SECTION -->
+                <div class="swiper swiper-careers overflow-visible lg:overflow-hidden p-4 -m-4 pb-12 lg:pb-4">
+                    <div class="swiper-wrapper lg:grid lg:grid-cols-12 lg:gap-10">
+
+                        <!-- Careers Box (Animate from Right) -->
+                        <div
+                            class="swiper-slide reveal-right delay-100 w-full lg:w-auto lg:col-span-5 bg-white/15 backdrop-blur-md border border-ficus-yellow rounded-[32px] lg:rounded-[48px] p-8 lg:p-12 text-white flex flex-col justify-center h-auto hover:bg-white/10 transition-colors">
+                            <div
+                                class="w-12 h-12 bg-ficus-yellow rounded-full flex items-center justify-center text-black mb-6">
+                                <i class="fas fa-briefcase text-xl"></i>
+                            </div>
+                            <h3 class="text-3xl lg:text-4xl font-black mb-6 tracking-tight">Careers & <br>Internships
+                            </h3>
+                            <p class="text-base lg:text-lg text-slate-300 mb-8 leading-relaxed font-light flex-grow">
+                                Looking to make FIDO your full-time mission? We are constantly on the lookout for
+                                dedicated project managers, agronomists, and field officers to join our headquarters.
+                            </p>
+                            <button onclick="openModal('cv-modal')"
+                                class="inline-flex items-center gap-3 text-amber-400 font-bold uppercase tracking-widest text-sm group w-max">
+                                <span
+                                    class="border-b-2 border-amber-400 pb-1 group-hover:text-white group-hover:border-white transition-all">Submit
+                                    Your CV</span>
+                                <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                            </button>
+                        </div>
+
+                        <!-- Fundraise Box (Animate from Left) -->
+                        <div
+                            class="swiper-slide reveal-left delay-200 w-full lg:w-auto lg:col-span-7 bg-amber-400 rounded-[32px] lg:rounded-[48px] p-8 lg:p-12 flex flex-col justify-center h-auto shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+                            <div class="flex flex-col md:flex-row items-start md:items-center gap-8">
+                                <div class="md:w-2/3 flex flex-col">
+                                    <h3 class="text-3xl lg:text-5xl font-black text-slate-900 mb-4 tracking-tight">
+                                        Fundraise for FIDO</h3>
+                                    <p class="text-base lg:text-lg text-slate-800 leading-relaxed font-medium mb-6">
+                                        Turn your birthday, marathon, or personal milestone into a lifeline for local
+                                        communities.
+                                    </p>
+                                    <div class="flex flex-col gap-3 mt-2">
+                                        <div
+                                            class="flex items-center gap-3 text-sm lg:text-base font-bold text-slate-900">
+                                            <span
+                                                class="w-6 h-6 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center text-xs">1</span>
+                                            Choose a specific project.
+                                        </div>
+                                        <div
+                                            class="flex items-center gap-3 text-sm lg:text-base font-bold text-slate-900">
+                                            <span
+                                                class="w-6 h-6 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center text-xs">2</span>
+                                            Set a monetary goal.
+                                        </div>
+                                        <div
+                                            class="flex items-center gap-3 text-sm lg:text-base font-bold text-slate-900">
+                                            <span
+                                                class="w-6 h-6 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center text-xs">3</span>
+                                            Share your link.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="md:w-1/3 w-full flex justify-start md:justify-end mt-4 md:mt-0">
+                                    <button onclick="openModal('campaign-modal')"
+                                        class="w-full sm:w-max text-center bg-slate-900 text-white px-8 py-4 rounded-full font-black hover:bg-white hover:text-slate-900 transition-all shadow-xl text-base lg:text-lg">
+                                        Start Campaign
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Numbered Pagination applied via custom CSS class below -->
+                    <div class="swiper-pagination swiper-pagination-number lg:hidden"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SPREAD THE WORD -->
+        <section class="py-20 lg:py-32 bg-white overflow-hidden relative border-b border-slate-200">
+            <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 text-center reveal-left relative z-10">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-4 tracking-tight">Spread the
+                    Word</h2>
+                <p class="text-lg lg:text-xl text-slate-600 mb-12 lg:mb-16 max-w-2xl mx-auto font-light">Your voice is a
+                    powerful tool for change. Copy these messages and share our mission with your social networks.</p>
+
+                <!-- NUMBERED PAGINATION FOR THIS SECTION -->
+                <div class="swiper swiper-social overflow-visible p-4 -m-4 pb-12 lg:pb-4">
+                    <div class="swiper-wrapper lg:grid lg:grid-cols-3 lg:gap-8">
+
+                        <!-- Social Cards (Animate from Left) -->
+                        <div
+                            class="swiper-slide reveal-left delay-100 w-full lg:w-auto bg-slate-50 border border-slate-200 p-8 rounded-[32px] text-left flex flex-col h-auto hover:shadow-xl transition-shadow duration-300">
+                            <div class="flex items-center justify-between mb-6">
+                                <div
+                                    class="w-12 h-12 bg-gradient-to-tr from-pink-500 to-orange-400 rounded-xl flex items-center justify-center text-white text-xl shadow-md">
+                                    <i class="fab fa-instagram"></i>
+                                </div>
+                                <button
+                                    class="bg-white border border-slate-200 hover:bg-slate-900 hover:text-white hover:border-slate-900 text-slate-700 px-4 py-2 rounded-full font-bold uppercase text-[10px] tracking-widest transition-colors">Copy
+                                    Post</button>
+                            </div>
+                            <p class="text-slate-700 font-medium text-lg mb-2 flex-grow leading-relaxed">"I just joined
+                                the movement with @FIDOTanzania to break the cycle of poverty. Check out their
+                                climate-smart agri projects!"</p>
+                        </div>
+
+                        <div
+                            class="swiper-slide reveal-left delay-200 w-full lg:w-auto bg-slate-50 border border-slate-200 p-8 rounded-[32px] text-left flex flex-col h-auto hover:shadow-xl transition-shadow duration-300">
+                            <div class="flex items-center justify-between mb-6">
+                                <div
+                                    class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl shadow-md">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <button
+                                    class="bg-white border border-slate-200 hover:bg-slate-900 hover:text-white hover:border-slate-900 text-slate-700 px-4 py-2 rounded-full font-bold uppercase text-[10px] tracking-widest transition-colors">Copy
+                                    Post</button>
+                            </div>
+                            <p class="text-slate-700 font-medium text-lg mb-2 flex-grow leading-relaxed">"FIDO is
+                                transforming lives in Tanzania through integrated development. Proud to support their
+                                vision for a resilient economic future."</p>
+                        </div>
+
+                        <div
+                            class="swiper-slide reveal-left delay-300 w-full lg:w-auto bg-slate-50 border border-slate-200 p-8 rounded-[32px] text-left flex flex-col h-auto hover:shadow-xl transition-shadow duration-300">
+                            <div class="flex items-center justify-between mb-6">
+                                <div
+                                    class="w-12 h-12 bg-black rounded-xl flex items-center justify-center text-white text-xl shadow-md">
+                                    𝕏</div>
+                                <button
+                                    class="bg-white border border-slate-200 hover:bg-slate-900 hover:text-white hover:border-slate-900 text-slate-700 px-4 py-2 rounded-full font-bold uppercase text-[10px] tracking-widest transition-colors">Copy
+                                    Post</button>
+                            </div>
+                            <p class="text-slate-700 font-medium text-lg mb-2 flex-grow leading-relaxed">"Change starts
+                                with us. Supporting @FIDO_Tanzania in building self-reliant communities. Join me! #FIDO
+                                #Tanzania"</p>
+                        </div>
+
+                    </div>
+                    <!-- Numbered Pagination applied via custom CSS class below -->
+                    <div class="swiper-pagination swiper-pagination-number lg:hidden"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= GET INVOLVED CTA ================= -->
+        <section
+            class="relative py-16 lg:py-24 bg-gradient-to-br from-ficus-blue via-blue-800 to-blue-950 overflow-hidden">
+            <!-- Glow effects -->
+            <div class="absolute inset-0 pointer-events-none">
+                <div
+                    class="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-ficus-yellow/10 blur-[120px]">
+                </div>
+                <div
+                    class="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-ficus-yellow/5 blur-[100px]">
+                </div>
+            </div>
+
+            <!-- Grid pattern -->
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <div
+                    class="h-full w-full bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[size:32px_32px]">
+                </div>
+            </div>
+
+            <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <!-- Badge -->
+                <div
+                    class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-ficus-yellow text-sm font-bold tracking-widest uppercase mb-8">
+                    <span class="relative flex h-2.5 w-2.5">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-ficus-yellow opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-ficus-yellow"></span>
+                    </span>
+                    Explore Our Work
+                </div>
+
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 tracking-tight leading-tight">
+                    See the <span class="text-ficus-yellow">Impact</span> You’ll Create
+                </h2>
+
+                <p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
+                    From climate‑smart farming to digital literacy, our programs and themes are designed for lasting
+                    change. Discover where you fit in.
                 </p>
-                <div class="flex justify-center lg:justify-start">
-                    <a href="#roles" class="bg-amber-400 text-slate-900 px-10 py-5 rounded-full font-black text-lg hover:bg-white transition-all duration-300 shadow-[0_15px_30px_rgba(251,191,36,0.3)] hover:-translate-y-1 inline-flex items-center gap-3">
-                        Discover Your Role <i class="fas fa-arrow-down"></i>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 lg:gap-6">
+                    <a href="program.html"
+                        class="group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 bg-ficus-yellow text-black font-bold text-lg rounded-full hover:bg-white hover:text-ficus-blue transition-all duration-300 shadow-[0_10px_30px_rgba(250,204,21,0.3)] hover:shadow-[0_15px_40px_rgba(250,204,21,0.5)] hover:-translate-y-1">
+                        View Programs
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                    <a href="themes.html"
+                        class="group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 border-2 border-white/30 text-white font-bold text-lg rounded-full hover:bg-ficus-yellow hover:text-black transition-all duration-300 hover:border-white">
+                        Our Themes
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
                     </a>
                 </div>
             </div>
-            
-            <div class="lg:col-span-6 flex justify-center items-center reveal-right order-1 lg:order-2" style="transition-delay: 150ms;">
-                <div class="relative w-full max-w-[320px] sm:max-w-[450px] lg:max-w-[600px] aspect-[4/5] lg:aspect-square rounded-[40px] lg:rounded-[60px] bg-white/5 border border-white/10 overflow-hidden shadow-2xl group hover:shadow-3xl transition-all duration-500 hover:-translate-y-2 p-3 lg:p-4 backdrop-blur-md">
-                    <div class="w-full h-full rounded-[30px] lg:rounded-[48px] overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1000&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" alt="Join FIDO">
-                        <div class="absolute inset-0 bg-slate-900/20 mix-blend-overlay"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- 2. ROLES SECTION -->
-    <section id="roles" class="py-20 lg:py-32 bg-slate-50 overflow-hidden relative border-b border-slate-200">
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-            
-            <div class="text-center mb-12 lg:mb-20 reveal-right">
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight">How You Can Help</h2>
-            </div>
-
-            <!-- DOTS PAGINATION FOR THIS SECTION -->
-            <div class="swiper swiper-roles overflow-visible lg:overflow-hidden p-4 -m-4 pb-12 lg:pb-4">
-                <div class="swiper-wrapper lg:grid lg:grid-cols-2 lg:gap-12">
-                    
-                    <!-- Volunteer (From Right) -->
-                    <div class="swiper-slide reveal-right delay-100 w-full lg:w-auto group bg-white border border-slate-200 shadow-sm rounded-[40px] p-8 lg:p-14 flex flex-col h-auto hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
-                        <div class="flex items-center gap-5 mb-8">
-                            <div class="w-16 h-16 lg:w-20 lg:h-20 shrink-0 bg-blue-600 rounded-2xl flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform duration-500">
-                                <i class="fas fa-hands-helping text-2xl lg:text-3xl"></i>
-                            </div>
-                            <h3 class="text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">Volunteer</h3>
-                        </div>
-                        <p class="text-base lg:text-lg text-slate-600 mb-8 leading-relaxed font-light">
-                            We rely on the passion of local Tanzanian talent and international volunteers. By offering your time and skills, you directly impact our grassroots programs in Mwanza and Ngara.
-                        </p>
-                        
-                        <h4 class="font-bold text-blue-800 mb-4 uppercase tracking-widest text-xs">Currently Seeking Experts In:</h4>
-                        <ul class="space-y-3 mb-10 flex-grow">
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-500 mt-1"></i><span class="text-slate-700 text-sm lg:text-base"><strong>Education:</strong> Teacher training and curriculum development.</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-500 mt-1"></i><span class="text-slate-700 text-sm lg:text-base"><strong>AgriTech & IT:</strong> Developers for mobile farming apps.</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-blue-500 mt-1"></i><span class="text-slate-700 text-sm lg:text-base"><strong>Healthcare:</strong> Community health workers and strategists.</span></li>
-                        </ul>
-
-                        <button onclick="openModal('volunteer-modal')" class="inline-flex justify-between items-center bg-slate-900 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-600 transition-all duration-300 text-base w-full sm:w-max group/btn shadow-md">
-                            Apply to Volunteer <i class="fas fa-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
-                        </button>
-                    </div>
-
-                    <!-- Partner (From Right) -->
-                    <div class="swiper-slide reveal-right delay-200 w-full lg:w-auto group bg-white border border-slate-200 shadow-sm rounded-[40px] p-8 lg:p-14 flex flex-col h-auto hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
-                        <div class="flex items-center gap-5 mb-8">
-                            <div class="w-16 h-16 lg:w-20 lg:h-20 shrink-0 bg-amber-400 rounded-2xl flex items-center justify-center text-slate-900 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                                <i class="fas fa-handshake text-2xl lg:text-3xl"></i>
-                            </div>
-                            <h3 class="text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">Partner With Us</h3>
-                        </div>
-                        <p class="text-base lg:text-lg text-slate-600 mb-8 leading-relaxed font-light">
-                            Sustainable development requires collaboration. We build strategic alliances with institutions that share our vision for an empowered, self-reliant Africa.
-                        </p>
-                        
-                        <h4 class="font-bold text-amber-600 mb-4 uppercase tracking-widest text-xs">Who We Partner With:</h4>
-                        <ul class="space-y-3 mb-10 flex-grow">
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-amber-500 mt-1"></i><span class="text-slate-700 text-sm lg:text-base"><strong>Corporate Entities:</strong> CSR funding and resource sharing.</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-amber-500 mt-1"></i><span class="text-slate-700 text-sm lg:text-base"><strong>Universities & Research:</strong> Data analysis and student programs.</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-amber-500 mt-1"></i><span class="text-slate-700 text-sm lg:text-base"><strong>Local Government:</strong> Scalable infrastructure projects.</span></li>
-                        </ul>
-
-                        <button onclick="openModal('partner-modal')" class="inline-flex justify-between items-center bg-slate-900 text-white px-8 py-4 rounded-full font-bold hover:bg-amber-400 hover:text-slate-900 transition-all duration-300 text-base w-full sm:w-max group/btn shadow-md">
-                            Become a Partner <i class="fas fa-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
-                        </button>
-                    </div>
-
-                </div>
-                <!-- Default Dots Container -->
-                <div class="swiper-pagination lg:hidden"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3. CAREERS & FUNDRAISE -->
-    <section class="py-20 lg:py-32 bg-[#081225] overflow-hidden relative">
-        <div class="absolute inset-0 bg-[radial-gradient(white_1px,transparent_1px)] [background-size:24px_24px] opacity-[0.03]"></div>
-        
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-            <!-- NUMBERED PAGINATION FOR THIS SECTION -->
-            <div class="swiper swiper-careers overflow-visible lg:overflow-hidden p-4 -m-4 pb-12 lg:pb-4">
-                <div class="swiper-wrapper lg:grid lg:grid-cols-12 lg:gap-10">
-                    
-                    <!-- Careers Box (Animate from Right) -->
-                    <div class="swiper-slide reveal-right delay-100 w-full lg:w-auto lg:col-span-5 bg-white/5 backdrop-blur-md border border-white/10 rounded-[32px] lg:rounded-[48px] p-8 lg:p-12 text-white flex flex-col justify-center h-auto hover:bg-white/10 transition-colors">
-                        <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 mb-6">
-                            <i class="fas fa-briefcase text-xl"></i>
-                        </div>
-                        <h3 class="text-3xl lg:text-4xl font-black mb-6 tracking-tight">Careers & <br>Internships</h3>
-                        <p class="text-base lg:text-lg text-slate-300 mb-8 leading-relaxed font-light flex-grow">
-                            Looking to make FIDO your full-time mission? We are constantly on the lookout for dedicated project managers, agronomists, and field officers to join our headquarters.
-                        </p>
-                        <button onclick="openModal('cv-modal')" class="inline-flex items-center gap-3 text-amber-400 font-bold uppercase tracking-widest text-sm group w-max">
-                            <span class="border-b-2 border-amber-400 pb-1 group-hover:text-white group-hover:border-white transition-all">Submit Your CV</span>
-                            <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
-                        </button>
-                    </div>
-
-                    <!-- Fundraise Box (Animate from Left) -->
-                    <div class="swiper-slide reveal-left delay-200 w-full lg:w-auto lg:col-span-7 bg-amber-400 rounded-[32px] lg:rounded-[48px] p-8 lg:p-12 flex flex-col justify-center h-auto shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
-                        <div class="flex flex-col md:flex-row items-start md:items-center gap-8">
-                            <div class="md:w-2/3 flex flex-col">
-                                <h3 class="text-3xl lg:text-5xl font-black text-slate-900 mb-4 tracking-tight">Fundraise for FIDO</h3>
-                                <p class="text-base lg:text-lg text-slate-800 leading-relaxed font-medium mb-6">
-                                    Turn your birthday, marathon, or personal milestone into a lifeline for local communities. 
-                                </p>
-                                <div class="flex flex-col gap-3 mt-2">
-                                    <div class="flex items-center gap-3 text-sm lg:text-base font-bold text-slate-900">
-                                        <span class="w-6 h-6 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center text-xs">1</span> Choose a specific project.
-                                    </div>
-                                    <div class="flex items-center gap-3 text-sm lg:text-base font-bold text-slate-900">
-                                        <span class="w-6 h-6 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center text-xs">2</span> Set a monetary goal.
-                                    </div>
-                                    <div class="flex items-center gap-3 text-sm lg:text-base font-bold text-slate-900">
-                                        <span class="w-6 h-6 rounded-full bg-slate-900 text-amber-400 flex items-center justify-center text-xs">3</span> Share your link.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="md:w-1/3 w-full flex justify-start md:justify-end mt-4 md:mt-0">
-                                <button onclick="openModal('campaign-modal')" class="w-full sm:w-max text-center bg-slate-900 text-white px-8 py-4 rounded-full font-black hover:bg-white hover:text-slate-900 transition-all shadow-xl text-base lg:text-lg">
-                                    Start Campaign
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- Numbered Pagination applied via custom CSS class below -->
-                <div class="swiper-pagination swiper-pagination-number lg:hidden"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. SPREAD THE WORD -->
-    <section class="py-20 lg:py-32 bg-white overflow-hidden relative border-b border-slate-200">
-        <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 text-center reveal-left relative z-10">
-            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-4 tracking-tight">Spread the Word</h2>
-            <p class="text-lg lg:text-xl text-slate-600 mb-12 lg:mb-16 max-w-2xl mx-auto font-light">Your voice is a powerful tool for change. Copy these messages and share our mission with your social networks.</p>
-            
-            <!-- NUMBERED PAGINATION FOR THIS SECTION -->
-            <div class="swiper swiper-social overflow-visible p-4 -m-4 pb-12 lg:pb-4">
-                <div class="swiper-wrapper lg:grid lg:grid-cols-3 lg:gap-8">
-                    
-                    <!-- Social Cards (Animate from Left) -->
-                    <div class="swiper-slide reveal-left delay-100 w-full lg:w-auto bg-slate-50 border border-slate-200 p-8 rounded-[32px] text-left flex flex-col h-auto hover:shadow-xl transition-shadow duration-300">
-                        <div class="flex items-center justify-between mb-6">
-                            <div class="w-12 h-12 bg-gradient-to-tr from-pink-500 to-orange-400 rounded-xl flex items-center justify-center text-white text-xl shadow-md"><i class="fab fa-instagram"></i></div>
-                            <button class="bg-white border border-slate-200 hover:bg-slate-900 hover:text-white hover:border-slate-900 text-slate-700 px-4 py-2 rounded-full font-bold uppercase text-[10px] tracking-widest transition-colors">Copy Post</button>
-                        </div>
-                        <p class="text-slate-700 font-medium text-lg mb-2 flex-grow leading-relaxed">"I just joined the movement with @FIDOTanzania to break the cycle of poverty. Check out their climate-smart agri projects!"</p>
-                    </div>
-
-                    <div class="swiper-slide reveal-left delay-200 w-full lg:w-auto bg-slate-50 border border-slate-200 p-8 rounded-[32px] text-left flex flex-col h-auto hover:shadow-xl transition-shadow duration-300">
-                        <div class="flex items-center justify-between mb-6">
-                            <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white text-xl shadow-md"><i class="fab fa-linkedin-in"></i></div>
-                            <button class="bg-white border border-slate-200 hover:bg-slate-900 hover:text-white hover:border-slate-900 text-slate-700 px-4 py-2 rounded-full font-bold uppercase text-[10px] tracking-widest transition-colors">Copy Post</button>
-                        </div>
-                        <p class="text-slate-700 font-medium text-lg mb-2 flex-grow leading-relaxed">"FIDO is transforming lives in Tanzania through integrated development. Proud to support their vision for a resilient economic future."</p>
-                    </div>
-
-                    <div class="swiper-slide reveal-left delay-300 w-full lg:w-auto bg-slate-50 border border-slate-200 p-8 rounded-[32px] text-left flex flex-col h-auto hover:shadow-xl transition-shadow duration-300">
-                        <div class="flex items-center justify-between mb-6">
-                            <div class="w-12 h-12 bg-black rounded-xl flex items-center justify-center text-white text-xl shadow-md">𝕏</div>
-                            <button class="bg-white border border-slate-200 hover:bg-slate-900 hover:text-white hover:border-slate-900 text-slate-700 px-4 py-2 rounded-full font-bold uppercase text-[10px] tracking-widest transition-colors">Copy Post</button>
-                        </div>
-                        <p class="text-slate-700 font-medium text-lg mb-2 flex-grow leading-relaxed">"Change starts with us. Supporting @FIDO_Tanzania in building self-reliant communities. Join me! #FIDO #Tanzania"</p>
-                    </div>
-
-                </div>
-                <!-- Numbered Pagination applied via custom CSS class below -->
-                <div class="swiper-pagination swiper-pagination-number lg:hidden"></div>
-            </div>
-        </div>
-    </section>
-
-</div>
-
-<!-- ================= INTERACTIVE MODALS CONTAINER ================= -->
-<div id="modal-container" class="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300 px-4 py-6">
-    <!-- Backdrop -->
-    <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm" onclick="closeModal()"></div>
-    
-    <!-- 1. VOLUNTEER MODAL -->
-    <div id="volunteer-modal" class="modal-card relative w-full max-w-3xl bg-white rounded-[32px] shadow-2xl p-6 lg:p-10 transform scale-95 opacity-0 transition-all duration-300 hidden max-h-[90vh] overflow-y-auto">
-        <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-red-500 transition-colors"><i class="fas fa-times text-2xl"></i></button>
-        <div class="mb-8 border-b border-slate-100 pb-6">
-            <h3 class="text-3xl font-black text-slate-900 mb-2">Volunteer Application</h3>
-            <p class="text-slate-500 text-sm">Join our grassroots teams. Please provide your details below so we can match you with the right initiative.</p>
-        </div>
-        
-        <form onsubmit="event.preventDefault(); closeModal();" class="space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">First Name <span class="text-red-500">*</span></label><input type="text" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></div>
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Last Name <span class="text-red-500">*</span></label><input type="text" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></div>
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Email Address <span class="text-red-500">*</span></label><input type="email" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></div>
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Phone Number</label><input type="tel" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></div>
-                
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Area of Expertise <span class="text-red-500">*</span></label>
-                    <select required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
-                        <option value="" disabled selected>Select an area...</option>
-                        <option>Education & Curriculum Design</option>
-                        <option>Agriculture & Agronomy</option>
-                        <option>Healthcare & Public Health</option>
-                        <option>Software / IT / Data Entry</option>
-                        <option>Logistics & Field Coordination</option>
-                        <option>Marketing & Fundraising</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Availability <span class="text-red-500">*</span></label>
-                    <select required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
-                        <option value="" disabled selected>Select availability...</option>
-                        <option>1-5 Hours / Week (Remote)</option>
-                        <option>10+ Hours / Week (Remote)</option>
-                        <option>Short-Term Field Work (1-3 Months)</option>
-                        <option>Long-Term Field Work (6+ Months)</option>
-                    </select>
-                </div>
-                
-                <div class="md:col-span-2">
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Upload Resume / CV (PDF max 5MB)</label>
-                    <input type="file" accept=".pdf" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 text-slate-800 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-bold file:bg-slate-900 file:text-white hover:file:bg-blue-600 transition-colors cursor-pointer outline-none">
-                </div>
-                
-                <div class="md:col-span-2">
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Why do you want to volunteer with FIDO? <span class="text-red-500">*</span></label>
-                    <textarea rows="4" required placeholder="Tell us about your motivation..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></textarea>
-                </div>
-            </div>
-            <button type="submit" class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-amber-400 hover:text-slate-900 transition-colors shadow-md mt-4">Submit Application</button>
-        </form>
     </div>
 
-    <!-- 2. PARTNER MODAL -->
-    <div id="partner-modal" class="modal-card relative w-full max-w-3xl bg-white rounded-[32px] shadow-2xl p-6 lg:p-10 transform scale-95 opacity-0 transition-all duration-300 hidden max-h-[90vh] overflow-y-auto">
-        <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-red-500 transition-colors"><i class="fas fa-times text-2xl"></i></button>
-        <div class="mb-8 border-b border-slate-100 pb-6">
-            <h3 class="text-3xl font-black text-slate-900 mb-2">Partnership Proposal</h3>
-            <p class="text-slate-500 text-sm">We are actively seeking strategic alliances to scale our impact across Tanzania.</p>
-        </div>
-        
-        <form onsubmit="event.preventDefault(); closeModal();" class="space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Organization Name <span class="text-red-500">*</span></label><input type="text" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all"></div>
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Organization Website</label><input type="url" placeholder="https://" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all"></div>
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Contact Person <span class="text-red-500">*</span></label><input type="text" required placeholder="Full Name" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all"></div>
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Job Title / Role <span class="text-red-500">*</span></label><input type="text" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all"></div>
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Email Address <span class="text-red-500">*</span></label><input type="email" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all"></div>
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Phone Number</label><input type="tel" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all"></div>
-                
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Type of Organization <span class="text-red-500">*</span></label>
-                    <select required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all">
-                        <option value="" disabled selected>Select type...</option>
-                        <option>Corporate / Private Sector</option>
-                        <option>NGO / Non-Profit</option>
-                        <option>Academic / Research Institution</option>
-                        <option>Government Agency</option>
-                        <option>Philanthropic Foundation</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Target Pillar of Interest <span class="text-red-500">*</span></label>
-                    <select required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all">
-                        <option value="" disabled selected>Select pillar...</option>
-                        <option>Education & Youth</option>
-                        <option>Agriculture & Food Security</option>
-                        <option>Healthcare & Sanitation</option>
-                        <option>Environment & Climate</option>
-                        <option>General Capacity Building</option>
-                    </select>
-                </div>
+    <!-- ================= INTERACTIVE MODALS CONTAINER ================= -->
+    <div id="modal-container"
+        class="fixed inset-0 z-[100] flex items-center justify-center pointer-events-none opacity-0 transition-opacity duration-300 px-4 py-6">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-slate-900/80 backdrop-blur-sm" onclick="closeModal()"></div>
 
-                <div class="md:col-span-2">
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Proposal Summary <span class="text-red-500">*</span></label>
-                    <textarea rows="4" required placeholder="Briefly describe how you envision partnering with FIDO..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all"></textarea>
-                </div>
+        <!-- 1. VOLUNTEER MODAL -->
+        <div id="volunteer-modal"
+            class="modal-card relative w-full max-w-3xl bg-white rounded-[32px] shadow-2xl p-6 lg:p-10 transform scale-95 opacity-0 transition-all duration-300 hidden max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()"
+                class="absolute top-6 right-6 text-slate-400 hover:text-red-500 transition-colors"><i
+                    class="fas fa-times text-2xl"></i></button>
+            <div class="mb-8 border-b border-slate-100 pb-6">
+                <h3 class="text-3xl font-black text-slate-900 mb-2">Volunteer Application</h3>
+                <p class="text-slate-500 text-sm">Join our grassroots teams. Please provide your details below so we can
+                    match you with the right initiative.</p>
             </div>
-            <button type="submit" class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-amber-400 hover:text-slate-900 transition-colors shadow-md mt-4">Send Partnership Proposal</button>
-        </form>
+
+            <form onsubmit="event.preventDefault(); closeModal();" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">First Name <span
+                                class="text-red-500">*</span></label><input type="text" required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
+                    </div>
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Last Name <span
+                                class="text-red-500">*</span></label><input type="text" required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
+                    </div>
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Email Address <span
+                                class="text-red-500">*</span></label><input type="email" required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
+                    </div>
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Phone Number</label><input
+                            type="tel"
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Area of Expertise <span
+                                class="text-red-500">*</span></label>
+                        <select required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
+                            <option value="" disabled selected>Select an area...</option>
+                            <option>Education & Curriculum Design</option>
+                            <option>Agriculture & Agronomy</option>
+                            <option>Healthcare & Public Health</option>
+                            <option>Software / IT / Data Entry</option>
+                            <option>Logistics & Field Coordination</option>
+                            <option>Marketing & Fundraising</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Availability <span
+                                class="text-red-500">*</span></label>
+                        <select required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
+                            <option value="" disabled selected>Select availability...</option>
+                            <option>1-5 Hours / Week (Remote)</option>
+                            <option>10+ Hours / Week (Remote)</option>
+                            <option>Short-Term Field Work (1-3 Months)</option>
+                            <option>Long-Term Field Work (6+ Months)</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Upload Resume / CV (PDF max
+                            5MB)</label>
+                        <input type="file" accept=".pdf"
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 text-slate-800 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-bold file:bg-slate-900 file:text-white hover:file:bg-blue-600 transition-colors cursor-pointer outline-none">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Why do you want to
+                            volunteer with FIDO? <span class="text-red-500">*</span></label>
+                        <textarea rows="4" required placeholder="Tell us about your motivation..."
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></textarea>
+                    </div>
+                </div>
+                <button type="submit"
+                    class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-amber-400 hover:text-slate-900 transition-colors shadow-md mt-4">Submit
+                    Application</button>
+            </form>
+        </div>
+
+        <!-- 2. PARTNER MODAL -->
+        <div id="partner-modal"
+            class="modal-card relative w-full max-w-3xl bg-white rounded-[32px] shadow-2xl p-6 lg:p-10 transform scale-95 opacity-0 transition-all duration-300 hidden max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()"
+                class="absolute top-6 right-6 text-slate-400 hover:text-red-500 transition-colors"><i
+                    class="fas fa-times text-2xl"></i></button>
+            <div class="mb-8 border-b border-slate-100 pb-6">
+                <h3 class="text-3xl font-black text-slate-900 mb-2">Partnership Proposal</h3>
+                <p class="text-slate-500 text-sm">We are actively seeking strategic alliances to scale our impact across
+                    Tanzania.</p>
+            </div>
+
+            <form onsubmit="event.preventDefault(); closeModal();" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Organization Name <span
+                                class="text-red-500">*</span></label><input type="text" required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all">
+                    </div>
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Organization
+                            Website</label><input type="url" placeholder="https://"
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all">
+                    </div>
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Contact Person <span
+                                class="text-red-500">*</span></label><input type="text" required placeholder="Full Name"
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all">
+                    </div>
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Job Title / Role <span
+                                class="text-red-500">*</span></label><input type="text" required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all">
+                    </div>
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Email Address <span
+                                class="text-red-500">*</span></label><input type="email" required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all">
+                    </div>
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Phone Number</label><input
+                            type="tel"
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all">
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Type of Organization <span
+                                class="text-red-500">*</span></label>
+                        <select required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all">
+                            <option value="" disabled selected>Select type...</option>
+                            <option>Corporate / Private Sector</option>
+                            <option>NGO / Non-Profit</option>
+                            <option>Academic / Research Institution</option>
+                            <option>Government Agency</option>
+                            <option>Philanthropic Foundation</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Target Pillar of Interest
+                            <span class="text-red-500">*</span></label>
+                        <select required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all">
+                            <option value="" disabled selected>Select pillar...</option>
+                            <option>Education & Youth</option>
+                            <option>Agriculture & Food Security</option>
+                            <option>Healthcare & Sanitation</option>
+                            <option>Environment & Climate</option>
+                            <option>General Capacity Building</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Proposal Summary <span
+                                class="text-red-500">*</span></label>
+                        <textarea rows="4" required
+                            placeholder="Briefly describe how you envision partnering with FIDO..."
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all"></textarea>
+                    </div>
+                </div>
+                <button type="submit"
+                    class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-amber-400 hover:text-slate-900 transition-colors shadow-md mt-4">Send
+                    Partnership Proposal</button>
+            </form>
+        </div>
+
+        <!-- 3. CV MODAL -->
+        <div id="cv-modal"
+            class="modal-card relative w-full max-w-3xl bg-white rounded-[32px] shadow-2xl p-6 lg:p-10 transform scale-95 opacity-0 transition-all duration-300 hidden max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()"
+                class="absolute top-6 right-6 text-slate-400 hover:text-red-500 transition-colors"><i
+                    class="fas fa-times text-2xl"></i></button>
+            <div class="mb-8 border-b border-slate-100 pb-6">
+                <h3 class="text-3xl font-black text-slate-900 mb-2">Submit Your Resume</h3>
+                <p class="text-slate-500 text-sm">Apply for current openings or submit your CV to our talent pool for
+                    future opportunities.</p>
+            </div>
+
+            <form onsubmit="event.preventDefault(); closeModal();" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">First Name <span
+                                class="text-red-500">*</span></label><input type="text" required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
+                    </div>
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Last Name <span
+                                class="text-red-500">*</span></label><input type="text" required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
+                    </div>
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Email Address <span
+                                class="text-red-500">*</span></label><input type="email" required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
+                    </div>
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Phone Number <span
+                                class="text-red-500">*</span></label><input type="tel" required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
+                    </div>
+
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Position Applied For <span
+                                class="text-red-500">*</span></label><input type="text" required
+                            placeholder="e.g. Field Officer, Admin"
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
+                    </div>
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">LinkedIn Profile
+                            URL</label><input type="url" placeholder="https://linkedin.com/in/..."
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Upload Resume / CV (PDF
+                            only) <span class="text-red-500">*</span></label>
+                        <input type="file" accept=".pdf" required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 text-slate-800 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-bold file:bg-slate-900 file:text-white hover:file:bg-amber-400 hover:file:text-slate-900 transition-colors cursor-pointer outline-none">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Cover Letter / Professional
+                            Summary</label>
+                        <textarea rows="4" placeholder="Highlight your experience and why you are a fit for FIDO..."
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></textarea>
+                    </div>
+                </div>
+                <button type="submit"
+                    class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-amber-400 hover:text-slate-900 transition-colors shadow-md mt-4">Submit
+                    Application</button>
+            </form>
+        </div>
+
+        <!-- 4. CAMPAIGN MODAL -->
+        <div id="campaign-modal"
+            class="modal-card relative w-full max-w-3xl bg-white rounded-[32px] shadow-2xl p-6 lg:p-10 transform scale-95 opacity-0 transition-all duration-300 hidden max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal()"
+                class="absolute top-6 right-6 text-slate-400 hover:text-red-500 transition-colors"><i
+                    class="fas fa-times text-2xl"></i></button>
+            <div class="mb-8 border-b border-slate-100 pb-6">
+                <h3 class="text-3xl font-black text-slate-900 mb-2">Start a Fundraising Campaign</h3>
+                <p class="text-slate-500 text-sm">Empower your network to support sustainable change in Tanzania.</p>
+            </div>
+
+            <form onsubmit="event.preventDefault(); closeModal();" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Organizer Name <span
+                                class="text-red-500">*</span></label><input type="text" required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
+                    </div>
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Organizer Email <span
+                                class="text-red-500">*</span></label><input type="email" required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
+                    </div>
+
+                    <div class="md:col-span-2"><label
+                            class="block text-xs font-bold text-slate-700 uppercase mb-2">Campaign Title <span
+                                class="text-red-500">*</span></label><input type="text" required
+                            placeholder="e.g. Maria's Marathon for Clean Water"
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
+                    </div>
+
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Target Goal (Amount) <span
+                                class="text-red-500">*</span></label><input type="text" required
+                            placeholder="e.g. $1,000 or TZS 2,000,000"
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
+                    </div>
+                    <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Campaign Deadline Date
+                            <span class="text-red-500">*</span></label><input type="date" required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Which FIDO Pillar will you
+                            support? <span class="text-red-500">*</span></label>
+                        <select required
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
+                            <option value="" disabled selected>Select a pillar to fund...</option>
+                            <option>General FIDO Fund (Where most needed)</option>
+                            <option>Education & Schools</option>
+                            <option>Sustainable Agriculture</option>
+                            <option>Healthcare & Clinics</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Campaign Story /
+                            Description <span class="text-red-500">*</span></label>
+                        <textarea rows="4" required
+                            placeholder="Tell people why you are raising money and why this cause matters to you..."
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></textarea>
+                    </div>
+                </div>
+                <button type="submit"
+                    class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-amber-400 hover:text-slate-900 transition-colors shadow-md mt-4">Create
+                    Campaign Profile</button>
+            </form>
+        </div>
     </div>
 
-    <!-- 3. CV MODAL -->
-    <div id="cv-modal" class="modal-card relative w-full max-w-3xl bg-white rounded-[32px] shadow-2xl p-6 lg:p-10 transform scale-95 opacity-0 transition-all duration-300 hidden max-h-[90vh] overflow-y-auto">
-        <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-red-500 transition-colors"><i class="fas fa-times text-2xl"></i></button>
-        <div class="mb-8 border-b border-slate-100 pb-6">
-            <h3 class="text-3xl font-black text-slate-900 mb-2">Submit Your Resume</h3>
-            <p class="text-slate-500 text-sm">Apply for current openings or submit your CV to our talent pool for future opportunities.</p>
-        </div>
-        
-        <form onsubmit="event.preventDefault(); closeModal();" class="space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">First Name <span class="text-red-500">*</span></label><input type="text" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></div>
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Last Name <span class="text-red-500">*</span></label><input type="text" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></div>
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Email Address <span class="text-red-500">*</span></label><input type="email" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></div>
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Phone Number <span class="text-red-500">*</span></label><input type="tel" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></div>
-                
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Position Applied For <span class="text-red-500">*</span></label><input type="text" required placeholder="e.g. Field Officer, Admin" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></div>
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">LinkedIn Profile URL</label><input type="url" placeholder="https://linkedin.com/in/..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></div>
-                
-                <div class="md:col-span-2">
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Upload Resume / CV (PDF only) <span class="text-red-500">*</span></label>
-                    <input type="file" accept=".pdf" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 text-slate-800 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-bold file:bg-slate-900 file:text-white hover:file:bg-amber-400 hover:file:text-slate-900 transition-colors cursor-pointer outline-none">
-                </div>
-                
-                <div class="md:col-span-2">
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Cover Letter / Professional Summary</label>
-                    <textarea rows="4" placeholder="Highlight your experience and why you are a fit for FIDO..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></textarea>
-                </div>
-            </div>
-            <button type="submit" class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-amber-400 hover:text-slate-900 transition-colors shadow-md mt-4">Submit Application</button>
-        </form>
-    </div>
+    <!-- Required Swiper Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- 4. CAMPAIGN MODAL -->
-    <div id="campaign-modal" class="modal-card relative w-full max-w-3xl bg-white rounded-[32px] shadow-2xl p-6 lg:p-10 transform scale-95 opacity-0 transition-all duration-300 hidden max-h-[90vh] overflow-y-auto">
-        <button onclick="closeModal()" class="absolute top-6 right-6 text-slate-400 hover:text-red-500 transition-colors"><i class="fas fa-times text-2xl"></i></button>
-        <div class="mb-8 border-b border-slate-100 pb-6">
-            <h3 class="text-3xl font-black text-slate-900 mb-2">Start a Fundraising Campaign</h3>
-            <p class="text-slate-500 text-sm">Empower your network to support sustainable change in Tanzania.</p>
-        </div>
-        
-        <form onsubmit="event.preventDefault(); closeModal();" class="space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Organizer Name <span class="text-red-500">*</span></label><input type="text" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></div>
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Organizer Email <span class="text-red-500">*</span></label><input type="email" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></div>
-                
-                <div class="md:col-span-2"><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Campaign Title <span class="text-red-500">*</span></label><input type="text" required placeholder="e.g. Maria's Marathon for Clean Water" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></div>
-                
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Target Goal (Amount) <span class="text-red-500">*</span></label><input type="text" required placeholder="e.g. $1,000 or TZS 2,000,000" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></div>
-                <div><label class="block text-xs font-bold text-slate-700 uppercase mb-2">Campaign Deadline Date <span class="text-red-500">*</span></label><input type="date" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></div>
+    <script>
+        // ================== MODAL LOGIC ==================
+        const modalContainer = document.getElementById('modal-container');
+        const allModals = document.querySelectorAll('.modal-card');
 
-                <div class="md:col-span-2">
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Which FIDO Pillar will you support? <span class="text-red-500">*</span></label>
-                    <select required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all">
-                        <option value="" disabled selected>Select a pillar to fund...</option>
-                        <option>General FIDO Fund (Where most needed)</option>
-                        <option>Education & Schools</option>
-                        <option>Sustainable Agriculture</option>
-                        <option>Healthcare & Clinics</option>
-                    </select>
-                </div>
-                
-                <div class="md:col-span-2">
-                    <label class="block text-xs font-bold text-slate-700 uppercase mb-2">Campaign Story / Description <span class="text-red-500">*</span></label>
-                    <textarea rows="4" required placeholder="Tell people why you are raising money and why this cause matters to you..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-800 focus:border-blue-600 focus:ring-2 focus:ring-blue-600/20 outline-none transition-all"></textarea>
-                </div>
-            </div>
-            <button type="submit" class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-amber-400 hover:text-slate-900 transition-colors shadow-md mt-4">Create Campaign Profile</button>
-        </form>
-    </div>
-</div>
-
-<!-- Required Swiper Script -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<script>
-    // ================== MODAL LOGIC ==================
-    const modalContainer = document.getElementById('modal-container');
-    const allModals = document.querySelectorAll('.modal-card');
-
-    window.openModal = function(modalId) {
-        document.body.style.overflow = 'hidden';
-        allModals.forEach(m => {
-            m.classList.add('hidden');
-            m.classList.remove('scale-100', 'opacity-100');
-            m.classList.add('scale-95', 'opacity-0');
-        });
-        modalContainer.classList.remove('pointer-events-none', 'opacity-0');
-        modalContainer.classList.add('pointer-events-auto', 'opacity-100');
-        const targetModal = document.getElementById(modalId);
-        targetModal.classList.remove('hidden');
-        setTimeout(() => {
-            targetModal.classList.remove('scale-95', 'opacity-0');
-            targetModal.classList.add('scale-100', 'opacity-100');
-        }, 10);
-    };
-
-    window.closeModal = function() {
-        document.body.style.overflow = 'auto';
-        allModals.forEach(m => {
-            if(!m.classList.contains('hidden')) {
+        window.openModal = function (modalId) {
+            document.body.style.overflow = 'hidden';
+            allModals.forEach(m => {
+                m.classList.add('hidden');
                 m.classList.remove('scale-100', 'opacity-100');
                 m.classList.add('scale-95', 'opacity-0');
-            }
-        });
-        modalContainer.classList.remove('pointer-events-auto', 'opacity-100');
-        modalContainer.classList.add('pointer-events-none', 'opacity-0');
-        setTimeout(() => {
-            allModals.forEach(m => m.classList.add('hidden'));
-        }, 300);
-    };
+            });
+            modalContainer.classList.remove('pointer-events-none', 'opacity-0');
+            modalContainer.classList.add('pointer-events-auto', 'opacity-100');
+            const targetModal = document.getElementById(modalId);
+            targetModal.classList.remove('hidden');
+            setTimeout(() => {
+                targetModal.classList.remove('scale-95', 'opacity-0');
+                targetModal.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        };
 
-    // ================== SWIPER & ANIMATION LOGIC ==================
-    document.addEventListener('DOMContentLoaded', function() {
-        
-        // Ensure entrance animations apply correctly for BOTH Left and Right slides
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
+        window.closeModal = function () {
+            document.body.style.overflow = 'auto';
+            allModals.forEach(m => {
+                if (!m.classList.contains('hidden')) {
+                    m.classList.remove('scale-100', 'opacity-100');
+                    m.classList.add('scale-95', 'opacity-0');
                 }
             });
-        }, { threshold: 0.1 });
+            modalContainer.classList.remove('pointer-events-auto', 'opacity-100');
+            modalContainer.classList.add('pointer-events-none', 'opacity-0');
+            setTimeout(() => {
+                allModals.forEach(m => m.classList.add('hidden'));
+            }, 300);
+        };
 
-        document.querySelectorAll('.reveal-right, .reveal-left, .slide-in-right, .slide-in-left').forEach(el => revealObserver.observe(el));
+        // ================== SWIPER & ANIMATION LOGIC ==================
+        document.addEventListener('DOMContentLoaded', function () {
 
-        // Safely start/stop autoplay when sliders scroll in/out of view
-        const autoplayObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (entry.target.swiper && entry.target.swiper.autoplay) entry.target.swiper.autoplay.start();
-                } else {
-                    if (entry.target.swiper && entry.target.swiper.autoplay) entry.target.swiper.autoplay.stop();
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.swiper').forEach(el => autoplayObserver.observe(el));
-
-        function initSwipers() {
-            if (window.innerWidth < 1024) {
-                
-                // Shared base config (with human-touch responsiveness and NO REWIND)
-                const commonConfig = {
-                    slidesPerView: 1.15,
-                    spaceBetween: 20,
-                    grabCursor: true,
-                    touchRatio: 1.5,
-                    resistanceRatio: 0.85,
-                    loop: false,
-                    rewind: false, 
-                    autoplay: {
-                        delay: 3000,
-                        disableOnInteraction: false
+            // Ensure entrance animations apply correctly for BOTH Left and Right slides
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
                     }
-                };
-
-                // Section 1: Roles (Slides Right to Left automatically, DOTS pagination)
-                new Swiper('.swiper-roles', {
-                    ...commonConfig,
-                    pagination: { el: '.swiper-roles .swiper-pagination', clickable: true }
                 });
+            }, { threshold: 0.1 });
 
-                // Function to render Numbers
-                const renderNum = function (index, className) {
-                    return '<span class="' + className + '">' + (index + 1) + '</span>';
-                };
+            document.querySelectorAll('.reveal-right, .reveal-left, .slide-in-right, .slide-in-left').forEach(el => revealObserver.observe(el));
 
-                // Section 2: Careers/Fundraise (Slides automatically, NUMBERS pagination)
-                new Swiper('.swiper-careers', {
-                    ...commonConfig,
-                    pagination: { el: '.swiper-careers .swiper-pagination', clickable: true, renderBullet: renderNum }
+            // Safely start/stop autoplay when sliders scroll in/out of view
+            const autoplayObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.swiper && entry.target.swiper.autoplay) entry.target.swiper.autoplay.start();
+                    } else {
+                        if (entry.target.swiper && entry.target.swiper.autoplay) entry.target.swiper.autoplay.stop();
+                    }
                 });
+            }, { threshold: 0.1 });
 
-                // Section 3: Social Cards (Slides automatically, NUMBERS pagination)
-                new Swiper('.swiper-social', {
-                    ...commonConfig,
-                    centeredSlides: true,
-                    pagination: { el: '.swiper-social .swiper-pagination', clickable: true, renderBullet: renderNum }
-                });
+            document.querySelectorAll('.swiper').forEach(el => autoplayObserver.observe(el));
+
+            function initSwipers() {
+                if (window.innerWidth < 1024) {
+
+                    // Shared base config (with human-touch responsiveness and NO REWIND)
+                    const commonConfig = {
+                        slidesPerView: 1.15,
+                        spaceBetween: 20,
+                        grabCursor: true,
+                        touchRatio: 1.5,
+                        resistanceRatio: 0.85,
+                        loop: false,
+                        rewind: false,
+                        autoplay: {
+                            delay: 3000,
+                            disableOnInteraction: false
+                        }
+                    };
+
+                    // Section 1: Roles (Slides Right to Left automatically, DOTS pagination)
+                    new Swiper('.swiper-roles', {
+                        ...commonConfig,
+                        pagination: { el: '.swiper-roles .swiper-pagination', clickable: true }
+                    });
+
+                    // Function to render Numbers
+                    const renderNum = function (index, className) {
+                        return '<span class="' + className + '">' + (index + 1) + '</span>';
+                    };
+
+                    // Section 2: Careers/Fundraise (Slides automatically, NUMBERS pagination)
+                    new Swiper('.swiper-careers', {
+                        ...commonConfig,
+                        pagination: { el: '.swiper-careers .swiper-pagination', clickable: true, renderBullet: renderNum }
+                    });
+
+                    // Section 3: Social Cards (Slides automatically, NUMBERS pagination)
+                    new Swiper('.swiper-social', {
+                        ...commonConfig,
+                        centeredSlides: true,
+                        pagination: { el: '.swiper-social .swiper-pagination', clickable: true, renderBullet: renderNum }
+                    });
+                }
             }
-        }
 
-        initSwipers();
-    });
-</script>
+            initSwipers();
+        });
+    </script>
 
     <div id="ficus-footer"></div>
 
     <script src="script.js"></script>
 
 </body>
-</html>
 
+</html>

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIDO</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         /* Smooth, gapless transition logic */
         .gallery-item {
@@ -14,45 +15,53 @@
             opacity: 1;
             transform: scale(1);
         }
+
         /* State 1: Faded out but still taking up space momentarily */
         .gallery-item.fade-out {
             opacity: 0;
             transform: scale(0.9);
         }
+
         /* State 2: Completely removed from layout to close gaps */
         .gallery-item.hidden-item {
             display: none !important;
         }
     </style>
 </head>
+
 <body class="bg-gray-50 text-slate-800 font-sans">
 
-        <div id="ficus-header-container"></div>
+    <div id="ficus-header-container"></div>
 
     <!-- ================= HERO SECTION ================= -->
-    <section class="relative min-h-[50vh]  mt-24 flex items-center justify-center overflow-hidden">
+    <section class="relative min-h-[60vh]  mt-24 flex items-center justify-center overflow-hidden">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1920&q=80" alt="FIDO Community" class="w-full h-full object-cover object-top">
-            <div class="absolute inset-0 bg-blue-900/80 backdrop-blur-[2px]"></div>
+            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1920&q=80"
+                alt="FIDO Community" class="w-full h-full object-cover object-top">
+            <div class="absolute inset-0 bg-ficus-blue/80 backdrop-blur-[2px]"></div>
         </div>
 
         <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
-            <span class="inline-block py-1 px-4 rounded-full bg-yellow-400/20 text-yellow-400 font-bold text-xs tracking-widest uppercase mb-4 border border-yellow-400/30">
+            <span
+                class="inline-block py-1 px-4 rounded-full bg-yellow-400 text-black font-bold text-xs tracking-widest uppercase mb-4 border border-yellow-400/30">
                 Visual Impact
             </span>
             <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-tight mb-6">
-                See The Change <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">We Create.</span>
+                See The Change <br><span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-yellow-200">We
+                    Create.</span>
             </h1>
             <p class="text-lg md:text-xl text-blue-100 font-light mb-8 max-w-2xl mx-auto leading-relaxed">
-                Explore moments captured from our grassroots initiatives across the Lake Zone, driving sustainable development in Tanzania.
+                Explore moments captured from our grassroots initiatives across the Lake Zone, driving sustainable
+                development in Tanzania.
             </p>
         </div>
     </section>
 
     <!-- ================= FILTER & GALLERY SECTION ================= -->
     <section class="py-16 lg:py-24 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
-        
+
         <div class="text-center mb-12">
             <h2 class="text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">Our Programs in Action</h2>
         </div>
@@ -60,38 +69,57 @@
         <!-- FIXED: Premium Hover States for Filter Buttons -->
         <div class="flex flex-wrap justify-center gap-3 lg:gap-4 mb-12" id="filter-buttons">
             <!-- Active Button -->
-            <button class="filter-btn active px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 bg-blue-900 text-white shadow-lg border-2 border-blue-900" data-filter="all">
+            <button
+                class="filter-btn active px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 bg-ficus-blue text-white shadow-lg border-2 border-ficus-blue"
+                data-filter="all">
                 All Projects
             </button>
             <!-- Inactive Buttons (With Blue Hover) -->
-            <button class="filter-btn px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 bg-white text-gray-600 border-2 border-gray-200 hover:border-blue-900 hover:text-blue-900 hover:bg-blue-50" data-filter="education">
+            <button
+                class="filter-btn px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 bg-white text-gray-600 border-2 border-gray-200 hover:border-blue-900 hover:text-blue-900 hover:bg-ficus-blue"
+                data-filter="education">
                 Education
             </button>
-            <button class="filter-btn px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 bg-white text-gray-600 border-2 border-gray-200 hover:border-blue-900 hover:text-blue-900 hover:bg-blue-50" data-filter="health">
+            <button
+                class="filter-btn px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 bg-white text-gray-600 border-2 border-gray-200 hover:border-blue-900 hover:text-blue-900 hover:bg-ficus-blue"
+                data-filter="health">
                 Healthcare
             </button>
-            <button class="filter-btn px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 bg-white text-gray-600 border-2 border-gray-200 hover:border-blue-900 hover:text-blue-900 hover:bg-blue-50" data-filter="agriculture">
+            <button
+                class="filter-btn px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 bg-white text-gray-600 border-2 border-gray-200 hover:border-blue-900 hover:text-blue-900 hover:bg-ficus-blue"
+                data-filter="agriculture">
                 Agriculture
             </button>
-            <button class="filter-btn px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 bg-white text-gray-600 border-2 border-gray-200 hover:border-blue-900 hover:text-blue-900 hover:bg-blue-50" data-filter="environment">
+            <button
+                class="filter-btn px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 bg-white text-gray-600 border-2 border-gray-200 hover:border-blue-900 hover:text-blue-900 hover:bg-ficus-blue"
+                data-filter="environment">
                 Environment
             </button>
             <!-- NEW: Technology Button -->
-            <button class="filter-btn px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 bg-white text-gray-600 border-2 border-gray-200 hover:border-blue-900 hover:text-blue-900 hover:bg-blue-50" data-filter="technology">
+            <button
+                class="filter-btn px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 bg-white text-gray-600 border-2 border-gray-200 hover:border-blue-900 hover:text-blue-900 hover:bg-ficus-blue"
+                data-filter="technology">
                 Technology
             </button>
         </div>
 
         <!-- Image Gallery Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8" id="gallery-grid">
-            
+
             <!-- Education -->
             <div class="gallery-item w-full" data-category="education">
-                <div class="relative rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-shadow duration-300 h-[300px] border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="Ngara School" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                        <span class="px-3 py-1 bg-yellow-400 text-blue-900 text-[10px] font-black uppercase tracking-wider rounded-full mb-2 block w-max">Education</span>
+                <div
+                    class="relative rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-shadow duration-300 h-[300px] border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80"
+                        alt="Ngara School"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span
+                            class="px-3 py-1 bg-yellow-400 text-blue-900 text-[10px] font-black uppercase tracking-wider rounded-full mb-2 block w-max">Education</span>
                         <h3 class="text-white font-bold text-xl">Ngara Classroom Build</h3>
                     </div>
                 </div>
@@ -99,11 +127,18 @@
 
             <!-- Healthcare -->
             <div class="gallery-item w-full" data-category="health">
-                <div class="relative rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-shadow duration-300 h-[300px] border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80" alt="Health Clinic" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                        <span class="px-3 py-1 bg-blue-500 text-white text-[10px] font-black uppercase tracking-wider rounded-full mb-2 block w-max">Healthcare</span>
+                <div
+                    class="relative rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-shadow duration-300 h-[300px] border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80"
+                        alt="Health Clinic"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span
+                            class="px-3 py-1 bg-blue-500 text-white text-[10px] font-black uppercase tracking-wider rounded-full mb-2 block w-max">Healthcare</span>
                         <h3 class="text-white font-bold text-xl">Mwanza Mobile Clinic</h3>
                     </div>
                 </div>
@@ -111,11 +146,18 @@
 
             <!-- Agriculture -->
             <div class="gallery-item w-full" data-category="agriculture">
-                <div class="relative rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-shadow duration-300 h-[300px] border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1593113565694-c68270104bdc?auto=format&fit=crop&w=800&q=80" alt="Women Farmers" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                        <span class="px-3 py-1 bg-green-500 text-white text-[10px] font-black uppercase tracking-wider rounded-full mb-2 block w-max">Agriculture</span>
+                <div
+                    class="relative rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-shadow duration-300 h-[300px] border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1593113565694-c68270104bdc?auto=format&fit=crop&w=800&q=80"
+                        alt="Women Farmers"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span
+                            class="px-3 py-1 bg-green-500 text-white text-[10px] font-black uppercase tracking-wider rounded-full mb-2 block w-max">Agriculture</span>
                         <h3 class="text-white font-bold text-xl">Women's Farming Co-op</h3>
                     </div>
                 </div>
@@ -123,11 +165,18 @@
 
             <!-- Environment -->
             <div class="gallery-item w-full" data-category="environment">
-                <div class="relative rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-shadow duration-300 h-[300px] border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80" alt="Tree Planting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                        <span class="px-3 py-1 bg-teal-600 text-white text-[10px] font-black uppercase tracking-wider rounded-full mb-2 block w-max">Environment</span>
+                <div
+                    class="relative rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-shadow duration-300 h-[300px] border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80"
+                        alt="Tree Planting"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span
+                            class="px-3 py-1 bg-teal-600 text-white text-[10px] font-black uppercase tracking-wider rounded-full mb-2 block w-max">Environment</span>
                         <h3 class="text-white font-bold text-xl">Reforestation Drive</h3>
                     </div>
                 </div>
@@ -135,11 +184,18 @@
 
             <!-- Agriculture (Second) -->
             <div class="gallery-item w-full" data-category="agriculture">
-                <div class="relative rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-shadow duration-300 h-[300px] border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Harvest" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                        <span class="px-3 py-1 bg-green-500 text-white text-[10px] font-black uppercase tracking-wider rounded-full mb-2 block w-max">Agriculture</span>
+                <div
+                    class="relative rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-shadow duration-300 h-[300px] border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80"
+                        alt="Harvest"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span
+                            class="px-3 py-1 bg-green-500 text-white text-[10px] font-black uppercase tracking-wider rounded-full mb-2 block w-max">Agriculture</span>
                         <h3 class="text-white font-bold text-xl">Drought-Resistant Seeds</h3>
                     </div>
                 </div>
@@ -147,28 +203,105 @@
 
             <!-- NEW: Technology (Converted from Education Second) -->
             <div class="gallery-item w-full" data-category="technology">
-                <div class="relative rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-shadow duration-300 h-[300px] border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1522661067900-ab829854a57f?auto=format&fit=crop&w=800&q=80" alt="Students with tech" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                        <span class="px-3 py-1 bg-purple-600 text-white text-[10px] font-black uppercase tracking-wider rounded-full mb-2 block w-max">Technology</span>
+                <div
+                    class="relative rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-shadow duration-300 h-[300px] border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1522661067900-ab829854a57f?auto=format&fit=crop&w=800&q=80"
+                        alt="Students with tech"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span
+                            class="px-3 py-1 bg-purple-600 text-white text-[10px] font-black uppercase tracking-wider rounded-full mb-2 block w-max">Technology</span>
                         <h3 class="text-white font-bold text-xl">Digital Literacy Hubs</h3>
                     </div>
                 </div>
             </div>
-            
+
             <!-- NEW: Technology (Second) -->
             <div class="gallery-item w-full" data-category="technology">
-                <div class="relative rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-shadow duration-300 h-[300px] border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="Technology Hub" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div class="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                        <span class="px-3 py-1 bg-purple-600 text-white text-[10px] font-black uppercase tracking-wider rounded-full mb-2 block w-max">Technology</span>
+                <div
+                    class="relative rounded-3xl overflow-hidden group shadow-md hover:shadow-2xl transition-shadow duration-300 h-[300px] border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80"
+                        alt="Technology Hub"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-transparent to-transparent opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+                    </div>
+                    <div
+                        class="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <span
+                            class="px-3 py-1 bg-purple-600 text-white text-[10px] font-black uppercase tracking-wider rounded-full mb-2 block w-max">Technology</span>
                         <h3 class="text-white font-bold text-xl">AgriTech Mobile Apps</h3>
                     </div>
                 </div>
             </div>
 
+        </div>
+    </section>
+
+
+
+    <!-- ================= GALLERY CTA ================= -->
+    <section class="relative py-16 lg:py-24 bg-gradient-to-br from-ficus-blue via-blue-800 to-blue-950 overflow-hidden">
+        <!-- Soft glow effect -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full bg-ficus-yellow/10 blur-[100px]">
+            </div>
+            <div class="absolute -bottom-20 -left-20 w-[350px] h-[350px] rounded-full bg-ficus-yellow/5 blur-[80px]">
+            </div>
+        </div>
+
+        <!-- Subtle dot pattern -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <div
+                class="h-full w-full bg-[radial-gradient(circle_at_1px_1px,white_1px,transparent_0)] bg-[size:32px_32px]">
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Premium badge -->
+            <div
+                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-ficus-yellow text-xs sm:text-sm font-bold tracking-widest uppercase mb-6">
+                <span class="w-2 h-2 rounded-full bg-ficus-yellow animate-pulse"></span>
+                Get Involved
+            </div>
+
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4 lg:mb-6">
+                Every Picture Tells a Story.<br>
+                <span class="text-ficus-yellow">You Can Write the Next One.</span>
+            </h2>
+
+            <p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                The moments you see here are made possible by people like you. Join our community of change‑makers and
+                help create lasting impact across Tanzania.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 lg:gap-6">
+                <!-- Primary Donate Button -->
+                <a href="donate.html"
+                    class="group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 bg-ficus-yellow text-ficus-blue font-bold text-lg rounded-full hover:bg-white hover:text-ficus-blue transition-all duration-300 shadow-[0_10px_30px_rgba(250,204,21,0.3)] hover:shadow-[0_15px_40px_rgba(250,204,21,0.5)] hover:-translate-y-1">
+                    Donate Now
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+
+                <!-- Secondary Volunteer/Partner Button -->
+                <a href="involved.html"
+                    class="group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-4 border-2 border-white/30 text-white font-bold text-lg rounded-full hover:bg-white hover:text-ficus-blue transition-all duration-300 hover:border-white">
+                    Volunteer With Us
+                    <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
+                        stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                </a>
+            </div>
         </div>
     </section>
 
@@ -180,16 +313,16 @@
 
             filterBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    
+
                     // 1. Reset all buttons to inactive hover state
                     filterBtns.forEach(button => {
-                        button.classList.remove('bg-blue-900', 'text-white', 'shadow-lg', 'active', 'border-blue-900');
-                        button.classList.add('bg-white', 'text-gray-600', 'border-gray-200');
+                        button.classList.remove('bg-ficus-blue', 'text-white', 'shadow-lg', 'active', 'border-black');
+                        button.classList.add('bg-white', 'text-black', 'border-black');
                     });
 
                     // 2. Set clicked button to Active state
-                    btn.classList.remove('bg-white', 'text-gray-600', 'border-gray-200');
-                    btn.classList.add('bg-blue-900', 'text-white', 'shadow-lg', 'active', 'border-blue-900');
+                    btn.classList.remove('bg-white', 'text-gray-600', 'border-ficus-yellow');
+                    btn.classList.add('bg-ficus-blue', 'text-white', 'shadow-lg', 'active', 'border-ficus-yellow');
 
                     // 3. Get filter value
                     const filterValue = btn.getAttribute('data-filter');
@@ -197,11 +330,11 @@
                     // 4. Filter Images without gaps
                     galleryItems.forEach(item => {
                         const category = item.getAttribute('data-category');
-                        
+
                         if (filterValue === 'all' || filterValue === category) {
                             // Show Item: First remove hidden (display:none) so it takes up space in the grid again
                             item.classList.remove('hidden-item');
-                            
+
                             // Tiny delay to allow CSS to register display:block before fading it in
                             setTimeout(() => {
                                 item.classList.remove('fade-out');
@@ -209,7 +342,7 @@
                         } else {
                             // Hide Item: First fade it out visually
                             item.classList.add('fade-out');
-                            
+
                             // Wait for the CSS transition (300ms) to finish, THEN remove it from the grid layout
                             setTimeout(() => {
                                 // Double check it still has fade-out (prevents bugs if user clicks quickly)
@@ -227,4 +360,5 @@
     <div id="ficus-footer"></div>
     <script src="script.js"></script>
 </body>
+
 </html>

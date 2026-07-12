@@ -1,516 +1,552 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FIDO</title>
-    
-    <!-- Tailwind CSS Script Setup -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              ficus: {
-                yellow: '#F2B705',
-                charcoal: '#1F2933',
-                sand: '#F4EFEA',
-                blue: '#0071BC',
-                green: '#39B54A',
-              }
-            },
-            fontFamily: {
-              sans: ['Inter', 'system-ui', 'sans-serif'],
-            },
-            animation: {
-              'fade-in-up': 'fadeInUp 0.5s ease forwards',
-              'fade-in-up-slow': 'fadeInUp 1.2s ease forwards',
-              'pulse-fast': 'pulse 1.5s infinite',
-              'slide-mobile': 'slideMobile 12s infinite alternate ease-in-out',
-            },
-            keyframes: {
-              fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(30px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              slideMobile: {
-                '0%, 35%': { transform: 'translateX(0)' },
-                '65%, 100%': { transform: 'translateX(-50%)' },
-              }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FIDO</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ficus: {
+              yellow: '#F2B705',
+              charcoal: '#1F2933',
+              sand: '#F4EFEA',
+              blue: '#0071BC',
+              green: '#39B54A',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          animation: {
+            'fade-in-up': 'fadeInUp 0.5s ease forwards',
+            'fade-in-up-slow': 'fadeInUp 1.2s ease forwards',
+            'pulse-fast': 'pulse 1.5s infinite',
+          },
+          keyframes: {
+            fadeInUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
             }
           }
         }
       }
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class=" font-sans text-ficus-sand selection:bg-ficus-yellow selection:text-ficus-blue cursor-default overflow-x-hidden">
 
-    <div id="ficus-header-container"></div>
-<!-- ==================== FICUS 2080 NEWS NEXUS (100% TAILWIND FIX) ==================== -->
-<div class="relative w-full overflow-x-hidden">
+<body class="font-sans text-ficus-charcoal bg-white overflow-x-hidden">
 
-  <!-- ── HERO ── -->
-<!-- ── HERO (IMMERSIVE 2080 REDESIGN) ── -->
-<!-- ── HERO (SIMPLIFIED IMAGE BACKGROUND) ── -->
-  <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden border-b border-white/5" id="ficus-hero-2080">
-    
-    <!-- Background Image with Dark Gradient Overlay -->
+  <div id="ficus-header-container"></div>
+
+  <!-- HERO -->
+  <section class="relative min-h-[80vh] flex items-center justify-center overflow-hidden" id="ficus-hero-2080">
     <div class="absolute inset-0 z-0">
-      <!-- You can change this Unsplash URL to your own FIDO Tanzania image -->
-      <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1920&q=80" alt="Community impact" class="w-full h-full object-cover" />
-      <!-- Gradient overlay ensures text is readable and blends into the dark page below -->
-      <div class="absolute inset-0 bg-gradient-to-b from-ficus-charcoal/80 via-ficus-charcoal/60 to-ficus-charcoal"></div>
+      <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1920&q=80"
+        alt="Community impact" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-br from-ficus-blue/60 via-ficus-blue/40 to-ficus-green/50"></div>
     </div>
-
-    <!-- Main Content -->
-    <div class="relative z-10 text-center max-w-[900px] px-6 py-12 flex flex-col items-center animate-fade-in-up">
-      
-      <!-- Simplified Badge -->
-      <div class="inline-flex items-center gap-2 bg-black/40 border border-white/10 px-5 py-2 rounded-full text-xs font-bold tracking-[0.2em] uppercase text-white backdrop-blur-md mb-8">
-        <span class="w-2 h-2 bg-ficus-green rounded-full animate-pulse shadow-[0_0_8px_#39B54A]"></span> Live Field Updates
+    <div class="relative z-10 text-center max-w-4xl px-6 py-12 flex flex-col items-center animate-fade-in-up">
+      <div
+        class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/40 text-white text-xs font-bold tracking-[0.2em] uppercase mb-8">
+        <span class="w-2 h-2 bg-ficus-yellow rounded-full animate-pulse"></span>
+        Live Field Updates
       </div>
-
-      <!-- Short, Punchy Headline -->
-      <h1 class="text-[clamp(3rem,8vw,5.5rem)] font-black leading-tight uppercase tracking-tighter mb-6 text-white drop-shadow-lg">
-        Shaping <span class="text-transparent bg-clip-text bg-gradient-to-r from-ficus-blue to-ficus-green">Tomorrow.</span>
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight text-white drop-shadow-lg mb-6">
+        Shaping
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-ficus-yellow to-white">Tomorrow.</span>
       </h1>
-
-      <!-- Concise Subtitle -->
-      <p class="text-[clamp(1rem,2vw,1.25rem)] max-w-[600px] mx-auto mb-10 text-white/90 leading-relaxed font-medium drop-shadow-md">
-        Real-time dispatches on agriculture, health, and education. See our impact and join the mission.
+      <p class="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+        Real‑time dispatches on agriculture, health, and education. See our impact and join the mission.
       </p>
-
-      <!-- Simple CTA Button -->
-      <button class="group relative inline-flex items-center justify-center px-8 py-4 overflow-hidden rounded-xl cursor-pointer transition-all duration-300 hover:-translate-y-1 bg-ficus-blue/90 backdrop-blur-md border border-ficus-blue hover:bg-ficus-blue shadow-[0_8px_20px_rgba(0,113,188,0.4)]" onclick="document.querySelector('#ficus-newsletter-2080').scrollIntoView({behavior:'smooth'})">
-        <span class="relative flex items-center gap-2 text-white font-bold text-sm tracking-widest uppercase">
-          Stay Connected <i class="fa-solid fa-arrow-down ml-2 transition-transform group-hover:translate-y-1"></i>
-        </span>
-      </button>
-
+      <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
+        <a href="#ficus-newsletter-2080"
+          class="group inline-flex items-center justify-center gap-2 bg-ficus-yellow text-ficus-blue px-8 py-4 rounded-full font-bold text-sm tracking-wider uppercase hover:bg-ficus-green hover:text-white transition-all duration-300 shadow-xl">
+          Stay Connected
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+          </svg>
+        </a>
+        <a href="news.html"
+          class="group inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-full font-bold text-sm tracking-wider uppercase hover:bg-white hover:text-ficus-blue transition-all duration-300">
+          Read Stories
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- ── STICKY FILTER BAR ── -->
-  <div class="sticky top-0 z-30 bg-ficus-green backdrop-blur-xl border-b border-white/5 py-5 transition-all duration-500" id="ficus-filter-bar-2080">
-    <!-- Grid for mobile (2 rows), Flex for desktop (1 row) -->
-    <div class="max-w-[1400px] mx-auto px-4 md:px-8 w-full grid grid-cols-6 gap-2 md:flex md:flex-wrap md:items-center md:justify-center md:gap-4 filter-btn-container">
-      
-      <button class="filter-btn-2080 col-span-3 md:col-span-1 bg-ficus-blue border border-ficus-blue text-white shadow-[0_4px_15px_rgba(0,113,188,0.3)] px-0 py-3 md:px-7 md:py-2.5 rounded-md text-xs md:text-sm font-semibold transition-all duration-300 whitespace-nowrap flex items-center justify-center cursor-pointer" data-filter="all">All Stories</button>
-      
-      <button class="filter-btn-2080 col-span-3 md:col-span-1 bg-transparent border border-yellow-400 text-ficus-sand px-0 py-3 md:px-7 md:py-2.5 rounded-md text-xs md:text-sm font-semibold transition-all duration-300 whitespace-nowrap flex items-center justify-center cursor-pointer hover:bg-ficus-blue hover:text-white hover:border-ficus-blue hover:shadow-[0_4px_15px_rgba(0,113,188,0.3)]" data-filter="agriculture">Agriculture</button>
-      
-      <button class="filter-btn-2080 col-span-2 md:col-span-1 bg-transparent border border-yellow-400 text-ficus-sand px-0 py-3 md:px-7 md:py-2.5 rounded-md text-xs md:text-sm font-semibold transition-all duration-300 whitespace-nowrap flex items-center justify-center cursor-pointer hover:bg-ficus-blue hover:text-white hover:border-ficus-blue hover:shadow-[0_4px_15px_rgba(0,113,188,0.3)]" data-filter="education">Education</button>
-      
-      <button class="filter-btn-2080 col-span-2 md:col-span-1 bg-transparent border border-yellow-400 text-ficus-sand px-0 py-3 md:px-7 md:py-2.5 rounded-md text-xs md:text-sm font-semibold transition-all duration-300 whitespace-nowrap flex items-center justify-center cursor-pointer hover:bg-ficus-blue hover:text-white hover:border-ficus-blue hover:shadow-[0_4px_15px_rgba(0,113,188,0.3)]" data-filter="health">Health</button>
-      
-      <button class="filter-btn-2080 col-span-2 md:col-span-1 bg-transparent border border-yellow-400 text-ficus-sand px-0 py-3 md:px-7 md:py-2.5 rounded-md text-xs md:text-sm font-semibold transition-all duration-300 whitespace-nowrap flex items-center justify-center cursor-pointer hover:bg-ficus-blue hover:text-white hover:border-ficus-blue hover:shadow-[0_4px_15px_rgba(0,113,188,0.3)]" data-filter="environment">Environment</button>
+  <!-- STICKY FILTER BAR -->
+  <div
+    class="sticky top-0 z-30 bg-white/90 backdrop-blur-xl border-b border-ficus-blue/10 shadow-sm py-4 transition-all duration-500"
+    id="ficus-filter-bar-2080">
+    <div
+      class="max-w-[1400px] mx-auto px-4 md:px-8 w-full grid grid-cols-6 gap-2 md:flex md:flex-wrap md:items-center md:justify-center md:gap-3 filter-btn-container">
+      <button
+        class="filter-btn-2080 col-span-3 md:col-span-1 bg-ficus-blue border border-ficus-blue text-white shadow-md px-0 py-3 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 whitespace-nowrap flex items-center justify-center cursor-pointer"
+        data-filter="all">All Stories</button>
+      <button
+        class="filter-btn-2080 col-span-3 md:col-span-1 bg-transparent border border-ficus-blue text-ficus-blue px-0 py-3 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 whitespace-nowrap flex items-center justify-center cursor-pointer hover:bg-ficus-blue/5"
+        data-filter="agriculture">Agriculture</button>
+      <button
+        class="filter-btn-2080 col-span-2 md:col-span-1 bg-transparent border border-ficus-blue text-ficus-blue px-0 py-3 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 whitespace-nowrap flex items-center justify-center cursor-pointer hover:bg-ficus-blue/5"
+        data-filter="education">Education</button>
+      <button
+        class="filter-btn-2080 col-span-2 md:col-span-1 bg-transparent border border-ficus-blue text-ficus-blue px-0 py-3 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 whitespace-nowrap flex items-center justify-center cursor-pointer hover:bg-ficus-blue/5"
+        data-filter="health">Health</button>
+      <button
+        class="filter-btn-2080 col-span-2 md:col-span-1 bg-transparent border border-ficus-blue text-ficus-blue px-0 py-3 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-semibold transition-all duration-300 whitespace-nowrap flex items-center justify-center cursor-pointer hover:bg-ficus-blue/5"
+        data-filter="environment">Environment</button>
     </div>
   </div>
 
-  <!-- ── MAIN CONTENT AREA ── -->
-  <main class="py-20 px-4 md:px-8 max-w-[1400px] mx-auto min-h-[60vh]" id="main-content-area">
-    
-    <!-- 1. GRID VIEW (Visible by Default) -->
-    <div class="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] md:grid-cols-[repeat(auto-fit,minmax(400px,1fr))] gap-10 w-full animate-fade-in-up" id="news-grid-2080">
+  <!-- MAIN CONTENT – CARDS GRID (NO STRETCH) -->
+  <main class="py-20 px-4 md:px-8 max-w-[1400px] mx-auto min-h-[60vh] bg-ficus-sand/20" id="main-content-area">
+    <div class="flex flex-wrap justify-center gap-10 w-full animate-fade-in-up" id="news-grid-2080">
 
       <!-- Card Agriculture -->
-      <article class="news-card-2080 group flex flex-col bg-ficus-blue backdrop-blur-md border border-white/10 rounded-xl overflow-hidden transition-all duration-400 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-10px_rgba(0,113,188,0.2)] hover:border-ficus-blue h-full w-full" data-category="agriculture">
-        <div class="relative h-[220px] overflow-hidden bg-ficus-charcoal">
-          <img src="https://images.unsplash.com/photo-1595804561879-a764d26214ee?auto=format&fit=crop&w=800&q=80" alt="Agriculture" loading="lazy" class="w-full h-full object-cover opacity-85 transition-all duration-700 group-hover:scale-110 group-hover:opacity-100">
-          <span class="absolute top-5 left-5 px-5 py-1.5 rounded-md text-[0.7rem] font-extrabold uppercase tracking-widest backdrop-blur-md shadow-lg bg-ficus-green text-white">Agriculture</span>
+      <article
+        class="news-card-2080 group flex flex-col bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:border-ficus-blue/50 w-full sm:w-[400px] h-full"
+        data-category="agriculture">
+        <div class="relative h-[220px] overflow-hidden bg-ficus-blue/5">
+          <img src="https://images.unsplash.com/photo-1595804561879-a764d26214ee?auto=format&fit=crop&w=800&q=80"
+            alt="Agriculture" loading="lazy" class="w-full h-full object-cover">
+          <span
+            class="absolute top-5 left-5 px-4 py-1.5 rounded-full text-[0.7rem] font-extrabold uppercase tracking-widest bg-ficus-green text-white shadow-lg">Agriculture</span>
         </div>
         <div class="p-8 flex flex-col flex-1">
-          <div class="flex justify-between text-[0.7rem] font-semibold tracking-widest text-yellow-400 mb-5"><span>NODE: FCS-AG-059</span><span>12 MIN READ</span></div>
-          <h3 class="text-xl font-extrabold leading-tight mb-4 text-white transition-colors duration-300 ">Smart Irrigation Expansion Volunteers & Donors Wanted</h3>
-          <p class="text-white text-[0.95rem] leading-relaxed mb-8 flex-1">Deploy AI‑driven irrigation to 2,000 more farms. Join our field team or donate a sensor kit.</p>
-          <button class="card-read-more-2080 mt-auto inline-flex items-center gap-2 bg-transparent border-none text-yellow-400 font-bold text-sm uppercase tracking-widest cursor-pointer transition-colors duration-300 hover:text-white after:content-['→'] after:transition-transform after:duration-300 hover:after:translate-x-2" data-article="agri-1">Read Full Story</button>
+          <div class="flex justify-between text-[0.7rem] font-semibold tracking-widest text-ficus-blue/80 mb-5">
+            <span>NODE: FCS-AG-059</span><span>12 MIN READ</span>
+          </div>
+          <h3 class="text-xl font-extrabold leading-tight mb-4 text-ficus-charcoal">Smart Irrigation Expansion –
+            Volunteers & Donors Wanted</h3>
+          <p class="text-ficus-charcoal/60 text-[0.95rem] leading-relaxed mb-8 flex-1">Deploy AI‑driven irrigation to
+            2,000 more farms. Join our field team or donate a sensor kit.</p>
+          <button
+            class="card-read-more-2080 mt-auto inline-flex items-center gap-2 bg-transparent border-none text-ficus-blue font-bold text-sm uppercase tracking-widest cursor-pointer hover:text-ficus-green transition-colors"
+            data-article="agri-1">
+            Read Full Story <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </button>
         </div>
       </article>
 
       <!-- Card Education -->
-      <article class="news-card-2080 group flex flex-col bg-ficus-blue backdrop-blur-md border border-white/10 rounded-xl overflow-hidden transition-all duration-400 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-10px_rgba(0,113,188,0.2)] hover:border-ficus-blue h-full w-full" data-category="education">
-        <div class="relative h-[220px] overflow-hidden bg-ficus-charcoal">
-          <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=80" alt="Education" loading="lazy" class="w-full h-full object-cover opacity-85 transition-all duration-700 group-hover:scale-110 group-hover:opacity-100">
-          <span class="absolute top-5 left-5 px-5 py-1.5 rounded-md text-[0.7rem] font-extrabold uppercase tracking-widest backdrop-blur-md shadow-lg bg-ficus-blue text-white">Education</span>
+      <article
+        class="news-card-2080 group flex flex-col bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:border-ficus-blue/50 w-full sm:w-[400px] h-full"
+        data-category="education">
+        <div class="relative h-[220px] overflow-hidden bg-ficus-blue/5">
+          <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=80"
+            alt="Education" loading="lazy" class="w-full h-full object-cover">
+          <span
+            class="absolute top-5 left-5 px-4 py-1.5 rounded-full text-[0.7rem] font-extrabold uppercase tracking-widest bg-ficus-blue text-white shadow-lg">Education</span>
         </div>
         <div class="p-8 flex flex-col flex-1">
-          <div class="flex justify-between text-[0.7rem] font-semibold tracking-widest text-yellow-400 mb-5"><span>NODE: FCS-ED-112</span><span>8 MIN READ</span></div>
-          <h3 class="text-xl font-extrabold leading-tight mb-4 text-white transition-colors duration-300 group-hover:text-yellow-400">Digital Hub Seeks Coding Mentors & Tech Partners</h3>
-          <p class="text-white text-[0.95rem] leading-relaxed mb-8 flex-1">Mwanza’s hub needs volunteer instructors and sponsors for 500 student devices.</p>
-          <button class="card-read-more-2080 mt-auto inline-flex items-center gap-2 bg-transparent border-none text-yellow-400 font-bold text-sm uppercase tracking-widest cursor-pointer transition-colors duration-300 hover:text-white after:content-['→'] after:transition-transform after:duration-300 hover:after:translate-x-2" data-article="edu-1">Read Full Story</button>
+          <div class="flex justify-between text-[0.7rem] font-semibold tracking-widest text-ficus-blue/80 mb-5">
+            <span>NODE: FCS-ED-112</span><span>8 MIN READ</span>
+          </div>
+          <h3 class="text-xl font-extrabold leading-tight mb-4 text-ficus-charcoal">Digital Hub Seeks Coding Mentors &
+            Tech Partners</h3>
+          <p class="text-ficus-charcoal/60 text-[0.95rem] leading-relaxed mb-8 flex-1">Mwanza’s hub needs volunteer
+            instructors and sponsors for 500 student devices.</p>
+          <button
+            class="card-read-more-2080 mt-auto inline-flex items-center gap-2 bg-transparent border-none text-ficus-blue font-bold text-sm uppercase tracking-widest cursor-pointer hover:text-ficus-green transition-colors"
+            data-article="edu-1">
+            Read Full Story <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </button>
         </div>
       </article>
 
       <!-- Card Health -->
-      <article class="news-card-2080 group flex flex-col bg-ficus-blue backdrop-blur-md border border-white/10 rounded-xl overflow-hidden transition-all duration-400 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-10px_rgba(0,113,188,0.2)] hover:border-ficus-blue h-full w-full" data-category="health">
-        <div class="relative h-[220px] overflow-hidden bg-ficus-charcoal">
-          <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80" alt="Health" loading="lazy" class="w-full h-full object-cover opacity-85 transition-all duration-700 group-hover:scale-110 group-hover:opacity-100">
-          <span class="absolute top-5 left-5 px-5 py-1.5 rounded-md text-[0.7rem] font-extrabold uppercase tracking-widest backdrop-blur-md shadow-lg bg-ficus-yellow text-ficus-charcoal">Health</span>
+      <article
+        class="news-card-2080 group flex flex-col bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:border-ficus-blue/50 w-full sm:w-[400px] h-full"
+        data-category="health">
+        <div class="relative h-[220px] overflow-hidden bg-ficus-blue/5">
+          <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80"
+            alt="Health" loading="lazy" class="w-full h-full object-cover">
+          <span
+            class="absolute top-5 left-5 px-4 py-1.5 rounded-full text-[0.7rem] font-extrabold uppercase tracking-widest bg-ficus-yellow text-ficus-blue shadow-lg">Health</span>
         </div>
         <div class="p-8 flex flex-col flex-1">
-          <div class="flex justify-between text-[0.7rem] font-semibold tracking-widest text-yellow-400 mb-5"><span>NODE: FCS-HL-033</span><span>5 MIN READ</span></div>
-          <h3 class="text-xl font-extrabold leading-tight mb-4 text-white transition-colors duration-300 group-hover:text-yellow-400">Mobile Clinic Fleet Needs Medical Volunteers & Fuel</h3>
-          <p class="text-white text-[0.95rem] leading-relaxed mb-8 flex-1">Our AI‑powered clinics are expanding to 15 villages. Volunteer doctors and fuel donations needed.</p>
-          <button class="card-read-more-2080 mt-auto inline-flex items-center gap-2 bg-transparent border-none text-yellow-400 font-bold text-sm uppercase tracking-widest cursor-pointer transition-colors duration-300 hover:text-white after:content-['→'] after:transition-transform after:duration-300 hover:after:translate-x-2" data-article="health-1">Read Full Story</button>
+          <div class="flex justify-between text-[0.7rem] font-semibold tracking-widest text-ficus-blue/80 mb-5">
+            <span>NODE: FCS-HL-033</span><span>5 MIN READ</span>
+          </div>
+          <h3 class="text-xl font-extrabold leading-tight mb-4 text-ficus-charcoal">Mobile Clinic Fleet Needs Medical
+            Volunteers & Fuel</h3>
+          <p class="text-ficus-charcoal/60 text-[0.95rem] leading-relaxed mb-8 flex-1">Our AI‑powered clinics are
+            expanding to 15 villages. Volunteer doctors and fuel donations needed.</p>
+          <button
+            class="card-read-more-2080 mt-auto inline-flex items-center gap-2 bg-transparent border-none text-ficus-blue font-bold text-sm uppercase tracking-widest cursor-pointer hover:text-ficus-green transition-colors"
+            data-article="health-1">
+            Read Full Story <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </button>
         </div>
       </article>
 
       <!-- Card Environment -->
-      <article class="news-card-2080 group flex flex-col bg-ficus-blue backdrop-blur-md border border-white/10 rounded-xl overflow-hidden transition-all duration-400 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-10px_rgba(0,113,188,0.2)] hover:border-ficus-blue h-full w-full" data-category="environment">
-        <div class="relative h-[220px] overflow-hidden bg-ficus-charcoal">
-          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" alt="Environment" loading="lazy" class="w-full h-full object-cover opacity-85 transition-all duration-700 group-hover:scale-110 group-hover:opacity-100">
-          <span class="absolute top-5 left-5 px-5 py-1.5 rounded-md text-[0.7rem] font-extrabold uppercase tracking-widest backdrop-blur-md shadow-lg bg-ficus-green text-white">Environment</span>
+      <article
+        class="news-card-2080 group flex flex-col bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:border-ficus-blue/50 w-full sm:w-[400px] h-full"
+        data-category="environment">
+        <div class="relative h-[220px] overflow-hidden bg-ficus-blue/5">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80"
+            alt="Environment" loading="lazy" class="w-full h-full object-cover">
+          <span
+            class="absolute top-5 left-5 px-4 py-1.5 rounded-full text-[0.7rem] font-extrabold uppercase tracking-widest bg-ficus-green text-white shadow-lg">Environment</span>
         </div>
         <div class="p-8 flex flex-col flex-1">
-          <div class="flex justify-between text-[0.7rem] font-semibold tracking-widest text-yellow-400 mb-5"><span>NODE: FCS-EN-024</span><span>6 MIN READ</span></div>
-          <h3 class="text-xl font-extrabold leading-tight mb-4 text-white transition-colors duration-300 group-hover:text-yellow-400">Reforestation Drive Seeks Tree‑Planting Volunteers & Eco‑Partners</h3>
-          <p class="text-white text-[0.95rem] leading-relaxed mb-8 flex-1">Help us plant 100,000 trees. Volunteer for a weekend or become a corporate sponsor.</p>
-          <button class="card-read-more-2080 mt-auto inline-flex items-center gap-2 bg-transparent border-none text-yellow-400 font-bold text-sm uppercase tracking-widest cursor-pointer transition-colors duration-300 hover:text-white after:content-['→'] after:transition-transform after:duration-300 hover:after:translate-x-2" data-article="env-1">Read Full Story</button>
+          <div class="flex justify-between text-[0.7rem] font-semibold tracking-widest text-ficus-blue/80 mb-5">
+            <span>NODE: FCS-EN-024</span><span>6 MIN READ</span>
+          </div>
+          <h3 class="text-xl font-extrabold leading-tight mb-4 text-ficus-charcoal">Reforestation Drive Seeks
+            Tree‑Planting Volunteers & Eco‑Partners</h3>
+          <p class="text-ficus-charcoal/60 text-[0.95rem] leading-relaxed mb-8 flex-1">Help us plant 100,000 trees.
+            Volunteer for a weekend or become a corporate sponsor.</p>
+          <button
+            class="card-read-more-2080 mt-auto inline-flex items-center gap-2 bg-transparent border-none text-ficus-blue font-bold text-sm uppercase tracking-widest cursor-pointer hover:text-ficus-green transition-colors"
+            data-article="env-1">
+            Read Full Story <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+          </button>
         </div>
       </article>
 
-      <!-- Fallback when filtering leaves 0 results -->
-      <div id="no-results-2080" class="hidden col-span-full text-center p-16 border border-dashed border-white/15 rounded-xl text-ficus-sand/50 font-semibold tracking-widest">
+      <!-- No results fallback -->
+      <div id="no-results-2080"
+        class="hidden w-full text-center p-16 border border-dashed border-ficus-blue/30 rounded-xl text-ficus-blue/60 font-semibold tracking-widest">
         <p>NO STORIES FOUND FOR THIS SECTOR. TRY ANOTHER NODE.</p>
       </div>
     </div>
 
-    <!-- LOAD MORE CONTAINER FOR MOBILE -->
+    <!-- Load More -->
     <div id="load-more-container" class="hidden text-center mt-12 w-full">
-      <button id="load-more-btn-2080" class="bg-ficus-blue text-white border-none px-10 py-4 rounded-lg font-bold text-sm tracking-widest uppercase cursor-pointer transition-all duration-300 shadow-[0_10px_20px_-5px_rgba(0,113,188,0.3)] hover:-translate-y-1 hover:shadow-[0_15px_30px_-5px_rgba(0,113,188,0.5)]">Load More Stories</button>
+      <button id="load-more-btn-2080"
+        class="bg-ficus-blue text-white px-10 py-4 rounded-full font-bold text-sm tracking-widest uppercase transition-all duration-300 hover:bg-ficus-green shadow-lg">
+        Load More Stories
+      </button>
     </div>
 
-    <!-- 2. INLINE ARTICLE VIEW (Hidden by Default) -->
-    <div class="hidden max-w-[900px] w-full mx-auto bg-ficus-blue border border-yellow-400 rounded-2xl p-6 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.5)] animate-fade-in-up scroll-mt-[100px]" id="article-view-2080">
-      
-      <!-- Top Close Button -->
-      <div class="flex justify-end mb-6">
-        <button class="inline-flex items-center gap-2 bg-transparent border border-yellow-400 text-white px-4 py-2 rounded-md font-semibold text-sm cursor-pointer transition-all duration-300 hover:bg-black hover:text-yellow-400 hover:border-ficus-blue" id="article-close-top-btn">&times; Close Article</button>
-      </div>
-
-      <div class="w-full overflow-hidden rounded-xl mb-10">
-        <div class="flex w-[200%] md:w-full md:grid md:grid-cols-2 gap-0 md:gap-8 mb-0 animate-slide-mobile md:animate-none">
-          <img src="" alt="Image 1" class="w-1/2 md:w-full px-2 md:px-0 h-[220px] md:h-[280px] object-cover rounded-xl border border-white" id="article-img-1">
-          <img src="" alt="Image 2" class="w-1/2 md:w-full px-2 md:px-0 h-[220px] md:h-[280px] object-cover rounded-xl border border-white" id="article-img-2">
+    <!-- Article Modal (clean white, now with full details) -->
+    <div class="hidden fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4"
+      id="article-view-2080">
+      <div
+        class="max-w-[900px] w-full bg-white border border-gray-200 rounded-3xl p-6 md:p-12 shadow-2xl overflow-y-auto max-h-[90vh]">
+        <div class="flex justify-end mb-6">
+          <button id="article-close-top-btn"
+            class="inline-flex items-center gap-2 bg-transparent border border-ficus-blue text-ficus-blue px-4 py-2 rounded-full font-semibold text-sm cursor-pointer hover:bg-ficus-blue hover:text-white transition-all duration-300">
+            &times; Close Article
+          </button>
+        </div>
+        <div class="w-full overflow-hidden rounded-xl mb-10">
+          <div
+            class="flex w-[200%] md:w-full md:grid md:grid-cols-2 gap-0 md:gap-8 mb-0 animate-slide-mobile md:animate-none">
+            <img src="" alt="Image 1"
+              class="w-1/2 md:w-full px-2 md:px-0 h-[220px] md:h-[280px] object-cover rounded-xl border border-gray-200"
+              id="article-img-1">
+            <img src="" alt="Image 2"
+              class="w-1/2 md:w-full px-2 md:px-0 h-[220px] md:h-[280px] object-cover rounded-xl border border-gray-200"
+              id="article-img-2">
+          </div>
+        </div>
+        <div class="text-ficus-charcoal leading-relaxed text-lg mb-12 whitespace-pre-wrap" id="article-content-2080">
+        </div>
+        <div class="flex flex-row flex-nowrap gap-2 md:gap-3 justify-between border-t border-gray-200 pt-8 w-full">
+          <a href="involved.html" id="action-job"
+            class="flex-1 min-w-0 py-4 px-2 rounded-lg font-extrabold text-sm text-center flex items-center justify-center bg-ficus-blue text-white hover:bg-ficus-green transition-all">
+            Apply as Volunteer
+          </a>
+          <a href="donate.html" id="action-donate"
+            class="flex-1 min-w-0 py-4 px-2 rounded-lg font-extrabold text-sm text-center flex items-center justify-center bg-ficus-green text-white hover:bg-ficus-blue transition-all">
+            Donate Now
+          </a>
+          <a href="involved.html" id="action-partner"
+            class="flex-1 min-w-0 py-4 px-2 rounded-lg font-extrabold text-sm text-center flex items-center justify-center bg-transparent text-ficus-blue border border-ficus-blue hover:bg-ficus-blue hover:text-white transition-all">
+            Become a Partner
+          </a>
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-200 flex justify-center">
+          <button id="article-back-btn-2080"
+            class="inline-flex items-center gap-2 bg-ficus-blue text-white px-10 py-3 rounded-full font-bold text-sm tracking-widest cursor-pointer hover:bg-ficus-green transition-all">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" />
+            </svg>
+            BACK TO NEWS GRID
+          </button>
         </div>
       </div>
-      
-      <div class="text-white leading-relaxed text-lg mb-12 whitespace-pre-wrap" id="article-content-2080"></div>
-      
-      <!-- Strictly Horizontal Action Buttons -->
-      <div class="flex flex-row flex-nowrap gap-2 md:gap-3 justify-between border-t border-white pt-8 w-full">
-        <a href="involved.html" class="flex-1 min-w-0 py-4 px-2 rounded-lg font-extrabold text-[clamp(0.6rem,2.5vw,0.95rem)] leading-tight text-center flex items-center justify-center whitespace-normal transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:brightness-110 bg-ficus-blue text-white border border-yellow-400" id="action-job">Apply as Volunteer</a>
-        <a href="donate.html" class="flex-1 min-w-0 py-4 px-2 rounded-lg font-extrabold text-[clamp(0.6rem,2.5vw,0.95rem)] leading-tight text-center flex items-center justify-center whitespace-normal transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:brightness-110 bg-ficus-green text-white border border-ficus-green" id="action-donate">Donate Now</a>
-        <a href="involved.html" class="flex-1 min-w-0 py-4 px-2 rounded-lg font-extrabold text-[clamp(0.6rem,2.5vw,0.95rem)] leading-tight text-center flex items-center justify-center whitespace-normal transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(0,0,0,0.2)] hover:brightness-110 bg-transparent text-ficus-sand border border-yellow-400" id="action-partner">Become a Partner</a>
-      </div>
-
-      <div class="mt-8 pt-6 border-t border-white flex justify-center">
-        <button class="inline-flex items-center gap-2 bg-black border border-white text-white px-10 py-3 rounded-lg font-bold text-sm tracking-widest cursor-pointer transition-all duration-300 hover:bg-yellow-400 hover:text-black" id="article-back-btn-2080">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2"/></svg>
-          BACK TO NEWS GRID
-        </button>
-      </div>
-
     </div>
   </main>
 
+  <!-- ==================== NEWSLETTER (PREMIUM) ==================== -->
+  <section
+    class="relative py-28 lg:py-40 px-4 md:px-8 bg-gradient-to-br from-ficus-blue via-blue-800 to-ficus-green overflow-hidden"
+    id="ficus-newsletter-2080">
 
-<!-- ── NEWSLETTER (MODERN GLASSMORPHISM UPGRADE) ── -->
-  <section class="relative py-32 px-4 md:px-8 bg-ficus-green overflow-hidden border-t border-white/5" id="ficus-newsletter-2080">
-    
-    <!-- Decorative Glowing Orbs -->
-    <div class="absolute top-10 left-1/4 w-[400px] h-[400px] bg-ficus-blue rounded-full mix-blend-screen filter blur-[100px] animate-pulse-fast pointer-events-none"></div>
-    <div class="absolute bottom-10 right-1/4 w-[300px] h-[300px] bg-ficus-blue rounded-full mix-blend-screen filter blur-[100px] animate-pulse-fast pointer-events-none" style="animation-delay: 1s;"></div>
+    <!-- Decorative Glows -->
+    <div
+      class="absolute top-10 -left-20 w-[500px] h-[500px] bg-ficus-yellow/20 rounded-full mix-blend-overlay filter blur-[120px] animate-pulse-fast pointer-events-none">
+    </div>
+    <div
+      class="absolute bottom-10 -right-20 w-[400px] h-[400px] bg-ficus-green/30 rounded-full mix-blend-overlay filter blur-[120px] animate-pulse-fast pointer-events-none"
+      style="animation-delay: 1.5s;"></div>
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-[150px] pointer-events-none">
+    </div>
 
-    <!-- Glassmorphism Card -->
-    <div class="relative z-10 max-w-[1100px] mx-auto bg-black backdrop-blur-2xl border border-white/10 rounded-[2rem] p-8 md:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
-      
-      <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-8 justify-between">
-        
-        <!-- Text Content -->
-        <div class="flex-1 text-center lg:text-left">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-ficus-blue/10 border border-ficus-blue/30 text-ficus-blue text-xs font-bold tracking-widest uppercase mb-6 shadow-[0_0_15px_rgba(0,113,188,0.2)]">
-            <i class="fa-solid fa-satellite-dish animate-pulse"></i> Secure Comm Link
-          </div>
-          <h2 class="text-[clamp(2.5rem,5vw,4rem)] font-black uppercase leading-[1.05] mb-4 text-white tracking-tight">
-            Stay <span class="text-transparent bg-clip-text bg-gradient-to-r from-ficus-blue via-[#00aaff] to-ficus-green drop-shadow-lg">Linked.</span>
-          </h2>
-          <p class="text-ficus-sand/70 text-lg max-w-md mx-auto lg:mx-0 leading-relaxed">
-            Receive monthly briefings on volunteer openings, donation drives, and partnership calls. No spam, just progress.
-          </p>
-        </div>
+    <!-- Glass Card -->
+    <div
+      class="relative z-10 max-w-4xl mx-auto bg-white/10 backdrop-blur-2xl border border-white/20 rounded-[3rem] p-8 sm:p-12 lg:p-16 shadow-2xl shadow-black/20 text-center">
 
-        <!-- Form Area -->
-        <div class="w-full max-w-lg lg:max-w-md">
-          <form class="flex flex-col gap-3" id="newsletter-form-2080">
-            
-            <!-- Input Wrapper (Unified look on Desktop, Stacked on Mobile) -->
-            <div class="relative flex flex-col sm:flex-row gap-3 sm:gap-0 sm:bg-black/40 sm:border sm:border-white/10 sm:rounded-2xl sm:p-1.5 sm:focus-within:border-ficus-blue/60 sm:focus-within:ring-2 sm:focus-within:ring-ficus-blue/20 transition-all duration-300 shadow-inner">
-              
-              <input type="email" placeholder="Enter your email address..." required 
-                class="w-full p-4 sm:py-3 sm:px-5 bg-black/40 sm:bg-transparent border border-white/10 sm:border-none rounded-xl sm:rounded-none text-white outline-none placeholder:text-white/40 focus:border-ficus-blue sm:focus:border-transparent transition-colors font-medium">
-              
-              <button type="submit" class="relative group sm:w-auto w-full px-8 py-4 sm:py-3 bg-gradient-to-r from-ficus-blue to-blue-600 text-white border-none rounded-xl font-extrabold tracking-wider cursor-pointer overflow-hidden transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,113,188,0.6)] hover:scale-[1.02] flex-shrink-0">
-                <span class="relative z-10 flex items-center justify-center gap-2">
-                  Initiate <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform duration-300"></i>
-                </span>
-                <!-- Button Hover Glow Sweep -->
-                <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
-              </button>
-            </div>
-
-            <p class="text-xs text-ficus-sand/40 mt-3 text-center sm:text-left flex items-center justify-center sm:justify-start gap-2 font-medium tracking-wide">
-              <i class="fa-solid fa-shield-halved text-[10px] text-ficus-green"></i> Quantum Encrypted • Opt-out anytime
-            </p>
-          </form>
-        </div>
-
+      <!-- Badge -->
+      <div
+        class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/20 border border-white/30 text-ficus-yellow text-xs font-bold tracking-widest uppercase mb-8">
+        <i class="fa-solid fa-satellite-dish animate-pulse"></i> Field Dispatches
       </div>
+
+      <!-- Headline -->
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+        Never Miss <br class="sm:hidden">a <span
+          class="text-transparent bg-clip-text bg-gradient-to-r from-ficus-yellow to-yellow-300">Breakthrough.</span>
+      </h2>
+
+      <!-- Subtext -->
+      <p class="text-white/80 text-lg sm:text-xl max-w-2xl mx-auto mb-10 font-light">
+        Get real‑time updates on our field projects, volunteer opportunities, and exclusive impact stories — delivered
+        straight to your inbox.
+      </p>
+
+      <!-- Form -->
+      <form id="newsletter-form-2080" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+        <input type="email" placeholder="Your email address" required
+          class="flex-1 px-6 py-4 rounded-full bg-white border border-transparent text-ficus-charcoal placeholder:text-gray-400 font-medium outline-none focus:border-ficus-yellow focus:ring-4 focus:ring-ficus-yellow/20 transition-all duration-300">
+        <button type="submit"
+          class="group flex items-center justify-center gap-2 px-8 py-4 bg-ficus-yellow text-ficus-blue font-bold rounded-full hover:bg-white hover:text-ficus-blue transition-all duration-300 shadow-xl hover:shadow-ficus-yellow/30 hover:-translate-y-0.5">
+          Subscribe
+          <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+        </button>
+      </form>
+
+      <!-- Privacy Note -->
+      <p class="text-white/50 text-sm mt-6 flex items-center justify-center gap-2">
+        <i class="fa-solid fa-shield-halved text-ficus-green"></i> No spam, ever. Unsubscribe anytime.
+      </p>
     </div>
   </section>
 
-</div>
+  <!-- SCRIPTS WITH FULL ARTICLE CONTENT -->
+  <script>
+      (function () {
+        const filterBtns = document.querySelectorAll('.filter-btn-2080');
+        const cards = document.querySelectorAll('.news-card-2080');
+        const noResults = document.getElementById('no-results-2080');
+        const loadMoreContainer = document.getElementById('load-more-container');
+        const loadMoreBtn = document.getElementById('load-more-btn-2080');
+        const newsGrid = document.getElementById('news-grid-2080');
+        const articleView = document.getElementById('article-view-2080');
+        const articleContent = document.getElementById('article-content-2080');
+        const articleImg1 = document.getElementById('article-img-1');
+        const articleImg2 = document.getElementById('article-img-2');
+        const actionJob = document.getElementById('action-job');
+        const actionDonate = document.getElementById('action-donate');
+        const actionPartner = document.getElementById('action-partner');
+        const heroSection = document.getElementById('ficus-hero-2080');
+        const filterBar = document.getElementById('ficus-filter-bar-2080');
+        const newsletterSection = document.getElementById('ficus-newsletter-2080');
+        const blurClasses = ['blur-md', 'opacity-30', 'pointer-events-none', 'select-none'];
 
-<!-- ==================== SCRIPTS ==================== -->
-<script>
-  (function() {
-    // ── Hero particles ──
-    const canvas = document.getElementById('hero-particles');
-    if (canvas) {
-      canvas.width = canvas.parentElement.offsetWidth;
-      canvas.height = canvas.parentElement.offsetHeight;
-      const ctx = canvas.getContext('2d');
-      const particles = Array.from({length: 50}, () => ({
-        x: Math.random() * canvas.width, y: Math.random() * canvas.height,
-        r: Math.random() * 1.2 + 0.5, speed: Math.random() * 0.3 + 0.1,
-        color: `rgba(0,113,188,${Math.random() * 0.15 + 0.05})`
-      }));
-      function draw() {
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        particles.forEach(p => {
-          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-          ctx.fillStyle = p.color; ctx.fill();
-          p.y -= p.speed;
-          if(p.y < -10) { p.y = canvas.height + 10; p.x = Math.random() * canvas.width; }
-        });
-        requestAnimationFrame(draw);
-      }
-      draw();
-    }
+        let currentFilter = 'all';
+        let isShowingAllMobile = false;
 
-    // ── Elements ──
-    const filterBtns = document.querySelectorAll('.filter-btn-2080');
-    const cards = document.querySelectorAll('.news-card-2080');
-    const noResults = document.getElementById('no-results-2080');
-    const loadMoreContainer = document.getElementById('load-more-container');
-    const loadMoreBtn = document.getElementById('load-more-btn-2080');
-
-    const newsGrid = document.getElementById('news-grid-2080');
-    const articleView = document.getElementById('article-view-2080');
-    const articleContent = document.getElementById('article-content-2080');
-    const articleImg1 = document.getElementById('article-img-1');
-    const articleImg2 = document.getElementById('article-img-2');
-    
-    const actionJob = document.getElementById('action-job');
-    const actionDonate = document.getElementById('action-donate');
-    const actionPartner = document.getElementById('action-partner');
-
-    const heroSection = document.getElementById('ficus-hero-2080');
-    const filterBar = document.getElementById('ficus-filter-bar-2080');
-    const newsletterSection = document.getElementById('ficus-newsletter-2080');
-
-    // Utility classes for blur effect
-    const blurClasses = ['blur-md', 'opacity-30', 'pointer-events-none', 'select-none'];
-
-    // ── Pagination & Filter State ──
-    let currentFilter = 'all';
-    let isShowingAllMobile = false;
-
-    // Core function to handle filtering and mobile limits
-    function applyFilter() {
-      const isMobile = window.innerWidth <= 768;
-      const cardsToShowMobile = 3;
-      let matchedCards = [];
-
-      // 1. Find all cards that match the current category filter
-      cards.forEach(card => {
-        if (currentFilter === 'all' || card.dataset.category === currentFilter) {
-          matchedCards.push(card);
-        } else {
-          card.style.display = 'none';
+        function applyFilter() {
+          const isMobile = window.innerWidth <= 768;
+          const cardsToShowMobile = 3;
+          let matchedCards = [];
+          cards.forEach(card => {
+            if (currentFilter === 'all' || card.dataset.category === currentFilter) {
+              matchedCards.push(card);
+            } else {
+              card.style.display = 'none';
+            }
+          });
+          matchedCards.forEach((card, index) => {
+            if (isMobile && !isShowingAllMobile && index >= cardsToShowMobile) {
+              card.style.display = 'none';
+            } else {
+              card.style.display = 'flex';
+            }
+          });
+          noResults.style.display = matchedCards.length === 0 ? 'block' : 'none';
+          if (isMobile && !isShowingAllMobile && matchedCards.length > cardsToShowMobile) {
+            loadMoreContainer.style.display = 'block';
+          } else {
+            loadMoreContainer.style.display = 'none';
+          }
         }
-      });
 
-      // 2. Loop through matched cards to apply mobile limit
-      matchedCards.forEach((card, index) => {
-        if (isMobile && !isShowingAllMobile && index >= cardsToShowMobile) {
-          card.style.display = 'none';
-        } else {
-          card.style.display = 'flex'; // Ensure flex layout is restored
-        }
-      });
-
-      // 3. Handle Empty States and Load More visibility
-      // Tailwinds generic classes for block vs none
-      noResults.style.display = matchedCards.length === 0 ? 'block' : 'none';
-
-      if (isMobile && !isShowingAllMobile && matchedCards.length > cardsToShowMobile) {
-        loadMoreContainer.style.display = 'block';
-      } else {
-        loadMoreContainer.style.display = 'none';
-      }
-    }
-
-    // Run on initial load
-    applyFilter();
-
-    // Re-run on resize to handle layout shifts dynamically
-    window.addEventListener('resize', applyFilter);
-
-    // ── Filter Buttons ──
-    // Classes used for active and inactive states
-    const btnActiveClasses = ['bg-ficus-blue', 'text-white', 'border-ficus-blue', 'shadow-[0_4px_15px_rgba(0,113,188,0.3)]'];
-    const btnInactiveClasses = ['bg-transparent', 'text-white', 'border-ficus-sand/20'];
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Reset all buttons to inactive
-        filterBtns.forEach(b => {
-          b.classList.remove(...btnActiveClasses);
-          b.classList.add(...btnInactiveClasses);
-        });
-        
-        // Set clicked button to active
-        btn.classList.remove(...btnInactiveClasses);
-        btn.classList.add(...btnActiveClasses);
-        
-        currentFilter = btn.dataset.filter;
-        isShowingAllMobile = false; // Reset pagination state when changing filters
         applyFilter();
-      });
-    });
+        window.addEventListener('resize', applyFilter);
 
-    // ── Load More Button ──
-    loadMoreBtn.addEventListener('click', () => {
-      isShowingAllMobile = true;
-      applyFilter();
-    });
+        const btnActiveClasses = ['bg-ficus-blue', 'text-white', 'border-ficus-blue', 'shadow-md'];
+        const btnInactiveClasses = ['bg-transparent', 'text-ficus-blue', 'border-ficus-blue'];
 
-    const articles = {
-      'agri-1': {
-        title: 'Smart Irrigation Expansion — Volunteers & Donors Wanted',
-        text: `Ficus is scaling its climate‑smart agriculture program across the Lake Zone. We need field volunteers to install AI‑driven moisture sensors and conduct farmer training workshops. Donors can sponsor a complete sensor kit for a village ($150) that reduces water waste by 40%.\n\nVolunteer roles:\n• Sensor installation and maintenance\n• Community training on sustainable irrigation\n• Data collection support\n\nDonor impact:\n• One kit equips 10 smallholder farms\n• Real‑time yield tracking shared with donors\n• Named recognition on our digital dashboard\n\nJoin us in building a food‑secure future for Tanzania.`,
-        img1: 'https://images.unsplash.com/photo-1595804561879-a764d26214ee?auto=format&fit=crop&w=800&q=80',
-        img2: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=800&q=80',
-        jobUrl: '#volunteer-agriculture',
-        donateUrl: '#donate-agriculture',
-        partnerUrl: '#partner-agriculture'
-      },
-      'edu-1': {
-        title: 'Digital Hub Seeks Coding Mentors & Tech Partners',
-        text: `Our Mwanza Digital Hub is opening its doors to 500 youth this quarter. We urgently need volunteer coding mentors (remote and on‑site) to deliver our AI and web development curriculum. Corporate partners can sponsor devices or provide internship opportunities.\n\nVolunteer benefits:\n• Training on our holographic teaching platform\n• Certificate of impact from Ficus\n• Flexible hours (2‑4 per week)\n\nPartnership tiers:\n• Bronze: Sponsor 10 tablets ($2,500)\n• Silver: Fund a full classroom ($10,000)\n• Gold: Name the lab & receive annual impact reports\n\nBe the force behind Tanzania’s next tech generation.`,
-        img1: 'https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=80',
-        img2: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80',
-        jobUrl: '#volunteer-education',
-        donateUrl: '#donate-education',
-        partnerUrl: '#partner-education'
-      },
-      'health-1': {
-        title: 'Mobile Clinic Fleet Needs Medical Volunteers & Fuel Donations',
-        text: `Ficus Health is expanding its AI‑powered mobile clinics to 15 remote villages. We need volunteer doctors, nurses, and community health workers for 2‑week rotations. Fuel and medical supply donations are also critical to keep the fleet moving.\n\nVolunteer positions:\n• General practitioners & nurses\n• Health educators for maternal/child workshops\n• Data analysts to review AI diagnostics\n\nDonation needs:\n• $50 fuels a clinic for one week\n• $200 restocks essential medicines\n• $1,000 sponsors a full village health camp\n\nAll donations are tax‑deductible and come with a personalized impact report.`,
-        img1: 'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80',
-        img2: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80',
-        jobUrl: '#volunteer-health',
-        donateUrl: '#donate-health',
-        partnerUrl: '#partner-health'
-      },
-      'env-1': {
-        title: 'Reforestation Drive Seeks Tree‑Planting Volunteers & Eco‑Partners',
-        text: `Help us plant 100,000 trees this season across the Uluguru Mountains. Volunteers can join weekend planting camps (transport provided), while eco‑partners can fund drone‑based seed dispersal or adopt a forest block.\n\nVolunteer experience:\n• No experience needed – training provided\n• Camping gear and meals included\n• Earn a verified carbon offset certificate\n\nPartnership opportunities:\n• Sponsor a drone planting mission ($5,000)\n• Adopt a 10‑hectare forest ($20,000/year)\n• Co‑brand on satellite monitoring dashboard\n\nLet’s restore Tanzania’s green lungs, together.`,
-        img1: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
-        img2: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80',
-        jobUrl: '#volunteer-environment',
-        donateUrl: '#donate-environment',
-        partnerUrl: '#partner-environment'
-      }
-    };
+        filterBtns.forEach(btn => {
+          btn.addEventListener('click', () => {
+            filterBtns.forEach(b => {
+              b.classList.remove(...btnActiveClasses);
+              b.classList.add(...btnInactiveClasses);
+            });
+            btn.classList.remove(...btnInactiveClasses);
+            btn.classList.add(...btnActiveClasses);
+            currentFilter = btn.dataset.filter;
+            isShowingAllMobile = false;
+            applyFilter();
+          });
+        });
 
-    // ── View Swap Logic (Hides Hero Completely) ──
-    function openArticle() {
-      // Hide Grid and Load More container
-      newsGrid.style.display = 'none';
-      loadMoreContainer.style.display = 'none';
-      
-      // HIDE HERO COMPLETELY
-      heroSection.style.display = 'none';
-      
-      // Blur filter bar and HIDE newsletter CTA completely
-      filterBar.classList.add(...blurClasses);
-      newsletterSection.style.display = 'none';
-      
-      // Show Article
-      articleView.style.display = 'block';
-      
-      // Smooth scroll back to top of filter bar
-      setTimeout(() => {
-        filterBar.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 50);
-    }
+        loadMoreBtn.addEventListener('click', () => {
+          isShowingAllMobile = true;
+          applyFilter();
+        });
 
-    function closeArticle() {
-      // Hide Article
-      articleView.style.display = 'none';
-      
-      // SHOW HERO AGAIN
-      heroSection.style.display = 'flex';
-      
-      // Remove blur from filter bar and SHOW newsletter CTA again
-      filterBar.classList.remove(...blurClasses);
-      newsletterSection.style.display = 'block';
-      
-      // Restore Grid based on current filters and mobile state
-      newsGrid.style.display = 'grid';
-      applyFilter(); 
-      
-      // Smooth scroll back to the filter bar
-      setTimeout(() => {
-        filterBar.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 50);
-    }
+        // FULL ARTICLE CONTENT – complete, modern, comprehensive
+        const articles = {
+          'agri-1': {
+            title: 'Smart Irrigation Expansion — Volunteers & Donors Wanted',
+            text: `Ficus is scaling its climate‑smart agriculture program across the Lake Zone. We need field volunteers to install AI‑driven moisture sensors and conduct farmer training workshops. Donors can sponsor a complete sensor kit for a village ($150) that reduces water waste by 40%.
 
-    // Read More Buttons (Open Article)
-    document.querySelectorAll('.card-read-more-2080').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const articleId = btn.dataset.article;
-        const article = articles[articleId];
-        if (article) {
-          articleContent.innerHTML = `<h2 class="text-2xl md:text-4xl font-extrabold mb-5 text-white leading-tight">${article.title}</h2><p>${article.text.replace(/\n/g, '<br>')}</p>`;
-          articleImg1.src = article.img1;
-          articleImg2.src = article.img2;
-          actionJob.href = article.jobUrl;
-          actionDonate.href = article.donateUrl;
-          actionPartner.href = article.partnerUrl;
-          openArticle();
+Volunteer roles:
+• Sensor installation and maintenance
+• Community training on sustainable irrigation
+• Data collection support
+
+Donor impact:
+• One kit equips 10 smallholder farms
+• Real‑time yield tracking shared with donors
+• Named recognition on our digital dashboard
+
+Join us in building a food‑secure future for Tanzania.`,
+            img1: 'https://images.unsplash.com/photo-1595804561879-a764d26214ee?auto=format&fit=crop&w=800&q=80',
+            img2: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=800&q=80',
+            jobUrl: '#volunteer-agriculture',
+            donateUrl: '#donate-agriculture',
+            partnerUrl: '#partner-agriculture'
+          },
+          'edu-1': {
+            title: 'Digital Hub Seeks Coding Mentors & Tech Partners',
+            text: `Our Mwanza Digital Hub is opening its doors to 500 youth this quarter. We urgently need volunteer coding mentors (remote and on‑site) to deliver our AI and web development curriculum. Corporate partners can sponsor devices or provide internship opportunities.
+
+Volunteer benefits:
+• Training on our holographic teaching platform
+• Certificate of impact from Ficus
+• Flexible hours (2‑4 per week)
+
+Partnership tiers:
+• Bronze: Sponsor 10 tablets ($2,500)
+• Silver: Fund a full classroom ($10,000)
+• Gold: Name the lab & receive annual impact reports
+
+Be the force behind Tanzania’s next tech generation.`,
+            img1: 'https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=80',
+            img2: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80',
+            jobUrl: '#volunteer-education',
+            donateUrl: '#donate-education',
+            partnerUrl: '#partner-education'
+          },
+          'health-1': {
+            title: 'Mobile Clinic Fleet Needs Medical Volunteers & Fuel Donations',
+            text: `Ficus Health is expanding its AI‑powered mobile clinics to 15 remote villages. We need volunteer doctors, nurses, and community health workers for 2‑week rotations. Fuel and medical supply donations are also critical to keep the fleet moving.
+
+Volunteer positions:
+• General practitioners & nurses
+• Health educators for maternal/child workshops
+• Data analysts to review AI diagnostics
+
+Donation needs:
+• $50 fuels a clinic for one week
+• $200 restocks essential medicines
+• $1,000 sponsors a full village health camp
+
+All donations are tax‑deductible and come with a personalized impact report.`,
+            img1: 'https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80',
+            img2: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&q=80',
+            jobUrl: '#volunteer-health',
+            donateUrl: '#donate-health',
+            partnerUrl: '#partner-health'
+          },
+          'env-1': {
+            title: 'Reforestation Drive Seeks Tree‑Planting Volunteers & Eco‑Partners',
+            text: `Help us plant 100,000 trees this season across the Uluguru Mountains. Volunteers can join weekend planting camps (transport provided), while eco‑partners can fund drone‑based seed dispersal or adopt a forest block.
+
+Volunteer experience:
+• No experience needed – training provided
+• Camping gear and meals included
+• Earn a verified carbon offset certificate
+
+Partnership opportunities:
+• Sponsor a drone planting mission ($5,000)
+• Adopt a 10‑hectare forest ($20,000/year)
+• Co‑brand on satellite monitoring dashboard
+
+Let’s restore Tanzania’s green lungs, together.`,
+            img1: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
+            img2: 'https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80',
+            jobUrl: '#volunteer-environment',
+            donateUrl: '#donate-environment',
+            partnerUrl: '#partner-environment'
+          }
+        };
+
+        function openArticle() {
+          newsGrid.style.display = 'none';
+          loadMoreContainer.style.display = 'none';
+          heroSection.style.display = 'none';
+          filterBar.classList.add(...blurClasses);
+          newsletterSection.style.display = 'none';
+          articleView.style.display = 'flex';
+          setTimeout(() => { filterBar.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
         }
-      });
-    });
 
-    // Close Buttons
-    document.getElementById('article-close-top-btn').addEventListener('click', closeArticle);
-    document.getElementById('article-back-btn-2080').addEventListener('click', closeArticle);
+        function closeArticle() {
+          articleView.style.display = 'none';
+          heroSection.style.display = 'flex';
+          filterBar.classList.remove(...blurClasses);
+          newsletterSection.style.display = 'block';
+          newsGrid.style.display = 'grid';
+          applyFilter();
+          setTimeout(() => { filterBar.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 50);
+        }
 
-    // ── Newsletter submit ──
-    document.getElementById('newsletter-form-2080').addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('You are now synced to the Ficus neural feed. Welcome aboard!');
-    });
-  })();
-</script>
+        document.querySelectorAll('.card-read-more-2080').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const article = articles[btn.dataset.article];
+            if (article) {
+              articleContent.innerHTML = `<h2 class="text-2xl md:text-4xl font-extrabold mb-5 text-ficus-charcoal">${article.title}</h2><p>${article.text.replace(/\n/g, '<br>')}</p>`;
+              articleImg1.src = article.img1;
+              articleImg2.src = article.img2;
+              if (actionJob) actionJob.href = article.jobUrl;
+              if (actionDonate) actionDonate.href = article.donateUrl;
+              if (actionPartner) actionPartner.href = article.partnerUrl;
+              openArticle();
+            }
+          });
+        });
 
-    <div id="ficus-footer"></div>
-    <script src="script.js"></script>
+        document.getElementById('article-close-top-btn').addEventListener('click', closeArticle);
+        document.getElementById('article-back-btn-2080').addEventListener('click', closeArticle);
+        document.getElementById('newsletter-form-2080').addEventListener('submit', (e) => {
+          e.preventDefault();
+          alert('You are now synced to the Ficus neural feed. Welcome aboard!');
+        });
+      })();
+  </script>
+
+  <div id="ficus-footer"></div>
+  <script src="script.js"></script>
 </body>
+
 </html>
